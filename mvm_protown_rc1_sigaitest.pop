@@ -399,7 +399,7 @@ population
 				Class	HeavyWeapons
 				health 600
 				Skill Expert
-				Tag	bot_giant
+				NoBombUpgrades 1 [$ SIGSEGV]
 				Item "iron curtain"
 				Item "the dark falkirk helm"
 				Item "the bolshevik biker"
