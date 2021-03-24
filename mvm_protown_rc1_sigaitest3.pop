@@ -27,6 +27,72 @@ population
 		}
 		WaveSpawn
 		{
+			Where spawnbot
+			WaitBeforeStarting 3
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			TotalCurrency 0
+
+			DoneWarningSound mvm\mvm_player_died.wav
+
+			TFBot
+			{
+				Class    Scout
+			    	Skill    Expert
+			    	Name    "Scout Player"
+			    	Attributes AutoJump
+			    	AutoJumpMin 3
+			    	AutoJumpMax 3
+			    	Item	"bonk helm"
+				Item	"graybanns"
+			    	Item  "Batter's Helmet"
+			    	Item	"the cool cat cardigan"
+			    	Item "Battery Canteens"
+			    	UseBestWeapon 1 [$SIGSEGV] 
+			    	ItemAttributes
+			    	{
+					ItemName    "TF_WEAPON_SCATTERGUN"
+					"damage bonus"    2.0
+					"heal on kill"    100
+					"clip size bonus"    3.0
+					"fire rate bonus"    0.6
+					"faster reload rate"    0.4
+					"projectile penetration"    3
+			   	}
+				ItemAttributes
+				{
+					ItemName    "TF_WEAPON_PISTOL"
+					"heal on kill"    100
+					"clip size bonus"    3.0
+					"fire rate bonus"    0.6
+					"projectile penetration"    1
+				}
+			    	CharacterAttributes
+			    	{
+					"dmg taken increased" 0.25
+					"increased air control" 4
+					"increased jump height"	2
+					"move speed bonus"    2.5
+					"health regen"    10
+			    	}
+				Item "Default Power Up Canteen (MvM)"
+				ItemAttributes
+				{
+				      ItemName "Default Power Up Canteen (MvM)"
+				      "critboost" 1
+				      "powerup duration" 25
+				      "powerup charges" 6
+				}
+		    		Action Mobber 					 
+				RocketJump 1
+				UseHumanModel 1 				 
+				AimTrackingInterval 0		  
+				UseMeleeThreatPrioritization 1 
+			}
+		}
+		WaveSpawn
+		{
 			Name "part03"
 			Where spawnbot
 			WaitBeforeStarting 3
@@ -41,7 +107,7 @@ population
 			{
 				Class Soldier
 				Name "Soldier Player2"
-				health 500
+				health 450
 				Skill Expert
 				Attributes HoldFireUntilFullReload
 				Item "The Gunboats"
@@ -69,8 +135,9 @@ population
 				CharacterAttributes
 				{
 					"cannot be backstabbed" 1
+					"rocket jump damage reduction"	3
 					"increased air control" 4
-					"dmg taken increased" 0.4
+					"dmg taken increased" 0.25
 					"health regen" 10
 					"move speed bonus" 2
 					"ammo regen" 1
@@ -107,7 +174,7 @@ population
 			{
 				Class Soldier
 				Name "Soldier Player1"
-				health 600
+				health 450
 				Attributes SpawnWithFullCharge
 				Attributes DisableDodge
 				Skill Expert
@@ -140,12 +207,13 @@ population
 				{
 					"cannot be backstabbed" 1
 					"increased air control" 4
-					"dmg taken increased" 0.4
+					"dmg taken increased" 0.25
 					"health regen" 10
 					//"move speed bonus" 2
 					"ammo regen" 1
 					"damage bonus" 2
 					"increase buff duration" 2
+					"rocket jump damage reduction"	3
 				}
 				Item "Default Power Up Canteen (MvM)"
 				ItemAttributes
@@ -175,7 +243,7 @@ population
 			{
 				Class Pyro
 				Name "Pyro Player"
-				health 575
+				health 450
 				Skill Expert
 				Attributes DisableDodge
 				Item "Memes vs Machines Player 2019"
@@ -216,7 +284,7 @@ population
 				{
 					"cannot be backstabbed" 1
 					"increased air control" 4
-					"dmg taken increased" 0.4
+					"dmg taken increased" 0.25
 					"health regen" 10
 					"move speed bonus" 2
 					"ammo regen" 1
@@ -255,7 +323,7 @@ population
 			{
 				Class	Demoman
 				Name "Demo Player1"
-				health 550
+				health 425
 				Skill Expert
 				Attributes HoldFireUntilFullReload
 				Item	"the horseless headless horseman's headtaker"
@@ -264,7 +332,7 @@ population
 				ItemAttributes
 				{
 					ItemName	tf_weapon_grenadelauncher
-					"damage bonus" 2
+					"damage bonus" 2.5
 					"faster reload rate" 0.4
 					"fire rate bonus" 0.6
 					"clip size bonus" 3
@@ -325,7 +393,7 @@ population
 			{
 				Name	"Heavy Player"
 				Class	HeavyWeapons
-				health 750
+				health 600
 				Skill Expert
 				Tag	bot_giant
 				Item "iron curtain"
@@ -346,7 +414,7 @@ population
 				{
 					"cannot be backstabbed" 1
 					"increased air control" 4
-					"dmg taken increased" 0.4
+					"dmg taken increased" 0.25
 					"health regen" 10
 					//"move speed bonus" 2
 					"ammo regen" 1
@@ -383,7 +451,7 @@ population
 			{
 				Class Medic
 				Name "Medic Player"
-				health 550
+				health 450
 				Skill Expert
 				Item "The Crusader's Crossbow"
 				Item "The Ubersaw"
@@ -426,7 +494,7 @@ population
 				CharacterAttributes
 				{
 					"increased air control" 4
-					"dmg taken increased" 0.4
+					"dmg taken increased" 0.25
 					"health regen" 10
 					"move speed bonus" 2
 					"ammo regen" 1
@@ -458,7 +526,7 @@ population
 			{
 				Class Sniper
 				Name "Sniper Player"
-				health 350
+				health 300
 				Skill Expert
 				Attributes SpawnWithFullCharge
 				Item "The Hitman's Heatmaker"
@@ -492,7 +560,7 @@ population
 				CharacterAttributes
 				{
 					"increased air control" 4
-					"dmg taken increased" 0.4
+					"dmg taken increased" 0.25
 					"health regen" 10
 					"move speed bonus" 2
 					"ammo regen" 1
@@ -577,7 +645,7 @@ population
 				CharacterAttributes
 				{
 					"increased air control" 4
-					"dmg taken increased" 0.4
+					"dmg taken increased" 0.25
 					"health regen" 10
 					"move speed bonus" 2
 					"ammo regen" 1
