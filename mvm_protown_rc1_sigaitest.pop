@@ -1,5 +1,6 @@
 //need sigmod
 //i'm so happy
+//sig is god
 #base robot_giant.pop
 #base robot_standard.pop
 #base robot_gatebot.pop
@@ -791,3 +792,4 @@ population
 		}
 	}
 }
+//전역 언제해 
