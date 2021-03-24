@@ -659,6 +659,18 @@
 					//Crouch
 					//Action
 					
+				WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
+				{
+				    Delay 1 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 3 //Time between each weapon switch (Default: 10)
+				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				    Type "Primary" // Weapon slot, possible values:
+					//Primary
+					//Secondary
+					//Melee
+				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
 				ItemColor [$SIGSEGV] //Set item color
 				{
 					ItemName "TF_WEAPON_ROCKETLAUNCHER"
@@ -950,4 +962,10 @@
 // "cannot taunt" 1
 
 // Rocket acceleration in hu/s^2
-// "projectile acceleration" 500				
+// "projectile acceleration" 500	
+
+// Projectile cannot be deflected
+// "projectile no deflect" 1
+
+// Time before projectile starts accelerating
+// "projectile acceleration start time" 1
