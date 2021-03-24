@@ -1,7 +1,7 @@
 
 #base robot_giant.pop
 #base robot_standard.pop
-#base robot_gatebot.pop
+#base robot_gatebot.popdddd
 population
 {
 	StartingCurrency	7600
