@@ -7,8 +7,24 @@
 population
 {
 	StartingCurrency	6500
-	CanBotsAttackWhileInSpawnRoom false
 	RespawnWaveTime	3
+	//sig
+	MaxTotalPlayers 15 [$ SIGSEGV]
+	MaxRedPlayers 10 [$ SIGSEGV]
+	CanBotsAttackWhileInSpawnRoom false
+	FlagCarrierMovementPenalty 1 [$ SIGSEGV]
+	ClassLimit [$SIGSEGV] //Limits the number of specified classes
+	{
+		Scout 1
+		Soldier 2
+		Pyro 1
+		Demoman 1
+		Heavyweapons 1
+		Engineer 1
+		Medic 1
+		Sniper 1
+		Spy 1
+	}
 	Templates
 	{
 	}
@@ -60,6 +76,7 @@ population
 					"fire rate bonus"    0.6
 					"faster reload rate"    0.4
 					"projectile penetration"    3
+					"boost on damage" 1
 			   	}
 				ItemAttributes
 				{
@@ -134,6 +151,7 @@ population
 				}
 				CharacterAttributes
 				{
+					"no self blast dmg" 2
 					"cannot be backstabbed" 1
 					"rocket jump damage reduction"	3
 					"increased air control" 4
@@ -213,6 +231,7 @@ population
 					"damage bonus" 2
 					"increase buff duration" 2
 					"rocket jump damage reduction"	3
+					"no self blast dmg" 2
 				}
 				Item "Default Power Up Canteen (MvM)"
 				ItemAttributes
@@ -351,6 +370,7 @@ population
 				}
 				CharacterAttributes
 				{
+					"no self blast dmg" 2
 					"cannot be backstabbed" 1
 					"increased air control" 4
 					"dmg taken increased" 0.25
@@ -607,6 +627,7 @@ population
 					"ammo regen" 1
 					"increase buff duration" 10
 					"backstab shield" 1
+					"bot medic uber health threshold" 200
 				}
 				
 				//SIG
