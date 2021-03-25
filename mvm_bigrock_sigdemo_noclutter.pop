@@ -461,6 +461,10 @@
 				ExtAttr TargetStickies [$SIGSEGV] //The bot will target stickies. 
 				ExtAttr BuildDispenserAsTeleporter [$SIGSEGV] //Builds dispenser instead of teleporter
 				ExtAttr BuildDispenserAsSentryGun [$SIGSEGV] //Builds dispenser instead of sentry gun
+				ExtAttr JumpStomp [$SIGSEGV] //Try to jump over and stomp obstracles
+				ExtAttr SuppressCanteenUse [$SIGSEGV] //If set, the bot will not automatically activate canteens when looking at the enemy
+				ExtAttr FastUpdate 1 [$SIGSEGV] //If set, the bot ai updates every tick. This does not make the bot more accurate, but fixes some issues with super scouts running in circles.
+				ExtAttr DropWeapon 1 [$SIGSEGV] //If set, bot will drop a weapon on death. The weapon cannot be upgraded
 				NoBombUpgrades 1 [$SIGSEGV] //If set, the bomb carrier will not upgrade over time
 				PainSound "GoldPipe_MissionIntro.mp3" [$SIGSEGV] //Override pain sound. 
 				DeathSound "GoldPipe_MissionIntro.mp3" [$SIGSEGV] //Override death sound.
