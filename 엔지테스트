@@ -1,0 +1,49 @@
+        T_TFBot_Demoman_Titanium
+        {
+                        Class	Engineer
+			Name "Engi Player"
+			health 400
+			AutoJumpMin 5
+			AutoJumpMax 10
+			Action Mobber
+            ChangeAttributes    //Periodically changes bot attributes, defined in EventChangeAttributes
+            {
+                Delay 0 //Time before the first bot attribute change (Default: 10)
+                Cooldown 10 //Time between each bot attribute change (Default: 10)
+                Repeats 0 //How many times should bot change attributes in total (Default: 0 - Infinite)
+                Name "Attr1" // Name of the bot attributes listed in EventChangeAttributes
+            }
+            ChangeAttributes    //Periodically changes bot attributes, defined in EventChangeAttributes
+            {
+                Delay 10 //Time before the first bot attribute change (Default: 10)
+                Cooldown 20 //Time between each bot attribute change (Default: 10)
+                Repeats 0 //How many times should bot change attributes in total (Default: 0 - Infinite)
+                Name "Attr2" // Name of the bot attributes listed in EventChangeAttributes
+            }
+            EventChangeAttributes
+            {
+                Attr1
+                {
+                    Skill Hard
+                    WeaponRestrictions MeleeOnly
+                    Item "The Iron Bomber"
+                    Item "The Eyelander"
+                    Item "The Chargin' Targe"
+                    Item "The Grenadier Helm"
+                    ItemAttributes
+                    {
+                        ItemName "The Eyelander"
+                        "critboost on kill" 5
+                    }
+                }
+                Attr2
+                {
+                    Skill Hard
+                    WeaponRestrictions PrimaryOnly
+                    Item "The Iron Bomber"
+                    Item "The Eyelander"
+                    Item "The Chargin' Targe"
+                    Item "The Grenadier Helm"        
+                }
+            }
+        }
