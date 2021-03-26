@@ -1,0 +1,56 @@
+T_TFBot_Engineer_ShortCircuit
+		{
+			Name "Short Circuit Engineer"
+			Class Engineer
+			ClassIcon engineer_shortcircuit
+			Skill Hard
+			Item "The Short Circuit"
+			WeaponRestrictions SecondaryOnly
+			Action FetchFlag  
+			ExtAttr TargetStickies  
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 1.25
+				IfSeeTarget 1
+				Type "Secondary"
+			}
+		}
+    
+  T_TFBot_Medic_Vaccinator_Cycle
+		{
+			Name "Cycling Vaccinator Medic"
+			Class Medic
+			ClassIcon medic_vac_trio_nys
+			Skill Expert
+			Item "The Vaccinator"
+			Attributes SpawnWithFullCharge
+			FireWeapon  
+			{
+				Delay		5
+				Cooldown	3
+				Repeats		0
+				IfSeeTarget 0
+				Type "Secondary"
+			}
+			FireWeapon  
+			{
+				Delay		7
+				Cooldown	3
+				Repeats		0
+				IfSeeTarget 0
+				Type "Reload"
+			}
+			ItemAttributes
+			{
+				ItemName "The Vaccinator"
+				"medigun blast resist deployed"		1
+				"medigun bullet resist deployed"	1  
+				"medigun fire resist deployed"		1
+				"ubercharge rate bonus" 999
+			}
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 0 //disable standard uber behavior
+			}
+		}
