@@ -367,6 +367,7 @@ population
 					"heal on kill" 100
                                         "Projectile speed increased"	1
                                         "deploy time decreased" 0.001
+					"max pipebombs decreased"    6
 				}
 				CharacterAttributes
 				{
