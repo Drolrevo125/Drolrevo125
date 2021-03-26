@@ -365,9 +365,10 @@ population
 					"fire rate bonus" 0.6
 					"clip size bonus" 3
 					"heal on kill" 100
-                                        "Projectile speed increased"	1
                                         "deploy time decreased" 0.001
 					"max pipebombs decreased"    6
+					"projectile range increased" 0.35
+					"stickybomb charge rate"     0.001
 				}
 				CharacterAttributes
 				{
@@ -387,7 +388,8 @@ population
 				RocketJump 1
 				UseHumanModel 1 				 
 				AimTrackingInterval 0 		 
-				AimLeadProjectileSpeed 1600		  
+				AimAt Head  
+				AimLeadProjectileSpeed 1200		  
 				UseMeleeThreatPrioritization 1
                                 WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
 				{
@@ -515,14 +517,6 @@ population
 					ItemName "eotl_insulated_innovator"
 					"set item tint rgb" 15132390
 				}
-				Item "Battery Canteens"
-				ItemAttributes
-                		{
-                    			ItemName "Battery Canteens"
-					"ubercharge" 3
-                    			"powerup duration" 20
-                    			"powerup charges" 7
-                		}
 				CharacterAttributes
 				{
 					"cannot be backstabbed" 1
@@ -533,6 +527,14 @@ population
 					"ammo regen" 1
                                         "maxammo metal increased" 5
 				}
+				Item "Battery Canteens"
+				ItemAttributes
+                		{
+                    			ItemName "Battery Canteens"
+					"ubercharge" 3
+                    			"powerup duration" 20
+                    			"powerup charges" 7
+                		}
 				//SIG
 				Action Mobber
                                 ExtAttr BuildDispenserAsTeleporter [$ SIGSEGV]
