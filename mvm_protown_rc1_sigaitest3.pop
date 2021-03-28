@@ -4,10 +4,25 @@
 #base robot_gatebot.pop
 population
 {
-	StartingCurrency	7600
-	CanBotsAttackWhileInSpawnRoom false
+	StartingCurrency	6500
 	RespawnWaveTime	3
+	//sig
+	MaxTotalPlayers 15 [$ SIGSEGV]
+	MaxRedPlayers 10 [$ SIGSEGV]
+	CanBotsAttackWhileInSpawnRoom false
+	Advanced	1
+	FlagCarrierMovementPenalty 1 [$ SIGSEGV]
+	ImprovedAirblast 1
 	SniperAllowHeadshots 1
+	ClassLimit [$SIGSEGV] //Limits the number of specified classes
+	{
+		Soldier 2
+		Pyro 1
+		Engineer 1
+		Medic 2
+		Sniper 1
+		Spy 1
+	}
 	Templates
 	{
 	}
