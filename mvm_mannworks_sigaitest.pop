@@ -553,7 +553,6 @@ WaveSchedule
 				health 750
 				Attributes SpawnWithFullCharge
 				Skill Expert
-				FlagCarrierMovementPenalty 1 [$ SIGSEGV]
 				Item "iron curtain"
 				Item "the dark falkirk helm"
 				Item "the bolshevik biker"
