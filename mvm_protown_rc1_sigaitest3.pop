@@ -1,12 +1,28 @@
+
 #base robot_giant.pop
 #base robot_standard.pop
 #base robot_gatebot.pop
 population
 {
-	StartingCurrency	7600
-	CanBotsAttackWhileInSpawnRoom false
+	StartingCurrency	6700
 	RespawnWaveTime	3
+	//sig
+	MaxTotalPlayers 15 [$ SIGSEGV]
+	MaxRedPlayers 10 [$ SIGSEGV]
+	CanBotsAttackWhileInSpawnRoom false
+	Advanced	1
+	FlagCarrierMovementPenalty 1 [$ SIGSEGV]
+	ImprovedAirblast 1
 	SniperAllowHeadshots 1
+	ClassLimit [$SIGSEGV] //Limits the number of specified classes
+	{
+		Soldier 2
+		Pyro 1
+		Engineer 1
+		Medic 2
+		Sniper 1
+		Spy 1
+	}
 	Templates
 	{
 	}
@@ -24,7 +40,6 @@ population
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-		
 		WaveSpawn
 		{
 			Name "part03"
@@ -130,6 +145,238 @@ population
 			}
 
 		}
+		
+		WaveSpawn
+		{
+			Name "part03"
+			Where spawnbot
+			WaitBeforeStarting 3
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			TotalCurrency 0
+			
+			DoneWarningSound mvm\mvm_player_died.wav
+
+			TFBot
+			{
+				Class Soldier
+				Name "Soldier Player2"
+				health 500
+				Skill Expert
+				Attributes HoldFireUntilFullReload
+				Item "The Gunboats"
+				Item "The Escape Plan"
+				Item "teufort_rocketlauncher_smalltownbringdown"
+				Item "Merc's Pride Scarf"
+				Item "Lieutenant Bites"
+				Item "TF_WEAPON_SPELLBOOK"
+				Item "Stout Shako"
+				ItemAttributes
+                {
+                    ItemName "teufort_rocketlauncher_smalltownbringdown"
+					"damage bonus" 1.8
+					"faster reload rate" 0.4
+					"fire rate bonus" 0.6
+					//"rocket specialist" 4
+					"clip size bonus" 3
+					"heal on kill" 100
+                }
+				ItemAttributes
+                {
+                    ItemName "Stout Shako"
+					"set item tint rgb" 1315860
+                }
+				CharacterAttributes
+				{
+					"cannot be backstabbed" 1
+					"increased air control" 4
+					"dmg taken increased" 0.4
+					"health regen" 10
+					"move speed bonus" 2
+					"ammo regen" 1
+					"damage bonus" 2
+				}
+				
+				//SIG
+				Action Mobber 					 
+				RocketJump 1
+				UseHumanModel 1 				 
+				AimTrackingInterval 0 		 
+				AimLeadProjectileSpeed 1600		  
+				UseMeleeThreatPrioritization 1 	 
+				FireWeapon  
+				{
+					Delay 0
+					Cooldown 2
+					IfSeeTarget 1
+					Type "Jump"
+				}
+				//SIG
+			}
+
+		}		
+
+		WaveSpawn
+		{
+			Name "part03"
+			Where spawnbot
+			WaitBeforeStarting 3
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			TotalCurrency 0
+			
+			DoneWarningSound mvm\mvm_player_died.wav
+
+			TFBot
+			{
+				Class Soldier
+				Name "Soldier Player1"
+				health 600
+				Attributes SpawnWithFullCharge
+				Attributes DisableDodge
+				Skill Expert
+				Item "The Escape Plan"
+				Item "The Original"
+				Item "The Gift Bringer"
+				Item "The Crack Pot"
+				Item "Eye-see-you"
+				ItemAttributes
+                {
+                    ItemName "The Original"
+					"damage bonus" 2.5
+					"faster reload rate" 0.4
+					"fire rate bonus" 0.6
+					"rocket specialist" 4
+					"clip size bonus" 2
+					"heal on kill" 100
+                }
+				ItemAttributes
+                {
+                    ItemName "Eye-see-you"
+					"attach particle effect" 13
+                }
+				ItemAttributes
+                {
+                    ItemName "The Concheror"
+					"attach particle effect" 13
+                }
+				CharacterAttributes
+				{
+					"cannot be backstabbed" 1
+					"increased air control" 4
+					"dmg taken increased" 0.4
+					"health regen" 10
+					//"move speed bonus" 2
+					"ammo regen" 1
+					"damage bonus" 2
+					"increase buff duration" 2
+				}
+				Item "Default Power Up Canteen (MvM)"
+				ItemAttributes
+                {
+                    ItemName "Default Power Up Canteen (MvM)"
+                    "critboost" 1
+                    "powerup duration" 25
+                    "powerup charges" 6
+                }
+				
+				//SIG
+				Action Mobber 					 
+				UseHumanModel 1 				 
+				AimTrackingInterval 0.5 		 
+				UseMeleeThreatPrioritization 1 	 
+				//SIG
+			}
+
+		}
+			
+		WaveSpawn
+		{
+			Name "part03"
+			Where spawnbot
+			WaitBeforeStarting 3
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			TotalCurrency 0
+			
+			DoneWarningSound mvm\mvm_player_died.wav
+
+			TFBot
+			{
+				Class Pyro
+				Name "Pyro Player"
+				health 575
+				Skill Expert
+				Attributes DisableDodge
+				Item "Memes vs Machines Player 2019"
+				Item "The Thermal Thruster"
+				Item "powerhouse_flamethrower_turbinetorcher"
+				Item "The Special Eyes"
+				Item "Trickster's Turnout Gear"
+				Item "Pyro Helm"
+				ItemAttributes
+                {
+                    ItemName "powerhouse_flamethrower_turbinetorcher"
+					"damage bonus" 2
+					"heal on kill" 250
+                }
+				ItemAttributes
+                {
+                    ItemName "The Thermal Thruster"
+					"thermal_thruster_air_launch" 1
+					"item_meter_charge_rate" 0.01
+					"falling_impact_radius_stun" 1
+					"holster_anim_time" 0
+					"deploy time decreased" 0.001
+                }
+				ItemAttributes 
+				{
+					ItemName "Pyro Helm"
+					"set item tint rgb" 13595446
+				}
+								Item "Battery Canteens"
+				ItemAttributes
+                {
+                    ItemName "Battery Canteens"
+					"ubercharge" 3
+                    "powerup duration" 20
+                    "powerup charges" 7
+                }
+				CharacterAttributes
+				{
+					"cannot be backstabbed" 1
+					"increased air control" 4
+					"dmg taken increased" 0.4
+					"health regen" 10
+					"move speed bonus" 2
+					"ammo regen" 1
+				}
+				
+				//SIG
+				Action Mobber 					 
+				UseBestWeapon 1 				 
+				UseHumanModel 1 				 
+				AimTrackingInterval 0			 
+				UseMeleeThreatPrioritization 1 	 
+				FireWeapon  
+				{
+					IfSeeTarget 1
+					Type "Primary"
+				}
+				FireWeapon  
+				{
+					Delay 0
+					Cooldown 5
+					IfSeeTarget 1
+					Type "Jump"
+				}
+				//SIG
+			}
+
+		}
 		WaveSpawn
 		{
 			Where spawnbot
@@ -144,19 +391,19 @@ population
 			TFBot
 			{
 				Class    Scout
-			    	Skill    Expert
-			    	Name    "Scout Player"
-			    	Attributes AutoJump
-			    	AutoJumpMin 3
-			    	AutoJumpMax 3
-			    	Item	"bonk helm"
+				Skill    Expert
+				Name    "Scout Player"
+				Attributes AutoJump
+				AutoJumpMin 3
+				AutoJumpMax 3
+				Item	"bonk helm"
 				Item	"graybanns"
-			    	Item  "Batter's Helmet"
-			    	Item	"the cool cat cardigan"
-			    	Item "Battery Canteens"
-			    	UseBestWeapon 1 [$SIGSEGV] 
-			    	ItemAttributes
-			    	{
+				Item  "Batter's Helmet"
+				Item	"the cool cat cardigan"
+				Item "Battery Canteens"
+				UseBestWeapon 1 [$SIGSEGV] 
+				ItemAttributes
+				{
 					ItemName    "TF_WEAPON_SCATTERGUN"
 					"damage bonus"    2.0
 					"heal on kill"    100
@@ -165,7 +412,7 @@ population
 					"faster reload rate"    0.4
 					"projectile penetration"    3
 					"boost on damage" 1
-			   	}
+				}
 				ItemAttributes
 				{
 					ItemName    "TF_WEAPON_PISTOL"
@@ -174,14 +421,14 @@ population
 					"fire rate bonus"    0.6
 					"projectile penetration"    1
 				}
-			    	CharacterAttributes
-			    	{
+				CharacterAttributes
+				{
 					"dmg taken increased" 0.25
 					"increased air control" 4
 					"increased jump height"	2
 					"move speed bonus"    2.5
 					"health regen"    10
-			    	}
+				}
 				Item "Default Power Up Canteen (MvM)"
 				ItemAttributes
 				{
@@ -190,7 +437,7 @@ population
 				      "powerup duration" 17
 				      "powerup charges" 10
 				}
-		    		Action Mobber 					 
+				Action Mobber 					 
 				RocketJump 1
 				UseHumanModel 1 				 
 				AimTrackingInterval 0		  
@@ -200,305 +447,7 @@ population
 		}
 		WaveSpawn
 		{
-			Where spawnbot
-			WaitBeforeStarting 3
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			TotalCurrency 0
-			
-			DoneWarningSound mvm\mvm_player_died.wav
-
-			TFBot
-			{
-				Class Soldier
-				Name "Soldier Player2"
-				health 450
-				Skill Expert
-				Attributes HoldFireUntilFullReload
-				Item "The Gunboats"
-				Item "The Escape Plan"
-				Item "teufort_rocketlauncher_smalltownbringdown"
-				Item "Merc's Pride Scarf"
-				Item "Lieutenant Bites"
-				Item "TF_WEAPON_SPELLBOOK"
-				Item "Stout Shako"
-				ItemAttributes
-				{
-				    	ItemName "teufort_rocketlauncher_smalltownbringdown"
-					"damage bonus" 1.8
-					"faster reload rate" 0.4
-					"fire rate bonus" 0.6
-					//"rocket specialist" 4
-					"clip size bonus" 3
-					"heal on kill" 100
-				}
-				ItemAttributes
-				{
-				    	ItemName "Stout Shako"
-					"set item tint rgb" 1315860
-				}
-				CharacterAttributes
-				{
-					"no self blast dmg" 2
-					"cannot be backstabbed" 1
-					"rocket jump damage reduction"	3
-					"increased air control" 4
-					"dmg taken increased" 0.25
-					"health regen" 10
-					"move speed bonus" 2
-					"ammo regen" 1
-					"damage bonus" 2
-				}
-				Action Mobber 					 
-				RocketJump 1
-				UseHumanModel 1 				 
-				AimTrackingInterval 0 		 
-				AimLeadProjectileSpeed 1600		  
-				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
-				FireWeapon  
-				{
-					Delay 0
-					Cooldown 2
-					IfSeeTarget 1
-					Type "Jump"
-				}
-			}
-		}		
-		WaveSpawn
-		{
-			Where spawnbot
-			WaitBeforeStarting 3
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			TotalCurrency 0
-			
-			DoneWarningSound mvm\mvm_player_died.wav
-
-			TFBot
-			{
-				Class Soldier
-				Name "Soldier Player1"
-				health 450
-				Attributes SpawnWithFullCharge
-				Attributes DisableDodge
-				Skill Expert
-				Item "The Escape Plan"
-				Item "The Original"
-				Item "The Gift Bringer"
-				Item "The Crack Pot"
-				Item "Eye-see-you"
-				ItemAttributes
-				{
-					ItemName "The Original"
-					"damage bonus" 2.5
-					"faster reload rate" 0.4
-					"fire rate bonus" 0.6
-					"rocket specialist" 4
-					"clip size bonus" 2
-					"heal on kill" 100
-				}
-				ItemAttributes
-				{
-				    	ItemName "Eye-see-you"
-					"attach particle effect" 13
-				}
-				ItemAttributes
-				{
-					ItemName "The Concheror"
-					"attach particle effect" 13
-				}
-				CharacterAttributes
-				{
-					"cannot be backstabbed" 1
-					"increased air control" 4
-					"dmg taken increased" 0.25
-					"health regen" 10
-					//"move speed bonus" 2
-					"ammo regen" 1
-					"damage bonus" 2
-					"increase buff duration" 2
-					"rocket jump damage reduction"	3
-					"no self blast dmg" 2
-				}
-				Item "Default Power Up Canteen (MvM)"
-				ItemAttributes
-                		{
-                   		 	ItemName "Default Power Up Canteen (MvM)"
-                    			"critboost" 1
-                    			"powerup duration" 25
-                    			"powerup charges" 6
-                		}
-				Action Mobber 					 
-				UseHumanModel 1 				 
-				AimTrackingInterval 0.5 		 
-				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
-			}
-		}			
-		WaveSpawn
-		{
-			Where spawnbot
-			WaitBeforeStarting 3
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			TotalCurrency 0
-			DoneWarningSound mvm\mvm_player_died.wav
-			TFBot
-			{
-				Class Pyro
-				Name "Pyro Player"
-				health 450
-				Skill Expert
-				Attributes DisableDodge
-				Item "Memes vs Machines Player 2019"
-				Item "The Thermal Thruster"
-				Item "powerhouse_flamethrower_turbinetorcher"
-				Item "The Special Eyes"
-				Item "Trickster's Turnout Gear"
-				Item "Pyro Helm"
-				ItemAttributes
-                		{
-                    			ItemName "powerhouse_flamethrower_turbinetorcher"
-					"damage bonus" 2
-					"heal on kill" 250
-                		}
-				ItemAttributes
-                		{
-                    			ItemName "The Thermal Thruster"
-					"thermal_thruster_air_launch" 1
-					"item_meter_charge_rate" 0.01
-					"falling_impact_radius_stun" 1
-					"holster_anim_time" 0
-					"deploy time decreased" 0.001
-                		}
-				ItemAttributes 
-				{
-					ItemName "Pyro Helm"
-					"set item tint rgb" 13595446
-				}
-				Item "Battery Canteens"
-				ItemAttributes
-                		{
-                    			ItemName "Battery Canteens"
-					"ubercharge" 3
-                    			"powerup duration" 20
-                    			"powerup charges" 7
-                		}
-				CharacterAttributes
-				{
-					"cannot be backstabbed" 1
-					"increased air control" 4
-					"dmg taken increased" 0.25
-					"health regen" 10
-					"move speed bonus" 2
-					"ammo regen" 1
-				}
-				//SIG
-				Action Mobber 					 
-				UseBestWeapon 1 				 
-				UseHumanModel 1
-				AimTrackingInterval 0			 
-				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
-				FireWeapon  
-				{
-					IfSeeTarget 1
-					Type "Primary"
-				}
-				FireWeapon  
-				{
-					Delay 0
-					Cooldown 5
-					IfSeeTarget 1
-					Type "Jump"
-				}
-			}
-		}
-		WaveSpawn
-		{
-			Where spawnbot
-			WaitBeforeStarting 3
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			TotalCurrency 0
-			DoneWarningSound mvm\mvm_player_died.wav
-			TFBot
-			{
-				Class	Demoman
-				Name "Demo Player1"
-				health 425
-				Skill Expert
-				Attributes HoldFireUntilFullReload
-				Item	"the horseless headless horseman's headtaker"
-				Item	"demoman hallmark"
-				Item	"the bearded bombardier"
-				ItemAttributes
-				{
-					ItemName	tf_weapon_grenadelauncher
-					"damage bonus" 2.5
-					"faster reload rate" 0.4
-					"fire rate bonus" 0.6
-					"clip size bonus" 3
-					"heal on kill" 100
-                                        "Projectile speed increased"	3
-                                        "deploy time decreased" 0.001
-				}
-				ItemAttributes
-				{
-					ItemName	tf_weapon_pipebomblauncher
-					"damage bonus" 2
-					"faster reload rate" 0.4
-					"fire rate bonus" 0.6
-					"clip size bonus" 3
-					"heal on kill" 100
-                                        "deploy time decreased" 0.001
-					"max pipebombs decreased"    6
-					"projectile range increased" 0.35
-					"stickybomb charge rate"     0.001
-				}
-				CharacterAttributes
-				{
-					"no self blast dmg" 2
-					"cannot be backstabbed" 1
-					"increased air control" 4
-					"dmg taken increased" 0.25
-					"health regen" 10
-					"move speed bonus" 2
-					"ammo regen" 1
-					"damage bonus" 2
-				}
-				
-				//SIG
-                                UseBestWeapon 1 [$SIGSEGV]
-				Action Mobber 					 
-				RocketJump 1
-				UseHumanModel 1 				 
-				AimTrackingInterval 0 		 
-				AimAt Head  
-				AimLeadProjectileSpeed 1200		  
-				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
-                                WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
-				{
-				    Delay 1 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 10 //Time between each weapon switch (Default: 10)
-				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
-				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
-				    Type "Secondary" // Weapon slot, possible values:
-					//Primary
-					//Secondary
-					//Melee
-				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
-				}
-			}
-		}	
-		WaveSpawn
-		{
+			Name "part03"
 			Where spawnbot
 			WaitBeforeStarting 3
 			TotalCount 1
@@ -512,15 +461,16 @@ population
 			{
 				Name	"Heavy Player"
 				Class	HeavyWeapons
-				health 600
+				health 750
+				Attributes SpawnWithFullCharge
 				Skill Expert
-				NoBombUpgrades 1 [$ SIGSEGV]
+				Tag	"bot_giant"
 				Item "iron curtain"
 				Item "the dark falkirk helm"
 				Item "the bolshevik biker"
 				ItemAttributes
-				{
-				   	ItemName "iron curtain"
+                {
+                    ItemName "iron curtain"
 					"damage bonus" 1
 					"attack projectiles" 3
 					"generate rage on damage" 3
@@ -528,30 +478,29 @@ population
 					"fire rate bonus" 1
 					"ring of fire while aiming" 1
 					"heal on kill" 100
-				}
+                }
 				CharacterAttributes
 				{
 					"cannot be backstabbed" 1
 					"increased air control" 4
-					"dmg taken increased" 0.25
+					"dmg taken increased" 0.4
 					"health regen" 10
 					//"move speed bonus" 2
 					"ammo regen" 1
 				}
 				Item "Default Power Up Canteen (MvM)"
 				ItemAttributes
-				{
-				    ItemName "Default Power Up Canteen (MvM)"
-				    "ubercharge" 1
-				    "powerup duration" 20
-				    "powerup charges" 8
-				}
+                {
+                    ItemName "Default Power Up Canteen (MvM)"
+                    "ubercharge" 1
+                    "powerup duration" 20
+                    "powerup charges" 7
+                }
 				
 				//SIG
 				UseHumanModel 1 				 
 				AimTrackingInterval 0.1		 
-				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
+				UseMeleeThreatPrioritization 1 	 
 				//SIG
 			}
 		}
