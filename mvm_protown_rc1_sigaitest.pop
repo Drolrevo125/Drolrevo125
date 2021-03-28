@@ -820,7 +820,6 @@ WaveSchedule
 				    IfHealthBelow 100
 				    Type "Primary"
 				}
-			}
 		}
 	}
 }
