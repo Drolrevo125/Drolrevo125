@@ -39,8 +39,10 @@ WaveSchedule
 		Explanation    //Dispayed once the wave is initialized
 		{
 
-			Line "{yellow}적 AI가 매우 상향됨 로점솔저,헤비,파이로,데모는 백스탭이 불가 나머지는 1회 보호{reset}"
-			Line "{purple}플레이어는 10명으로 파이로1명 메딕2명 스파이1명으로 제한됨{reset}"
+			Line "{yellow}적 AI가 매우 상향됨{reset}"
+			Line "{blue}로점솔저,헤비,파이로,데모는 백스탭이 불가 나머지는 재생성 레이저백을 가짐{reset}"
+			Line "{orange}플레이어는 10명으로 파이로1명 메딕2명 스파이1명으로 제한됨{reset}"
+			Line "{red}팀선택에서 무작위선택으로 레드로 갈수있음{reset}"
 		}
 		WaveSpawn
 		{
