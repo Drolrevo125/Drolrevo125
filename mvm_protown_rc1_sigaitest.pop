@@ -107,7 +107,6 @@ WaveSchedule
 				UseHumanModel 1 				 
 				AimTrackingInterval 0		  
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 			}
 		}
 		WaveSpawn
@@ -168,7 +167,6 @@ WaveSchedule
 				AimTrackingInterval 0 		 
 				AimLeadProjectileSpeed 1600		  
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				FireWeapon  
 				{
 					Delay 0
@@ -247,7 +245,6 @@ WaveSchedule
 				UseHumanModel 1 				 
 				AimTrackingInterval 0.5 		 
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 			}
 		}			
 		WaveSpawn
@@ -315,7 +312,6 @@ WaveSchedule
 				UseHumanModel 1
 				AimTrackingInterval 0			 
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				FireWeapon  
 				{
 					IfSeeTarget 1
@@ -394,7 +390,6 @@ WaveSchedule
 				AimAt Head  
 				AimLeadProjectileSpeed 1200		  
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
                                 WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
 				{
 				    Delay 1 //Time before the first weapon switch starts (Default: 10)
@@ -463,7 +458,6 @@ WaveSchedule
 				UseHumanModel 1 				 
 				AimTrackingInterval 0.1		 
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				//SIG
 			}
 		}
@@ -542,8 +536,6 @@ WaveSchedule
                 		}
 				//SIG
 				Action Mobber
-                                ExtAttr BuildDispenserAsTeleporter [$ SIGSEGV]
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				UseBestWeapon 1 				 
 				UseHumanModel 1 
 				AimTrackingInterval 0			 
@@ -642,7 +634,6 @@ WaveSchedule
 				//SIG
 				//Action Mobber 				 
 				//UseBestWeapon 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				UseHumanModel 1 				 
 				UseMeleeThreatPrioritization 1 	 
 				//SIG
@@ -710,7 +701,6 @@ WaveSchedule
 				UseHumanModel 1  
 				AimTrackingInterval 0
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				FireWeapon  
 				{
 					Delay 0.5
@@ -793,7 +783,6 @@ WaveSchedule
 				UseHumanModel 1 				 
 				AimTrackingInterval 0 		 
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				FireWeapon  
 				{
 					Delay 1
