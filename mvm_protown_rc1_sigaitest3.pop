@@ -2,16 +2,16 @@
 #base robot_giant.pop
 #base robot_standard.pop
 #base robot_gatebot.pop
-population
+WaveSchedule
 {
 	StartingCurrency	7600
 	CanBotsAttackWhileInSpawnRoom false
-	MaxTotalPlayers 15 [$ SIGSEGV]
-	MaxRedPlayers 10 [$ SIGSEGV]
 	RespawnWaveTime	3
 	Advanced	1
 	ImprovedAirblast 1
 	SniperAllowHeadshots 1
+	MaxTotalPlayers 15 // sig
+	MaxRedPlayers 10 // sig
 	Templates
 	{
 	}
