@@ -39,7 +39,7 @@ WaveSchedule
 		WaveSpawn
 		{
 			Where spawnbot
-			WaitBeforeStarting 3
+			WaitBeforeStarting 6
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
@@ -107,7 +107,7 @@ WaveSchedule
 		{
 			Name "part03"
 			Where spawnbot
-			WaitBeforeStarting 3
+			WaitBeforeStarting 6
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
@@ -538,7 +538,7 @@ WaveSchedule
 		{
 			Name "part03"
 			Where spawnbot
-			WaitBeforeStarting 3
+			WaitBeforeStarting 2
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
@@ -784,7 +784,7 @@ WaveSchedule
 		{
 			Name "part03"
 			Where spawnbot
-			WaitBeforeStarting 3
+			WaitBeforeStarting 7
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
