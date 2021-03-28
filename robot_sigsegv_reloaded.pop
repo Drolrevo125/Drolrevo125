@@ -53,11 +53,11 @@
 
 WaveSchedule
 {
-    PrecacheModel "models/props_frontline/tank_cart.mdl"
-    PrecacheModel "models/props_frontline/tank_turret.mdl"
-    PrecacheModel "models/props_tumb/mvm/tank_shield.mdl"
+    PrecacheModel "models/props_frontline/tank_cart.mdl"  
+    PrecacheModel "models/props_frontline/tank_turret.mdl"  
+    PrecacheModel "models/props_tumb/mvm/tank_shield.mdl"  
 
-    PointTemplates [$SIGSEGV]
+    PointTemplates  
 	{
 		Bumpercar_Model
 		{
@@ -326,7 +326,35 @@ WaveSchedule
                 "touch_trigger" "touch2"
                 "defaultupgrade" "2"
 			}
-            
+            obj_teleporter
+			{
+				"targetname" "tp1" //Entity name. Required if the entity is going to be referenced somewhere
+				"origin" "0 0 0"
+				"teamnum" "2" // 2 - Red team, 3 - Blu team
+                "teleporterType" "0"
+                "defaultupgrade" "2"
+                "matchingTeleporter" "tp2"
+			}
+            obj_teleporter
+			{
+				"targetname" "tp2" //Entity name. Required if the entity is going to be referenced somewhere
+				"origin" "0 0 300"
+				"teamnum" "2" // 2 - Red team, 3 - Blu team
+                "teleporterType" "1"
+                "defaultupgrade" "2"
+                "matchingTeleporter" "tp1"
+			}
+            obj_dispenser
+			{
+				"targetname" "sentry" //Entity name. Required if the entity is going to be referenced somewhere
+				"origin" "0 0 0"
+				"teamnum" "3" // 2 - Red team, 3 - Blu team
+				"SolidToPlayer" "0"
+                "touch_trigger" "touch"
+                "OnDestroyed" "sentry2,kill,,0,-1"
+                "OnDestroyed" "!parent,sethealth,0,0,-1"
+                "defaultupgrade" "2"
+			}
 		}
         Teleporter_Small
 		{
@@ -1541,11 +1569,11 @@ WaveSchedule
         {
             Class Pyro
             ClassIcon bumpercar
-            AddCond [$SIGSEGV]
+            AddCond  
             {
                 Index 82
             }
-            FireWeapon [$SIGSEGV] //Periodically fires weapon
+            FireWeapon   //Periodically fires weapon
             {
                 Delay 5 //Time before the first fire input starts (Default: 10)
                 Cooldown 6 //Time between each fire input (Default: 10)
@@ -1554,7 +1582,7 @@ WaveSchedule
                 Duration 0.5 //How long should the button be pressed (Default: 0.1)
                 Type "Primary"
             }
-            SpawnTemplate Bumpercar_Model [$SIGSEGV]
+            SpawnTemplate Bumpercar_Model  
             Skill Expert
             Scale 1.25
             Health 350
@@ -1923,7 +1951,7 @@ WaveSchedule
             Attributes MiniBoss
             Item "The Short Circuit"
             Action FetchFlag
-            FireWeapon [$SIGSEGV] //Periodically fires weapon
+            FireWeapon   //Periodically fires weapon
             {
                 Delay 0 //Time before the first fire input starts (Default: 10)
                 Cooldown 8 //Time between each fire input (Default: 10)
@@ -1953,13 +1981,13 @@ WaveSchedule
 			Name "Giant Burst Fire Flare Pyro"
 			ClassIcon pyro_flare_giant
 			Health 3000
-            ChangeAttributes [$SIGSEGV] //Periodically changes bot attributes, defined in EventChangeAttributes
+            ChangeAttributes   //Periodically changes bot attributes, defined in EventChangeAttributes
             {
                 Delay 1 //Time before the first bot attribute change (Default: 10)
                 Cooldown 6 //Time between each bot attribute change (Default: 10)
                 Name "Fire" // Name of the bot attributes listed in EventChangeAttributes
             }
-            ChangeAttributes [$SIGSEGV] 
+            ChangeAttributes   
             {
                 Delay 3.2
                 Cooldown 6
