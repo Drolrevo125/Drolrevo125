@@ -13,6 +13,7 @@ WaveSchedule
 	SniperAllowHeadshots 1
 	MaxTotalPlayers 15 // sig
 	MaxRedPlayers 10 // sig
+	RobotLimit 10
 	ClassLimit   //Limits the number of specified classes
 	{
 		Pyro 1
