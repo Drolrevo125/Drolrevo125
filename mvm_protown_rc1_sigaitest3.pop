@@ -24,6 +24,112 @@ population
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		
+		WaveSpawn
+		{
+			Name "part03"
+			Where spawnbot
+			WaitBeforeStarting 3
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			TotalCurrency 0
+			
+			DoneWarningSound mvm\mvm_player_died.wav
+
+			TFBot
+			{
+				Class Spy
+				Name "Spy Player"
+				health 250
+				Skill Expert
+				Attributes AutoJump
+				AutoJumpMin 3
+				AutoJumpMax 3
+				Item "The Diamondback"
+				Item "Conniver's Kunai"
+				Item "The Dead Ringer"
+				Item "The Lurking Legionnaire"
+				Item "The Eye-Catcher"
+				Item "The Well-Rounded Rifleman"
+				ItemAttributes
+                {
+                    ItemName "The Diamondback"
+					"faster reload rate" 0.4
+					"fire rate bonus" 0.6
+					"always crit" 1
+                }
+				ItemAttributes
+                {
+                    ItemName "Conniver's Kunai"
+					"fire rate bonus" 0.6
+					"heal on kill" 100
+					"armor piercing" 100
+					"max health additive penalty" 0
+                }
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_BUILDER_SPY"
+					"robo sapper" 3
+				}
+				ItemAttributes
+                {
+                    ItemName "The Well-Rounded Rifleman"
+					"set item tint rgb" 15132390
+					"attach particle effect" 14
+                }
+				ItemAttributes
+				{
+					ItemName "The Dead Ringer"
+					"mult decloak rate" 0.35
+					"cloak regen rate increased" 100
+				}
+				CharacterAttributes
+				{
+					"increased air control" 4
+					"dmg taken increased" 0.4
+					"health regen" 10
+					"move speed bonus" 2
+					"ammo regen" 1
+					"damage bonus" 2
+					"backstab shield" 1
+				}
+				
+				//SIG
+				//Action Mobber 					 
+				UseHumanModel 1 				 
+				AimTrackingInterval 0 		 
+				UseMeleeThreatPrioritization 1 	 
+				FireWeapon  
+				{
+					Delay 1
+					Cooldown 1337         
+					Duration 1
+					Repeats 1
+					IfSeeTarget 0
+					Type Secondary
+				}
+				FireWeapon  
+				{
+					Delay 1
+					Cooldown 3        
+					Duration 1
+					Repeats 1337
+					IfSeeTarget 0
+					Type Secondary
+					IfHealthBelow 66
+				}
+				FireWeapon  
+                {
+                    Delay 0
+                    Cooldown 0
+					IfHealthBelow 100
+                    Type "Primary"
+                }
+				//SIG
+			}
+
+		}
 		WaveSpawn
 		{
 			Where spawnbot
@@ -448,111 +554,6 @@ population
 				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				//SIG
 			}
-		}
-		WaveSpawn
-		{
-			Name "part03"
-			Where spawnbot
-			WaitBeforeStarting 3
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			TotalCurrency 0
-			
-			DoneWarningSound mvm\mvm_player_died.wav
-
-			TFBot
-			{
-				Class Spy
-				Name "Spy Player"
-				health 250
-				Skill Expert
-				Attributes AutoJump
-				AutoJumpMin 3
-				AutoJumpMax 3
-				Item "The Diamondback"
-				Item "Conniver's Kunai"
-				Item "The Dead Ringer"
-				Item "The Lurking Legionnaire"
-				Item "The Eye-Catcher"
-				Item "The Well-Rounded Rifleman"
-				ItemAttributes
-                {
-                    ItemName "The Diamondback"
-					"faster reload rate" 0.4
-					"fire rate bonus" 0.6
-					"always crit" 1
-                }
-				ItemAttributes
-                {
-                    ItemName "Conniver's Kunai"
-					"fire rate bonus" 0.6
-					"heal on kill" 100
-					"armor piercing" 100
-					"max health additive penalty" 0
-                }
-				ItemAttributes
-				{
-					ItemName "TF_WEAPON_BUILDER_SPY"
-					"robo sapper" 3
-				}
-				ItemAttributes
-                {
-                    ItemName "The Well-Rounded Rifleman"
-					"set item tint rgb" 15132390
-					"attach particle effect" 14
-                }
-				ItemAttributes
-				{
-					ItemName "The Dead Ringer"
-					"mult decloak rate" 0.35
-					"cloak regen rate increased" 100
-				}
-				CharacterAttributes
-				{
-					"increased air control" 4
-					"dmg taken increased" 0.4
-					"health regen" 10
-					"move speed bonus" 2
-					"ammo regen" 1
-					"damage bonus" 2
-					"backstab shield" 1
-				}
-				
-				//SIG
-				//Action Mobber 					 
-				UseHumanModel 1 				 
-				AimTrackingInterval 0 		 
-				UseMeleeThreatPrioritization 1 	 
-				FireWeapon  
-				{
-					Delay 1
-					Cooldown 1337         
-					Duration 1
-					Repeats 1
-					IfSeeTarget 0
-					Type Secondary
-				}
-				FireWeapon  
-				{
-					Delay 1
-					Cooldown 3        
-					Duration 1
-					Repeats 1337
-					IfSeeTarget 0
-					Type Secondary
-					IfHealthBelow 66
-				}
-				FireWeapon  
-                {
-                    Delay 0
-                    Cooldown 0
-					IfHealthBelow 100
-                    Type "Primary"
-                }
-				//SIG
-			}
-
 		}
 		WaveSpawn
 		{
