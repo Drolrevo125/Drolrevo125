@@ -510,7 +510,7 @@ WaveSchedule
 				UseMeleeThreatPrioritization 1
                                 WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
 				{
-				    Delay 1 //Time before the first weapon switch starts (Default: 10)
+				    Delay 0 //Time before the first weapon switch starts (Default: 10)
 				    Cooldown 10 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
@@ -522,8 +522,8 @@ WaveSchedule
 				}
 				WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
 				{
-				    Delay 11 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 10 //Time between each weapon switch (Default: 10)
+				    Delay 10 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 20 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 				    Type "Primary" // Weapon slot, possible values:
@@ -671,19 +671,10 @@ WaveSchedule
 				AimTrackingInterval 0			 
 				UseMeleeThreatPrioritization 1 	
                                 //합선기 도전
-				FireWeapon [$SIGSEGV]  //Periodically fires weapon
-                                {
-                                        Delay 1 //Time before the first fire input starts (Default: 10)
-                                        Cooldown 10 //Time between each fire input (Default: 10)
-                                        Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
-                                        Duration 10 //How long should the button be pressed (Default: 0.1)
-				        Type "Secondary" // Type of fire input, Possible values:
-				        //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
-				}
-                                WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
+				WeaponSwitch [$SIGSEGV]  //합선
 				{
-				    Delay 1 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 10 //Time between each weapon switch (Default: 10)
+				    Delay 10 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 20 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 				    Type "Secondary" // Weapon slot, possible values:
@@ -692,9 +683,18 @@ WaveSchedule
 					//Melee
 				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
 				}
-				WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
+				FireWeapon [$SIGSEGV]  //Periodically fires weapon
+                                {
+                                        Delay 10 //Time before the first fire input starts (Default: 10)
+                                        Cooldown 20 //Time between each fire input (Default: 10)
+                                        Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
+                                        Duration 10 //How long should the button be pressed (Default: 0.1)
+				        Type "Secondary" // Type of fire input, Possible values:
+				        //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+				WeaponSwitch [$SIGSEGV]  //위도우
 				{
-				    Delay 11 //Time before the first weapon switch starts (Default: 10)
+				    Delay 0 //Time before the first weapon switch starts (Default: 10)
 				    Cooldown 10 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
