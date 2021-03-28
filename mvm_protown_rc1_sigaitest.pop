@@ -4,7 +4,7 @@
 #base robot_giant.pop
 #base robot_standard.pop
 #base robot_gatebot.pop
-population
+WaveSchedule
 {
 	StartingCurrency	6500
 	RespawnWaveTime	3
@@ -12,16 +12,16 @@ population
 	MaxTotalPlayers 15 [$ SIGSEGV]
 	MaxRedPlayers 10 [$ SIGSEGV]
 	CanBotsAttackWhileInSpawnRoom false
+	Advanced	1
 	FlagCarrierMovementPenalty 1 [$ SIGSEGV]
+	ImprovedAirblast 1
+	SniperAllowHeadshots 1
 	ClassLimit [$SIGSEGV] //Limits the number of specified classes
 	{
-		Scout 1
 		Soldier 2
 		Pyro 1
-		Demoman 1
-		Heavyweapons 1
 		Engineer 1
-		Medic 1
+		Medic 2
 		Sniper 1
 		Spy 1
 	}
@@ -106,7 +106,8 @@ population
 				RocketJump 1
 				UseHumanModel 1 				 
 				AimTrackingInterval 0		  
-				UseMeleeThreatPrioritization 1 
+				UseMeleeThreatPrioritization 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 			}
 		}
 		WaveSpawn
@@ -166,7 +167,8 @@ population
 				UseHumanModel 1 				 
 				AimTrackingInterval 0 		 
 				AimLeadProjectileSpeed 1600		  
-				UseMeleeThreatPrioritization 1 	 
+				UseMeleeThreatPrioritization 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				FireWeapon  
 				{
 					Delay 0
@@ -244,7 +246,8 @@ population
 				Action Mobber 					 
 				UseHumanModel 1 				 
 				AimTrackingInterval 0.5 		 
-				UseMeleeThreatPrioritization 1 	 
+				UseMeleeThreatPrioritization 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 			}
 		}			
 		WaveSpawn
@@ -309,10 +312,10 @@ population
 				//SIG
 				Action Mobber 					 
 				UseBestWeapon 1 				 
-				UseHumanModel 1 
-				ImprovedAirblast 1
+				UseHumanModel 1
 				AimTrackingInterval 0			 
-				UseMeleeThreatPrioritization 1 	 
+				UseMeleeThreatPrioritization 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				FireWeapon  
 				{
 					IfSeeTarget 1
@@ -391,6 +394,7 @@ population
 				AimAt Head  
 				AimLeadProjectileSpeed 1200		  
 				UseMeleeThreatPrioritization 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
                                 WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
 				{
 				    Delay 1 //Time before the first weapon switch starts (Default: 10)
@@ -458,7 +462,8 @@ population
 				//SIG
 				UseHumanModel 1 				 
 				AimTrackingInterval 0.1		 
-				UseMeleeThreatPrioritization 1 	 
+				UseMeleeThreatPrioritization 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				//SIG
 			}
 		}
@@ -538,6 +543,7 @@ population
 				//SIG
 				Action Mobber
                                 ExtAttr BuildDispenserAsTeleporter [$ SIGSEGV]
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				UseBestWeapon 1 				 
 				UseHumanModel 1 
 				AimTrackingInterval 0			 
@@ -635,7 +641,8 @@ population
 				
 				//SIG
 				//Action Mobber 				 
-				//UseBestWeapon 1 				 
+				//UseBestWeapon 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				UseHumanModel 1 				 
 				UseMeleeThreatPrioritization 1 	 
 				//SIG
@@ -700,10 +707,10 @@ population
 				//SIG
 				Action Sniper
 				AimAt Head
-				SniperAllowHeadshots 1
 				UseHumanModel 1  
 				AimTrackingInterval 0
-				UseMeleeThreatPrioritization 1  
+				UseMeleeThreatPrioritization 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				FireWeapon  
 				{
 					Delay 0.5
@@ -785,7 +792,8 @@ population
 				//Action Mobber 					 
 				UseHumanModel 1 				 
 				AimTrackingInterval 0 		 
-				UseMeleeThreatPrioritization 1 	 
+				UseMeleeThreatPrioritization 1
+				ExtAttr SuppressCanteenUse [$ SIGSEGV]
 				FireWeapon  
 				{
 					Delay 1
