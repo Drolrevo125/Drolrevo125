@@ -92,13 +92,11 @@ population
 				//SIG
                                 UseBestWeapon 1 [$SIGSEGV]
 				Action Mobber 					 
-				RocketJump 1
 				UseHumanModel 1 				 
 				AimTrackingInterval 0 		 
 				AimAt Head  
 				AimLeadProjectileSpeed 1200		  
 				UseMeleeThreatPrioritization 1
-				ExtAttr SuppressCanteenUse [$ SIGSEGV]
                                 WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
 				{
 				    Delay 1 //Time before the first weapon switch starts (Default: 10)
