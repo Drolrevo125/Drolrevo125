@@ -45,6 +45,7 @@ population
 		health 400
 		AutoJumpMin 5
 		AutoJumpMax 10
+		Action Default
             ChangeAttributes    //Periodically changes bot attributes, defined in EventChangeAttributes
             {
                 Delay 0 //Time before the first bot attribute change (Default: 10)
@@ -63,7 +64,6 @@ population
             {
                 Attr1
                 {
-			Action Mobber
 			Skill Expert
 			Item	"the widowmaker"
 			Item	"the short circuit"
@@ -152,7 +152,6 @@ population
 				}
                 Attr2
                 {
-			Action Default
 			Skill Expert
 			Item	"the widowmaker"
 			Item	"the short circuit"
