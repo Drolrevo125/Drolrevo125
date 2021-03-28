@@ -93,7 +93,6 @@ WaveSchedule
 				{
 				      ItemName "Default Power Up Canteen (MvM)"
 				      "critboost" 1
-				      "powerup duration" 17
 				      "powerup charges" 10
 				}
 		    		Action Mobber 					 
@@ -341,7 +340,6 @@ WaveSchedule
                 {
                     ItemName "Default Power Up Canteen (MvM)"
                     "critboost" 1
-                    "powerup duration" 25
                     "powerup charges" 13
                 }
 				
@@ -405,7 +403,6 @@ WaveSchedule
                 {
                     ItemName "Battery Canteens"
 					"ubercharge" 3
-                    "powerup duration" 20
                     "powerup charges" 7
                 }
 				CharacterAttributes
@@ -499,7 +496,6 @@ WaveSchedule
 				{
 				    ItemName "Default Power Up Canteen (MvM)"
 				    "critboost" 1
-				    "powerup duration" 25
 				    "powerup charges" 13
 				}
 				
@@ -585,7 +581,6 @@ WaveSchedule
                 {
                     ItemName "Default Power Up Canteen (MvM)"
                     "ubercharge" 1
-                    "powerup duration" 20
                     "powerup charges" 7
                 }
 				
@@ -666,7 +661,6 @@ WaveSchedule
                 		{
                     			ItemName "Battery Canteens"
 					"ubercharge" 3
-                    			"powerup duration" 20
                     			"powerup charges" 5
                 		}
 				//SIG
@@ -759,7 +753,6 @@ WaveSchedule
                 {
                     ItemName "Battery Canteens"
 					"critboost" 3
-                    "powerup duration" 25
                     "powerup charges" 6
                 }
 				ItemAttributes
