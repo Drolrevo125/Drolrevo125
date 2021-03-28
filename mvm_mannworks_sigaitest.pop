@@ -699,7 +699,7 @@ WaveSchedule
                                         Delay 5 //Time before the first fire input starts (Default: 10)
                                         Cooldown 10 //Time between each fire input (Default: 10)
                                         Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
-                                        Duration 10 //How long should the button be pressed (Default: 0.1)
+                                        Duration 5 //How long should the button be pressed (Default: 0.1)
 				        Type "Secondary" // Type of fire input, Possible values:
 				        //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
 				}
