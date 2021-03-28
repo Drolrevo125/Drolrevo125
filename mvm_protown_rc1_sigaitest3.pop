@@ -42,63 +42,75 @@ population
 			MaxActive 1
 			SpawnCount 1
 			TotalCurrency 0
-
 			DoneWarningSound mvm\mvm_player_died.wav
-
 			TFBot
 			{
-				Class    Scout
-			    	Skill    Expert
-			    	Name    "Scout Player"
-			    	Attributes AutoJump
-			    	AutoJumpMin 3
-			    	AutoJumpMax 3
-			    	Item	"bonk helm"
-				Item	"graybanns"
-			    	Item  "Batter's Helmet"
-			    	Item	"the cool cat cardigan"
-			    	Item "Battery Canteens"
-			    	ItemAttributes
-			    	{
-					ItemName    "TF_WEAPON_SCATTERGUN"
-					"damage bonus"    2.0
-					"heal on kill"    100
-					"clip size bonus"    3.0
-					"fire rate bonus"    0.6
-					"faster reload rate"    0.4
-					"projectile penetration"    3
-					"boost on damage" 1
-			   	}
+				Class	Demoman
+				Name "Demo Player1"
+				health 425
+				Skill Expert
+				Attributes HoldFireUntilFullReload
+				Item	"the horseless headless horseman's headtaker"
+				Item	"demoman hallmark"
+				Item	"the bearded bombardier"
 				ItemAttributes
 				{
-					ItemName    "TF_WEAPON_PISTOL"
-					"heal on kill"    100
-					"clip size bonus"    3.0
-					"fire rate bonus"    0.6
-					"projectile penetration"    1
+					ItemName	tf_weapon_grenadelauncher
+					"damage bonus" 2.5
+					"faster reload rate" 0.4
+					"fire rate bonus" 0.6
+					"clip size bonus" 3
+					"heal on kill" 100
+                                        "Projectile speed increased"	3
+                                        "deploy time decreased" 0.001
 				}
-			    	CharacterAttributes
-			    	{
-					"dmg taken increased" 0.25
+				ItemAttributes
+				{
+					ItemName	tf_weapon_pipebomblauncher
+					"damage bonus" 2
+					"faster reload rate" 0.4
+					"fire rate bonus" 0.6
+					"clip size bonus" 3
+					"heal on kill" 100
+                                        "deploy time decreased" 0.001
+					"max pipebombs decreased"    6
+					"projectile range increased" 0.35
+					"stickybomb charge rate"     0.001
+				}
+				CharacterAttributes
+				{
+					"no self blast dmg" 2
+					"cannot be backstabbed" 1
 					"increased air control" 4
-					"increased jump height"	2
-					"move speed bonus"    2.5
-					"health regen"    10
-			    	}
-				Item "Default Power Up Canteen (MvM)"
-				ItemAttributes
-				{
-				      ItemName "Default Power Up Canteen (MvM)"
-				      "critboost" 1
-				      "powerup duration" 17
-				      "powerup charges" 10
+					"dmg taken increased" 0.25
+					"health regen" 10
+					"move speed bonus" 2
+					"ammo regen" 1
+					"damage bonus" 2
 				}
-		    		Action Mobber 					 
-				UseBestWeapon 1 [$SIGSEGV] 
+				
+				//SIG
+                                UseBestWeapon 1 [$SIGSEGV]
+				Action Mobber 					 
+				RocketJump 1
 				UseHumanModel 1 				 
-				AimTrackingInterval 0		  
+				AimTrackingInterval 0 		 
+				AimAt Head  
+				AimLeadProjectileSpeed 1200		  
 				UseMeleeThreatPrioritization 1
 				ExtAttr SuppressCanteenUse [$ SIGSEGV]
+                                WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
+				{
+				    Delay 1 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 10 //Time between each weapon switch (Default: 10)
+				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				    Type "Secondary" // Weapon slot, possible values:
+					//Primary
+					//Secondary
+					//Melee
+				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
 			}
 		}
 		WaveSpawn
