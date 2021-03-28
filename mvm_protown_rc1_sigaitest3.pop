@@ -4,9 +4,15 @@
 #base robot_gatebot.pop
 population
 {
-	StartingCurrency	7600
-	CanBotsAttackWhileInSpawnRoom false
+	StartingCurrency	6500
 	RespawnWaveTime	3
+	//sig
+	MaxTotalPlayers 15 [$ SIGSEGV]
+	MaxRedPlayers 10 [$ SIGSEGV]
+	CanBotsAttackWhileInSpawnRoom false
+	Advanced	1
+	FlagCarrierMovementPenalty 1 [$ SIGSEGV]
+	ImprovedAirblast 1
 	SniperAllowHeadshots 1
 	ClassLimit [$SIGSEGV] //Limits the number of specified classes
 	{
@@ -33,6 +39,72 @@ population
 		{
 			Target	wave_finished_relay
 			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Where spawnbot
+			WaitBeforeStarting 3
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			TotalCurrency 0
+
+			DoneWarningSound mvm\mvm_player_died.wav
+
+			TFBot
+			{
+				Class    Scout
+			    	Skill    Expert
+			    	Name    "Scout Player"
+			    	Attributes AutoJump
+			    	AutoJumpMin 3
+			    	AutoJumpMax 3
+			    	Item	"bonk helm"
+				Item	"graybanns"
+			    	Item  "Batter's Helmet"
+			    	Item	"the cool cat cardigan"
+			    	Item "Battery Canteens"
+			    	UseBestWeapon 1 [$SIGSEGV] 
+			    	ItemAttributes
+			    	{
+					ItemName    "TF_WEAPON_SCATTERGUN"
+					"damage bonus"    2.0
+					"heal on kill"    100
+					"clip size bonus"    3.0
+					"fire rate bonus"    0.6
+					"faster reload rate"    0.4
+					"projectile penetration"    3
+					"boost on damage" 1
+			   	}
+				ItemAttributes
+				{
+					ItemName    "TF_WEAPON_PISTOL"
+					"heal on kill"    100
+					"clip size bonus"    3.0
+					"fire rate bonus"    0.6
+					"projectile penetration"    1
+				}
+			    	CharacterAttributes
+			    	{
+					"dmg taken increased" 0.25
+					"increased air control" 4
+					"increased jump height"	2
+					"move speed bonus"    2.5
+					"health regen"    10
+			    	}
+				Item "Default Power Up Canteen (MvM)"
+				ItemAttributes
+				{
+				      ItemName "Default Power Up Canteen (MvM)"
+				      "critboost" 1
+				      "powerup duration" 17
+				      "powerup charges" 10
+				}
+		    		Action Mobber 					 
+				UseHumanModel 1 				 
+				AimTrackingInterval 0		  
+				UseMeleeThreatPrioritization 1
+			}
 		}
 		WaveSpawn
 		{
