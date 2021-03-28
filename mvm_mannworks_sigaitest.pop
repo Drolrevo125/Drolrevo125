@@ -523,7 +523,7 @@ WaveSchedule
 				WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
 				{
 				    Delay 5 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 100 //Time between each weapon switch (Default: 10)
+				    Cooldown 10 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 				    Type "Primary" // Weapon slot, possible values:
