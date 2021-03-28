@@ -342,7 +342,7 @@ WaveSchedule
                     ItemName "Default Power Up Canteen (MvM)"
                     "critboost" 1
                     "powerup duration" 25
-                    "powerup charges" 6
+                    "powerup charges" 13
                 }
 				
 				//SIG
@@ -493,6 +493,14 @@ WaveSchedule
 					"move speed bonus" 2
 					"ammo regen" 1
 					"damage bonus" 2
+				}
+				Item "Battery Canteens"
+				ItemAttributes
+				{
+				    ItemName "Default Power Up Canteen (MvM)"
+				    "critboost" 1
+				    "powerup duration" 25
+				    "powerup charges" 13
 				}
 				
 				//SIG
@@ -659,7 +667,7 @@ WaveSchedule
                     			ItemName "Battery Canteens"
 					"ubercharge" 3
                     			"powerup duration" 20
-                    			"powerup charges" 7
+                    			"powerup charges" 5
                 		}
 				//SIG
 				Action Mobber
