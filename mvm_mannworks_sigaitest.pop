@@ -36,6 +36,12 @@ WaveSchedule
 			Target	wave_finished_relay
 			Action	Trigger
 		}
+		Explanation    //Dispayed once the wave is initialized
+		{
+			Line "{blue}ㅁㄴㅇㅀ{reset}"
+			//Line "{yellow}Only one of each class is allowed, no class stacking for you!{reset}"
+			//Line "{purple}Due to increased bot limit, no spectators are allowed.{reset}"
+		}
 		WaveSpawn
 		{
 			Where spawnbot
