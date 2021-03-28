@@ -11,7 +11,6 @@ population
 	MaxRedPlayers 10 [$ SIGSEGV]
 	CanBotsAttackWhileInSpawnRoom false
 	Advanced	1
-	FlagCarrierMovementPenalty 1 [$ SIGSEGV]
 	ImprovedAirblast 1
 	SniperAllowHeadshots 1
 	ClassLimit [$SIGSEGV] //Limits the number of specified classes
