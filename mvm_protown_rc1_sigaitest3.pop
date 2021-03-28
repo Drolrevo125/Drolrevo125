@@ -58,7 +58,6 @@ population
 			    	Item  "Batter's Helmet"
 			    	Item	"the cool cat cardigan"
 			    	Item "Battery Canteens"
-			    	UseBestWeapon 1 [$SIGSEGV] 
 			    	ItemAttributes
 			    	{
 					ItemName    "TF_WEAPON_SCATTERGUN"
@@ -95,7 +94,7 @@ population
 				      "powerup charges" 10
 				}
 		    		Action Mobber 					 
-				RocketJump 1
+				UseBestWeapon 1 [$SIGSEGV] 
 				UseHumanModel 1 				 
 				AimTrackingInterval 0		  
 				UseMeleeThreatPrioritization 1
