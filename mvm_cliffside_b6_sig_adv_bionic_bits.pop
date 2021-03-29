@@ -791,6 +791,7 @@ WaveSchedule
 			Line "{red}--------------------------------------------------"
 			Line "{yellow}YOU ARE A {red}ROBOT!"
 			Line "{yellow}New {blue}perks {yellow}and {blue}game rules{yellow} apply.{red} Inspect body upgrades to find out."
+			Line "{yellow}요약:플레이어 대충"
 		}			
 
 		WaveSpawn
