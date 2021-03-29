@@ -10,6 +10,13 @@ WaveSchedule //
 	PrecacheModel "models/props_frontline/tank_cart.mdl"   //PRECACHE THESE
         PrecacheModel "models/props_frontline/tank_turret.mdl"   //PRECACHE THESE
         PrecacheModel "models/props_tumb/mvm/tank_shield.mdl"   //PRECACHE THESE
+			
+			//투사체 바꾸는거
+			//OverrideProjectileType [$SIGSEGV]
+			//{
+			//Slot Primary //무기위치 Primary,Secondary
+			//Type MechanicalArmOrb //합선기공
+			//}
 	
 	Templates // 
 	{
@@ -21,10 +28,32 @@ WaveSchedule //
 		}
 		
 		//soldier
-		T_TFBot_Soldier
+		T_TFBot_Soldier_Homing_ChargeCow //
 		{
+			Name "Homing ChargeShot Soldier"
 			Class Soldier
 			Skill Expert
+			ClassIcon soldier_homing_nys
+			ExtAttr AlwaysFireWeaponAlt  
+			ItemAttributes
+			{
+				ItemName "The Cow Mangler 5000"
+				"faster reload rate" 0.5
+			}
+			AddCond  
+			{
+				Index 36
+				Delay 1
+			}
+			RocketCustomParticle eyeboss_projectile  
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.5 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target=
+				MaxAimError 90 //Max angle between rocket and the target
+			}
 		}
 		
 		//pyro
@@ -42,8 +71,9 @@ WaveSchedule //
 		}
 		
 		//heavy
-		T_TFBot_Heavy_explosiveshot_normal
+		T_TFBot_Heavy_explosiveshot_normal	//폭팔탄헤비노말
 		{
+			Name "Explosive Bullet Heavy"
 			Class Heavyweapons
 			//Classicon 
 			Skill normal
@@ -61,8 +91,9 @@ WaveSchedule //
 			Item	"the eliminators safeguard"
 			Item	"the war goggles"
 		}
-		T_TFBot_Heavy_explosiveshot_expert
+		T_TFBot_Heavy_explosiveshot_expert	//폭팔탄헤비익퍼
 		{
+			Name "Explosive Bullet Heavy"
 			Class Heavyweapons
 			//Classicon 
 			Skill Expert
@@ -92,6 +123,86 @@ WaveSchedule //
 		{
 			Class Medic
 			Skill Expert
+		}
+		T_TFBot_Medic_Vaccinator_All
+		{
+			Name "All Type Vaccinator Medic"
+			Class Medic
+			ClassIcon medic_vac_trio_nys
+			Skill Expert
+			Item "The Vaccinator"
+			Attributes SpawnWithFullCharge
+			FireWeapon  
+			{
+				Delay		1
+				Cooldown	1
+				Repeats		0
+				IfSeeTarget 0
+				Type "Secondary"
+			}
+			FireWeapon  
+			{
+				Delay		1.3
+				Cooldown	1
+				Repeats		0
+				IfSeeTarget 0
+				Type "Reload"
+			}
+			ItemAttributes
+			{
+				ItemName "The Vaccinator"
+				"medigun blast resist deployed"		1
+				"medigun bullet resist deployed"	1  
+				"medigun fire resist deployed"		1
+				"ubercharge rate bonus" 999
+			}
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 0 //disable standard uber behavior
+			}
+		}
+		T_TFBot_Giant_Medic_Vaccinator_All
+		{
+			Name "Giant All Type Vaccinator Medic"
+			Class Medic
+			ClassIcon medic_vac_trio_nys_giant
+			Health 4500
+			Skill Expert
+			Attributes MiniBoss
+			Attributes SpawnWithFullCharge
+			Item "The Vaccinator"
+			FireWeapon  
+			{
+				Delay		1
+				Cooldown	1
+				Repeats		0
+				IfSeeTarget 0
+				Type "Secondary"
+			}
+			FireWeapon  
+			{
+				Delay		1.3
+				Cooldown	1
+				Repeats		0
+				IfSeeTarget 0
+				Type "Reload"
+			}
+			ItemAttributes
+			{
+				ItemName "The Vaccinator"
+				"medigun blast resist deployed" 1
+				"medigun bullet resist deployed" 1  
+				"medigun fire resist deployed" 1
+				"ubercharge rate bonus" 999
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier"	0.6
+				"bot medic uber health threshold" 0
+				"heal rate bonus" 200
+			}
 		}
 		
 		//sniper
