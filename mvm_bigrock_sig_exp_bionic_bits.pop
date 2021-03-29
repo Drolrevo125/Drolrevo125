@@ -1,0 +1,2373 @@
+#base robot_giant.pop
+#base robot_standard.pop
+//Bionic Bits
+//Made By Hell-met http://steamcommunity.com/id/hell-met/
+//Expert Skill
+
+WaveSchedule
+{
+
+	ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "spawndoor"
+        TeamNum 3
+        X	"-1480"                     
+        Y	"3382"                  
+        Z	"380"        
+    }
+	
+	ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "spawnpit"
+        TeamNum 3
+        X	"-1696"                     
+        Y	"287"                  
+        Z	"337"        
+    }
+	
+	ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "spawnpit"
+        TeamNum 3
+        X	"-1559"                     
+        Y	"518"                  
+        Z	"337"        
+    }
+	
+	ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "spawnpit"
+        TeamNum 3
+        X	"-1483"                     
+        Y	"965"                  
+        Z	"337"        
+    }
+
+	StartingCurrency		0
+	RespawnWaveTime 		7
+	CanBotsAttackWhileInSpawnRoom no
+	NoReanimators 1				[$SIGSEGV]
+	NoMvMDeathTune 1 			[$SIGSEGV]
+	SniperAllowHeadshots 1		[$SIGSEGV]
+	SniperHideLasers 1 			[$SIGSEGV]
+	
+	Mission // Sentry Buster
+	{
+		Objective DestroySentries
+
+		InitialCooldown 0
+		Where spawnbot
+		BeginAtWave 1
+		RunForThisManyWaves 6
+		CooldownTime 25
+		
+			TFBot
+			{
+			Class Demoman
+			Name "Sentry Runner"
+			Skill Expert
+			Health 2000
+			WeaponRestrictions PrimaryOnly
+			ClassIcon sentry_buster
+			Item "EOTL_winter_pants"
+			Item "The Tide Turner"
+			Attributes DisableDodge
+			Attributes Miniboss
+			CharacterAttributes
+			{
+				"gesture speed increase" 100
+				"move speed bonus" 2
+				"damage force reduction" 0.5
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 7
+				"cannot be backstabbed" 1
+			}
+			ItemAttributes
+			{
+				ItemName "The Tide Turner"
+				"charge time increased" 7
+				"charge recharge rate increased" 7
+				"Attack not cancel charge" 1
+				"charge impact damage increased" 0
+			}
+			}
+			
+	}
+	
+	Mission // Sniper
+	{
+		Objective Sniper
+
+		InitialCooldown 30
+		Where spawnbot
+		BeginAtWave 1
+		RunForThisManyWaves 6
+		CooldownTime 30
+		DesiredCount 2
+
+		TFBot
+		{
+			Class Sniper
+			Skill Expert
+			Item "The Razorback"
+			AddCond [$SIGSEGV]
+			{
+				Name TF_COND_AIMING
+			}
+		}
+		
+	}
+	
+	Mission // Spy
+	{
+		Objective Spy  
+
+		InitialCooldown 60
+		Where spawnbot
+		BeginAtWave 1
+		RunForThisManyWaves 6
+		CooldownTime 30
+		DesiredCount 2
+
+		TFBot
+		{
+			Class Spy
+			Skill Easy
+			Item "The Spy-cicle"
+			CharacterAttributes
+				{
+				"sapper degenerates buildings" 0.5
+				"sapper damage penalty" 0
+				}	
+		}
+		
+	}
+	
+	Mission // Engineer
+	{
+		Objective Engineer  
+
+		InitialCooldown 15
+		Where spawndoor
+		BeginAtWave 1
+		RunForThisManyWaves 6
+		CooldownTime 60
+		DesiredCount 1
+
+		TFBot
+		{
+		Template T_TFBot_Engineer_Sentry_Tele_Battle
+		}
+		
+	}	
+	
+	Mission // Mine Soldier - Wave 3
+	{
+		Objective Spy
+
+		InitialCooldown 10
+		Where Behind
+		BeginAtWave 5
+		RunForThisManyWaves 1
+		CooldownTime 0
+		DesiredCount 1
+
+		TFBot
+		{
+			Class Soldier
+			Name "Miner"
+			Skill Easy
+			ClassIcon soldier_libertylauncher
+			Health 100
+			MaxVisionRange 1
+			Attributes DisableDodge
+			Item "MvM GateBot Light Soldier"
+			ItemColor [$SIGSEGV]
+				{
+				ItemName "MvM GateBot Light Soldier"
+				Red   0
+				Green 255
+				Blue  0
+				}
+			Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+			Attributes Alwayscrit
+			BehaviorModifiers Push
+			Attributes AlwaysFireWeapon
+			ItemAttributes 
+			{
+				ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
+				"damage bonus" 2
+				"faster reload rate" 0.01
+				"fire rate bonus" 2
+				"Projectile speed increased" 0.001
+				"move speed bonus" 3
+				"cannot pick up intelligence" 1
+				"mini rockets" 1
+				"bombinomicon effect on death" 1
+			}
+		}
+	}
+	
+	//WAVE 1
+	
+	Wave
+	{
+		StartWaveOutput
+			{
+				Target wave_start_relay_boss
+				Action Trigger
+			}
+		DoneOutput					
+			{
+				Target wave_finished_relay
+				Action trigger
+			}	
+
+		WaveSpawn
+		{
+			Name "SS"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Scout
+			Name "Lesser Super Scout"
+			ClassIcon scout_giant_FAST
+			Skill Easy
+			Item "Bonk Boy"
+			Item "The Holy Mackerel"
+			WeaponRestrictions MeleeOnly
+			CharacterAttributes
+				{
+				"move speed bonus"	3
+				}
+			}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "circuit"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 25
+			WaitBeforeStarting 25
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Engineer 
+			Classicon hellmet_tf2
+			Skill Expert
+			Health 275
+			Item "The Short Circuit"
+			WeaponRestrictions SecondaryOnly
+			Action Mobber [$SIGSEGV]
+			OverrideProjectileType [$SIGSEGV]
+			{
+			Slot Secondary
+			Type MechanicalArmOrb
+			}
+			ItemAttributes
+			{
+				ItemName "The Short Circuit"
+				"fire rate bonus" 5
+			}
+			}
+				
+		}
+
+		WaveSpawn
+		{
+			Name "part01"
+			Where spawnbot
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 2
+			TotalCurrency 200	
+		
+			TFBot
+			{
+			Template T_TFBot_Giant_Scout_Bonk
+			Name "Giant Bonk!"
+			Skill Hard
+			Item "The Atomizer"
+			CharacterAttributes
+				{
+				"effect bar recharge rate increased" 0.35
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part02"
+			Where spawnbot
+			TotalCount 36
+			MaxActive 18
+			SpawnCount 6
+			WaitBetweenSpawns 6
+			WaitForAllDead "part01"
+			TotalCurrency 200		
+		
+			Squad
+			{
+				TFBot
+				{
+					Class Pyro
+					Skill Easy
+					Classicon "PyRO"
+					Attributes AlwaysFireWeapon
+				}
+				
+				TFBot
+				{
+					Class Pyro
+					Skill Normal
+					Classicon "PyRO"
+				}
+				
+				TFBot
+				{
+					Class Pyro
+					Skill Hard
+					Classicon "PyRO"
+				}
+				
+				TFBot
+				{
+					Class Pyro
+					Skill Normal
+					Attributes AlwaysFireWeapon
+					Attributes AlwaysCrit
+				}
+				
+				TFBot
+				{
+					Class Pyro
+					Skill Hard
+					Attributes AlwaysCrit
+				}
+				
+				TFBot
+				{
+					Class Pyro
+					Skill Expert
+					Classicon "PyRO"
+				}
+			}
+		}
+		
+		
+		WaveSpawn
+		{
+			Name "part03"
+			Where spawnbot
+			TotalCount 6
+			MaxActive 3
+			SpawnCount 1
+			WaitBetweenSpawns 24
+			WaitBeforeStarting 6
+			WaitForAllSpawned "part02"
+			TotalCurrency 200		
+		
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavyweapons
+					Skill Easy
+					Attributes AlwaysCrit
+				}
+				
+				TFBot
+				{
+					Class Medic
+					ClassIcon medic_uber
+					Attributes SpawnWithFullCharge
+				}
+				
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part04"
+			Where spawnbot
+			TotalCount 36
+			MaxActive 16
+			SpawnCount 2
+			WaitBetweenSpawns 2
+			WaitForAllDead "part03"
+			TotalCurrency 200	
+		
+				TFBot
+				{
+					Class Soldier
+					Skill Expert
+					Item "The Direct Hit"
+				}
+				
+		}
+			
+		WaveSpawn
+		{
+			Name "part05"
+			Where spawnbot
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllSpawned "part04"
+			TotalCurrency 100	
+		
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_RocketShotgun
+					UseMeleeThreatPrioritization 1 [$SIGSEGV]
+				}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "part06"
+			TotalCount 1
+			WaitForAllSpawned "part03"
+			WaitBeforeStarting 18
+			TotalCurrency 100
+			
+			FirstSpawnOutput                                                                                                                                                            
+			{
+				 Target boss_spawn_relay                                            
+				 Action Trigger                         
+			}
+		
+			Tank
+			{
+				Health 20000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}	
+		
+	}
+	
+	//WAVE 2
+	
+	Wave
+	{
+	
+		StartWaveOutput
+			{
+				Target wave_start_relay_boss
+				Action Trigger
+			}
+		DoneOutput					
+			{
+				Target wave_finished_relay
+				Action trigger
+			}	
+		
+		WaveSpawn
+		{
+			Name "part01"
+			Where spawnbot
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 2
+			WaitBeforeStarting 2
+			TotalCurrency 200	
+		
+			TFBot
+			{
+			Template T_TFBot_Giant_Scout_Bonk
+			Name "Giant Bonk!"
+			Skill Hard
+			Item "The Atomizer"
+			CharacterAttributes
+				{
+				"effect bar recharge rate increased" 0.35
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "SS"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 20
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Scout
+			Name "Lesser Super Scout"
+			ClassIcon scout_giant_FAST
+			Skill Easy
+			Item "Bonk Boy"
+			Item "The Holy Mackerel"
+			WeaponRestrictions MeleeOnly
+			CharacterAttributes
+				{
+				"move speed bonus"	3
+				}
+			}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "circuit"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 25
+			WaitBeforeStarting 5
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Engineer 
+			Classicon hellmet_tf2
+			Skill Expert
+			Health 275
+			Item "The Short Circuit"
+			WeaponRestrictions SecondaryOnly
+			Action Mobber [$SIGSEGV]
+			OverrideProjectileType [$SIGSEGV]
+			{
+			Slot Secondary
+			Type MechanicalArmOrb
+			}
+			ItemAttributes
+			{
+				ItemName "The Short Circuit"
+				"fire rate bonus" 5
+			}
+			}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "supportdemo"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 4
+			SpawnCount 4
+			WaitForAllDead "part01"
+			TotalCurrency 0
+			Support 1
+		
+			TFBot
+			{
+			Class Heavy
+			Name "Chocolate Heavy"
+			Health 350
+			Skill Expert
+			Item "Football Helmet"
+			ItemAttributes
+				{
+				ItemName "Football Helmet"
+				"set item tint rgb" 8272640
+				}
+			}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "part04"
+			Where spawnbot
+			TotalCount 4
+			MaxActive 2
+			SpawnCount 2
+			WaitForAllDead "part01"
+			TotalCurrency 200		
+		
+			Squad
+			{
+				TFBot
+				{
+				Template T_TFBot_Giant_Soldier_Spammer
+				Attributes AlwaysFireWeapon
+				}
+				
+				TFBot
+				{
+				Class Medic
+				Name "Shield Medic"
+				Health 150
+				Classicon "hellmet_medic_shield"
+				Item "Platinum Pickelhaube"
+				Skill Hard
+				Attributes ProjectileShield
+				Attributes SpawnWithFullCharge
+				ItemAttributes
+				{
+				ItemName "TF_WEAPON_MEDIGUN"
+				"generate rage on heal" 2
+				"increase buff duration" 2
+				}
+				CharacterAttributes
+				{
+				"bot medic uber deploy delay duration" 1337
+				}
+				}
+				
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part05"
+			Where spawnbot
+			TotalCount 20
+			MaxActive 4
+			SpawnCount 2
+			WaitForAllDead "part01"
+			WaitBeforeStarting 10
+			WaitBetweenSpawns 12
+			TotalCurrency 200	
+		
+			TFBot
+			{
+			Template T_TFBot_Heavyweapons_Fist
+			Attributes AlwaysCrit
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part07"
+			Where spawnbot
+			TotalCount 4
+			MaxActive 2
+			SpawnCount 2
+			WaitForAllDead "part04"
+			TotalCurrency 200		
+		
+			Squad
+			{
+				TFBot
+				{
+				Template T_TFBot_Giant_Demoman
+				Attributes AlwaysFireWeapon
+				}
+				
+				TFBot
+				{
+				Class Medic
+				Name "Shield Medic"
+				Health 150
+				Classicon "hellmet_medic_shield"
+				Item "Platinum Pickelhaube"
+				Skill Hard
+				Attributes ProjectileShield
+				Attributes SpawnWithFullCharge
+				ItemAttributes
+				{
+				ItemName "TF_WEAPON_MEDIGUN"
+				"generate rage on heal" 2
+				"increase buff duration" 2
+				}
+				CharacterAttributes
+				{
+				"bot medic uber deploy delay duration" 1337
+				}
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part08"
+			Where spawnbot
+			TotalCount 4
+			MaxActive 2
+			SpawnCount 2
+			WaitForAllDead "part07"
+			TotalCurrency 200		
+		
+			Squad
+			{
+				TFBot
+				{
+				Template T_TFBot_Giant_Heavyweapons
+				Attributes AlwaysFireWeapon
+				}
+					
+				TFBot
+				{
+				Class Medic
+				Name "Shield Medic"
+				Health 150
+				Classicon "hellmet_medic_shield"
+				Item "Platinum Pickelhaube"
+				Skill Hard
+				Attributes ProjectileShield
+				Attributes SpawnWithFullCharge
+				ItemAttributes
+				{
+				ItemName "TF_WEAPON_MEDIGUN"
+				"generate rage on heal" 2
+				"increase buff duration" 2
+				}
+				CharacterAttributes
+				{
+				"bot medic uber deploy delay duration" 1337
+				}
+				}
+				
+			}
+		
+		}		
+		
+	}
+	
+	//WAVE 3
+	
+	Wave
+	{
+	
+		StartWaveOutput
+			{
+				Target wave_start_relay_boss
+				Action Trigger
+			}
+		DoneOutput					
+			{
+				Target wave_finished_relay
+				Action trigger
+			}	
+			
+		WaveSpawn
+		{
+			Name "SS"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAlldead "part01"
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Scout
+			Name "Lesser Super Scout"
+			ClassIcon scout_giant_FAST
+			Skill Easy
+			Item "Bonk Boy"
+			Item "The Holy Mackerel"
+			WeaponRestrictions MeleeOnly
+			CharacterAttributes
+				{
+				"move speed bonus"	3
+				}
+			}
+				
+		}	
+			
+		WaveSpawn
+		{
+			Name "part01"
+			Where spawnbot
+			TotalCount 3
+			MaxActive 3
+			SpawnCount 3
+			WaitBeforeStarting 2
+			TotalCurrency 200	
+		
+			TFBot
+			{
+			Template T_TFBot_Giant_Scout_Bonk
+			Name "Giant Bonk!"
+			Skill Hard
+			Item "The Atomizer"
+			CharacterAttributes
+				{
+				"effect bar recharge rate increased" 0.35
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "circuit"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 25
+			WaitBeforeStarting 25
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Engineer 
+			Classicon hellmet_tf2
+			Skill Expert
+			Health 275
+			Item "The Short Circuit"
+			WeaponRestrictions SecondaryOnly
+			Action Mobber [$SIGSEGV]
+			OverrideProjectileType [$SIGSEGV]
+			{
+			Slot Secondary
+			Type MechanicalArmOrb
+			}
+			ItemAttributes
+			{
+				ItemName "The Short Circuit"
+				"fire rate bonus" 5
+			}
+			}
+				
+		}
+
+		WaveSpawn
+		{
+			Name "part02"
+			TotalCount 1
+			WaitForAllDead "part01"
+			TotalCurrency 200
+			
+			FirstSpawnOutput                                                                                                                                                            
+			{
+				 Target boss_spawn_relay                                            
+				 Action Trigger                         
+			}
+		
+			Tank
+			{
+				Health 50000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part03"
+			Where spawnbot
+			TotalCount 48
+			MaxActive 12
+			SpawnCount 4
+			WaitForAllDead "part01"
+			WaitBetweenSpawns 4
+			TotalCurrency 200
+			
+		
+			TFBot
+			{
+			Class Spy
+			Classicon "heavy_mittens"
+			UseCustomModel models/player/pyro.mdl [$SIGSEGV]
+			CustomWeaponModel [$SIGSEGV]
+			{
+			Slot 2
+			Model models\weapons\c_models\c_sd_cleaver\c_sd_cleaver.mdl
+			}
+			Skill Easy
+			Name "Clown"
+			Health 30
+			Item "Bozo's Brogues"	
+			Item "Prinny Machete"
+			Item "Bozo's Bouffant"
+			Item "The Menpo"
+			Attributes AlwaysFireWeapon
+			WeaponRestrictions MeleeOnly
+			CharacterAttributes
+			{
+			"head scale" 1.2
+			"cancel falling damage" 1
+			"bombinomicon effect on death" 1
+			"add jingle to footsteps" 2
+			"voice pitch scale" 1.5
+			"reveal disguised victim on hit" 1
+			}
+			Itemattributes
+			{
+			Itemname "Prinny Machete"
+			"gesture speed increase" 100
+			"cannot be backstabbed" 1
+			"cannot pick up intelligence" 1
+			"health drain" -2
+			"fire rate penalty" 1.25
+			"damage bonus" 0
+			"melee range multiplier" 0.00001
+			"melee bounds multiplier" 0.00001
+			"dmg from ranged reduced" 0
+			"dmg taken from crit reduced" 0
+			"dmg taken from bullets reduced" 0
+			"dmg taken from fire reduced" 0
+			"dmg taken from blast reduced" 0
+			"dmg from melee increased" 0
+			"disguise speed penalty" 25
+			}
+			}		
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "part04"
+			Where spawnbot
+			TotalCount 7
+			MaxActive 7
+			SpawnCount 7
+			WaitForAllDead "part02"
+			WaitBeforeStarting 20
+			TotalCurrency 200		
+		
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavyweapons_Shotgun
+					Attributes AlwaysCrit
+				}
+				
+				TFBot
+				{
+					Class Medic
+					ClassIcon medic_uber
+					Attributes SpawnWithFullCharge
+					CharacterAttributes
+					{
+					"overheal penalty" 0
+					}
+				}
+				
+				TFBot
+				{
+					Class Medic
+					ClassIcon medic_uber
+					Attributes SpawnWithFullCharge
+					CharacterAttributes
+					{
+					"overheal penalty" 0
+					}
+				}
+				
+				TFBot
+				{
+					Class Medic
+					ClassIcon medic_uber
+					Attributes SpawnWithFullCharge
+					CharacterAttributes
+					{
+					"overheal penalty" 0
+					}
+				}
+				
+				TFBot
+				{
+					Class Medic
+					ClassIcon medic_uber
+					Attributes SpawnWithFullCharge
+					CharacterAttributes
+					{
+					"overheal penalty" 0
+					}
+				}
+				
+				TFBot
+				{
+					Class Medic
+					ClassIcon medic_uber
+					Attributes SpawnWithFullCharge
+					CharacterAttributes
+					{
+					"overheal penalty" 0
+					}
+				}
+				
+				TFBot
+				{
+					Class Medic
+					ClassIcon medic_uber
+					Attributes SpawnWithFullCharge
+					CharacterAttributes
+					{
+					"overheal penalty" 0
+					}
+				}
+				
+			}
+		}	
+		
+		WaveSpawn
+		{
+			Name "part05"
+			Where spawnbot
+			TotalCount 2
+			MaxActive 2
+			SpawnCount 2
+			WaitForAllDead "part02"
+			WaitBeforeStarting 30
+			TotalCurrency 200		
+		
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Heavyweapons_Shotgun
+					ClassIcon heavy_shotguN
+				}
+				
+				TFBot
+				{
+				Template T_TFBot_Giant_Medic
+				Attributes IgnoreEnemies
+				}
+				
+			}
+		}	
+			
+		WaveSpawn
+		{
+			Name "part06"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 12
+			SpawnCount 6
+			WaitBetweenSpawns 6
+			WaitBeforeStarting 6
+			WaitForAllDead "part02"
+			TotalCurrency 0
+			Support 1
+		
+			TFBot
+			{
+			Class HeavyWeapons
+			Name "Middleweight Champ"
+			Health 300
+			Classicon hellmet_kgb_black
+			Skill Expert
+			Attributes DisableDodge
+			WeaponRestrictions MeleeOnly
+			Item "the killing gloves of boxing"
+			Item "Pugilist's Protector"
+			ItemColor [$SIGSEGV]
+			{
+			ItemName "the killing gloves of boxing"
+			Red   0
+			Green 0
+			Blue  0
+			}
+			ItemAttributes
+			{
+			ItemName "the killing gloves of boxing"
+			"move speed bonus" 2
+			"damage force reduction" 0
+			"critboost on kill" 0
+			"fire rate penalty" 1
+			"damage bonus" 2
+			}
+			ItemAttributes
+			{
+			ItemName "Pugilist's Protector"
+			"set item tint rgb" 1315860
+			}
+			}
+				
+		}
+		
+	}
+	
+	//WAVE 4
+	
+	Wave
+	{
+		StartWaveOutput
+			{
+				Target wave_start_relay_boss
+				Action Trigger
+			}
+		DoneOutput					
+			{
+				Target wave_finished_relay
+				Action trigger
+			}	
+			
+		WaveSpawn
+		{
+			Name "SS"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAlldead "part01"
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Scout
+			Name "Lesser Super Scout"
+			ClassIcon scout_giant_FAST
+			Skill Easy
+			Item "Bonk Boy"
+			Item "The Holy Mackerel"
+			WeaponRestrictions MeleeOnly
+			CharacterAttributes
+				{
+				"move speed bonus"	3
+				}
+			}
+				
+		}		
+			
+		WaveSpawn
+		{
+			Name "part01"
+			Where spawnbot
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 4
+			WaitBeforeStarting 2
+			TotalCurrency 200
+		
+			TFBot
+			{
+			Template T_TFBot_Giant_Scout_Bonk
+			Name "Giant Bonk!"
+			Skill Hard
+			Item "The Atomizer"
+			CharacterAttributes
+				{
+				"effect bar recharge rate increased" 0.35
+				}
+			}
+			
+		}
+		
+		WaveSpawn
+		{
+			Name "circuit"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 25
+			WaitBeforeStarting 25
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Engineer 
+			Classicon hellmet_tf2
+			Skill Expert
+			Health 275
+			Item "The Short Circuit"
+			WeaponRestrictions SecondaryOnly
+			Action Mobber [$SIGSEGV]
+			OverrideProjectileType [$SIGSEGV]
+			{
+			Slot Secondary
+			Type MechanicalArmOrb
+			}
+			ItemAttributes
+			{
+				ItemName "The Short Circuit"
+				"fire rate bonus" 5
+			}
+			}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "part02"
+			TotalCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 6
+			TotalCurrency 200
+			
+			FirstSpawnWarningSound ambient\alarms\razortrain_horn1.wav
+			
+			FirstSpawnOutput                                                                                                                                                            
+			{
+				 Target boss_spawn_relay                                            
+				 Action Trigger                         
+			}
+		
+			Tank
+			{
+				Health 30000
+				Speed 75
+				Name "tankboss"
+				Skin 1
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}	
+		
+		WaveSpawn
+		{
+			Name "part03"
+			TotalCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 8.25
+			TotalCurrency 0
+			
+			FirstSpawnOutput                                                                                                                                                            
+			{
+				 Target boss_spawn_relay                                            
+				 Action Trigger                         
+			}
+		
+			Tank
+			{
+				Health 10000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_a1"
+				DisableSmokestack 1 [$SIGSEGV]
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}	
+		
+		WaveSpawn
+		{
+			Name "part04"
+			TotalCount 1
+			WaitForAllDead "part01"
+			WaitBeforeStarting 10.50
+			TotalCurrency 0
+			
+			FirstSpawnOutput                                                                                                                                                            
+			{
+				 Target boss_spawn_relay                                            
+				 Action Trigger                         
+			}
+		
+			Tank
+			{
+				Health 10000
+				Speed 75
+				Name "tankboss"
+				StartingPathTrackNode "boss_path_a1"
+				DisableSmokestack 1 [$SIGSEGV]
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part05"
+			Where spawnbot
+			TotalCount 25
+			MaxActive 5
+			SpawnCount 5
+			WaitForAllSpawned "part04"
+			TotalCurrency 100
+		
+				TFBot
+				{
+					Class Soldier
+					Skill Expert
+					ClassIcon soldier_burstfire
+					Item "The Beggar's Bazooka"
+					ItemAttributes
+					{
+					ItemName "The Beggar's Bazooka"
+					"can overload" 0
+					"auto fires full clip" 0
+					}
+				}
+				
+		}	
+		
+		WaveSpawn
+		{
+			Name "part06"
+			Where spawnbot
+			TotalCount 25
+			MaxActive 5
+			SpawnCount 5
+			WaitForAllSpawned "part04"
+			WaitBeforeStarting 5
+			TotalCurrency 100
+		
+				TFBot
+				{
+					Class Demoman
+					Skill Expert
+					Item "The Loose Cannon"
+					ItemAttributes
+					{
+					ItemName "The Loose Cannon"
+					"grenade launcher mortar mode" 0
+					}
+				}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "part07"
+			Where spawnbot
+			TotalCount 25
+			MaxActive 5
+			SpawnCount 5
+			WaitForAllSpawned "part04"
+			WaitBeforeStarting 10
+			TotalCurrency 100
+		
+				TFBot
+				{
+					Class Pyro
+					Skill Expert
+					Item "The Phlogistinator"
+					Attributes SpawnWithFullCharge
+					ItemAttributes
+					{
+					ItemName "The Phlogistinator"
+					"airblast disabled" 0
+					}	
+				}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "part07b"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 5
+			SpawnCount 5
+			WaitForAllDead "part02"
+			TotalCurrency 0
+			Support 1
+		
+			TFBot
+			{
+				Class HeavyWeapons
+				Skill Expert
+				Item "Natascha"
+			}
+				
+		}
+
+		WaveSpawn
+		{
+			Name "part08"
+			Where spawnbot
+			TotalCount 6
+			MaxActive 6
+			SpawnCount 2
+			WaitBetweenSpawns 30
+			WaitForAllDead "part02"
+			WaitBeforeStarting 30
+			TotalCurrency 300
+		
+			Squad
+			{
+				TFBot
+				{
+				Class Heavyweapons
+				Name "Giant Heal-On-Kill Heavy"
+				ClassIcon heavy_deflector_healonkill
+				Skill Expert
+				Item "The Tungsten Toque"
+				Item "Deflector"
+				Health 5000
+				MaxVisionRange 1600
+				WeaponRestrictions PrimaryOnly
+				Attributes MiniBoss
+				ItemAttributes
+				{
+				ItemName "Deflector"
+				"damage bonus"	1.2
+				"attack projectiles" 2
+				"heal on kill" 5000
+				}
+				CharacterAttributes
+				{
+				"move speed bonus"	0.4
+				"damage force reduction" 0.3
+				"airblast vulnerability multiplier" 0.4
+				"airblast vertical vulnerability multiplier" 0.1
+				"rage giving scale"	0.9
+				"override footstep sound set" 2
+				}
+				}
+				
+				TFBot
+				{
+				Template T_TFBot_Giant_Medic
+				Attributes IgnoreEnemies
+				}
+				
+			}
+		}
+		
+		
+		
+	}
+	
+	//WAVE 5
+	
+	Wave
+	{
+	
+		StartWaveOutput
+			{
+				Target wave_start_relay_boss
+				Action Trigger
+			}
+		DoneOutput					
+			{
+				Target wave_finished_relay
+				Action trigger
+			}
+
+		WaveSpawn
+		{
+			Name "SS"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 10
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Scout
+			Name "Lesser Super Scout"
+			ClassIcon scout_giant_FAST
+			Skill Easy
+			Item "Bonk Boy"
+			Item "The Holy Mackerel"
+			WeaponRestrictions MeleeOnly
+			CharacterAttributes
+				{
+				"move speed bonus"	3
+				}
+			}
+				
+		}	
+
+		WaveSpawn
+		{
+			Name "part00"
+			Where spawnbot
+			TotalCount 5
+			MaxActive 5
+			SpawnCount 5
+			WaitBeforeStarting 2
+			TotalCurrency 100
+		
+			TFBot
+			{
+			Template T_TFBot_Giant_Scout_Bonk
+			Name "Giant Bonk!"
+			Skill Hard
+			Item "The Atomizer"
+			CharacterAttributes
+				{
+				"effect bar recharge rate increased" 0.35
+				}
+			}
+			
+		}	
+		
+		WaveSpawn
+		{
+			Name "circuit"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBetweenSpawnsAfterDeath 25
+			WaitBeforeStarting 25
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Engineer 
+			Classicon hellmet_tf2
+			Skill Expert
+			Health 275
+			Item "The Short Circuit"
+			WeaponRestrictions SecondaryOnly
+			Action Mobber [$SIGSEGV]
+			OverrideProjectileType [$SIGSEGV]
+			{
+			Slot Secondary
+			Type MechanicalArmOrb
+			}
+			ItemAttributes
+			{
+				ItemName "The Short Circuit"
+				"fire rate bonus" 5
+			}
+			}
+				
+		}
+			
+		WaveSpawn
+		{
+			Name "part01"
+			Where spawnbot
+			TotalCount 12
+			MaxActive 6
+			SpawnCount 2
+			WaitForAllDead "part00"
+			WaitBetweenSpawns 6
+			TotalCurrency 100	
+		
+		Squad
+		{
+		
+			TFBot
+			{
+			Template T_TFBot_Giant_Demo_Burst
+			Attributes AlwaysCrit
+			Item "The Loch-n-Load"
+			ItemAttributes
+			{
+				ItemName "The Loch-n-Load"
+				"faster reload rate" 0.65 //35% faster reload
+				"fire rate bonus" 0.1
+				"clip size upgrade atomic" 7.0
+				"projectile spread angle penalty" 5
+				"Projectile speed increased"	1.1
+			}
+			}
+			
+			TFBot
+			{
+			Class Medic
+			ClassIcon medic_uber
+			Attributes SpawnWithFullCharge
+			}
+			
+		}	
+		}
+			
+		WaveSpawn
+		{
+			Name "part02"
+			Where spawnbot
+			TotalCount 72
+			MaxActive 24
+			SpawnCount 12
+			WaitForAllDead "part00"
+			WaitBetweenSpawns 6
+			TotalCurrency 200	
+			
+			TFBot
+			{
+			Class Scout
+			Skill Expert
+			ClassIcon scout_fan
+			Item "The Force-a-Nature"
+			Attributes AlwaysCrit
+			}
+			
+		}
+		
+		WaveSpawn
+		{
+			Name "part03"
+			Where spawnbot
+			TotalCount 24
+			MaxActive 8
+			SpawnCount 2
+			WaitForAllSpawned "part01"
+			WaitBetweenSpawns 3
+			TotalCurrency 200	
+			
+		Squad
+		{
+			TFBot
+			{
+			Class Demoman
+			Skill Expert
+			}
+
+			TFBot
+			{
+			Class Medic
+			ClassIcon medic_uber
+			Attributes SpawnWithFullCharge
+			}
+		}
+		
+		}
+		
+		WaveSpawn
+		{
+			Name "part04"
+			Where spawnbot
+			TotalCount 9
+			MaxActive 3
+			SpawnCount 3
+			WaitForAllDead "part01"
+			WaitBeforeStarting 6
+			TotalCurrency 200	
+		
+			Squad
+			{
+			
+			TFBot
+			{
+			Class Soldier
+			Name "Giant Barrage Soldier"
+			ClassIcon soldier_barrage
+			Health 4000
+			Item "MvM GateBot Light Soldier"
+			ItemColor [$SIGSEGV]
+				{
+				ItemName "MvM GateBot Light Soldier"
+				Red   0
+				Green 255
+				Blue  0
+				}
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			Attributes AlwaysCrit
+			Attributes DisableDodge
+			HomingRockets [$SIGSEGV]
+				{
+				Enable               1
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				TurnPower    500
+				MaxAimError 180
+				RocketSpeed 0.35
+				}
+			ItemAttributes
+			{
+			ItemName "TF_WEAPON_ROCKETLAUNCHER"
+			"clip size upgrade atomic" 26.0
+			"faster reload rate" 0.4
+			"fire rate bonus" 0.2
+			"projectile spread angle penalty" 5
+			}
+			CharacterAttributes
+			{
+			"health regen"	40
+			"move speed bonus"	0.5
+			"damage bonus" 1.5
+			"damage force reduction" 0.4
+			"airblast vulnerability multiplier" 0.4
+			"override footstep sound set" 3
+			"airblast vertical vulnerability multiplier" 0.1				
+			"Projectile speed increased" 0.35
+			}
+			}
+				
+			TFBot
+			{
+			Template T_TFBot_Giant_Medic_Regen
+			Attributes IgnoreEnemies
+			}
+			
+			TFBot
+			{
+			Template T_TFBot_Giant_Medic_Regen
+			Attributes IgnoreEnemies
+			}
+			
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part05"
+			Where spawnbot
+			TotalCount 10
+			MaxActive 10
+			SpawnCount 2
+			WaitBetweenSpawns 10
+			WaitForAllDead "part04"
+			TotalCurrency 200	
+		
+			TFBot
+			{
+			Template T_TFBot_Soldier_BurstFire
+			UseMeleeThreatPrioritization 1 [$SIGSEGV]
+			}	
+		}
+		
+	}
+	
+	//WAVE 6
+	
+	Wave
+	{
+	
+	Explanation [$SIGSEGV]
+    {
+        Line "{yellow}TEMPORAL VIZIER"
+        Line "{green}Warp Cannon"
+		Line "{blue}40,000 health"
+		Line "{red}Weak damage"
+    }
+	
+		StartWaveOutput
+			{
+				Target wave_start_relay_boss
+				Action Trigger
+			}
+		DoneOutput					
+			{
+				Target wave_finished_relay
+				Action trigger
+			}	
+		
+		WaveSpawn
+		{
+			Name "SS"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part01"
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Scout
+			Name "Lesser Super Scout"
+			ClassIcon scout_giant_FAST
+			Skill Easy
+			Item "Bonk Boy"
+			Item "The Holy Mackerel"
+			WeaponRestrictions MeleeOnly
+			CharacterAttributes
+				{
+				"move speed bonus"	3
+				}
+			}
+				
+		}
+
+		WaveSpawn
+		{
+			Name "part01"
+			Where spawnbot
+			TotalCount 6
+			MaxActive 6
+			SpawnCount 6
+			WaitBeforeStarting 2
+			TotalCurrency 100
+		
+			TFBot
+			{
+			Template T_TFBot_Giant_Scout_Bonk
+			Name "Giant Bonk!"
+			Skill Hard
+			Item "The Atomizer"
+			CharacterAttributes
+				{
+				"effect bar recharge rate increased" 0.35
+				}
+			}
+			
+		}	
+		
+		WaveSpawn
+		{
+			Name "circuit"
+			Where spawnbot
+			TotalCount 1337
+			MaxActive 1
+			SpawnCount 1
+			WaitForAllDead "part00"
+			WaitBetweenSpawnsAfterDeath 25
+			WaitBeforeStarting 25
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Engineer 
+			Classicon hellmet_tf2
+			Skill Expert
+			Health 275
+			Item "The Short Circuit"
+			WeaponRestrictions SecondaryOnly
+			Action Mobber [$SIGSEGV]
+			OverrideProjectileType [$SIGSEGV]
+			{
+			Slot Secondary
+			Type MechanicalArmOrb
+			}
+			ItemAttributes
+			{
+				ItemName "The Short Circuit"
+				"fire rate bonus" 5
+			}
+			}
+				
+		}
+
+		WaveSpawn
+		{
+			Name "part02"
+			Where spawnbot
+			TotalCount 6
+			MaxActive 3
+			SpawnCount 1
+			WaitForAllDead "part01"
+			WaitBetweenSpawns 12
+			TotalCurrency 100		
+			
+			TFBot
+			{
+			Class Demoman
+			Name "Giant Samurai Demo"
+			ClassIcon demoknight_samurai
+			Skill Expert
+			Item "The Half-Zatoichi"
+			Item "The Splendid Screen"
+			ItemAttributes
+			{
+				ItemName "The Splendid Screen"
+				"Attack not cancel charge" 1
+			}
+			Item "Demo Kabuto"
+			Health 4500
+			WeaponRestrictions MeleeOnly
+			Action Mobber [$SIGSEGV]
+			Attributes Miniboss
+			Attributes AirChargeOnly
+			Attributes AutoJump
+			AutoJumpMin 10
+			AutoJumpMax 10
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 4
+				"cancel falling damage" 1
+				"charge time increased" 2
+				"charge recharge rate increased" 7
+				"increased jump height" 2.3
+				"bot custom jump particle"	1
+				"damage bonus"	1.5
+			}	
+				
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part03"
+			Where spawnbot
+			TotalCount 48
+			MaxActive 12
+			SpawnCount 6
+			WaitForAllDead "part01"
+			WaitBetweenSpawns 6
+			TotalCurrency 200	
+		
+		RandomChoice
+		{
+			TFBot
+			{
+			Template T_TFBot_Scout_Shortstop
+			Skill Expert
+			Attributes AlwaysCrit
+			}
+			
+			TFBot
+			{
+			Class Demoman
+			Skill Expert
+			Item "The Chargin' Targe"
+			}
+			
+		}	
+		}
+		
+		WaveSpawn
+		{
+			Name "part04"
+			TotalCount 1
+			WaitForAllDead "part00"
+			WaitBeforeStarting 26
+			TotalCurrency 0
+			
+			FirstSpawnOutput                                                                                                                                                            
+			{
+				 Target boss_spawn_relay                                            
+				 Action Trigger                         
+			}
+			
+			DoneOutput
+			{
+				Target door_boss_relay_open
+				Action trigger
+			}
+		
+			Tank
+			{
+				Health 30000
+				Speed 75
+				Name "tankboss"
+				Scale 0.1 [$SIGSEGV]
+				DisableSmokestack 1 [$SIGSEGV]
+				StartingPathTrackNode "boss_path_a1"
+
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}	
+		
+		WaveSpawn
+		{
+			Name "part05"
+			Where spawnbot
+			TotalCount 8
+			MaxActive 8
+			SpawnCount 2
+			WaitForAllDead "part03"
+			WaitBetweenSpawns 8
+			TotalCurrency 200		
+		
+			Squad
+			{
+				TFBot
+				{
+				Class Soldier
+				Classicon hellmet_zap
+				Name "Giant Plasma Soldier"
+				Item "The Hellmet"
+				Item "The Cow Mangler 5000"
+				Skill Expert
+				Health 4200
+				Attributes MiniBoss
+				Attributes DisableDodge
+				MaxVisionRange 5000
+				Attributes AlwaysCrit
+				ItemAttributes
+				{
+				ItemName "The Cow Mangler 5000"
+				"set item tint rgb" 15185211
+				"override projectile type" 18
+				"damage bonus" 4
+				"dmg bonus vs buildings" 4
+				"faster reload rate" 0.1
+				"ragdolls become ash" 1
+				"projectile penetration" 1
+				"crits_become_minicrits" 0
+				}
+				ItemAttributes
+				{
+				ItemName "The Hellmet"
+				"set item tint rgb" 15185211
+				}
+				CharacterAttributes
+				{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				}
+				}
+				
+				TFBot	
+				{
+				Template T_TFBot_Giant_Medic_Regen
+				WeaponRestrictions SecondaryOnly
+				Attributes IgnoreEnemies
+				}
+				
+			}
+		}
+		
+		WaveSpawn
+		{
+			Name "part06"
+			Where spawnbot
+			TotalCount 48
+			MaxActive 12
+			SpawnCount 6
+			WaitForAllDead "part05"
+			TotalCurrency 200
+		
+		RandomChoice
+		{
+		
+				TFBot
+				{
+				Class Pyro
+				Skill Expert
+				Item "The Dragon's Fury"
+				Classicon "pyro_dragonfury"
+				}
+				
+				TFBot
+				{
+				Template T_TFBot_Sniper_Huntsman_Spammer
+				Attributes AlwaysCrit
+				Item "MvM GateBot Light Sniper"
+				Item "The Razorback"
+				Classicon sniper_bow_multi
+				ItemColor [$SIGSEGV]
+				{
+				ItemName "MvM GateBot Light Sniper"
+				Red   0
+				Green 255
+				Blue  0
+				}	
+				}
+				
+		}		
+		}
+		
+		WaveSpawn
+		{
+			Name "part07"
+			Where SpawnPit
+			TotalCount 6
+			MaxActive 6
+			SpawnCount 1
+			WaitBeforeStarting 9
+			WaitBetweenSpawns 2
+			WaitForAllDead "part05"
+			TotalCurrency 100
+		
+			TFBot
+			{
+			Template T_TFBot_Giant_Scout_Fast
+			Attributes AlwaysCrit
+			}
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "part08"
+			Where spawnbot
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 15
+			WaitForAllDead "part06"
+			TotalCurrency 100		
+		
+			TFBot
+			{
+			Class Soldier
+			Name "Temporal Vizier"
+			Skill Expert
+			Scale 1.9
+			Attributes Miniboss
+			Item "The Cow Mangler 5000"
+			Item "Teufort Knight"
+			ItemAttributes
+			{
+				ItemName "Teufort Knight"
+				"SPELL: set item tint RGB"	"5"
+			}
+			ClassIcon soldieR
+			Health 40000
+			UseMeleeThreatPrioritization 1 [$SIGSEGV]
+			CustomWeaponModel [$SIGSEGV]
+			{
+			Slot 0
+			Model models\weapons\c_models\c_flameball\c_flameball.mdl
+			}
+			Attributes UseBossHealthBar
+			Attributes DisableDodge
+			OverrideProjectileType [$SIGSEGV]
+			{
+			Slot Primary
+			Type MechanicalArmOrb
+			}
+			DamageAppliesCond [$SIGSEGV]
+			{
+				Name TF_COND_SWIMMING_NO_EFFECTS
+				Duration 8
+			}
+			ItemAttributes
+			{
+				ItemName "The Cow Mangler 5000"
+				"gesture speed increase" 0.5
+				"apply z velocity on damage" 400
+				"faster reload rate" 0.01
+				"attach particle effect" 95	
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"override footstep sound set" 3
+				"airblast vulnerability multiplier" 0
+				"airblast vertical vulnerability multiplier" 0
+				"damage force reduction" 0
+				"rage giving scale" 0.1
+			}
+			}					
+		}
+		
+		WaveSpawn
+		{
+			Name "part09"
+			Where spawnbot
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 1
+			WaitBeforeStarting 25
+			WaitBetweenSpawns 5
+			WaitForAllDead "part06"
+			TotalCurrency 0	
+			Support 1
+		
+			TFBot
+			{
+			Class Medic
+			Name "Big-Heal Medic"
+			Classicon hellmet_bigheal
+			Skill Expert
+			WeaponRestrictions SecondaryOnly
+			Attributes IgnoreEnemies
+			Item "The Medicine Manpurse"
+			Item "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName "The Quick-Fix"
+				"ubercharge rate bonus" 0.1
+			}
+			CharacterAttributes
+			{
+				"heal rate bonus" 200
+				"overheal penalty" 0
+			}
+			}	
+		}
+	}
+	
+	//WAVE 7
+	
+	Wave
+	{
+	
+	Explanation [$SIGSEGV]
+    {
+        Line "{yellow}COMMANDER FUEL"
+        Line "{green}Flamethrower"
+		Line "{blue}60,000 health 250 regeneration"
+		Line "{red}Short attack range"
+    }
+	
+		StartWaveOutput
+			{
+				Target wave_start_relay_boss
+				Action Trigger
+			}
+		DoneOutput					
+			{
+				Target wave_finished_relay
+				Action trigger
+			}	
+			
+		WaveSpawn
+		{
+			Name "part01"
+			Where spawnbot
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			WaitBeforeStarting 4
+			TotalCurrency 1337
+		
+			TFBot
+			{
+			Class Pyro
+			Name "Commander Fuel"
+			Skill Expert
+			Scale 1.9
+			Attributes Miniboss
+			Item "powerhouse_flamethrower_turbinetorcher"
+			Item "Pyro Helm"
+			ClassIcon pyrO
+			Health 60000
+			UseMeleeThreatPrioritization 1 [$SIGSEGV]
+			Attributes UseBossHealthBar
+			Attributes DisableDodge
+			ItemAttributes
+			{
+				ItemName "powerhouse_flamethrower_turbinetorcher"
+				"flame_up_speed" -800
+				"damage bonus" 2
+				"afterburn duration bonus" 1337
+				"killstreak tier" 3		
+				"killstreak idleeffect" 3
+				"airblast pushback scale" 3
+				"apply look velocity on damage" 200
+				"mult airblast refire time" 0.1
+			}
+			ItemAttributes 
+				{
+					ItemName "Pyro Helm"
+					"set item tint rgb" 13595446
+				}
+			CharacterAttributes
+			{
+				"increased jump height" 4
+				"health regen" 250
+				"move speed bonus"	0.5
+				"override footstep sound set" 7
+				"airblast vulnerability multiplier" 0
+				"airblast vertical vulnerability multiplier" 0
+				"damage force reduction" 0
+				"rage giving scale" 0.1
+			}
+			}		
+		}
+		
+		WaveSpawn
+		{
+			Name "part02"
+			Where SpawnBot
+			TotalCount 1337
+			MaxActive 6
+			SpawnCount 6
+			WaitBeforeStarting 15
+			WaitBetweenSpawns 15
+			TotalCurrency 0
+			Support 1
+		
+			TFBot
+			{
+			Class Pyro
+			Skill Expert
+			Attributes AlwaysCrit
+			Attributes DisableDodge
+			Action Mobber [$SIGSEGV]
+			}
+			
+				
+		}
+		
+		WaveSpawn
+		{
+			Name "part03"
+			Where SpawnPit
+			TotalCount 1337
+			MaxActive 6
+			SpawnCount 6
+			WaitBeforeStarting 5
+			WaitBetweenSpawns 5
+			TotalCurrency 0
+			Support 1
+		
+			TFBot
+			{
+			Class Pyro
+			Skill Expert
+			Attributes AlwaysCrit
+			}
+							
+		}
+		
+	}
+	
+	}
