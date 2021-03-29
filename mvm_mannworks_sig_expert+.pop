@@ -1,0 +1,1560 @@
+// mvm_mannworks
+//Sexpert (Concept by : Hacked Exhale)
+//Made By Hell-met http://steamcommunity.com/id/hell-met/
+//Joke Skill
+
+#base robot_giant.pop
+#base robot_standard.pop
+
+WaveSchedule
+{
+	StartingCurrency 400
+	CanBotsAttackWhileInSpawnRoom No
+	RespawnWaveTime 7
+	NoReanimators 1				[$SIGSEGV]
+	NoMvMDeathTune 1 			[$SIGSEGV]
+	SniperHideLasers 1 			[$SIGSEGV]
+	SniperAllowHeadshots 1		[$SIGSEGV]
+	RespecEnabled 0				[$SIGSEGV]
+	BonusRatioHalf 1			[$SIGSEGV]
+	SentryBusterFriendlyFire 0	[$SIGSEGV]
+	
+	Templates
+	{
+		T_TFBot_Heavyweapons_Deflector
+		{
+			Class Heavyweapons
+			Name "Deflector Heavy"
+			ClassIcon heavy_deflector
+			Skill Hard
+			Attributes AlwaysCrit
+			Item "The U-clank-a"
+			Item "Deflector"
+			WeaponRestrictions PrimaryOnly
+			MaxVisionRange 1200
+			ItemAttributes 
+			{
+				ItemName "Deflector"
+				"attack projectiles" 1
+			}
+		}
+	}
+
+// MISSION: Sentry Buster
+	Mission
+	{
+		Objective DestroySentries
+		Where spawnbot_right
+		CooldownTime 30
+		
+		TFBot
+		{
+			Template T_TFBot_SentryBuster
+			Skill Easy
+			Attributes DisableDodge
+			Attributes IgnoreEnemies
+			Attributes AutoJump
+			AutoJumpMin 5
+			AutoJumpMax 5
+		}
+	}
+	
+// MISSION: Sentry Buster
+	Mission
+	{
+		Objective DestroySentries
+		Where spawnbot_left
+		CooldownTime 30
+		
+		TFBot
+		{
+			Template T_TFBot_SentryBuster
+			Skill Expert
+			Attributes DisableDodge
+			Attributes IgnoreEnemies
+			Attributes AutoJump
+			AutoJumpMin 10
+			AutoJumpMax 10
+		}
+	}
+
+// MISSION: Sniper 01
+	Mission
+	{
+		Objective Sniper
+		
+		Where spawnbot_mission_sniper
+		
+		BeginAtWave 1
+		RunForThisManyWaves 1
+		CooldownTime 60
+		InitialCooldown 30
+		DesiredCount 2
+		
+		TFBot
+		{
+			Template T_TFBot_Sniper_Sydney_Sleeper
+			Attributes AlwaysCrit
+		}
+	}
+
+// MISSION: Sniper 02
+	Mission
+	{
+		Objective Sniper
+		
+		Where spawnbot_mission_sniper
+		
+		BeginAtWave 2
+		RunForThisManyWaves 1
+		CooldownTime 60
+		InitialCooldown 20
+		DesiredCount 2
+		
+		TFBot
+		{
+			Template T_TFBot_Sniper_Razorback
+		}
+	}	
+
+// MISSION: Sniper 03
+	Mission
+	{
+		Objective Sniper
+		
+		Where spawnbot_mission_sniper
+		
+		BeginAtWave 3
+		RunForThisManyWaves 1
+		CooldownTime 60
+		InitialCooldown 20
+		DesiredCount 2
+		
+		TFBot
+		{
+			Template T_TFBot_Sniper_Razorback
+		}
+	}
+
+// MISSION: Sniper 05
+	Mission
+	{
+		Objective Sniper
+		
+		Where spawnbot_mission_sniper
+		
+		BeginAtWave 5
+		RunForThisManyWaves 1
+		CooldownTime 60
+		InitialCooldown 20
+		DesiredCount 2
+		
+		TFBot
+		{
+			Template T_TFBot_Sniper_Sydney_Sleeper
+			Attributes AlwaysCrit
+		}
+	}
+	
+// MISSION: Spy 01
+	Mission
+	{
+		Objective Spy
+		
+		Where spawnbot_mission_spy
+		
+		BeginAtWave	1
+		RunForThisManyWaves 1
+		CooldownTime 45
+		InitialCooldown 45
+		DesiredCount 3
+		
+		TFBot
+		{
+			Template T_TFBot_Spy
+			Attributes AlwaysCrit
+			Skill Easy
+		}
+	}
+	
+// MISSION: Spy 02
+	Mission
+	{
+		Objective Spy
+		
+		Where spawnbot_mission_spy
+		
+		BeginAtWave	2
+		RunForThisManyWaves 1
+		CooldownTime 90
+		InitialCooldown 30
+		DesiredCount 2
+		
+		TFBot
+		{
+			Template T_TFBot_Spy
+			Attributes AlwaysCrit
+			Skill Easy
+		}
+	}
+	
+// MISSION: Spy 04
+	Mission
+	{
+		Objective Spy
+		
+		Where spawnbot_mission_spy
+		
+		BeginAtWave	4
+		RunForThisManyWaves 1
+		CooldownTime 60
+		InitialCooldown 5
+		DesiredCount 3
+		
+		TFBot
+		{
+			Template T_TFBot_Spy
+			Attributes AlwaysCrit
+			Skill Easy
+		}
+	}
+
+// MISSION: Spy 05
+	Mission
+	{
+		Objective Spy
+		
+		Where spawnbot_mission_spy
+		
+		BeginAtWave	5
+		RunForThisManyWaves 1
+		CooldownTime 60
+		InitialCooldown 30
+		DesiredCount 2
+		
+		TFBot
+		{
+			Template T_TFBot_Spy
+			Attributes AlwaysCrit
+			Skill Easy
+		}
+	}
+	
+// WAVE 01 900
+	Wave
+	{
+		
+	Explanation [$SIGSEGV]
+    {
+		Line "{yellow}The most difficult mission made even more difficult{red}!"
+    }
+	
+		Checkpoint Yes
+		
+		StartWaveOutput
+		{
+			Target bombpath_arrows_clear_relay
+			Action Trigger
+		}
+		
+		DoneOutput
+		{
+			Target bombpath_wavefinished
+			Action Trigger
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 200
+			
+			Name "stage1"
+			
+			Where spawnbot_mission_sniper
+			RandomSpawn 1
+			TotalCount 12
+			SpawnCount 2
+			MaxActive 10
+			WaitBetweenSpawns 20
+			WaitBeforeStarting 5
+			
+			TFBot
+			{
+				Template T_TFBot_Pyro
+				Skill Expert
+				Attributes AlwaysCrit
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 700
+			
+			Name "stage1"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 35
+			SpawnCount 5
+			MaxActive 15
+			WaitBetweenSpawns 18
+			WaitBeforeStarting 0
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Demo_Burst
+					Attributes AlwaysCrit
+					Item "MvM GateBot Light Demoman"
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Heavy_IronFist_Airblast
+					Item "MvM GateBot Light Heavy"
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Heavy_IronFist_Airblast
+					Item "MvM GateBot Light Heavy"
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Heavy_IronFist_Airblast
+					Item "MvM GateBot Light Heavy"
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Heavy_IronFist_Airblast
+					Item "MvM GateBot Light Heavy"
+				}
+			}
+		}
+	}
+	
+// WAVE 02 900
+	Wave
+	{
+		Checkpoint Yes
+		
+		StartWaveOutput
+		{
+			Target bombpath_arrows_clear_relay
+			Action Trigger
+		}
+		
+		DoneOutput
+		{
+			Target bombpath_wavefinished
+			Action Trigger
+		}
+		
+		WaveSpawn // Crit Scout Invasion
+		{
+			TotalCurrency 200
+			
+			Name "stage1"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 48
+			SpawnCount 12
+			MaxActive 16
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+			Class scout
+			Skill Hard
+			Name "Jumping Sandman"
+			Classicon scout_jumping
+			WeaponRestrictions MeleeOnly
+			Attributes AlwaysCrit
+			Item "The Sandman"
+			Item "The Hanger-On Hood"
+			Item "The Flight of the Monarch"
+			Attributes AutoJump
+			AutoJumpMin 5
+			AutoJumpMax 5
+			CharacterAttributes
+			{
+			"increased jump height" 2
+			"cancel falling damage" 1
+			}
+			ItemAttributes
+			{
+			ItemName "The Sandman"
+			"effect bar recharge rate increased" 0.5
+			}
+			}
+		}
+		
+		WaveSpawn // Crit Scout Invasion Center
+		{
+			TotalCurrency 200
+			
+			Name "stage1"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 24
+			SpawnCount 6
+			MaxActive 8
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+			Class scout
+			Skill Hard
+			Name "Jumping Sandman"
+			Classicon scout_jumping
+			WeaponRestrictions MeleeOnly
+			Attributes AlwaysCrit
+			Item "The Sandman"
+			Item "The Hanger-On Hood"
+			Item "The Flight of the Monarch"
+			Attributes AutoJump
+			AutoJumpMin 5
+			AutoJumpMax 5
+			CharacterAttributes
+			{
+			"increased jump height" 2
+			"cancel falling damage" 1
+			}
+			ItemAttributes
+			{
+			ItemName "The Sandman"
+			"effect bar recharge rate increased" 0.5
+			}
+			}
+		}
+		
+		WaveSpawn // Crit Scout Invasion Escalation
+		{
+			TotalCurrency 200
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 32
+			SpawnCount 16
+			MaxActive 16
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 0
+			
+			Squad
+			{
+			
+			TFBot
+			{
+				Class scout
+				Skill Hard
+				Name "Jumping Sandman"
+				Classicon scout_jumping
+				WeaponRestrictions MeleeOnly
+				Attributes AlwaysCrit
+				Item "The Sandman"
+				Item "The Hanger-On Hood"
+				Item "The Flight of the Monarch"
+				Attributes AutoJump
+				AutoJumpMin 5
+				AutoJumpMax 5
+				CharacterAttributes
+				{
+				"increased jump height" 2
+				"cancel falling damage" 1
+				}
+				ItemAttributes
+				{
+				ItemName "The Sandman"
+				"effect bar recharge rate increased" 0.5
+				}
+			}
+				
+			TFBot
+			{
+				Template T_TFBot_Medic_BigHeal
+				Name "Big-Heal Medic"
+				Skill Expert
+			}
+			
+			}
+		}
+		
+		WaveSpawn // Crit Scout Invasion Center Escalation
+		{
+			TotalCurrency 200
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 24
+			SpawnCount 6
+			MaxActive 8
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 0
+			
+			Squad
+			{
+			
+			TFBot
+			{
+				Class scout
+				Skill Hard
+				Name "Jumping Sandman"
+				Classicon scout_jumping
+				WeaponRestrictions MeleeOnly
+				Attributes AlwaysCrit
+				Item "The Sandman"
+				Item "The Hanger-On Hood"
+				Item "The Flight of the Monarch"
+				Attributes AutoJump
+				AutoJumpMin 5
+				AutoJumpMax 5
+				CharacterAttributes
+				{
+				"increased jump height" 2
+				"cancel falling damage" 1
+				}
+				ItemAttributes
+				{
+				ItemName "The Sandman"
+				"effect bar recharge rate increased" 0.5
+				}
+			}
+				
+			TFBot
+			{
+				Template T_TFBot_Medic_BigHeal
+				Name "Big-Heal Medic"
+				Skill Expert
+			}
+			
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 8
+			SpawnCount 2
+			MaxActive 4
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 10
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Soldier_Extended_Battalion
+			}
+		}
+	}
+	
+// WAVE 03 900
+	Wave
+	{
+		Checkpoint Yes
+		
+		StartWaveOutput
+		{
+			Target bombpath_arrows_clear_relay
+			Action Trigger
+		}
+		
+		DoneOutput
+		{
+			Target bombpath_wavefinished
+			Action Trigger
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage1"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 6
+			SpawnCount 2
+			MaxActive 4
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_Jumping_Sandman
+				Attributes AlwaysCrit
+				CharacterAttributes
+			{
+				"cancel falling damage" 1
+			}
+			}
+		}
+
+		WaveSpawn
+		{
+			TotalCurrency 200
+			TotalCount 1
+			
+			WaitForAllSpawned "stage1"
+			
+			Tank
+			{
+				Health 12000
+				Speed 75
+				Scale 0.75 [$SIGSEGV]
+				Name "tankboss_left"
+				StartingPathTrackNode "boss_path_1"
+				
+				OnBombDroppedOutput
+				{
+					Target boss_deploy_relay
+					Action Trigger
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 200
+			TotalCount 1
+			
+			WaitForAllSpawned "stage1"
+			
+			Tank
+			{
+				Health 12000
+				Speed 75
+				Scale 0.75 [$SIGSEGV]
+				Name "tankboss_right"
+				StartingPathTrackNode "boss_path2_1"
+				
+				OnBombDroppedOutput
+				{
+					Target boss_deploy_relay
+					Action Trigger
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+			
+			Where spawnbot
+			TotalCount 20
+			SpawnCount 4
+			MaxActive 16
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 15
+		
+		RandomChoice
+		
+			TFBot
+			{
+				Template T_TFBot_Soldier_Extended_Concheror
+				Classicon SoLdIeR
+				Skill Easy
+			}
+			
+			TFBot
+			{
+				Template T_TFBot_Soldier_Extended_Battalion
+				Classicon SoLdIeR
+				Skill Easy
+			}
+			
+			TFBot
+			{
+				Template T_TFBot_Soldier_Extended_Buff_Banner
+				Classicon SoLdIeR
+				Skill Easy
+			}
+		}
+		
+		WaveSpawn // Pyro
+		{
+			TotalCurrency 100
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+			
+			Where spawnbot
+			TotalCount 20
+			SpawnCount 4
+			MaxActive 4
+			WaitBetweenSpawns 15
+			WaitBeforeStarting 20
+			
+			TFBot
+			{
+				Class Pyro
+				Skill Expert
+				Attributes AlwaysCrit
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 6
+			SpawnCount 2
+			MaxActive 4
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 20
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Scout_Jumping_Sandman
+				Attributes AlwaysCrit
+				CharacterAttributes
+			{
+				"cancel falling damage" 1
+			}
+			}
+		}
+		
+		WaveSpawn
+		{
+			//TotalCurrency 100
+			
+			Name "stage3"
+			WaitForAllSpawned "stage2"
+			
+			Support 1 // fix the timing issue so these don't just end mid way
+			
+			Where spawnbot
+			TotalCount 36
+			SpawnCount 6
+			MaxActive 10
+			WaitBetweenSpawns 15
+			WaitBeforeStarting 20
+			
+			TFBot
+			{
+			Template T_TFBot_Scout_Sandman_FastCharge
+			Attributes AlwaysCrit
+			}
+		}
+		
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage3"
+			WaitForAllSpawned "stage2"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 32
+			SpawnCount 8
+			MaxActive 8
+			WaitBetweenSpawns 20
+			WaitBeforeStarting 0
+			
+			Squad
+			{
+				TFBot
+				{
+				Class Heavyweapons
+				Name "Giant Heal-On-Kill Heavy"
+				ClassIcon heavy_deflector_healonkill
+				Attributes AlwaysCrit
+				Skill Expert
+				Item "The Tungsten Toque"
+				Item "MvM Gatebot Light Heavy"
+				Item "Deflector"
+				Health 5000
+				MaxVisionRange 1600
+				WeaponRestrictions PrimaryOnly
+				Attributes MiniBoss
+				ItemAttributes
+				{
+				ItemName "Deflector"
+				"damage bonus"	1.2
+				"attack projectiles" 2
+				"heal on kill" 5000
+				}
+				CharacterAttributes
+				{
+				"move speed bonus"	0.4
+				"damage force reduction" 0.3
+				"airblast vulnerability multiplier" 0.4
+				"airblast vertical vulnerability multiplier" 0.1
+				"rage giving scale"	0.9
+				"override footstep sound set" 2
+				}
+				}
+				
+				TFBot
+				{
+					Class Medic
+					Name "Normal Uber Medic"
+					Classicon medic_uber
+					Skill Expert
+					Attributes SpawnWithFullCharge
+				}
+				
+				TFBot
+				{
+					Class Medic
+					Name "Normal Uber Medic"
+					Classicon medic_uber
+					Skill Expert
+					Attributes SpawnWithFullCharge
+				}
+				
+				TFBot
+				{
+					Class Medic
+					Name "Normal Uber Medic"
+					Classicon medic_uber
+					Skill Expert
+					Attributes SpawnWithFullCharge
+				}
+			}
+		}
+	}
+
+// WAVE 04 900
+	Wave
+	{
+		Checkpoint Yes
+
+		StartWaveOutput
+		{
+			Target bombpath_arrows_clear_relay
+			Action Trigger
+		}
+		
+		DoneOutput
+		{
+			Target bombpath_wavefinished
+			Action Trigger
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 200
+			
+			Name "stage1"
+			
+			Where spawnbot_left
+			TotalCount 8
+			SpawnCount 8
+			MaxActive 8
+			WaitBetweenSpawns 0
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Template T_TFBot_Heavyweapons_Deflector
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 50
+			
+			Name "stage1"
+			
+			Where spawnbot_right
+			TotalCount 8
+			SpawnCount 8
+			MaxActive 8
+			WaitBetweenSpawns 0
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Template T_TFBot_Demo_Burst
+				Attributes AlwaysCrit
+				Skill Expert
+				Item "MvM GateBot Light Demoman"
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 50
+			
+			Name "stage1"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 4
+			SpawnCount 2
+			MaxActive 2
+			WaitBetweenSpawns 20
+			WaitBeforeStarting 5
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Pyro
+				Attributes AlwaysFireWeapon
+				Attributes AlwaysCrit
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 50
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+			
+			Where spawnbot_left
+			TotalCount 24
+			SpawnCount 8
+			MaxActive 8
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 15
+			
+			TFBot
+			{
+				Template T_TFBot_Demo_Burst
+				Attributes AlwaysCrit
+				Skill Expert
+				Item "MvM GateBot Light Demoman"
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 200
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+			
+			Where spawnbot_right
+			TotalCount 30
+			SpawnCount 10
+			MaxActive 12
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 15
+			
+			TFBot
+			{
+				Template T_TFBot_Heavyweapons_Deflector
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 25
+			
+			Name "stage3"
+			WaitForAllSpawned "stage2"
+			
+			Where spawnbot
+			TotalCount 24
+			SpawnCount 8
+			MaxActive 22
+			WaitBetweenSpawns 20
+			WaitBeforeStarting 30
+			
+			TFBot
+				{
+					Class Demoman
+					Name "Samurai Demo"
+					ClassIcon demoknight_samurai
+					Skill Expert
+					Item "The Half-Zatoichi"
+					Item "The Splendid Screen"
+					ItemAttributes
+					{
+					ItemName "The Splendid Screen"
+					"Attack not cancel charge" 1
+					}
+					Item "Demo Kabuto"
+					Scale "1.3"
+					Health 650
+					WeaponRestrictions MeleeOnly
+					CharacterAttributes
+					{
+						"charge time increased" -10
+						"charge recharge rate increased" 7
+						"increased jump height" 2.3
+						"bot custom jump particle"	1
+						"damage bonus"	1.5
+					}
+				}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage3"
+			WaitForAllSpawned "stage2"
+			
+			Where spawnbot
+			TotalCount 6
+			SpawnCount 1
+			MaxActive 3
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Demo_Burst
+				Attributes AlwaysCrit
+				Item "MvM GateBot Light Demoman"
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage3"
+			WaitForAllSpawned "stage2"
+			
+			Where spawnbot
+			TotalCount 2
+			SpawnCount 2
+			MaxActive 2
+			//WaitBetweenSpawns 0
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Pyro
+				Attributes AlwaysFireWeapon
+				Attributes AlwaysCrit
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+			}
+		}
+		
+		// Final Push
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage4"
+			WaitForAllSpawned "stage3"
+			
+			Where spawnbot
+			TotalCount 18
+			SpawnCount 4
+			MaxActive 8
+			WaitBetweenSpawns 5
+			WaitBeforeStarting 0
+			
+			Squad
+			{
+				TFBot
+				{
+				Template T_TFBot_Giant_Demo_Burst
+				Attributes AlwaysCrit
+				Item "MvM GateBot Light Demoman"
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Medic
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Medic
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Medic
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 25
+			
+			Name "stage4"
+			WaitForAllSpawned "stage3"
+			
+			Where spawnbot
+			TotalCount 12
+			SpawnCount 3
+			MaxActive 6
+			WaitBetweenSpawns 15
+			WaitBeforeStarting 10
+			
+			TFBot
+			{
+				Template T_TFBot_Pyro
+				Skill Expert
+				Attributes AlwaysCrit
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 25
+			
+			Name "stage4"
+			WaitForAllSpawned "stage3"
+			
+			Where spawnbot
+			TotalCount 30
+			SpawnCount 10
+			MaxActive 18
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Class Soldier
+				Item "MvM GateBot Light Soldier"
+				Item "The Direct Hit"
+				Attributes AlwaysCrit
+				Skill Expert
+			}
+		}
+	}
+
+// WAVE 05 900
+	Wave
+	{
+		Checkpoint Yes
+		
+		StartWaveOutput
+		{
+			Target bombpath_arrows_clear_relay
+			Action Trigger
+		}
+		
+		DoneOutput
+		{
+			Target bombpath_wavefinished
+			Action Trigger
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 200
+			
+			Name "stage1"
+			
+			Where spawnbot_left
+			TotalCount 8
+			SpawnCount 2
+			MaxActive 4
+			WaitBetweenSpawns 30
+			WaitBeforeStarting 0
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Soldier_BurstFire
+				}
+				
+				TFBot
+				{
+					Class Medic
+					Name "Normal Uber Medic"
+					Classicon medic_uber
+					Skill Expert
+					Attributes SpawnWithFullCharge
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 200
+			
+			Name "stage1"
+			
+			Where spawnbot_right
+			TotalCount 8
+			SpawnCount 2
+			MaxActive 4
+			WaitBetweenSpawns 30
+			WaitBeforeStarting 0
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_RocketShotgun
+					Classicon "soldier_burstfire"
+					Attributes AlwaysCrit
+					Item "MvM Gatebot Light Soldier"
+				}
+				
+				TFBot
+				{
+					Class Medic
+					Name "Normal Uber Medic"
+					Classicon medic_uber
+					Skill Expert
+					Attributes SpawnWithFullCharge
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage1"
+			
+			Where spawnbot_mission_sniper
+			RandomSpawn 1
+			TotalCount 30
+			SpawnCount 5
+			MaxActive 10
+			WaitBetweenSpawns 20
+			WaitBeforeStarting 3
+			
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Pyro
+					Skill Expert
+					Attributes AlwaysFireWeapon
+					Attributes AlwaysCrit
+					ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+				}
+
+				TFBot
+				{
+					Template T_TFBot_Pyro
+					Skill Expert
+					Attributes AlwaysCrit
+					ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Pyro
+					Skill Expert
+					Attributes AlwaysCrit
+					ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Pyro
+					Skill Expert
+					Attributes AlwaysCrit
+					ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+				}
+
+				TFBot
+				{
+					Template T_TFBot_Pyro
+					Skill Expert
+					Attributes AlwaysCrit
+					ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 50
+			TotalCount 1
+			
+			WaitForAllSpawned "stage1"
+			
+			Tank
+			{
+				Health 20000
+				Speed 75
+				Scale 0.75 [$SIGSEGV]
+				Name "tankboss_left"
+				StartingPathTrackNode "boss_path_1"
+				
+				OnBombDroppedOutput
+				{
+					Target boss_deploy_relay
+					Action Trigger
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			TotalCount 1
+			
+			WaitForAllSpawned "stage1"
+			
+			Tank
+			{
+				Health 20000
+				Speed 75
+				Scale 0.75 [$SIGSEGV]
+				Name "tankboss_right"
+				StartingPathTrackNode "boss_path2_1"
+				
+				OnBombDroppedOutput
+				{
+					Target boss_deploy_relay
+					Action Trigger
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 100
+			
+			Name "stage2"
+			WaitForAllSpawned "stage1"
+			
+			Where spawnbot_left
+			TotalCount 25
+			SpawnCount 5
+			MaxActive 16
+			WaitBetweenSpawns 10
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Template T_TFBot_Heavyweapons_Deflector
+			}
+		}
+		
+		// Final Push
+		WaveSpawn
+		{
+			TotalCurrency 50
+			
+			Name "stage3"
+			WaitForAllSpawned "stage2"
+			
+			Where spawnbot_mission_sniper
+			RandomSpawn 1
+			TotalCount 30
+			SpawnCount 4
+			MaxActive 10
+			WaitBetweenSpawns 20
+			WaitBeforeStarting 5
+			
+			TFBot
+			{
+				Template T_TFBot_Pyro
+				Skill Expert
+				Attributes AlwaysCrit
+				ItemAttributes
+				{
+					ItemName "TF_WEAPON_FLAMETHROWER"
+					"mult airblast refire time" 0.001
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			//TotalCurrency 0
+			
+			Name "stage3"
+			WaitForAllSpawned "stage2"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 8
+			SpawnCount 1
+			MaxActive 6
+			WaitBetweenSpawns 15
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Template T_TFBot_Giant_Demo_Burst
+				Attributes AlwaysCrit
+				Item "MvM GateBot Light Demoman"
+			}
+		}
+		
+		WaveSpawn
+		{
+			//TotalCurrency 0
+			
+			Name "stage3"
+			WaitForAllSpawned "stage2"
+			
+			Where spawnbot
+			RandomSpawn 1
+			TotalCount 20
+			SpawnCount 4
+			MaxActive 12
+			WaitBetweenSpawns 15
+			WaitBeforeStarting 0
+			
+			TFBot
+			{
+				Template T_TFBot_Heavy_IronFist_Airblast
+				Item "MvM GateBot Light Heavy"
+				Attributes AlwaysCrit
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 25
+			
+			Name "stage4"
+			WaitForAllSpawned "stage3"
+			
+			Where spawnbot
+			TotalCount 45
+			SpawnCount 15
+			MaxActive 18
+			//WaitBetweenSpawns 0
+			WaitBeforeStarting 0
+			
+			TFBot
+				{
+					Class Demoman
+					Name "Samurai Demo"
+					ClassIcon demoknight_samurai
+					Skill Expert
+					Attributes AlwaysCrit
+					Item "The Half-Zatoichi"
+					Item "The Splendid Screen"
+					ItemAttributes
+					{
+					ItemName "The Splendid Screen"
+					"Attack not cancel charge" 1
+					}
+					Item "Demo Kabuto"
+					Scale "1.3"
+					Health 650
+					WeaponRestrictions MeleeOnly
+					CharacterAttributes
+					{
+						"charge time increased" -10
+						"charge recharge rate increased" 7
+						"increased jump height" 2.3
+						"bot custom jump particle"	1
+						"damage bonus"	1.5
+					}
+				}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 50
+			TotalCount 1
+			
+			WaitForAllSpawned "stage3"
+			
+			Tank
+			{
+				Health 20000
+				Speed 75
+				Scale 0.5 [$SIGSEGV]
+				Name "tankboss_left"
+				Skin 1
+				StartingPathTrackNode "boss_path_1"
+				
+				OnBombDroppedOutput
+				{
+					Target boss_deploy_relay
+					Action Trigger
+				}
+			}
+		}
+		
+		WaveSpawn
+		{
+			TotalCurrency 50
+			TotalCount 1
+			
+			WaitForAllSpawned "stage3"
+			
+			Tank
+			{
+				Health 20000
+				Speed 75
+				Scale 0.5 [$SIGSEGV]
+				Name "tankboss_right"
+				Skin 1
+				StartingPathTrackNode "boss_path2_1"
+				
+				OnBombDroppedOutput
+				{
+					Target boss_deploy_relay
+					Action Trigger
+				}
+			}
+		}
+	}
+}
