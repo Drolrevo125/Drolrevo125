@@ -110,14 +110,14 @@ WaveSchedule
 				FireWeapon [$SIGSEGV]  //더블점프시도
 				{
 				    	Delay 1 //Time before the first fire input starts (Default: 10)
-				    	Cooldown 5 //Time between each fire input (Default: 10)
+				    	Cooldown 4 //Time between each fire input (Default: 10)
 					IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 					Type "Jump" // Type of fire input, Possible values:
 				}
 				FireWeapon [$SIGSEGV]  //Periodically fires weapon
 				{
 				    	Delay 1.1 //Time before the first fire input starts (Default: 10)
-				    	Cooldown 5 //Time between each fire input (Default: 10)
+				    	Cooldown 4 //Time between each fire input (Default: 10)
 					IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 					Type "Jump" // Type of fire input, Possible values:
 				}
@@ -366,7 +366,7 @@ WaveSchedule
                 }
 				
 				//SIG
-				Action FetchFlag				 
+				Action Mobber				 
 				UseHumanModel 1 				 
 				AimTrackingInterval 0.5 		 
 				UseMeleeThreatPrioritization 1 	 
@@ -523,7 +523,7 @@ WaveSchedule
 				
 				//SIG
                                 UseBestWeapon 1 [$SIGSEGV]
-				Action FetchFlag				 
+				Action Mobber				 
 				UseHumanModel 1 				 
 				AimTrackingInterval 0 		 
 				AimAt Head  
@@ -559,7 +559,7 @@ WaveSchedule
 		{
 			Name "part03"
 			Where spawnbot
-			WaitBeforeStarting 2
+			WaitBeforeStarting 1
 			TotalCount 1
 			MaxActive 1
 			SpawnCount 1
