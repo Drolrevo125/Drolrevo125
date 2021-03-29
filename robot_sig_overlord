@@ -1,1 +1,51 @@
-
+WaveSchedule // 
+{
+	PrecacheModel  "models/props_mvm/mvm_upgrade_blue_center.mdl"   //PRECACHE THESE
+	PrecacheModel  "models/props_mvm/mvm_upgrade_blue_sign.mdl"   //PRECACHE THESE
+	PrecacheModel  "models/props_mvm/mvm_upgrade_blue_tools.mdl"   //PRECACHE THESE
+	PrecacheModel  "models/bots/boss_bot/boss_tank_color.mdl"   //PRECACHE THESE
+	PrecacheModel  "models/bots/boss_bot/boss_tank_ubered.mdl"   //PRECACHE THESE
+	PrecacheModel  "models/bots/boss_bot/boss_tank_color.mdl"   //PRECACHE THESE
+	PrecacheModel  "models/bots/boss_bot/boss_tank_color.mdl"   //PRECACHE THESE
+	PrecacheModel "models/props_frontline/tank_cart.mdl"   //PRECACHE THESE
+        PrecacheModel "models/props_frontline/tank_turret.mdl"   //PRECACHE THESE
+        PrecacheModel "models/props_tumb/mvm/tank_shield.mdl"   //PRECACHE THESE
+	
+	Templates // 
+	{
+		cond_homing_example
+		{
+				Class Soldier
+				SuppressTimedFetchFlag 1   //Don't fetch flag automatically when the flag is in reset state
+				RocketCustomParticle eyeboss_projectile  
+				AddCond  
+				{
+					Index 36
+					Delay 1
+				}
+				HomingRockets   
+				{
+					IgnoreDisguisedSpies 1
+					IgnoreStealthedSpies 1
+					RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+					TurnPower 30 //How fast should the rocket rotate to face the target=
+					MaxAimError 50 //Max angle between rocket and the target
+				}
+				AddCond   //Adds conditions to bots
+				{
+					Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					//Index 43 //Condition index can be used instead
+					Delay 3 // Delay before the condition activates (Default: 0)
+					Duration 99 // Duration of the condition effect (Default: 0 - infinite duration)
+					IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+				DamageAppliesCond   //Adds conditions to players on hit
+				{
+					Name "TF_COND_URINE" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					//Index 24 //Condition index can be used instead
+					Duration 3 // Duration of the condition effect (Default: 0 - infinite duration)
+					IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+		}
+          }
+ }
