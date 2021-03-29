@@ -246,7 +246,13 @@ WaveSchedule
 		
 	Explanation [$SIGSEGV]
     {
-		Line "{yellow}The most difficult mission made even more difficult{red}!"
+		Line "{yellow}기존 익퍼가 강화되었습니다{red}!"
+		Line "{yellow}변경점"
+		Line "{yellow}로봇스폰장소가 추가됩니다.."
+		Line "{yellow}리애니메이터가 비활성화됩니다."
+		Line "{yellow}스나봇이 헤드샷을 할수있고, 레이저포인터가 사라집니다."
+		Line "{yellow}A등급 보너스 자금이 비활성화됩니다."
+		Line "{yellow}센트리버스터가 로봇들에게 피해를 주지않습니다."
     }
 	
 		Checkpoint Yes
