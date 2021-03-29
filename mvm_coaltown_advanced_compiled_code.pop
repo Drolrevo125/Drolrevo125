@@ -3,6 +3,7 @@
 //Compiled Code
 //Made By Hell-met http://steamcommunity.com/id/hell-met/
 //Advanced Skill
+//need sig
 
 WaveSchedule
 {
@@ -413,10 +414,11 @@ WaveSchedule
 	
 	Explanation [$SIGSEGV]
     {
-		Line "{orange}[Money is dropped in very few piles. A collector is not required.]"
-		Line "The Gravel Wars is at an end. Both teams embark on a truce."
-		Line "{808080}Gray Mann deploys his first fleet."
-		Line "{yellow}GateBots{blue} will circle around the hatch and come back from behind."
+		Line "{orange}[드랍되는 돈이 적어 수집가가 필요없습니다]"
+		Line "{orange}[리에니메이터가 비활성화됩니다.]"
+		Line "자갈전쟁이 끝이 나고 레드와 블루는 휴전을 합니다."
+		Line "{808080}그레이만이 로봇 공세를 시작했습니다."
+		Line "{yellow}게이트봇{blue} 이들은 해치로 간 다음 다시 돌아옵니다."
     }
 	
 		StartWaveOutput
@@ -701,7 +703,7 @@ WaveSchedule
 	
 	Explanation [$SIGSEGV]
     {
-		Line "{blue}A friendly Direct Hit BLU soldier will be deployed."
+		Line "{blue}아군 블루팀 다렉이 합류합니다."
     }
 	
 	Wave
@@ -1189,7 +1191,7 @@ WaveSchedule
 	
 	Explanation [$SIGSEGV]
     {
-		Line "{blue}Friendly medics will be deployed. No ubercharges."
+		Line "{blue}블루팀 메딕이 합류합니다. 우버를 사용안합니다."
     }
 	
 	Wave
@@ -1585,7 +1587,7 @@ WaveSchedule
 	
 	Explanation [$SIGSEGV]
     {
-		Line "{blue}A overhealer will be deployed in RED spawn."
+		Line "{blue}블루팀 오버힐 메딕이 합류합니다."
     }
 	
 	Wave
@@ -2458,7 +2460,7 @@ WaveSchedule
 	
 	Explanation [$SIGSEGV]
     {
-		Line "{blue}Friendly sentries will be deployed."
+		Line "{blue}아군 센트리가 배치됩니다."
     }
 	
 	Wave
