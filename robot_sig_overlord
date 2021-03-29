@@ -14,56 +14,88 @@ WaveSchedule //
 	Templates // 
 	{
 		//scout
-		T_TFBot_Spy
+		T_TFBot_Scout
 		{
 			Class Scout
 			Skill Expert
 		}
 		
 		//soldier
-		T_TFBot_Spy
+		T_TFBot_Soldier
 		{
 			Class Soldier
 			Skill Expert
 		}
 		
 		//pyro
-		T_TFBot_Spy
+		T_TFBot_Pyro
 		{
 			Class Pyro
 			Skill Expert
 		}
 		
 		//demo
-		T_TFBot_Spy
+		T_TFBot_Demoman
 		{
 			Class Demoman
 			Skill Expert
 		}
 		
 		//heavy
-		T_TFBot_Spy
+		T_TFBot_Heavy_explosiveshot_normal
 		{
 			Class Heavyweapons
+			//Classicon 
+			Skill normal
+			ItemAttributes
+			{
+				ItemName	"iron curtain"
+				"explosive bullets" 70
+				"fire rate penalty" 0.3
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	1
+			}
+			Item	"iron curtain"
+			Item	"the eliminators safeguard"
+			Item	"the war goggles"
+		}
+		T_TFBot_Heavy_explosiveshot_expert
+		{
+			Class Heavyweapons
+			//Classicon 
 			Skill Expert
+			ItemAttributes
+			{
+				ItemName	"iron curtain"
+				"explosive bullets" 70
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	1
+			}
+			Item	"iron curtain"
+			Item	"the eliminators safeguard"
+			Item	"the war goggles"
 		}
 		
 		//engi
-		T_TFBot_Spy
+		T_TFBot_Engineer
 		{
 			Class Engineer
 			Skill Expert
 		}
 		
 		//medic
-		T_TFBot_Spy
+		T_TFBot_Medic
 		{
 			Class Medic
 			Skill Expert
 		}
 		
 		//sniper
-		T_TFBot_Spy
+		T_TFBot_Sniper
 		{
 			Class Sniper
 			Skill Expert
