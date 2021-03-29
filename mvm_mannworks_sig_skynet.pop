@@ -7,7 +7,7 @@ WaveSchedule
 {
 	StartingCurrency	7600
 	CanBotsAttackWhileInSpawnRoom false
-	RespawnWaveTime	3
+	RespawnWaveTime	7
 	Advanced	1
 	ImprovedAirblast 1
 	SniperAllowHeadshots 1
