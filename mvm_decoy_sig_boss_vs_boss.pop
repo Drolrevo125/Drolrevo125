@@ -6,9 +6,9 @@ WaveSchedule
 	StartingCurrency	5000
 	RespawnWaveTime	10
 	CanBotsAttackWhileInSpawnRoom	no
-	AllowJoinTeamBlueMax 2   //How many players can join the blue team
+	AllowJoinTeamBlueMax 4   //How many players can join the blue team
 	AllowJoinTeamBlue 1   //If it is possible to join team blue
-	MaxTotalPlayers 8   // Override max total player count (default: 10)
+	MaxTotalPlayers 10   // Override max total player count (default: 10)
 	ExtraSpawnPoint    //Adds spawn points on specified location
 	{
 		Name "spawnbot_redbot"
@@ -52,12 +52,10 @@ WaveSchedule
 		}
 		Explanation    //Dispayed once the wave is initialized
 		{
-			Line "{green}Help Major League and Major Bomber kill Sargant Crits to win!"
-			Line "{white}Your team gets $5000 to help your chief robots."
-			Line "{white}Work as a team to maximize your team's chance of winning!"
-			Line "{red}However, if your team dies, you'll lose!"
-			Line "{red}What's worse, heavy and spy are banned!"
-			Line "{red}The worst part, the vaccinator is dissabled!"
+			Line "{green}메이저리그, 메이저봄버를 도와 서전트크리츠를 부수고 이기세요!"
+			Line "{red}하지만 레드로봇이 모두 파괴된다면 패배합니다."
+			Line "{blue}관전들은 블루로 가서 서전트크리츠를 도울수 있습니다."
+			Line "{white}변경사항:클래스1제한, 헤비,스파이불가, 백시불가"
 		}
 		RedTeamWipeCausesWaveLoss 1   //If red team is wiped, it loses
 		WaveSpawn
