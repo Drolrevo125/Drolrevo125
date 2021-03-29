@@ -11,13 +11,14 @@ WaveSchedule
 	Advanced	1
 	ImprovedAirblast 1
 	SniperAllowHeadshots 1
-	MaxTotalPlayers 15 // sig
+	MaxTotalPlayers 22 // sig
 	MaxRedPlayers 10 // sig
 	RobotLimit 10
 	ClassLimit   //Limits the number of specified classes
 	{
 		Pyro 1
-		Medic 2
+		Medic 1
+		Sniper	1
 		Spy 1
 	}
 	Templates
@@ -42,7 +43,7 @@ WaveSchedule
 
 			Line "{yellow}적 AI가 매우 상향됨{reset}"
 			Line "{blue}로점솔저,헤비,파이로,데모는 백스탭이 불가 나머지는 재생성 레이저백을 가짐{reset}"
-			Line "{orange}플레이어는 10명으로 파이로1명 메딕2명 스파이1명으로 제한됨{reset}"
+			Line "{orange}플레이어는 10명으로 파이로1명,메딕1명,스나이퍼1명,스파이1명으로 제한됨{reset}"
 			Line "{red}팀선택에서 무작위선택으로 레드로 갈수있음{reset}"
 		}
 		WaveSpawn
@@ -61,9 +62,6 @@ WaveSchedule
 				Class    Scout
 			    	Skill    Expert
 			    	Name    "Scout Player"
-			    	Attributes AutoJump
-			    	AutoJumpMin 3
-			    	AutoJumpMax 3
 			    	Item	"bonk helm"
 				Item	"graybanns"
 			    	Item  "Batter's Helmet"
@@ -105,10 +103,24 @@ WaveSchedule
 				      "critboost" 1
 				      "powerup charges" 10
 				}
-		    		Action FetchFlag					 
+		    		Action Mobber					 
 				UseHumanModel 1 				 
 				AimTrackingInterval 0		  
 				UseMeleeThreatPrioritization 1
+				FireWeapon [$SIGSEGV]  //더블점프시도
+				{
+				    	Delay 1 //Time before the first fire input starts (Default: 10)
+				    	Cooldown 5 //Time between each fire input (Default: 10)
+					IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+					Type "Jump" // Type of fire input, Possible values:
+				}
+				FireWeapon [$SIGSEGV]  //Periodically fires weapon
+				{
+				    	Delay 1.1 //Time before the first fire input starts (Default: 10)
+				    	Cooldown 5 //Time between each fire input (Default: 10)
+					IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+					Type "Jump" // Type of fire input, Possible values:
+				}
 			}
 		}
 		
