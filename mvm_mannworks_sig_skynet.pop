@@ -580,11 +580,11 @@ WaveSchedule
 				ItemAttributes
                 {
                     ItemName "iron curtain"
-					"damage bonus" 1
+					"damage bonus" 1.5
 					"attack projectiles" 3
 					"generate rage on damage" 3
 					"projectile penetration heavy" 6
-					"fire rate bonus" 1
+					"fire rate bonus" 0.5
 					"ring of fire while aiming" 1
 					"heal on kill" 100
                 }
