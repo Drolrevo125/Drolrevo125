@@ -588,9 +588,12 @@ WaveSchedule
 	{
 	
 	Explanation [$SIGSEGV]
-    {
-        Line "{yellow}HINT: {blue}Tanks{green} are used exclusively as barricade breakers in this mission."
-    }
+    	{
+    		Line "{yellow}변경점"
+		Line "{yellow}리애니메이터가 비활성화됩니다."
+		Line "{yellow}스나봇이 헤드샷을 할수있습니다."
+        	Line "{yellow}힌트: {blue}탱크들{green}은 바리게이트 파괴용으로만 쓰입니다."
+    	}
 	
 		StartWaveOutput
 			{
