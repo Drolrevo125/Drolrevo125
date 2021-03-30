@@ -1428,7 +1428,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Hard
-			Name "UltraRobotKiller2342"
+			Name "52zX지존로봇학살자Xz52"
 			
 			UseHumanModel 1  
 			
@@ -1441,7 +1441,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{FF3D3D}UltraRobotKiller2342 :{FFFFFF} why can't i buy eoi?" 
+				Name "{FF3D3D}52zX지존로봇학살자Xz52 :{FFFFFF} 왜 업글못함?"
 				Delay 7
 				Cooldown 0 
 				Repeats 1 
@@ -1449,7 +1449,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{FF3D3D}UltraRobotKiller2342 :{FFFFFF} this server sucks" 
+				Name "{FF3D3D}52zX지존로봇학살자Xz52 :{FFFFFF} 서버 개쓰레기다" 
 				Delay 11
 				Cooldown 0 
 				Repeats 1 
@@ -1457,7 +1457,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{FF3D3D}UltraRobotKiller2342 :{FFFFFF} !joinblu" 
+				Name "{FF3D3D}52zX지존로봇학살자Xz52 :{FFFFFF} !joinblu" 
 				Delay 18
 				Cooldown 0 
 				Repeats 1 
@@ -1465,7 +1465,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{FF3D3D}UltraRobotKiller2342 :{FFFFFF} !robot" 
+				Name "{FF3D3D}52zX지존로봇학살자Xz52 :{FFFFFF} !robot" 
 				Delay 22
 				Cooldown 0 
 				Repeats 1 
@@ -1790,7 +1790,7 @@ WaveSchedule
 				
 			Message
 			{
-				Name "{99CCFF}Scout : {FFFFFF}Greetings, mercenaries." 
+				Name "{99CCFF}Scout : {FFFFFF}안녕하십니까, 용병들." 
 				Delay 7 
 				Cooldown 0 
 				Repeats 1 
@@ -1798,7 +1798,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{99CCFF}Scout : {FFFFFF}Do not worry, I am not here to deploy a detonation device within the premises of your base." 
+				Name "{99CCFF}Scout : {FFFFFF}걱정하지마세요, 난 당신들의 기지에 폭탄을 배치하러 온 것이 아닙니다." 
 				Delay 14 
 				Cooldown 0 
 				Repeats 1 
@@ -1806,7 +1806,7 @@ WaveSchedule
 				
 			Message
 			{
-				Name "{99CCFF}Scout : {FFFFFF}I have come here to deliver a message." 
+				Name "{99CCFF}Scout : {FFFFFF}난 메세지를 전달하러 왔습니다." 
 				Delay 18
 				Cooldown 0 
 				Repeats 1 
@@ -1814,7 +1814,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{99CCFF}Scout : {FFFFFF}Due to technical difficulties, the robot army will arrive with a small delay in this wave." 
+				Name "{99CCFF}Scout : {FFFFFF}기술적인 어려움으로 인해 로봇 군대들은 웨이브에 약간의 지연을 가지고 출발할 것입니다." 
 				Delay 24
 				Cooldown 0 
 				Repeats 1 
@@ -1822,7 +1822,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{99CCFF}Scout : {FFFFFF}The reasoning for that is unknown to me, but it's probably Captain Punch drinking motor oil again." 
+				Name "{99CCFF}Scout : {FFFFFF}저도 그 이유는 알 수 없지만 아마 캡틴펀치가 다시 모터 오일을 마시고 있을 것입니다." 
 				Delay 30
 				Cooldown 0 
 				Repeats 1 
@@ -1830,7 +1830,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{99CCFF}Scout : {FFFFFF}On behalf of the robot army, I would like to apologize for the inconvenience." 
+				Name "{99CCFF}Scout : {FFFFFF}로봇군을 대표하여 불편을 끼쳐드린 점 사과드립니다." 
 				Delay 34 
 				Cooldown 0 
 				Repeats 1 
@@ -1838,7 +1838,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{99CCFF}Scout : {FFFFFF}The designated robots for this wave will arrive as fast as possible." 
+				Name "{99CCFF}Scout : {FFFFFF}이번 웨이브를 위해 지정된 로봇들은 가능한 한 빨리 도착할 것입니다." 
 				Delay 38 
 				Cooldown 0 
 				Repeats 1 
@@ -2199,7 +2199,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가"
 			ClassIcon among_wedding 
 			
 			Action Mobber
@@ -2288,7 +2288,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가"
 			ClassIcon jerma_thick 
 			
 			Action Mobber
@@ -2377,7 +2377,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가나가나가"
 			ClassIcon jerma_thick 
 			
 			Action Mobber
@@ -2466,7 +2466,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가나가나가"
 			ClassIcon among_wedding 
 			
 			Action Mobber
@@ -2555,7 +2555,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가나가나가나가"
 			ClassIcon sussy_ass 
 			
 			Action Mobber
@@ -2644,7 +2644,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가나가나가나가"
 			ClassIcon jerma_thick 
 			
 			Action Mobber
@@ -2733,7 +2733,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가나가나가나가"
 			ClassIcon among_wedding 
 			
 			Action Mobber
@@ -2822,7 +2822,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가나가나가나가"
 			ClassIcon sussy_ass 
 			
 			Action Mobber
@@ -2911,7 +2911,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Expert
-			Name "GETOUTGETOUTGETOUTGETOUTGETOUT"
+			Name "나가나가나가나가나가나가나가나가"
 			ClassIcon jerma_thick 
 			
 			Action Mobber
@@ -3602,7 +3602,7 @@ WaveSchedule
 		{
 			Class Pyro
 			Skill Hard
-			Name "UltraRobotKiller2342"
+			Name "52zX지존로봇학살자Xz52"
 			
 			UseHumanModel 1  
 			
@@ -3615,7 +3615,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "{FF3D3D}UltraRobotKiller2342 :{FFFFFF} !become0000FF" 
+				Name "{FF3D3D}52zX지존로봇학살자Xz52 :{FFFFFF} !become0000FF" 
 				Delay 6
 				Cooldown 0 
 				Repeats 1 
@@ -3623,7 +3623,7 @@ WaveSchedule
 			
 			Message
 			{
-				Name "UltraRobotKiller2342 was automatically assigned to team ROBOTS" 
+				Name "52zX지존로봇학살자Xz52 님이 무작위선택으로 인해 ROBOTS 팀에 참가했습니다." 
 				Delay 6.01
 				Cooldown 0 
 				Repeats 1 
@@ -3697,7 +3697,7 @@ WaveSchedule
 		
 		T_TFBot_Robot_Killer
 		{
-			Name  "UltraRobotKiller2342"
+			Name  "52zX지존로봇학살자Xz52"
 			Class Pyro
 			ClassIcon pyro_gascann_explode
 
@@ -3980,7 +3980,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 2
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}Most waves will feature ingame music and sounds."  
+			FirstSpawnMessage "{12E8EE}대부분의 웨이브에서 음악과 효과음이 나옵니다."  
 		}
 		
 		WaveSpawn
@@ -3988,7 +3988,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 5
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}It is advised to turn off music you may have playing in the bg for a better experience."  
+			FirstSpawnMessage "{12E8EE}다른 음악을 끄시면 좋습니다."  
 		}
 		
 		WaveSpawn
@@ -3996,7 +3996,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 8
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}It is also advised to turn down your 'Music Volume' slider in Options."  
+			FirstSpawnMessage "{12E8EE}옵션에서 'Music Volume' 를 낮추는게 좋습니다."  
 		}
 		
 		WaveSpawn
@@ -4004,7 +4004,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 11
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}If a song happens to not end with the wave (wave victory or failure), type 'snd_restart' in the console."  
+			FirstSpawnMessage "{12E8EE}만약 게임에서 이기거나 져도 다른음악, 효과음이 난다면 콘솔에 'snd_restart' 을 치시면 해결됩니다."  
 		}
 		
 		WaveSpawn
@@ -4012,7 +4012,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 14
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}Messages will also appear during waves, so make sure to read them."  
+			FirstSpawnMessage "{12E8EE}메세지는 웨이브 도중에도 나올 수 있습니다.."  
 		}
 		
 		WaveSpawn
@@ -4020,7 +4020,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 17
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}Red text will tell you about special rules that will apply in waves."  
+			FirstSpawnMessage "{FF0000}빨간 메세지는 해당 웨이브에 적용되는것을 알려줍니다."  
 		}
 		
 		WaveSpawn
@@ -4028,7 +4028,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 20
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}Some additional information that you need to know:"  
+			FirstSpawnMessage "{12E8EE}이번 임무에서 변경사항:"  
 		}
 		
 		WaveSpawn
@@ -4036,7 +4036,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 23
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}Projectile Shield is banned."  
+			FirstSpawnMessage "{12E8EE}투사체 쉴드가 금지됩니다."  
 		}
 		
 		WaveSpawn
@@ -4044,7 +4044,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 24
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}The Short Circuit is banned."  
+			FirstSpawnMessage "{12E8EE}합선기가 금지됩니다."  
 		}
 		
 		WaveSpawn
@@ -4052,7 +4052,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 25
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}You can't play spy in this mission."  
+			FirstSpawnMessage "{12E8EE}스파이를 할 수 없습니다."  
 		}
 		
 		WaveSpawn
@@ -4060,7 +4060,7 @@ WaveSchedule
 			Name wave1-explain
 			WaitBeforeStarting 27
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{12E8EE}Good luck and have fun!"  
+			FirstSpawnMessage "{12E8EE}재미있게 즐기세요. 행운을 빕니다!"  
 		}
 		
 		WaveSpawn
@@ -4068,7 +4068,7 @@ WaveSchedule
 			Name wave1-arrival
 			WaitBeforeStarting 83
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "UltraRobotKiller2342 has joined the game"   
+			FirstSpawnMessage "52zX지존로봇학살자Xz52 님이 게임에 접속했습니다."   
 		}
 		
 		WaveSpawn
@@ -4485,7 +4485,7 @@ WaveSchedule
 		
 		Explanation  
 		{
-			Line "{FF0000}This wave will not have a bomb, but will result in a loss upon a RED teamwipe."
+			Line "{FF0000}이번웨이브는 폭탄이 없지만 레드팀이 모두 죽으면 패배합니다."
 		}
 		
 		RedTeamWipeCausesWaveLoss 1  
@@ -4516,7 +4516,7 @@ WaveSchedule
 			Name wave2-text
 			WaitBeforeStarting 56
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "UltraRobotKiller2342 has joined the game"    
+			FirstSpawnMessage "52zX지존로봇학살자Xz52 님이 게임에 접속했습니다."    
 		}
 		
 		WaveSpawn
@@ -5088,7 +5088,7 @@ WaveSchedule
 		
 		Explanation  
 		{
-			Line "{12E8EE}Oh yeah, I forgot to tell you, heavy can't get primary ammo from dispensers while his minigun is active."
+			Line "{12E8EE}맞다, 안 말해준게있음 헤비는 미니건 쓰는동안 디펜 탄보급 안됨."
 		}
 		
 		WaveSpawn
@@ -5153,8 +5153,8 @@ WaveSchedule
 			TotalCurrency 0 
 			Where spawnbot_killer
 			Support Limited
-			FirstSpawnMessage "UltraRobotKiller2342 was automatically assigned to team DEFENDERS"  
-			DoneMessage "UltraRobotKiller2342 left the game (Disconnect by user.)"   
+			FirstSpawnMessage "52zX지존로봇학살자Xz52 님이 무작위선택으로 인해 DEFENDERS 팀에 참가했습니다."
+			DoneMessage "52zX지존로봇학살자Xz52 님이 게임에서 퇴장했습니다. (Disconnect by user.)"   
 			RandomChoice
 			{
 				RandomChoice
@@ -5289,7 +5289,7 @@ WaveSchedule
 			Name wave4-message
 			WaitBeforeStarting 5
 			WaitBetweenSpawns 0.4
-			FirstSpawnMessage "{FFFFFF}There are {FF0000}75 impostors {FFFFFF}among us"  
+			FirstSpawnMessage "{FFFFFF}우리 중에 {FF0000}75명의 임포스터{FFFFFF}가 있습니다."  
 		}
 		
 		WaveSpawn
@@ -6128,7 +6128,7 @@ WaveSchedule
 			WaitBeforeStarting 10
 			WaitBetweenSpawns 0
 			FirstSpawnWarningSound "fat_among_chat.mp3"
-			FirstSpawnMessage "crazyjoe: {FFFFFF}red sus, he vented, i saw him do it before my very eyes"  
+			FirstSpawnMessage "나임포아님: {FFFFFF}빨강이 밴트탐 내 눈으로 봄"  
 		}
 		
 		WaveSpawn
@@ -6147,7 +6147,7 @@ WaveSchedule
 			WaitBeforeStarting 16
 			WaitBetweenSpawns 0
 			FirstSpawnWarningSound "fat_among_chat.mp3"
-			FirstSpawnMessage "crazyjoe: {FFFFFF}trust me on this one guys i know what im doing, vote red"  
+			FirstSpawnMessage "나임포아님: {FFFFFF}진짜임 빨강 투표해야함 제발"  
 		}
 		
 		WaveSpawn
@@ -6291,7 +6291,7 @@ WaveSchedule
 			WaitForAllDead wave4d
 			WaitBeforeStarting 25
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "Vote Results:"  
+			FirstSpawnMessage "투표 결과:"  
 		}
 		
 		WaveSpawn
@@ -6300,7 +6300,7 @@ WaveSchedule
 			WaitForAllDead wave4d
 			WaitBeforeStarting 25.1
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "crazyjoe {FF3D3D}ඞ ඞ ඞ ඞ ඞ ඞ"  
+			FirstSpawnMessage "나임포아님 {FF3D3D}ඞ ඞ ඞ ඞ ඞ ඞ"  
 		}
 		
 		WaveSpawn
@@ -6309,7 +6309,7 @@ WaveSchedule
 			WaitForAllDead wave4d
 			WaitBeforeStarting 25.2
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "Red Team {99CCFF}ඞ "  
+			FirstSpawnMessage "레드팀 {99CCFF}ඞ "  
 		}
 		
 		WaveSpawn
@@ -6319,7 +6319,7 @@ WaveSchedule
 			WaitBeforeStarting 28
 			WaitBetweenSpawns 0
 			FirstSpawnWarningSound "fat_among_chat.mp3"
-			FirstSpawnMessage "crazyjoe: WHAT? NO YOU IDIOTS! I'M NOT THE IMPOSTER, WE'RE GONNA LOSE NOW GOOD JOB RETARDS."  
+			FirstSpawnMessage "나임포아님: 아 ㅆ발 뭐야 나 임포 아니라고 개ㅅ끼들아"
 		}
 		
 		WaveSpawn
@@ -6329,7 +6329,7 @@ WaveSchedule
 			WaitBeforeStarting 32
 			WaitBetweenSpawns 0
 			FirstSpawnWarningSound "fat_among_ejection.mp3"
-			FirstSpawnMessage "crazy joe was The Impostor"  
+			FirstSpawnMessage "나임포아님 은 임포스터 였습니다."  
 		}
 		
 		WaveSpawn
@@ -6339,7 +6339,7 @@ WaveSchedule
 			WaitBeforeStarting 34
 			WaitBetweenSpawns 0
 			FirstSpawnWarningSound "fat_among_victory.mp3" 
-			FirstSpawnMessage "{038DFC}VICTORY"  
+			FirstSpawnMessage "{038DFC}승 리"  
 		}
 		
 		WaveSpawn
@@ -6356,7 +6356,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 0
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "get out of my head"  
+			FirstSpawnMessage "내 머리에서 나가"  
 		}
 		
 		WaveSpawn
@@ -6365,7 +6365,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 2
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "get out of my head"  
+			FirstSpawnMessage "내 머리에서 나가"  
 		}
 		
 		WaveSpawn
@@ -6374,7 +6374,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 4
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "get out of my head"  
+			FirstSpawnMessage "내 머리에서 나가"  
 		}
 		
 		WaveSpawn
@@ -6383,7 +6383,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 8
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "no no no no no"  
+			FirstSpawnMessage "안돼 안돼 안돼 안돼 안돼"  
 		}
 		
 		WaveSpawn
@@ -6392,7 +6392,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 12
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}NO NO NO NO NO NO"  
+			FirstSpawnMessage "{FF0000}안돼 안돼 안돼 안돼 안돼"  
 		}
 		
 		WaveSpawn
@@ -6401,7 +6401,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 17
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}EVERYWHERE I LOOK I SEE THE FUCKING AMONG US CREWMATE"  
+			FirstSpawnMessage "{FF0000}모든곳에서 좆같은 크루원이 보여"
 		}
 		
 		WaveSpawn
@@ -6411,7 +6411,7 @@ WaveSchedule
 			WaitBeforeStarting 20
 			WaitBetweenSpawns 0
 			FirstSpawnWarningSound "fat_musical_short.mp3"
-			FirstSpawnMessage "{FF0000}WHAT THE FUCK"  
+			FirstSpawnMessage "{FF0000}뭐야 씨발"  
 		}
 		
 		WaveSpawn
@@ -6420,7 +6420,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 24
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}HOW THE FUCK CAN I MAKE IT STOP"  
+			FirstSpawnMessage "{FF0000}이 좆같은걸 어떻게 멈추지"  
 		}
 		
 		WaveSpawn
@@ -6429,7 +6429,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 27
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}GET OUT OF MY HEAD GET OUT OF MY HEAD"  
+			FirstSpawnMessage "{FF0000}내 머리에서 나가 내 머리에서 나가"  
 		}
 		
 		WaveSpawn
@@ -6438,7 +6438,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 28
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}GET OUT OF MY HEAD GET OUT OF MY HEAD"  
+			FirstSpawnMessage "{FF0000}내 머리에서 나가 내 머리에서 나가"  
 		}
 		
 		WaveSpawn
@@ -6447,7 +6447,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 29
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}GET OUT OF MY HEAD GET OUT OF MY HEAD"  
+			FirstSpawnMessage "{FF0000}내 머리에서 나가 내 머리에서 나가"  
 		}
 		
 		WaveSpawn
@@ -6456,7 +6456,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 29
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}GET OUT OF MY HEAD GET OUT OF MY HEAD"  
+			FirstSpawnMessage "{FF0000}내 머리에서 나가 내 머리에서 나가"  
 		}
 		
 		WaveSpawn
@@ -6465,7 +6465,7 @@ WaveSchedule
 			WaitForAllDead wave4unlock
 			WaitBeforeStarting 30
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{FF0000}HELP"  
+			FirstSpawnMessage "{FF0000}도와줘"  
 		}
 		
 		WaveSpawn
@@ -6845,7 +6845,7 @@ WaveSchedule
 			WaitForAllDead     wave6a
 			WaitBeforeStarting 5
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "UltraRobotKiller2342 has joined the game"   
+			FirstSpawnMessage "52zX지존로봇학살자Xz52 님이 게임에 참가했습니다."   
 		}
 		
 		WaveSpawn
@@ -6973,7 +6973,7 @@ WaveSchedule
 			SpawnCount 1
 			WaitBeforeStarting 5
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "UltraRobotKiller2342 was automatically assigned to team DEFENDERS"  
+			FirstSpawnMessage "52zX지존로봇학살자Xz52 님이 무작위선택으로 인해 DEFENDERS 팀에 참가했습니다."  
 			Support Limited
 			Squad
 			{
@@ -7001,7 +7001,7 @@ WaveSchedule
 			WaitBeforeStarting 11
 			WaitBetweenSpawns  1
 			
-			DoneMessage "UltraRobotKiller2342 left the game (Disconnect by user.)"    
+			DoneMessage "52zX지존로봇학살자Xz52 님이 게임에서 퇴장했습니다. (Disconnect by user.)"    
 			
 
 			TFBot 
@@ -7397,7 +7397,7 @@ WaveSchedule
 	}
 	
 
-	//Wave  //Wave 7: Payday 2
+	//Wave  //Wave 7: Payday 2  아쉽다 
 	//{	
 		//StartWaveOutput
 		//{
@@ -7443,13 +7443,13 @@ WaveSchedule
 		
 		Explanation  
 		{
-			Line "{FF0000}don't die don't die don't die don't die."
-			Line "{FF0000}don't die don't die don't die don't die."
-			Line "{FF0000}don't die don't die don't die don't die."
-			Line "{FF0000}don't die don't die don't die don't die."
-			Line "{FF0000}don't die don't die don't die don't die."
-			Line "{FF0000}don't die don't die don't die don't die."
-			Line "{FF0000}don't die don't die don't die don't die."
+			Line "{FF0000}죽지마 죽지마 죽지마 죽지마 죽지마 죽지마."
+			Line "{FF0000}죽지마 죽지마 죽지마 죽지마 죽지마 죽지마"
+			Line "{FF0000}죽지마 죽지마 죽지마 죽지마 죽지마 죽지마"
+			Line "{FF0000}죽지마 죽지마 죽지마 죽지마 죽지마 죽지마"
+			Line "{FF0000}죽지마 죽지마 죽지마 죽지마 죽지마 죽지마"
+			Line "{FF0000}죽지마 죽지마 죽지마 죽지마 죽지마 죽지마"
+			Line "{FF0000}죽지마 죽지마 죽지마 죽지마 죽지마 죽지마"
 		}
 		
 		WaveSpawn
@@ -7457,7 +7457,7 @@ WaveSchedule
 			Name wave8begin
 			WaitBeforeStarting 5
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{000000}red team dies if their health drops to 0"  
+			FirstSpawnMessage "{000000}레드팀의 체력이 0으로 떨어지면 사망합니다."  
 			FirstSpawnWarningSound "fat_glitch_song.mp3"
 		}
 		
@@ -7474,7 +7474,7 @@ WaveSchedule
 			Name wave8begin
 			WaitBeforeStarting 12
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{000000}1) wait for an timespace continuum ripple and enter a foreign universe"  
+			FirstSpawnMessage "{000000}1) 시공간 연속체의 파문을 기다리며 외국 우주에 진입합니다."  
 		}
 		
 		WaveSpawn
@@ -7482,7 +7482,7 @@ WaveSchedule
 			Name wave8begin
 			WaitBeforeStarting 19
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{000000}2) cover them in oil"  
+			FirstSpawnMessage "{000000}2) 오일로 덮어라"  
 		}
 		
 		WaveSpawn
@@ -7490,7 +7490,7 @@ WaveSchedule
 			Name wave8begin
 			WaitBeforeStarting 28
 			WaitBetweenSpawns 0
-			FirstSpawnMessage "{000000}3) launch highly lethal explosives at the red team"  
+			FirstSpawnMessage "{000000}3) 레드팀은 매우 치명적인 폭발물을 발사하세요."  
 		}
 		
 		WaveSpawn
