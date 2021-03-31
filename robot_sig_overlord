@@ -504,13 +504,14 @@ WaveSchedule //
 				"head scale" 0.7
 			}
 		}
-		TFBot_Sniper_ExpShot
+		T_TFBot_Sniper_ExpShot // 폭탄환 스나
 		{
 			//ClassIcon	sniper
 			Health	125
 			Name	"Explosive Shot Sniper"
 			Class	Sniper
 			Skill	Expert
+			AimAt Body [$SIGSEGV]
 			ItemAttributes
 			{
 				ItemName	"the classic"
@@ -530,7 +531,7 @@ WaveSchedule //
 			Class Spy
 			Skill Expert
 		}
-		TFBot_Spy_Exp_Headshot
+		T_TFBot_Spy_Exp_Headshot // 헤폭엠버
 				{
 			//ClassIcon	spy
 			Health	125
@@ -540,7 +541,6 @@ WaveSchedule //
 			WeaponRestrictions	PrimaryOnly
 			Attributes	"UseBossHealthBar"
 			Attributes	"HoldFireUntilFullReload"
-			AimAt Body [$SIGSEGV]
 			ItemAttributes
 			{
 				ItemName	"the ambassador"
