@@ -493,12 +493,20 @@ gettysburg
 
         Explanation  
         {
-            Line "{green}---------------------------------------------------------------"
-            Line "{blue}Reanimators are disabled."
-            Line "{blue}Buybacks are limited to 1 per wave and are a fixed price."
-            Line "{blue}Giants give halved rage and Ubersaw percentage."
-            Line "{blue}Sentry Busters no longer damage their allies."
-            Line "{green}---------------------------------------------------------------"
+            	Line "{green}---------------------------------------------------------------"
+	    	Line "{yellow}변경점"
+		Line "{yellow}리애니메이터가 비활성화됩니다."
+		Line "{yellow}스나봇이 헤드샷을 할수있습니다."
+		Line "{yellow}즉시 부활이 웨이브당 한번씩 제한되고 가격이 고정되어있습니다."
+		Line "{yellow}센트리버스터가 로봇에 피해를 주지 않습니다."
+		Line "{yellow}거대봇은 분노충전율,우버톱의 효과가 절반으로 감소됩니다."
+		Line "{white}여러 무기들이 {blue}상향,{red}너프 {white}되었습니다. 그중 크게 바뀐것만 알려드리겠습니다."
+		Line "{white}엠버서더:헤드샷 피해량이 증가하고 헤드샷 폭팔이 가능합니다.
+		Line "{white}컴파운드보우: 발사되는 화살이 추가됩니다.
+		Line "{white}클래식:탄환이 폭팔합니다.
+		Line "{white}폭곤:적중시 크리,재생성됩니다.
+		Line "{white}기름때제거기:붕붕이가 재조정,상향되고 아군에게 이속증진을 부여 할수있습니다."
+            	Line "{green}---------------------------------------------------------------"
         }
 
         WaveSpawn
