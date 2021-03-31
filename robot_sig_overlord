@@ -21,10 +21,24 @@ WaveSchedule //
 	Templates // 
 	{
 		//scout
-		T_TFBot_Scout
+		T_TFBot_Scout_DBjump
 		{
 			Class Scout
 			Skill Expert
+			FireWeapon [$SIGSEGV]  //더블점프시도
+			{
+			    	Delay 1 //Time before the first fire input starts (Default: 10)
+			    	Cooldown 6 //Time between each fire input (Default: 10)
+				IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				Type "Jump" // Type of fire input, Possible values:
+			}
+			FireWeapon [$SIGSEGV]  //Periodically fires weapon
+			{
+			    	Delay 1.1 //Time before the first fire input starts (Default: 10)
+			    	Cooldown 6 //Time between each fire input (Default: 10)
+				IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				Type "Jump" // Type of fire input, Possible values:
+			}
 		}
 		
 		//soldier
@@ -57,10 +71,24 @@ WaveSchedule //
 		}
 		
 		//pyro
-		T_TFBot_Pyro
+		T_TFBot_Pyro_jump //앞으로 도약함 될지모름
 		{
 			Class Pyro
 			Skill Expert
+			Item	"the gas guzzler"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_flamethrower
+				"airblast dashes" 1
+			}
+			RocketJump 1
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 2
+				IfSeeTarget 1
+				Type "Jump"
+			}
 		}
 		
 		//demo
@@ -68,6 +96,27 @@ WaveSchedule //
 		{
 			Class Demoman
 			Skill Expert
+		}
+		T_TFBot_Demoman_blastjump_charge //폭곤점프,돌진 수정해야함
+		{
+			ClassIcon	demoman
+			Health	175
+			Name	Demoman
+			Class	Demoman
+			Skill	Expert
+			ItemAttributes
+			{
+				ItemName	"the tide turner"
+				"full charge turn control"	1
+			}
+			ItemAttributes
+			{
+				ItemName	"the ullapool caber"
+				"melee range multiplier"	3
+			}
+			Item	"the iron bomber"
+			Item	"the tide turner"
+			Item	"the ullapool caber"
 		}
 		
 		//heavy
@@ -87,7 +136,7 @@ WaveSchedule //
 		}
 		T_TFBot_Heavy_explosiveshot_normal	//폭팔탄헤비노말
 		{
-			Name "Explosive Bullet Heavy"
+			Name "Explosive Shot Heavy"
 			Class Heavyweapons
 			//Classicon 
 			Skill normal
@@ -107,7 +156,7 @@ WaveSchedule //
 		}
 		T_TFBot_Heavy_explosiveshot_expert	//폭팔탄헤비익퍼
 		{
-			Name "Explosive Bullet Heavy"
+			Name "Explosive Shot Heavy"
 			Class Heavyweapons
 			//Classicon 
 			Skill Expert
@@ -413,7 +462,7 @@ WaveSchedule //
 			Class Sniper
 			Skill Expert
 		}
-		T_TFBot_Sniper_Huntsman_3multishot
+		T_TFBot_Sniper_Huntsman_3multishot //3중샷
 		{
 			Class Sniper
 			Name "Triple Shot Bowman"
@@ -429,7 +478,7 @@ WaveSchedule //
 			AimAt Head  
 			AimLeadProjectileSpeed 2600   //https://wiki.teamfortress.com/wiki/Projectiles can be used to find good speed.
 		}
-		T_TFBot_Sniper_Giant_Bowman_Master
+		T_TFBot_Sniper_Giant_Bowman_Master //3중샷거대
 		{
 			Class Sniper
 			ClassIcon sniper_bow_multi
@@ -455,12 +504,54 @@ WaveSchedule //
 				"head scale" 0.7
 			}
 		}
+		TFBot_Sniper_ExpShot
+		{
+			//ClassIcon	sniper
+			Health	125
+			Name	"Explosive Shot Sniper"
+			Class	Sniper
+			Skill	Expert
+			ItemAttributes
+			{
+				ItemName	"the classic"
+				"damage bonus"	5
+				"sniper penetrate players when charged"	1
+				"sniper fires tracer HIDDEN"	1
+				"explosive bullets" 50
+			}
+			Item	"the classic"
+			Item	"the cozy camper"
+			Item	"letch's led"
+		}
 		
 		//spy
 		T_TFBot_Spy
 		{
 			Class Spy
 			Skill Expert
+		}
+		TFBot_Spy_Exp_Headshot
+				{
+			//ClassIcon	spy
+			Health	125
+			Name	"Explosive Headshot Spy"
+			Class	Spy
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"UseBossHealthBar"
+			Attributes	"HoldFireUntilFullReload"
+			AimAt Body [$SIGSEGV]
+			ItemAttributes
+			{
+				ItemName	"the ambassador"
+				"headshot damage increase" 2
+				"reload time increased" 1.5
+				"clip size penalty" 0.2
+				"fire rate penalty" 3
+				"explosive sniper shot" 3
+			}
+			Item	"the ambassador"
+			Item	"the deep cover operator"
 		}
 	}
 }
