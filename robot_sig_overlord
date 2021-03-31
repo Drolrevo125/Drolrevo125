@@ -28,7 +28,7 @@ WaveSchedule //
 		}
 		
 		//soldier
-		T_TFBot_Soldier_Homing_ChargeCow //
+		T_TFBot_Soldier_Homing_ChargeCow // 
 		{
 			Name "Homing ChargeShot Soldier"
 			Class Soldier
@@ -71,6 +71,20 @@ WaveSchedule //
 		}
 		
 		//heavy
+		T_TFBot_Heavy_Orb	//합선공헤비
+		{
+			Name "Explosive Bullet Heavy"
+			Class Heavyweapons
+			//Classicon 
+			Skill expert
+			Item	"silver botkiller minigun mk.ii"
+			Item	"the virtual viewfinder"
+			OverrideProjectileType [$SIGSEGV]
+			{
+				Slot Primary //무기위치 Primary,Secondary
+				Type MechanicalArmOrb //합선기공
+			}
+		}
 		T_TFBot_Heavy_explosiveshot_normal	//폭팔탄헤비노말
 		{
 			Name "Explosive Bullet Heavy"
@@ -398,6 +412,48 @@ WaveSchedule //
 		{
 			Class Sniper
 			Skill Expert
+		}
+		T_TFBot_Sniper_Huntsman_3multishot
+		{
+			Class Sniper
+			Name "Triple Shot Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi
+			WeaponRestrictions PrimaryOnly
+			Item "The Huntsman"
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"arrow mastery" 1
+			}
+			AimAt Head  
+			AimLeadProjectileSpeed 2600   //https://wiki.teamfortress.com/wiki/Projectiles can be used to find good speed.
+		}
+		T_TFBot_Sniper_Giant_Bowman_Master
+		{
+			Class Sniper
+			ClassIcon sniper_bow_multi
+			Name "Giant Triple Shot Bowman"
+			Skill Expert
+			Item "The Huntsman"
+			Attributes miniboss
+			Health 3600
+			AimAt Head  
+			AimLeadProjectileSpeed 2600   //https://wiki.teamfortress.com/wiki/Projectiles can be used to find good speed.
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage bonus" 1.5
+				"arrow mastery" 1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.5
+				"damage force reduction" 0.0
+				"airblast vulnerability multiplier" 0.0
+				"override footstep sound set" 4
+				"head scale" 0.7
+			}
 		}
 		
 		//spy
