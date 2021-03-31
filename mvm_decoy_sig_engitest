@@ -122,7 +122,7 @@ WaveSchedule
 				WeaponSwitch [$SIGSEGV]  //합선
 				{
 				    Delay 5 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 17 //Time between each weapon switch (Default: 10)
+				    Cooldown 12 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 				    Type "Secondary" // Weapon slot, possible values:
@@ -134,7 +134,7 @@ WaveSchedule
 				FireWeapon [$SIGSEGV]  //Periodically fires weapon
                                 {
                                         Delay 5 //Time before the first fire input starts (Default: 10)
-                                        Cooldown 17 //Time between each fire input (Default: 10)
+                                        Cooldown 12 //Time between each fire input (Default: 10)
                                         Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
                                         Duration 5 //How long should the button be pressed (Default: 0.1)
 				        Type "Secondary" // Type of fire input, Possible values:
@@ -143,7 +143,7 @@ WaveSchedule
                                 WeaponSwitch [$SIGSEGV]  //건물파괴선택
 				{
 				    Delay 10 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 22 //Time between each weapon switch (Default: 10)
+				    Cooldown 12 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 				    Type "PDA2" // Weapon slot, possible values:
@@ -155,7 +155,7 @@ WaveSchedule
                                 WeaponSwitch [$SIGSEGV]  //건물파괴
 				{
 				    Delay 10.5 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 22.5 //Time between each weapon switch (Default: 10)
+				    Cooldown 12 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 				    Type "Primary" // Weapon slot, possible values:
@@ -167,7 +167,7 @@ WaveSchedule
                                 WeaponSwitch [$SIGSEGV]  //건물짓기
 				{
 				    Delay 11 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 23 //Time between each weapon switch (Default: 10)
+				    Cooldown 12 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 				    Type "PDA" // Weapon slot, possible values:
@@ -179,7 +179,7 @@ WaveSchedule
                                 WeaponSwitch [$SIGSEGV]  //건물선택
 				{
 				    Delay 11.5 //Time before the first weapon switch starts (Default: 10)
-				    Cooldown 23.5 //Time between each weapon switch (Default: 10)
+				    Cooldown 12 //Time between each weapon switch (Default: 10)
 				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
 				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
 				    Type "Primary" // Weapon slot, possible values:
@@ -191,7 +191,7 @@ WaveSchedule
                                 FireWeapon [$SIGSEGV]  //Periodically fires weapon 건설
                                 {
                                     Delay 11.9 //Time before the first fire input starts (Default: 10)
-                                    Cooldown 23.9 //Time between each fire input (Default: 10)
+                                    Cooldown 12 //Time between each fire input (Default: 10)
                                     Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
                                     Duration 1 //How long should the button be pressed (Default: 0.1)
 				    Type "Primary" // Type of fire input
