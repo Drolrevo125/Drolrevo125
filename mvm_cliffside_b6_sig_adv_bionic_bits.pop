@@ -789,9 +789,8 @@ WaveSchedule
 			Line "{white}As our primary renegade robotized task force, you are to hold off this immediate area against your own kind."
 			Line "{white}Succeeding in your mission will repel enemy forces back to the nearby mining village known as 'Coal Town'."
 			Line "{red}--------------------------------------------------"
-			Line "{yellow}YOU ARE A {red}ROBOT!"
-			Line "{yellow}New {blue}perks {yellow}and {blue}game rules{yellow} apply.{red} Inspect body upgrades to find out."
-			Line "{yellow}요약:플레이어 대충"
+			Line "{yellow}당신은 이제 {red}로봇{yellow}입니다!"
+			Line "{yellow}새로운 {blue}효과와 {yellow}그리고 {blue}게임 룰{yellow}이 적용되었습니다.{red} 플레이어의 ."
 		}			
 
 		WaveSpawn
