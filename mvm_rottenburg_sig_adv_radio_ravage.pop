@@ -2381,7 +2381,7 @@ WaveSchedule
 	
 	Explanation [$SIGSEGV]
     {
-        Line "{yellow}HINT: {green}Avoid the {blue}Sniper {red}- it can't be killed"
+        Line "{yellow}힌트: {blue}스나이퍼{green}를 피하세요. {red}- 처치할 수 없습니다."
     }
 	
 		StartWaveOutput
