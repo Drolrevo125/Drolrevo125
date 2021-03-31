@@ -1,0 +1,202 @@
+#base robot_giant.pop
+#base robot_standard.pop
+WaveSchedule
+{
+	StartingCurrency	7600
+	CanBotsAttackWhileInSpawnRoom false
+	RespawnWaveTime	1
+	Advanced	1
+	Templates
+	{
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+                Explanation    //설명
+		{
+
+			Line "{yellow}엔지봇테스트{reset}"
+			Line "{blue}엔지테스트용도 실험난이도임{reset}"
+		}
+                WaveSpawn
+		{
+			Where spawnbot
+			WaitBeforeStarting 3
+			TotalCount 1
+			MaxActive 1
+			SpawnCount 1
+			TotalCurrency 0
+			TFBot
+			{
+				Class	Engineer
+				Name "Engi Player"
+				health 400
+				Skill Expert
+				Item	"the widowmaker"
+				Item	"the short circuit"
+				Item	"golden wrench"
+				Item	"ol' geezer"
+				Item	"the danger"
+                                Item	"eotl_insulated_innovator"
+				ItemAttributes
+                		{
+                    			ItemName "the widowmaker"
+                                        "damage bonus"    2.0
+                                        "heal on kill"    100
+                                        "fire rate bonus"    0.6
+                                        "projectile penetration"    3
+					"heal on kill" 250
+				        "damage bonus vs sentry target"	2
+                                        "deploy time decreased" 0.001
+                		}
+				ItemAttributes
+                		{
+                    			ItemName "the short circuit"
+					"deploy time decreased" 0.001
+                		}
+                                ItemAttributes
+                		{
+                    			ItemName "golden wrench"
+					"fire rate bonus"    0.6
+                                        "heal on kill" 100
+                                        //build
+                                        "engy sentry fire rate increased"       0.5
+                                        "Repair rate bonus"    2
+                                        "engy dispenser radius increased" 40
+                                        "build rate bonus"    5.0        //Dispenser only
+                                        "engineer teleporter build rate multiplier"    0.4        //Nullify stats above
+                                        "mult dispenser rate"    5.0        //100 HP per second
+                		}
+				ItemAttributes 
+				{
+					ItemName "eotl_insulated_innovator"
+					"set item tint rgb" 15132390
+				}
+				CharacterAttributes
+				{
+					"increased air control" 4
+					"dmg taken increased" 0.25
+					"health regen" 10
+					"move speed bonus" 2
+					"ammo regen" 1
+                                        "maxammo metal increased" 5
+					"backstab shield" 1
+				}
+				Item "Battery Canteens"
+				ItemAttributes
+                		{
+                    			ItemName "Battery Canteens"
+					"ubercharge" 3
+                    			"powerup charges" 5
+                		}
+				//SIG
+				Action Mobber
+				UseBestWeapon 1 				 
+				UseHumanModel 1 
+				AimTrackingInterval 0			 
+				UseMeleeThreatPrioritization 1 
+                                //합선기 도전 1 2 3 5 5 2
+				WeaponSwitch [$SIGSEGV]  //위도우
+				{
+				    Delay 0 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 12 //Time between each weapon switch (Default: 10)
+				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				    Type "Primary" // Weapon slot, possible values:
+					//Primary
+					//Secondary
+					//Melee
+				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+				WeaponSwitch [$SIGSEGV]  //합선
+				{
+				    Delay 5 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 17 //Time between each weapon switch (Default: 10)
+				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				    Type "Secondary" // Weapon slot, possible values:
+					//Primary
+					//Secondary
+					//Melee
+				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+				FireWeapon [$SIGSEGV]  //Periodically fires weapon
+                                {
+                                        Delay 5 //Time before the first fire input starts (Default: 10)
+                                        Cooldown 17 //Time between each fire input (Default: 10)
+                                        Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
+                                        Duration 5 //How long should the button be pressed (Default: 0.1)
+				        Type "Secondary" // Type of fire input, Possible values:
+				        //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+                                WeaponSwitch [$SIGSEGV]  //건물파괴선택
+				{
+				    Delay 10 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 22 //Time between each weapon switch (Default: 10)
+				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				    Type "PDA2" // Weapon slot, possible values:
+					//Primary
+					//Secondary
+					//Melee
+				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+                                WeaponSwitch [$SIGSEGV]  //건물파괴
+				{
+				    Delay 10.5 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 22.5 //Time between each weapon switch (Default: 10)
+				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				    Type "Primary" // Weapon slot, possible values:
+					//Primary
+					//Secondary
+					//Melee
+				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+                                WeaponSwitch [$SIGSEGV]  //건물짓기
+				{
+				    Delay 11 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 23 //Time between each weapon switch (Default: 10)
+				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				    Type "PDA" // Weapon slot, possible values:
+					//Primary
+					//Secondary
+					//Melee
+				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+                                WeaponSwitch [$SIGSEGV]  //건물선택
+				{
+				    Delay 11.5 //Time before the first weapon switch starts (Default: 10)
+				    Cooldown 23.5 //Time between each weapon switch (Default: 10)
+				    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				    Type "Primary" // Weapon slot, possible values:
+					//Primary
+					//Secondary
+					//Melee
+				    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+				}
+                                FireWeapon [$SIGSEGV]  //Periodically fires weapon 건설
+                                {
+                                    Delay 11.9 //Time before the first fire input starts (Default: 10)
+                                    Cooldown 23.9 //Time between each fire input (Default: 10)
+                                    Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
+                                    Duration 1 //How long should the button be pressed (Default: 0.1)
+				    Type "Primary" // Type of fire input
+				}
+			}
+		}
+          }
+}
