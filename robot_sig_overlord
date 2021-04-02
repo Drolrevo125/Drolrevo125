@@ -261,7 +261,7 @@ WaveSchedule //
 		T_TFBot_Giant_Heavy_Shield //쉴드거대헤비
 		{
 		    	Class    Heavy
-		    	ClassIcon    heavy_armoured
+		    	//ClassIcon    heavy_armoured
 		    	Health    5000
 		    	Attributes    MiniBoss
 		    	Attributes    SpawnWithFullCharge
