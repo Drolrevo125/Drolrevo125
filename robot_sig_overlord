@@ -40,6 +40,44 @@ WaveSchedule //
 				Type "Jump" // Type of fire input, Possible values:
 			}
 		}
+		T_TFBot_Scout_Cleaver_combo
+		{
+			ClassIcon	scout_cleaver
+			Name	"Combo Cleaver Scout"
+			Class	Scout
+			Skill	Expert
+			CharacterAttributes
+			{
+				"effect bar recharge rate increased"	0.05
+			}
+			Item	"the flying guillotine"
+			Item "The Sandman"
+			Item "bonk! atomic punch"
+			Item "bonk helm"
+			Item "bonk boy"
+			WeaponSwitch [$SIGSEGV]  //칼
+			{
+			    Delay 0 //Time before the first weapon switch starts (Default: 10)
+			    Cooldown 2 //Time between each weapon switch (Default: 10)
+			    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+			    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+			    Type "Secondary" // Weapon slot, possible values:
+				//Primary
+				//Secondary
+				//Melee
+			}
+			WeaponSwitch [$SIGSEGV]  //공
+			{
+			    Delay 1 //Time before the first weapon switch starts (Default: 10)
+			    Cooldown 2 //Time between each weapon switch (Default: 10)
+			    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+				    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+			    Type "Melee" // Weapon slot, possible values:
+				//Primary
+				//Secondary
+				//Melee
+			}
+		}
 		
 		//soldier
 		T_TFBot_Soldier_ChargeCow // 
