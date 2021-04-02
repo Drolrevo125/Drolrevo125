@@ -1,6 +1,6 @@
 //sig 필요함
 //https://youtu.be/FRPeYP6gS-s
-//봇교체할것, 아이콘추가
+//봇교체할것, 아이콘추가 8
 #base robot_giant.pop
 #base robot_standard.pop
 #base robot_click.pop
@@ -209,13 +209,14 @@ WaveSchedule
 			Line "{orange}임무 특징"
 			Line "시그 기능 사용, 플레이어만 노리는 봇 있음"
 			Line "열기구나옴(서버파일허용으로 다운로드권장)"
-			Line "{yellow}무기 조정목록"
+			Line "{green}무기 조정목록"
 			Line "{blue}해품막,소화도끼,화산도끼:불붙은대상 400%추가피해"
 			Line "{blue}자투:트리플샷"
 			Line "{blue}철의장막:탄환폭팔,발속감소 건슬:체력100,35"
 			Line "{blue}컴파운드보우:추가화살발사 클래식:탄환폭팔"
 			Line "{blue}엠버서더:헤드폭팔2업"
 			Line "{red}버그생기면 직접수정해도되고 갠챗으로 알려주셈"
+			Line "{yellow}아직6웨밖에 못만듬 8웨까지 예정}
 		}
 		WaitWhenDone	65
 		Checkpoint	Yes
