@@ -1,0 +1,47 @@
+WaveSchedule
+{
+
+	  ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "redspawn"
+        TeamNum 3
+        X	"1266"                     
+        Y	"-2341"                  
+        Z	"548"        
+    }
+	
+	  ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "redspawn"
+        TeamNum 3
+        X	"-1071"                     
+        Y	"-1798"                  
+        Z	"715"        
+    }
+	
+	  ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "redspawn"
+        TeamNum 3
+        X	"-858"                     
+        Y	"-1005"                  
+        Z	"539"        
+    }
+	
+	  ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "redspawn"
+        TeamNum 3
+        X	"730"                     
+        Y	"-617"                  
+        Z	"811"        
+    }
+	
+	  ExtraSpawnPoint [$SIGSEGV]
+    {
+        Name "redspawn"
+        TeamNum 3
+        X	"1255"                     
+        Y	"899"                  
+        Z	"651"        
+    }
