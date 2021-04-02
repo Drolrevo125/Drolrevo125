@@ -44,10 +44,11 @@ WaveSchedule //
 		//soldier
 		T_TFBot_Soldier_ChargeCow // 
 		{
-			Name "ChargeShot Soldier"
+			Name "Charging Soldier"
 			Class Soldier
 			Skill Expert
-			ClassIcon soldier_homing_nys
+			//ClassIcon soldier_homing_nys
+			Attributes	"HoldFireUntilFullReload"
 			ExtAttr AlwaysFireWeaponAlt  
 			ItemAttributes
 			{
@@ -57,11 +58,12 @@ WaveSchedule //
 		}
 		T_TFBot_Soldier_Homing_ChargeCow // 
 		{
-			Name "Homing ChargeShot Soldier"
+			Name "Homing Charging Soldier"
 			Class Soldier
 			Skill Expert
 			ClassIcon soldier_homing_nys
-			ExtAttr AlwaysFireWeaponAlt  
+			ExtAttr AlwaysFireWeaponAlt
+			Attributes	"HoldFireUntilFullReload"
 			ItemAttributes
 			{
 				ItemName "The Cow Mangler 5000"
@@ -77,9 +79,50 @@ WaveSchedule //
 			{
 				IgnoreDisguisedSpies 1
 				IgnoreStealthedSpies 1
-				RocketSpeed 0.5 // Multiplier of rocket speed. 1 for default speed
-				TurnPower 60 //How fast should the rocket rotate to face the target=
-				MaxAimError 90 //Max angle between rocket and the target
+				RocketSpeed 0.8 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 75 //How fast should the rocket rotate to face the target=
+				MaxAimError 180 //Max angle between rocket and the target
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Charging
+		{
+			//ClassIcon	soldier_barrage
+			Health	4000
+			Name	"Giant Homing Charging Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Tag	"bot_giant"
+			Attributes	"MiniBoss"
+			Attributes	"HoldFireUntilFullReload"
+			ExtAttr AlwaysFireWeaponAlt  
+			ItemAttributes
+			{
+				ItemName "The Cow Mangler 5000"
+				"faster reload rate" 0.5
+				"damage bonus"	2
+			}
+			AddCond  
+			{
+				Index 36
+				Delay 1
+			}
+			RocketCustomParticle eyeboss_projectile  
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 80 //How fast should the rocket rotate to face the target=
+				MaxAimError 360 //Max angle between rocket and the target
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"airblast vertical vulnerability multiplier"	0.1
 			}
 		}
 		
