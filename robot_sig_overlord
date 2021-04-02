@@ -478,7 +478,7 @@ WaveSchedule //
 			AimAt Head  
 			AimLeadProjectileSpeed 2600   //https://wiki.teamfortress.com/wiki/Projectiles can be used to find good speed.
 		}
-		T_TFBot_Sniper_Giant_Bowman_Master //3중샷거대
+		T_TFBot_Sniper_Giant_Huntsman_3multishot //3중샷거대
 		{
 			Class Sniper
 			ClassIcon sniper_bow_multi
