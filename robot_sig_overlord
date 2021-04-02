@@ -42,9 +42,9 @@ WaveSchedule //
 		}
 		
 		//soldier
-		T_TFBot_Soldier_Homing_ChargeCow // 
+		T_TFBot_Soldier_ChargeCow // 
 		{
-			Name "Homing ChargeShot Soldier"
+			Name "ChargeShot Soldier"
 			Class Soldier
 			Skill Expert
 			ClassIcon soldier_homing_nys
