@@ -80,7 +80,49 @@ WaveSchedule //
 		}
 		
 		//soldier
-		T_TFBot_Soldier_ChargeCow // 
+		T_TFBot_Soldier_Quadshot //쿼드샷 시그임
+		{
+			Name "Quadshot Soldier"
+			Class Soldier
+			Skill Expert
+			//ClassIcon soldier_homing_nys
+			ItemAttributes
+			{
+				ItemName	"the liberty launcher"
+				"mult projectile count" 3
+				"projectile spread angle penalty"	4
+			}
+			Item	"the liberty launcher"
+			Item	"full metal drill hat"
+		}
+		T_TFBot_Giant_Soldier_Quadshot //거대 쿼드샷 시그임
+		{
+			Name "Giant Quadshot Soldier"
+			Class Soldier
+			Skill Expert
+			//ClassIcon soldier_homing_nys
+			Tag	"bot_giant"
+			Attributes	"MiniBoss"
+			ItemAttributes
+			{
+				ItemName	"the liberty launcher"
+				"damage bonus"	1.5
+				"faster reload rate" 0.5
+				"mult projectile count" 3
+				"projectile spread angle penalty"	4
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"airblast vertical vulnerability multiplier"	0.1
+			}
+			Item	"the liberty launcher"
+			Item	"full metal drill hat"
+		}
+		T_TFBot_Soldier_ChargeCow // 충전소도둑
 		{
 			Name "Charging Soldier"
 			Class Soldier
@@ -94,7 +136,7 @@ WaveSchedule //
 				"faster reload rate" 0.5
 			}
 		}
-		T_TFBot_Soldier_Homing_ChargeCow // 
+		T_TFBot_Soldier_Homing_ChargeCow // 호밍충전
 		{
 			Name "Homing Charging Soldier"
 			Class Soldier
@@ -122,7 +164,7 @@ WaveSchedule //
 				MaxAimError 180 //Max angle between rocket and the target
 			}
 		}
-		T_TFBot_Giant_Soldier_Homing_Charging
+		T_TFBot_Giant_Soldier_Homing_Charging /거대호밍
 		{
 			//ClassIcon	soldier_barrage
 			Health	4000
@@ -281,6 +323,37 @@ WaveSchedule //
 			{
 				ItemName	"iron curtain"
 				"explosive bullets" 90
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	1
+			}
+			Item	"iron curtain"
+			Item	"the eliminators safeguard"
+			Item	"the war goggles"
+		    	CharacterAttributes
+		    	{
+				"move speed bonus"    0.5
+				"damage force reduction"    0.4
+				"airblast vulnerability multiplier"    0.4
+		    	}
+		}
+		T_TFBot_Giant_Heavy_explosiveshot_pusher //거대폭팔푸셔
+		{
+		    	Class    Heavy
+		    	//ClassIcon
+		    	Health    5000
+		    	Attributes    MiniBoss
+			Name "ExploShot Heavy Pusher"
+			Class Heavyweapons
+			Skill Expert
+			ItemAttributes
+			{
+				ItemName	"iron curtain"
+				"explosive bullets" 90
+				"damage bonus"	1.5
+				"attack projectiles"	2
+				"damage causes airblast"	1
 			}
 			CharacterAttributes
 			{
