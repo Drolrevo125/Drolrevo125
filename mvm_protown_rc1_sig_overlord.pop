@@ -5,7 +5,7 @@
 #base robot_standard.pop
 #base robot_sig_randomguy.pop //sig
 #base robot_sig_overlord.pop
-population
+WaveSchedule
 {
 	StartingCurrency	800
 	RespawnWaveTime	3
@@ -13,6 +13,28 @@ population
 	AddSentryBusterWhenDamageDealtExceeds	750
 	AddSentryBusterWhenKillCountExceeds	8
 	Advanced	1
+	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl"  
+	ExtraTankPath   //Blimp Path, 오른쪽경로
+	{
+		Name "blimppath_right" //name of the starting path node prefix. First tank node name would be name_1
+		Node "1495 3158 1038" // note XYZ coordinates. First node is the starting point
+		Node "603.72 2531.98 1038"
+		Node "625 621 1038"
+		Node "953 -530 1038"
+		Node "942 -1368 1038"
+		Node "183 -1807 1038"
+	}
+	ExtraTankPath   //Blimp Path, 왼쪽경로
+	{
+		Name "blimppath_left" //name of the starting path node prefix. First tank node name would be name_1
+		Node "-1586 3383 1038" // note XYZ coordinates. First node is the starting point
+		Node "-705 2640 1038"
+		Node "92 2220 1038"
+		Node "69 1020 1038"
+		Node "-981 -423 1038"
+		Node "-959 -1154 1038"
+		Node "-176 -1773 1038"  
+	}
 	Templates
 	{
 		T_TFBot_Giant_Soldier_SlowBarrage
@@ -135,11 +157,7 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	demoman
-					Health	175
-					Name	차지(모바)
-					Class	Demoman
-					Skill	Normal
+					Template	T_TFBot_Demo_Charger_Expert
 					Action Mobber [$SIGSEGV]
 				}
 			}
@@ -179,8 +197,7 @@ population
 				}
 				TFBot
 				{
-					Name	크리딕
-					Template	T_TFBot_Medic
+					Template	T_TFBot_Medic_Kritzkrieg
 				}
 				TFBot
 				{
@@ -203,12 +220,13 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	scout
-					Health	125
-					Name	우유캇
-					Class	Scout
-					Skill	Normal
-					Item	"mad milk"
+					Template	T_TFBot_Scout_Milk_Hard
+					ItemAttributes
+					{
+						ItemName "Mad Milk"
+						"applies snare effect" 0.35
+						"effect bar recharge rate increased" -2
+					}
 					Action Mobber [$SIGSEGV]
 				}
 			}
@@ -227,8 +245,7 @@ population
 			{
 				TFBot
 				{
-					Name	공식칼
-					Template	T_TFBot_Scout_Sandman_FastCharge
+					Template	T_TFBot_Scout_Cleaver_combo
 					Action Mobber [$SIGSEGV]
 				}
 			}
@@ -460,8 +477,7 @@ population
 			{
 				TFBot
 				{
-					Name	"Steel Gauntlet //버프"
-					Template	T_TFBot_Heavyweapons_Fist
+					Template	T_TFBot_Heavyweapons_Fist_Buff
 				}
 			}
 		}
@@ -496,8 +512,7 @@ population
 			{
 				TFBot
 				{
-					Name	거대퍼플릭,모바
-					Template	T_TFBot_Giant_Scout
+					Template	T_TFBot_Giant_Scout_Blaster_Hyper
 					Action Mobber [$SIGSEGV]
 				}
 			}
@@ -517,7 +532,7 @@ population
 				Tank
 				{
 					Health	20000
-					Name	"Tank //센트리탱"
+					Name	"Tank"
 					Speed	75
 					OnKilledOutput
 					{
@@ -529,6 +544,8 @@ population
 						Target	boss_deploy_relay
 						Action	Trigger
 					}
+					SpawnTemplate "SentryTank" 
+					ClassIcon tank_sentry 
 				}
 			}
 		}
@@ -650,7 +667,7 @@ population
 			{
 				TFBot
 				{
-					Template	T_TFBot_Giant_Engineer_SC //
+					Template	T_TFBot_Giant_Engineer_SC // 안될지도
 				}
 			}
 		}
@@ -667,8 +684,7 @@ population
 			{
 				TFBot
 				{
-					Template	
-					Name	골든건
+					Template	T_TFBot_Heavy_Brassbeast_Hyper
 					Attributes	"AlwaysCrit"
 				}
 			}
@@ -693,32 +709,77 @@ population
 		WaveSpawn
 		{
 			WaitForAllDead	w4_a
-			TotalCurrency	165
-			TotalCount	3
-			MaxActive	3
+			TotalCurrency	100
+			TotalCount	2
+			MaxActive	2
 			SpawnCount	1
 			WaitBeforeStarting	5
-			WaitBetweenSpawns	20
-			Where	spawnbot
-			Squad
+			WaitBetweenSpawns	45
+			Tank
 			{
-				Tank
-				{
-					Health	7500
-					Name	"Tank //열기구"
-					Speed	75
-					OnKilledOutput
-					{
-						Target	boss_dead_relay
-						Action	Trigger
-					}
-					OnBombDroppedOutput
-					{
-						Target	boss_deploy_relay
-						Action	Trigger
-					}
+				Health 7500
+				Speed 90
+				Name "blimpboss"
+				StartingPathTrackNode "blimppath_right_1"       //경로이름
+                                DisableSmokestack 1  //연기제거
+                                Classicon blimp2_lite
+                                Skin 1
+                                MaxTurnRate 50  //회전속도
+                                Model "models/bots/boss_bot/boss_blimp.mdl" ReplaceModelCollisions 1  
+                                Gravity 0  
+                                DisableTracks 1  
+                                DisableChildModels 1  
+                                ReplaceModelCollisions 1  
+                                EngineLoopSound "npc\combine_gunship\dropship_engine_distant_loop1.wav"  
+                                PingSound "npc\combine_gunship\ping_search.wav"  
+                                OnKilledOutput
+                                {
+                                    Target    boss_dead_relay
+                                    Action    Trigger
+                                }
+                                OnBombDroppedOutput
+                                {
+                                    Target    boss_deploy_relay
+		                    Action    Trigger
 				}
-			}
+			}			
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w4_a
+			TotalCurrency	65
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	25
+			Tank
+			{
+				Health 7500
+				Speed 90
+				Name "blimpboss"
+				StartingPathTrackNode "blimppath_left_1"       //경로이름
+                                DisableSmokestack 1  //연기제거
+                                Classicon blimp2_lite
+                                Skin 1
+                                MaxTurnRate 50  //회전속도
+                                Model "models/bots/boss_bot/boss_blimp.mdl" ReplaceModelCollisions 1  
+                                Gravity 0  
+                                DisableTracks 1  
+                                DisableChildModels 1  
+                                ReplaceModelCollisions 1  
+                                EngineLoopSound "npc\combine_gunship\dropship_engine_distant_loop1.wav"  
+                                PingSound "npc\combine_gunship\ping_search.wav"  
+                                OnKilledOutput
+                                {
+                                    Target    boss_dead_relay
+                                    Action    Trigger
+                                }
+                                OnBombDroppedOutput
+                                {
+                                    Target    boss_deploy_relay
+		                    Action    Trigger
+				}
+			}			
 		}
 		WaveSpawn
 		{
@@ -735,11 +796,7 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	demoman
-					Health	175
-					Name	Demoman차지데모탱버거대
-					Class	Demoman
-					Skill	Normal
+					Template	T_TFBot_Giant_Demo_Expert_Tankburster
 				}
 			}
 		}
@@ -836,16 +893,14 @@ population
 				{
 					TFBot
 					{
-						Template	
-						Name	Pyro붕붕마스터
+						Template	T_TFBot_Pyro_Pusher
 					}
 				}
 				Squad
 				{
 					TFBot
 					{
-						Template	
-						Name	Pyro백버너
+						Template	T_TFBot_Pyro_Backburner
 						Action Mobber [$SIGSEGV]
 					}
 				}
@@ -883,43 +938,47 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	scout
-					Health	125
-					Name	Scout하이퍼블릭모바
-					Class	Scout
-					Skill	Normal
+					Template	T_TFBot_Scout_Blaster_Hyper
 					Action Mobber [$SIGSEGV]
 				}
 			}
 		}
 		WaveSpawn
 		{
+			WaitForAllDead	w4_a
 			TotalCurrency	200
 			TotalCount	1
 			MaxActive	1
 			SpawnCount	1
 			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
+			Tank
 			{
-				Tank
-				{
-					Health	30000
-					Name	Tank열기구
-					Speed	75
-					OnKilledOutput
-					{
-						Target	boss_dead_relay
-						Action	Trigger
-					}
-					OnBombDroppedOutput
-					{
-						Target	boss_deploy_relay
-						Action	Trigger
-					}
+				Health 30000
+				Speed 75
+				Name "blimpboss"
+				StartingPathTrackNode "blimppath_left_1"       //경로이름
+                                DisableSmokestack 1  //연기제거
+                                Classicon blimp2_lite
+                                Skin 1
+                                MaxTurnRate 50  //회전속도
+                                Model "models/bots/boss_bot/boss_blimp.mdl" ReplaceModelCollisions 1  
+                                Gravity 0  
+                                DisableTracks 1  
+                                DisableChildModels 1  
+                                ReplaceModelCollisions 1  
+                                EngineLoopSound "npc\combine_gunship\dropship_engine_distant_loop1.wav"  
+                                PingSound "npc\combine_gunship\ping_search.wav"  
+                                OnKilledOutput
+                                {
+                                    Target    boss_dead_relay
+                                    Action    Trigger
+                                }
+                                OnBombDroppedOutput
+                                {
+                                    Target    boss_deploy_relay
+		                    Action    Trigger
 				}
-			}
+			}			
 		}
 		WaveSpawn
 		{
@@ -963,8 +1022,7 @@ population
 				{
 					TFBot
 					{
-						Template	
-						Name	Scout블캇모바
+						Template	T_TFBot_Scout_Blaster_Pusher
 						Action Mobber [$SIGSEGV]
 					}
 				}
@@ -979,8 +1037,7 @@ population
 				{
 					TFBot
 					{
-						Template	
-						Name	드래곤모바
+						Template	T_TFBot_Pyro_Dragon_Hard
 						Action Mobber [$SIGSEGV]
 					}
 				}
@@ -1004,8 +1061,7 @@ population
 				}
 				TFBot
 				{
-					Name	"Giant Medic크리딕"
-					Template	T_TFBot_Giant_Medic
+					Template	T_TFBot_Giant_Medic_Kritzkrieg_Quickheal
 				}
 			}
 		}
@@ -1071,8 +1127,7 @@ population
 			{
 				TFBot
 				{
-					Name	"Scout 슈봉"
-					Template	T_TFBot_Scout_Bonk
+					Template	T_TFBot_Scout_Bonk_Fast
 				}
 			}
 		}
@@ -1128,11 +1183,30 @@ population
 				{
 					TFBot
 					{
-						Template	
-						Class	Soldier
-						Item	"the gunboats"
+						Name "True Air Strike Soldier"	
+						Class Soldier
 						Skill Expert
+						Health 200
+						ClassIcon soldier_airstrike_para
+						WeaponRestrictions PrimaryOnly
+						MaxVisionRange 2000
+						Item "The Air Strike"
+						Item "The B.A.S.E. Jumper"
+						Item "The Whirly Warrior"
 						Attributes HoldFireUntilFullReload
+						Attributes Parachute
+						ItemAttributes
+						{
+							ItemName "The Air Strike"
+							"clip size upgrade atomic" 4
+							"faster reload rate" 0.4
+							"Projectile speed increased"	0.75
+						}
+						CharacterAttributes
+						{
+							"cancel falling damage" 1
+							"increased air control" 4
+						}
 						Action Mobber [$SIGSEGV]
 						RocketJump 1
 						FireWeapon  
@@ -1156,6 +1230,11 @@ population
 						Attributes HoldFireUntilFullReload
 						Action Mobber [$SIGSEGV]
 						RocketJump 1
+						CharacterAttributes
+						{
+							"cancel falling damage" 1
+							"increased air control" 4
+						}
 						FireWeapon  
 						{
 							Delay 0
@@ -1203,9 +1282,51 @@ population
 			{
 				TFBot
 				{
-					Name	"Steel Gauntlet 스왑함"
-					Template	T_TFBot_Heavyweapons_Fist
+					ClassIcon	heavy_juggernaut
+					Health	1000
+					Name	"Swaping Juggernaut"
+					Scale	1.5
+					Class	HeavyWeapons
 					Action Mobber [$SIGSEGV]
+					ChangeAttributes    
+					{
+						Delay 1
+						Repeats 1
+						IfHealthBelow 500
+						Name "half"
+					}
+					EventChangeAttributes
+					{
+						main
+						{
+							Skill	Expert
+							WeaponRestrictions	MeleeOnly
+							ItemAttributes
+							{
+								ItemName	"fists of steel"
+								"damage bonus"	5.0
+								"fire rate bonus"	0.6
+							}
+							Item	"fists of steel"
+							Item	"war head"
+						}
+						half
+						{
+							Skill	Expert
+							WeaponRestrictions	PrimaryOnly
+							ItemAttributes
+							{
+								ItemName	"iron curtain"
+								"damage bonus"	3.0
+								"fire rate bonus"	0.8
+								"attack projectiles"	2
+								"weapon spread bonus"	0.75
+							}
+							Item	"iron curtain"
+							Item	"fists of steel"
+							Item	"war head"
+						}
+					}
 				}
 			}
 		}
@@ -1224,8 +1345,31 @@ population
 			{
 				TFBot
 				{
-					Name	"Giant Soldier유도 거대스캐터"
-					Template	T_TFBot_Giant_Soldier
+					Name	"Giant Homing Hyper Scatter Soldier"
+					Template	T_TFBot_Giant_Soldier_Scatter_Expert
+					ItemAttributes
+					{
+						ItemName	"blood botkiller rocket launcher mk.i"
+						"faster reload rate"	0.4
+						"fire rate bonus"	0.001
+						"clip size upgrade atomic"	12.0
+						"projectile spread angle penalty"	80
+						"damage bonus"	2.0
+					}
+					AddCond  
+					{
+						Index 36
+						Delay 1
+					}
+					RocketCustomParticle eyeboss_projectile  
+					HomingRockets   
+					{
+						IgnoreDisguisedSpies 1
+						IgnoreStealthedSpies 1
+						RocketSpeed 0.8 // Multiplier of rocket speed. 1 for default speed
+						TurnPower 75 //How fast should the rocket rotate to face the target=
+						MaxAimError 360 //Max angle between rocket and the target
+					}
 				}
 				TFBot
 				{
@@ -1247,8 +1391,7 @@ population
 			{
 				TFBot
 				{
-					Template	
-					Name	Soldier탱버
+					Template	T_TFBot_Soldier_TankBuster
 				}
 			}
 		}
@@ -1267,39 +1410,78 @@ population
 				TFBot
 				{
 					Health	35000
-					Name	"Mann Hunter // 버레이지몸들고오기"
+					Name	"Mann Hunter"
 					Scale	1.7
 					Skill	Expert
 					MaxVisionRange	4000
 					Template	T_TFBot_Sniper
-					Attributes	"MiniBoss"
+					Attributes MiniBoss Tag bot_giant
 					Attributes	"UseBossHealthBar"
 					Action Sniper [$SIGSEGV]
-					ItemAttributes
+					ChangeAttributes    
 					{
-						ItemName	"the classic"
-						"damage bonus"	5
-						"explosive sniper shot"	3
+						Delay 1
+						Repeats 1
+						IfHealthBelow 37500
+						Name "15hp"
 					}
-					ItemAttributes
+					EventChangeAttributes
 					{
-						ItemName	"the tribalman's shiv"
-						"damage bonus"	5
-					}
-					CharacterAttributes
-					{
-						"head scale"	0.7
-						"damage bonus"	1.5
-						"damage force reduction"	0.4
-						"airblast vulnerability multiplier"	0.4
-						"override footstep sound set"	3
-						"airblast vertical vulnerability multiplier"	0.1
-					}
-					Item	"the classic"
-					Item	"the cozy camper"
-					Item	"the tribalman's shiv"
-					Item	"sniper's snipin' glass"
-					Item	"corona australis"
+						35hp //기본
+						{
+							ItemAttributes
+							{
+								ItemName	"the classic"
+								"damage bonus"	5
+								"explosive sniper shot"	3
+								"damage bonus"	5
+								"sniper penetrate players when charged"	1
+								"sniper fires tracer HIDDEN"	1
+								"explosive bullets" 100
+							}
+							CharacterAttributes
+							{
+								"head scale"	0.7
+								"damage bonus"	1.5
+								"damage force reduction"	0.4
+								"airblast vulnerability multiplier"	0.4
+								"override footstep sound set"	3
+								"airblast vertical vulnerability multiplier"	0.1
+							}
+							Item	"the classic"
+							Item	"the cozy camper"
+							Item	"the tribalman's shiv"
+							Item	"sniper's snipin' glass"
+							Item	"corona australis"
+						}
+						15hp
+						{
+							ItemAttributes
+							{
+								ItemName	"the classic"
+								"damage bonus"	5
+								"explosive sniper shot"	3
+								"damage bonus"	5
+								"sniper penetrate players when charged"	1
+								"sniper fires tracer HIDDEN"	1
+								"explosive bullets" 100
+							}
+							CharacterAttributes
+							{
+								"head scale"	0.7
+								"damage bonus"	1.5
+								"damage force reduction"	0.4
+								"airblast vulnerability multiplier"	0.4
+								"override footstep sound set"	3
+								"airblast vertical vulnerability multiplier"	0.1
+							}
+							Item	"the classic"
+							Item	"the cozy camper"
+							Item	"the tribalman's shiv"
+							Item	"sniper's snipin' glass"
+							Item	"corona australis"
+						}
+					}	
 				}
 			}
 		}
@@ -1318,12 +1500,7 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	demoman
-					Health	175
-					Name	Demoman스ㅜ\왑데모
-					Class	Demoman
-					Skill	Normal
-					Attributes	"AlwaysCrit"
+					Template	T_TFBot_Demoman_Sticky_LeadShot
 				}
 			}
 		}
