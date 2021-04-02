@@ -54,6 +54,19 @@ WaveSchedule //
 				ItemName "The Cow Mangler 5000"
 				"faster reload rate" 0.5
 			}
+		}
+		T_TFBot_Soldier_Homing_ChargeCow // 
+		{
+			Name "Homing ChargeShot Soldier"
+			Class Soldier
+			Skill Expert
+			ClassIcon soldier_homing_nys
+			ExtAttr AlwaysFireWeaponAlt  
+			ItemAttributes
+			{
+				ItemName "The Cow Mangler 5000"
+				"faster reload rate" 0.5
+			}
 			AddCond  
 			{
 				Index 36
