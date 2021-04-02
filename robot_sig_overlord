@@ -84,8 +84,9 @@ WaveSchedule //
 		}
 		
 		//pyro
-		T_TFBot_Pyro_jump //앞으로 도약함 될지모름
+		T_TFBot_Pyro_boosting //앞으로 도약함 될지모름
 		{
+			Name "boosting Pyro"
 			Class Pyro
 			Skill Expert
 			Item	"the gas guzzler"
