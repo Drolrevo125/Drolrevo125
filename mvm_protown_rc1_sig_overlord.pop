@@ -89,16 +89,7 @@ WaveSchedule
 	ItemAttributes  
 	{
 		ItemName "the liberty launcher"
-		"thermal_thruster_air_launch" 1
-		"item_meter_charge_rate" 0.01
-		HomingRockets   
-		{
-			IgnoreDisguisedSpies 1
-			IgnoreStealthedSpies 1
-			RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
-			TurnPower 90 //How fast should the rocket rotate to face the target=
-			MaxAimError 180 //Max angle between rocket and the target
-		}
+		"mult projectile count" 2
 	}
 	ItemAttributes  
 	{
@@ -129,6 +120,11 @@ WaveSchedule
 	AddSentryBusterWhenDamageDealtExceeds	750
 	AddSentryBusterWhenKillCountExceeds	8
 	Advanced	1
+	SentryBusterFriendlyFire 0
+	NoRomevisionCosmetics 1 [$ SIGSEGV]
+	SniperAllowHeadshots 1 [$ SIGSEGV]
+	ImprovedAirblast 1 [$SIGSEGV]
+	NoHolidayPickups 1 [$ SIGSEGV]
 	PrecacheModel "models/bots/boss_bot/boss_blimp.mdl"  
 	Templates
 	{
@@ -215,7 +211,7 @@ WaveSchedule
 			Line "열기구나옴(서버파일허용으로 다운로드권장)"
 			Line "{yellow}무기 조정목록"
 			Line "{blue}해품막,소화도끼,화산도끼:불붙은대상 400%추가피해"
-			//Line "{blue}자투:유도생김" 되면추가
+			Line "{blue}자투:트리플샷"
 			Line "{blue}철의장막:탄환폭팔,발속감소 건슬:체력100,35"
 			Line "{blue}컴파운드보우:추가화살발사 클래식:탄환폭팔"
 			Line "{blue}엠버서더:헤드폭팔2업"
