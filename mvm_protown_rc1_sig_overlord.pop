@@ -5,7 +5,8 @@
 #base robot_standard.pop
 #base robot_click.pop
 #base robot_click_giant.pop
-#base robot_sig_randomguy.pop //sig
+#base robot_sig_randomguy.pop
+#base robot_sigsegv_reloaded.pop
 #base robot_sig_overlord.pop
 WaveSchedule
 {
