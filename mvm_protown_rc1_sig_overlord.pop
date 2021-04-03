@@ -1,3 +1,6 @@
+//sig 필요함
+//https://youtu.be/FRPeYP6gS-s
+//봇교체할것, 아이콘추가 8
 #base robot_giant.pop
 #base robot_standard.pop
 #base robot_click.pop
@@ -6,9 +9,48 @@
 #base robot_sigsegv_reloaded.pop
 #base robot_sig_overlord.pop
 
-
-WaveSchedule // https://youtu.be/FRPeYP6gS-s, 아이콘교체할것
+WaveSchedule
 {
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"1266"                     
+		Y	"-2341"                  
+		Z	"548"        
+	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"-1071"                     
+		Y	"-1798"                  
+		Z	"715"        
+	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"-858"                     
+		Y	"-1005"                  
+		Z	"539"        
+	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"730"                     
+		Y	"-617"                  
+		Z	"811"        
+	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"1255"                     
+		Y	"899"                  
+		Z	"651"        
+	}
    	ExtraTankPath   //Blimp Path, 오른쪽경로
 	{
 		Name "blimppath_right" //name of the starting path node prefix. First tank node name would be name_1
