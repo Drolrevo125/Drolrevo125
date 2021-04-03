@@ -205,6 +205,16 @@ WaveSchedule
 	}
 	Wave
 	{
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
 		Explanation [$SIGSEGV]
 		{
 			Line "{orange}임무 특징"
@@ -218,18 +228,6 @@ WaveSchedule
 			Line "{blue}엠버서더:헤드폭팔2업"
 			Line "{red}버그생기면 직접수정해도되고 갠챗으로 알려주셈"
 			Line "{yellow}아직6웨밖에 못만듬 8웨까지 예정"
-		}
-		WaitWhenDone	65
-		Checkpoint	Yes
-		StartWaveOutput
-		{
-			Target	wave_start_relay
-			Action	Trigger
-		}
-		DoneOutput
-		{
-			Target	wave_finished_relay
-			Action	Trigger
 		}
 		WaveSpawn
 		{
