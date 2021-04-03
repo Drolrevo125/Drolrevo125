@@ -1607,5 +1607,837 @@ WaveSchedule // https://youtu.be/FRPeYP6gS-s, 아이콘교체할것
 			}
 		}
 	}
+	Wave //w7
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	160
+			TotalCount	16
+			MaxActive	4
+			SpawnCount	2
+			WaitBeforeStarting	7
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"Giant Scout//거대블푸모바,점프"
+					Template	T_TFBot_Giant_Scout
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w7_a
+			TotalCurrency	160
+			TotalCount	20
+			MaxActive	6
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	5
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	Pyro중형파이로
+					Template	T_TFBot_Pyro
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	105
+			TotalCount	15
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	2
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"Burst Fire Demo 스캐터"
+					Template	T_TFBot_Demo_Burst
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	90
+			TotalCount	15
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	2
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	3중형
+					Template	T_TFBot_Sniper_Huntsman
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w7_b
+			WaitForAllSpawned	w7_a
+			TotalCurrency	150
+			TotalCount	3
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			RandomChoice
+			{
+				Squad
+				{
+					TFBot
+					{
+						Name	"Giant Soldier 하이퍼거대솔로"
+						Template	T_TFBot_Giant_Soldier
+					}
+				}
+				Squad
+				{
+					TFBot
+					{
+						Template	T_TFBot_Giant_Soldier
+					}
+				}
+				Squad
+				{
+					TFBot
+					{
+						Template	T_TFBot_Giant_Soldier
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w7_a
+			TotalCurrency	100
+			TotalCount	20
+			MaxActive	10
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	engineer
+					Health	125
+					Name	Engineer합선
+					Class	Engineer
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w7_a
+			TotalCurrency	120
+			TotalCount	12
+			MaxActive	6
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	4
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Engineer_Sentry_Teleporter
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w7_a
+			TotalCurrency	140
+			TotalCount	14
+			MaxActive	2
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	15
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	soldier
+					Health	200
+					Name	Soldier탱커솔
+					Class	Soldier
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w7_b
+			TotalCurrency	375
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				Tank
+				{
+					Health	50000
+					Name	Tank텔포탱크
+					Speed	75
+					OnKilledOutput
+					{
+						Target	boss_dead_relay
+						Action	Trigger
+					}
+					OnBombDroppedOutput
+					{
+						Target	boss_deploy_relay
+						Action	Trigger
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w7_b
+			TotalCurrency	200
+			TotalCount	40
+			MaxActive	12
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	0.2
+			Where	spawnbot
+			RandomChoice
+			{
+				Squad
+				{
+					TFBot
+					{
+						ClassIcon	heavyweapons
+						Health	300
+						Name	HeavyWeapons폭팔탄
+						Class	HeavyWeapons
+						Skill	Normal
+					}
+				}
+				Squad
+				{
+					TFBot
+					{
+						ClassIcon	soldier
+						Health	200
+						Name	Soldier쿼드솔
+						Class	Soldier
+						Skill	Normal
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w7_b
+			TotalCurrency	200
+			TotalCount	40
+			MaxActive	8
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	0.2
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	scout
+					Health	125
+					Name	Scout백스캇
+					Class	Scout
+					Skill	Normal
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name	w8_a
+			TotalCurrency	120
+			TotalCount	6
+			MaxActive	2
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"Colonel Barrageg하이퍼"
+					Template	T_TFBot_Giant_Soldier_SlowBarrage
+				}
+				TFBot
+				{
+					Name	"Giant Medic쉴드거대"
+					Template	T_TFBot_Giant_Medic_Regen
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	120
+			TotalCount	12
+			MaxActive	5
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	heavyweapons
+					Health	300
+					Name	"HeavyWeapons저거너트 모바로"
+					Class	HeavyWeapons
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	160
+			TotalCount	20
+			MaxActive	7
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	heavyweapons
+					Health	300
+					Name	"HeavyWeapons합선헤비 안되면 엔지"
+					Class	HeavyWeapons
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	180
+			TotalCount	24
+			MaxActive	6
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	demoman
+					Health	175
+					Name	Demoman점착
+					Class	Demoman
+					Skill	Normal
+				}
+				TFBot
+				{
+					Name	옼르리백시
+					Template	T_TFBot_Medic_BigHeal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w8_a
+			TotalCurrency	80
+			TotalCount	4
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"Giant Soldier거대공폭"
+					Template	T_TFBot_Giant_Soldier
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w8_a
+			TotalCurrency	360
+			TotalCount	45
+			MaxActive	9
+			SpawnCount	3
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	pyro
+					Health	175
+					Name	Pyro제트팩문맨
+					Class	Pyro
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w8_a
+			TotalCurrency	240
+			TotalCount	30
+			MaxActive	8
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	sniper
+					Health	125
+					Name	Sniper폭팔탄스나
+					Class	Sniper
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	w8_b
+			WaitForAllDead	w8_a
+			TotalCurrency	470
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				Tank
+				{
+					Health	10000
+					Name	Tank열기구
+					Speed	75
+					OnKilledOutput
+					{
+						Target	boss_dead_relay
+						Action	Trigger
+					}
+					OnBombDroppedOutput
+					{
+						Target	boss_deploy_relay
+						Action	Trigger
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	90
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"Giant Heavy쉴드골건"
+					Template	T_TFBot_Giant_Heavyweapons
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	180
+			TotalCount	36
+			MaxActive	12
+			SpawnCount	6
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	Bowman하이퍼보우7발
+					Template	T_TFBot_Sniper_Huntsman
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	30
+			MaxActive	6
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	1
+			Where	spawnbot
+			RandomChoice
+			{
+				Squad
+				{
+					TFBot
+					{
+						Template	T_TFBot_Medic
+					}
+				}
+				Squad
+				{
+					TFBot
+					{
+						Name	"Uber Medic크리로"
+						Template	T_TFBot_Medic
+					}
+				}
+				Squad
+				{
+					TFBot
+					{
+						ClassIcon	scout
+						Health	125
+						Name	Scout크리
+						Class	Scout
+						Skill	Normal
+					}
+				}
+				Squad
+				{
+					TFBot
+					{
+						ClassIcon	scout
+						Health	125
+						Name	Scout크리
+						Class	Scout
+						Skill	Normal
+					}
+				}
+			}
+		}
+	}
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	10
+			MaxActive	5
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Chief_Demo_Atomic
+					ItemAttributes
+					{
+						ItemName	"the loose cannon"
+						"blast radius increased"	1.6
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	10
+			MaxActive	5
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Metalbeard
+					ItemAttributes
+					{
+						ItemName	tf_weapon_grenadelauncher
+						"damage bonus"	2
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	10
+			MaxActive	5
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"Major Bomber점착,4페복사"
+					Template	T_TFBot_Giant_Metalbeard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	500
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"Chief Tavish지뢰페시브"
+					Template	T_TFBot_Chief_Tavish
+					ItemAttributes
+					{
+						ItemName	"the iron bomber"
+						"damage bonus"	1
+					}
+					ItemAttributes
+					{
+						ItemName	"the chargin' targe"
+						"damage bonus"	1
+					}
+					Item	"the iron bomber"
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	750
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	20
+			Where	spawnbot
+			Squad
+			{
+				Tank
+				{
+					Health	4000
+					Name	Tank센트리탱스폰리미트
+					Speed	75
+					OnKilledOutput
+					{
+						Target	boss_dead_relay
+						Action	Trigger
+					}
+					OnBombDroppedOutput
+					{
+						Target	boss_deploy_relay
+						Action	Trigger
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	750
+			TotalCount	10
+			MaxActive	10
+			SpawnCount	1
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	20
+			Where	spawnbot
+			Squad
+			{
+				Tank
+				{
+					Health	3000
+					Name	Tank열기구스폰리미트
+					Speed	75
+					OnKilledOutput
+					{
+						Target	boss_dead_relay
+						Action	Trigger
+					}
+					OnBombDroppedOutput
+					{
+						Target	boss_deploy_relay
+						Action	Trigger
+					}
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	13
+			MaxActive	13
+			SpawnCount	13
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	40
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	demoman
+					Health	175
+					Name	Demoman무한돌진
+					Class	Demoman
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	13
+			MaxActive	13
+			SpawnCount	13
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	40
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	scout
+					Health	125
+					Name	Scout빠른캇
+					Class	Scout
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	13
+			MaxActive	13
+			SpawnCount	13
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	40
+			Support	1
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	pyro
+					Health	175
+					Name	Pyro빠른파이로
+					Class	Pyro
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	0
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					ClassIcon	scout
+					Health	125
+					Name	Scout타이머봇
+					Class	Scout
+					Skill	Normal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			TotalCurrency	400
+			TotalCount	10
+			MaxActive	5
+			SpawnCount	2
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Name	"클릭거대 5마리 아군으로"
+					Template	T_TFBot_Sniper
+				}
+			}
+		}
+	}
 }
 //This file has been generated by http://mvm.tf
