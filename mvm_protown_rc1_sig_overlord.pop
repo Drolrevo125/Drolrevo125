@@ -204,6 +204,36 @@ WaveSchedule
 			Template	T_TFBot_Spy
 		}
 	}
+	Mission
+	{
+		Objective	Spy
+		Where	spawnbot_mission_spy
+		BeginAtWave	7
+		RunForThisManyWaves	1
+		InitialCooldown	30
+		CooldownTime	30
+		DesiredCount	2
+		TFBot
+		{
+			Name	Spy엠버해폭
+			Template	T_TFBot_Spy
+		}
+	}
+	Mission
+	{
+		Objective	Spy
+		Where	spawnbot_mission_spy
+		BeginAtWave	8
+		RunForThisManyWaves	1
+		InitialCooldown	30
+		CooldownTime	30
+		DesiredCount	1
+		TFBot
+		{
+			Name	Spy엠버해폭
+			Template	T_TFBot_Spy
+		}
+	}
 	Wave
 	{
 		StartWaveOutput
