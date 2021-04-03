@@ -479,19 +479,7 @@ gettysburg
 
     Wave //Wave 1
     {
-        StartWaveOutput
-        {
-            Target wave_start_relay
-            Action Trigger
-        }
-
-        DoneOutput
-        {
-            Target wave_finished_relay
-            Action Trigger
-        }
-
-        Explanation  
+    	Explanation  
         {
             	Line "{green}---------------------------------------------------------------"
 	    	Line "{yellow}변경점"
@@ -507,6 +495,17 @@ gettysburg
 		Line "{white}폭곤:적중시 크리,재생성됩니다.
 		Line "{white}기름때제거기:붕붕이가 재조정,상향되고 아군에게 이속증진을 부여 할수있습니다."
             	Line "{green}---------------------------------------------------------------"
+        }
+        StartWaveOutput
+        {
+            Target wave_start_relay
+            Action Trigger
+        }
+
+        DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
         }
 
         WaveSpawn
