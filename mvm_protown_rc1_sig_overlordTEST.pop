@@ -94,13 +94,12 @@ WaveSchedule
 	{
 		ItemName "the liberty launcher"
 		"mult projectile count" 2
-		"projectile spread angle penalty" 4
 	}
 	ItemAttributes  
 	{
 		ItemName	"iron curtain"
-		"explosive bullets" 50
-		"fire rate penalty" 1.8
+		"explosive bullets" 70
+		"fire rate penalty" 0.3
 	}
 	ItemAttributes  
 	{
@@ -113,13 +112,6 @@ WaveSchedule
 		ItemName "the fortified compound"
 		"arrow mastery" 1
 		"faster reload rate" 1.4
-	}
-	ItemAttributes
-	{
-		ItemName	"the classic"
-		"sniper penetrate players when charged"	1
-		"sniper fires tracer HIDDEN"	1
-		"explosive bullets" 100
 	}
 	ItemAttributes  
 	{
@@ -645,106 +637,65 @@ WaveSchedule
 		}
 		WaveSpawn
 		{
-			Name redspawn
+			Name redsupp
 			Where redspawn
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
+			TotalCount 5
+			MaxActive 5
+			SpawnCount 5
 			WaitBeforeStarting 0
 			WaitBetweenSpawnsAfterDeath 10
 			Support Limited
-			TFBot
+			Squad
 			{
-				Template T_TFBot_Giant_Scout_Blaster_Hyper
-				Action Mobber  
-				ClassIcon red2_lite
-				AddCond   //Adds conditions to bots
+				TFBot
 				{
-					Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					Template T_TFBot_Giant_Scout_Blaster_Hyper
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
 				}
-			}
-		}
-		WaveSpawn
-		{
-			Name redspawn
-			Where redspawn
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			WaitBeforeStarting 0
-			WaitBetweenSpawnsAfterDeath 10
-			Support Limited
-			TFBot
-			{
-				Template T_TFBot_Giant_Soldier_Tanker
-				Action Mobber  
-				ClassIcon red2_lite
-				AddCond   //Adds conditions to bots
+				TFBot
 				{
-					Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					Template T_TFBot_Giant_Soldier_Tanker
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
 				}
-			}
-		}
-		WaveSpawn
-		{
-			Name redspawn
-			Where redspawn
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			WaitBeforeStarting 0
-			WaitBetweenSpawnsAfterDeath 10
-			Support Limited
-			TFBot
-			{
-				Template T_TFBot_Giant_Pyro_Future
-				Action Mobber  
-				ClassIcon red2_lite
-				AddCond   //Adds conditions to bots
+				TFBot
 				{
-					Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					Template T_TFBot_Giant_Pyro_Future
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
 				}
-			}
-		}
-		WaveSpawn
-		{
-			Name redspawn
-			Where redspawn
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			WaitBeforeStarting 0
-			WaitBetweenSpawnsAfterDeath 10
-			Support Limited
-			TFBot
-			{
-				Template T_TFBot_Giant_Demo_Scatter_Hyper
-				Action Mobber  
-				ClassIcon red2_lite
-				AddCond   //Adds conditions to bots
+				TFBot
 				{
-					Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					Template T_TFBot_Giant_Demo_Scatter_Hyper
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
 				}
-			}
-		}
-		WaveSpawn
-		{
-			Name redspawn
-			Where redspawn
-			TotalCount 1
-			MaxActive 1
-			SpawnCount 1
-			WaitBeforeStarting 0
-			WaitBetweenSpawnsAfterDeath 10
-			Support Limited
-			TFBot
-			{
-				Template T_TFBot_Giant_Heavy_Tomislav_Hyper
-				Action Mobber  
-				ClassIcon red2_lite
-				AddCond   //Adds conditions to bots
+				TFBot
 				{
-					Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					Template T_TFBot_Giant_Heavy_Tomislav_Hyper
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
 				}
 			}
 
@@ -752,5 +703,3 @@ WaveSchedule
 	}
 }
 //제발되라 씨ㅏㄹ 
-
-
