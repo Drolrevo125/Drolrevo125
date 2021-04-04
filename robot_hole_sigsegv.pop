@@ -1,0 +1,3152 @@
+population
+{
+	Templates
+	{
+		//=======STANDARD=======//
+
+		//=======Soldier=======//	
+		T_TFBot_Soldier_Homing_Easy
+		{
+			ClassIcon	soldier_homing_nys
+			Health	200
+			Name	"Homing Soldier"
+			Class	Soldier
+			Skill	Normal
+			WeaponRestrictions	PrimaryOnly
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.5 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}			
+		T_TFBot_Soldier_Homing_Normal
+		{
+			ClassIcon	soldier_homing_nys
+			Health	200
+			Name	"Homing Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Soldier_Homing_Spammer
+		{
+			ClassIcon	soldier_homing_spammer_nys
+			Health	200
+			Name	"Homing Rapid Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			ItemAttributes
+			{
+				ItemName	tf_weapon_rocketlauncher
+				"Projectile speed increased"	0.65
+				"faster reload rate"	-0.8
+				"fire rate bonus"	0.5
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Soldier_Homing_Burst
+		{
+			ClassIcon	soldier_homing_burst_nys
+			Health	200
+			Name	"Homing Burst Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"HoldFireUntilFullReload"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_rocketlauncher
+				"Projectile speed increased"	0.65
+				"faster reload rate"	0.6
+				"fire rate bonus"	0.1
+				"clip size upgrade atomic"	5.0
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Soldier_Homing_Scatter
+		{
+			ClassIcon	soldier_rocketrain_homing_nys
+			Name	"Homing Scatter Soldier"
+			Class	Soldier
+			Skill	Expert
+			Attributes	"HoldFireUntilFullReload"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_rocketlauncher
+				"faster reload rate"	0.9
+				"fire rate bonus"	0.001
+				"clip size upgrade atomic"	2.0
+				"projectile spread angle penalty"	2
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Soldier_Homing_Charged
+		{
+			ClassIcon	soldier_homing_nys
+			Name	"Homing Charged Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			ItemAttributes
+			{
+				ItemName	"the original"
+				//"Projectile speed increased"	0.5
+				"fire rate bonus"	2
+				"faster reload rate"	0.5
+			}
+			Item	"the original"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.5 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 20 //How fast should the rocket rotate to face the target
+				MaxAimError 360 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Soldier_Homing_PowerShot
+		{
+			ClassIcon	soldier_homing_nuke_nys
+			Name	"Homing Power Shot Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			RocketCustomParticle eyeboss_projectile  
+			ItemAttributes
+			{
+				ItemName	"the original"
+				//"Projectile speed increased"	0.5
+				"fire rate bonus"	2
+				"faster reload rate"	0.5
+				"damage bonus"	5.0
+			}
+			Item	"the original"
+			Item	"full metal drill hat"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.5 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 20 //How fast should the rocket rotate to face the target
+				MaxAimError 360 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		//
+		T_TFBot_Soldier_Homing_Burst_Expert
+		{
+			ClassIcon	soldier_homing_burst_nys
+			Name	"Hyper Homing Burst Soldier"
+			Class	Soldier
+			Skill	Expert
+			Attributes	"AlwaysCrit"
+			Attributes	"HoldFireUntilFullReload"
+			RocketCustomParticle eyeboss_projectile  
+			ItemAttributes
+			{
+				ItemName	"rust botkiller rocket launcher mk.i"
+				//"Projectile speed increased"	0.9
+				"faster reload rate"	0.4
+				"fire rate bonus"	0.2
+				"clip size upgrade atomic"	5.0
+				"damage bonus"	2.0
+			}
+			Item	"rust botkiller rocket launcher mk.i"
+			Item	"tyrant's helm"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.9 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Soldier_Homing_Scatter_Expert
+		{
+			ClassIcon	soldier_rocketrain_homing_nys
+			Name	"Hyper Homing Scatter Soldier"
+			Class	Soldier
+			Skill	Expert
+			Attributes	"AlwaysCrit"
+			Attributes	"HoldFireUntilFullReload"
+			RocketCustomParticle eyeboss_projectile  
+			ItemAttributes
+			{
+				ItemName	"rust botkiller rocket launcher mk.i"
+				"faster reload rate"	0.5
+				"fire rate bonus"	0.001
+				"clip size upgrade atomic"	6.0
+				"projectile spread angle penalty"	2
+				"damage bonus"	2.0
+			}
+			Item	"rust botkiller rocket launcher mk.i"
+			Item	"the cross-comm crash helmet"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.9 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		//
+		T_TFBot_Soldier_Homing_Barrage // 많이 나오면 튕김
+		{
+			ClassIcon	soldier_barrage_homing_nys
+			Health	650
+			Name	"Homing_Barrage Soldier"
+			Scale	1.4
+			Class	Soldier
+			Skill	Expert
+			Attributes	"HoldFireUntilFullReload"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_rocketlauncher
+				"faster reload rate"	0.22
+				"fire rate bonus"	0.2
+				"damage bonus"	1.5
+				"projectile spread angle penalty"	5
+				"clip size upgrade atomic"	26.0
+			}
+			CharacterAttributes
+			{
+				//"Projectile speed increased"	0.4
+				"move speed bonus"	0.9
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.4 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		//Blast
+		T_TFBot_Soldier_Homing_RocketPush
+		{
+			Class Soldier
+			Skill Expert
+			WeaponRestrictions PrimaryOnly		
+			Item "The Liberty Launcher"
+			Name "Homing Blast Soldier"
+			ClassIcon soldier_libertylauncher
+			Attributes HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName "The Liberty Launcher"
+				"damage causes airblast" 1
+				"damage bonus" .45
+				"fire rate bonus" 0.001
+				"clip size upgrade atomic" -2
+				"faster reload rate" 1.5
+				"Blast radius decreased" 1.2
+				"projectile spread angle penalty" 2
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		//Direct hit
+		T_TFBot_Soldier_Homing_Direct
+		{
+			ClassIcon	soldier_homing_nys
+			Health	200
+			Name	"Direct Homing Soldier"
+			Class	Soldier
+			Skill	Expert
+			Attributes	"SpawnWithFullCharge"
+			CharacterAttributes
+			{
+				"increase buff duration"	9.0
+				"deploy time increased" 0.5
+			}
+			Item	"the direct hit"
+			Item	"the buff banner"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Soldier_Homing_Direct_Nobuff
+		{
+			ClassIcon	soldier_homing_nys
+			Health	200
+			Name	"Direct Homing Soldier"
+			Class	Soldier
+			Skill	Expert
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_soldier_Homing_Direct_Spammer
+		{
+			ClassIcon	soldier_homing_spammer_nys
+			Health	200
+			Name	"Direct Homing Soldier"
+			Class	Soldier
+			Skill	Expert
+			Attributes	"SpawnWithFullCharge"
+			ItemAttributes
+			{
+				ItemName	"the direct hit"
+				"fire rate bonus"	0.6
+				"faster reload rate"	-0.8
+			}
+			CharacterAttributes
+			{
+				"increase buff duration"	9.0
+				"deploy time increased" 0.5
+			}
+			Item	"the direct hit"
+			Item	"the buff banner"
+			Item	"defiant spartan"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_soldier_Homing_Direct_Spammer_Nobuff
+		{
+			ClassIcon	soldier_homing_spammer_nys
+			Health	200
+			Name	"Direct Homing Soldier"
+			Class	Soldier
+			Skill	Expert
+			ItemAttributes
+			{
+				ItemName	"the direct hit"
+				"fire rate bonus"	0.6
+				"faster reload rate"	-0.8
+			}
+			Item	"the direct hit"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_soldier_Homing_Direct_Burst
+		{
+			ClassIcon	soldier_homing_burst_nys
+			Health	200
+			Name	"Direct Homing Soldier"
+			Class	Soldier
+			Skill	Expert
+			Attributes	"HoldFireUntilFullReload"
+			Attributes  "SpawnWithFullCharge"
+			ItemAttributes
+			{
+				ItemName	"the direct hit"
+				"faster reload rate"	0.6
+				"fire rate bonus"	0.2
+				"clip size upgrade atomic"	4.0
+			}
+			CharacterAttributes
+			{
+				"increase buff duration"	9.0
+				"deploy time increased" 0.5
+			}
+			Item	"the direct hit"
+			Item	"the buff banner"
+			Item	"defiant spartan"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_soldier_Homing_Direct_Burst_Nobuff
+		{
+			ClassIcon	soldier_homing_burst_nys
+			Health	200
+			Name	"Direct Homing Soldier"
+			Class	Soldier
+			Skill	Expert
+			Attributes	"HoldFireUntilFullReload"
+			ItemAttributes
+			{
+				ItemName	"the direct hit"
+				"faster reload rate"	0.6
+				"fire rate bonus"	0.2
+				"clip size upgrade atomic"	4.0
+			}
+			Item	"the direct hit"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		//airstrike
+		T_TFBot_Soldier_Homing_Airstrike
+		{
+			Name "Homing Strike Soldier"
+			Class Soldier
+			Skill Hard
+			Health 200
+			ClassIcon soldier_airstrike_para
+			AutoJumpMin 12
+			AutoJumpMax 12
+			WeaponRestrictions PrimaryOnly
+			MaxVisionRange 2000
+			Item "The Air Strike"
+			Item "The B.A.S.E. Jumper"
+			Item "The Whirly Warrior"
+			Attributes AutoJump
+			Attributes HoldFireUntilFullReload
+			Attributes Parachute
+			ItemAttributes
+			{
+				ItemName "The Air Strike"
+				"clip size upgrade atomic" 4
+				"faster reload rate" 0.4
+				"Projectile speed increased"	0.75
+			}
+			CharacterAttributes
+			{
+				"cancel falling damage" 1
+				"increased jump height" 3.0
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Soldier_Homing_Airstrike_Hyper
+		{
+			Name "Hyper Homing Strike Soldier"
+			Class Soldier
+			Skill Expert
+			Health 200
+			ClassIcon soldier_airstrike_para_hyper
+			AutoJumpMin 12
+			AutoJumpMax 12
+			WeaponRestrictions PrimaryOnly
+			MaxVisionRange 2000
+			Item "The Air Strike"
+			Item "The B.A.S.E. Jumper"
+			Item "The Whirly Warrior"
+			Attributes AutoJump
+			Attributes HoldFireUntilFullReload
+			Attributes Parachute
+			ItemAttributes
+			{
+				ItemName "The Air Strike"
+				"clip size upgrade atomic" 10
+				"faster reload rate" 0.4
+				"fire rate bonus" 0.2
+			}
+			CharacterAttributes
+			{
+				"cancel falling damage" 1
+				"increased jump height" 3.0
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		//=======Pyro=======//
+		T_TFBot_Pyro_Thruster_Easy // 제트팩 1회만 사용함
+		{
+			Class Pyro
+			Name "Jetpack Pyro"
+			health 175
+			Skill Normal
+			Attributes DisableDodge
+			WeaponRestrictions	SecondaryOnly
+			
+			Item "The Thermal Thruster"
+		
+			Item "Pyro Helm"
+			AimLeadProjectileSpeed 2000
+				
+			ItemAttributes
+            {
+                ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+            }
+			CharacterAttributes
+			{
+				"cancel falling damage" 1
+			}
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Repeats	1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 1
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats	1 
+			    Type "Primary" 
+			}
+		}
+		T_TFBot_Pyro_Thruster
+		{
+			Class Pyro
+			Name "Jetpack Pyro"
+			health 175
+			Skill Expert
+			Attributes DisableDodge
+			WeaponRestrictions	SecondaryOnly
+			
+			Item "The Thermal Thruster"
+		
+			Item "Pyro Helm"
+			AimLeadProjectileSpeed 2000
+				
+			ItemAttributes
+            {
+                ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+            }
+			CharacterAttributes
+			{
+				"cancel falling damage" 1
+			}
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 0
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats 0 
+			    Type "Primary" 
+			}
+		}
+		T_TFBot_Pyro_Thruster_Backburner
+		{
+			Class Pyro
+			Name "Backburner Jetpack Pyro"
+			health 175
+			Skill Expert
+			Attributes DisableDodge
+			WeaponRestrictions	SecondaryOnly
+			Item	"the backburner"
+			Item "The Thermal Thruster"
+		
+			Item "Pyro Helm"
+			AimLeadProjectileSpeed 2000
+			
+			ItemAttributes
+            {
+                ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+            }
+			CharacterAttributes
+			{
+				"move speed bonus"	1.5
+				"cancel falling damage" 1
+			}
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 0
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats 0 
+			    Type "Primary" 
+			}
+		}
+		T_TFBot_Pyro_Thruster_Pusher
+		{
+			Class Pyro
+			Name "Airblast Jetpack Pyro"
+			health 175
+			Skill Expert
+			Attributes DisableDodge
+			WeaponRestrictions	SecondaryOnly
+			Item	"the degreaser"
+			Item "The Thermal Thruster"
+		
+			Item	"traffic cone"
+			AimLeadProjectileSpeed 2000
+			ItemAttributes
+			{
+				ItemName	"the degreaser"
+				"mult airblast refire time"	0
+				"airblast pushback scale"	5
+				"damage bonus"	0.8
+				"damage causes airblast"	1
+			}
+			ItemAttributes
+            {
+                ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+            }
+			CharacterAttributes
+			{
+				"move speed bonus"	1.5
+				"cancel falling damage" 1
+			}
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 0
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats 0 
+			    Type "Primary" 
+			}
+		}
+		T_TFBot_Pyro_Thruster_Crit
+		{
+			Class Pyro
+			Name "Crit Jetpack Pyro"
+			health 175
+			Skill Expert
+			Attributes DisableDodge
+			WeaponRestrictions	SecondaryOnly
+			Attributes	AlwaysCrit
+			Item "The Thermal Thruster"
+		
+			Item "Pyro Helm"
+			AimLeadProjectileSpeed 2000
+			ItemAttributes
+			{
+				ItemName	tf_weapon_flamethrower
+				"damage bonus"	2.0
+			}
+			ItemAttributes
+            {
+                ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+            }
+			CharacterAttributes
+			{
+				"move speed bonus"	1.5
+				"cancel falling damage" 1
+			}
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 0
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats 0 
+			    Type "Primary" 
+			}
+		}
+		T_TFBot_Pyro_Thruster_Hyper
+		{
+			Class Pyro
+			Name "Hyper Jetpack Pyro"
+			health 175
+			Skill Expert
+			Attributes DisableDodge
+			WeaponRestrictions	SecondaryOnly
+			Attributes	AlwaysCrit
+			Item "The Thermal Thruster"
+			Item "rust botkiller flame thrower mk.i"
+			
+			Item	"the flamboyant flamenco"
+
+			AimLeadProjectileSpeed 2000
+			ItemAttributes
+			{
+				ItemName	"rust botkiller flame thrower mk.i"
+				"damage bonus"	3.0
+				"airblast pushback scale"	3.0
+			}
+			ItemAttributes
+            {
+                ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+            }
+			CharacterAttributes
+			{
+				"move speed bonus"	2.0
+				"cancel falling damage" 1
+			}
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 0
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats 0 
+			    Type "Primary" 
+			}
+		}
+		T_TFBot_Pyro_Thruster_Gasjockey
+		{
+			ClassIcon	pyro_degreaser
+			Health	650
+			Name	"Gas Jetpack Pyro"
+			Scale	1.4
+			Class	Pyro
+			Skill	Expert
+			WeaponRestrictions	SecondaryOnly
+			ItemAttributes
+			{
+				ItemName	"the degreaser"
+				"airblast pushback scale"	5
+				"damage causes airblast"	1
+				"mult airblast refire time"	0
+				"weapon burn dmg increased" 2
+				"weapon burn time increased" 2
+			}
+			ItemAttributes
+            {
+                ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+            }
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 0
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats 0 
+			    Type "Primary" 
+			}
+			Item	"the degreaser"
+			Item "The Thermal Thruster"
+			Item	"the attendant"
+		}
+		//=======Heavy=======//
+		
+		T_TFBot_Heavy_Explosive_Easy
+		{
+			Class Heavyweapons
+			Name "Explosive Heavy"
+			ClassIcon heavy_blaster
+			Skill Easy
+			ItemAttributes
+			{
+				ItemName	tf_weapon_minigun
+				"weapon spread bonus"	1.5
+				"fire rate bonus"	4
+				"explosive bullets" 50
+			}
+		}
+		T_TFBot_Heavy_Explosive
+		{
+			Class Heavyweapons
+			Name "Explosive Heavy"
+			ClassIcon heavy_blaster
+			Skill Hard
+			ItemAttributes
+			{
+				ItemName	tf_weapon_minigun
+				"weapon spread bonus"	1.5
+				"damage	bonus"	2
+				"fire rate bonus"	3
+				"explosive bullets" 90
+			}
+		}
+		T_TFBot_Heavy_Explosive_Penetration
+		{
+			Class Heavyweapons
+			Name "Explosive Penetrator Heavy"
+			ClassIcon heavy_blaster
+			Skill Hard
+			ItemAttributes
+			{
+				ItemName	tf_weapon_minigun
+				"weapon spread bonus"	1.5
+				"damage	bonus"	2
+				"fire rate bonus"	3
+				"projectile penetration"	1
+				"explosive bullets" 90
+			}
+		}
+		T_TFBot_Heavy_Explosive_Crit
+		{
+			Class Heavyweapons
+			Name "Crit Explosive Heavy"
+			ClassIcon heavy_blaster
+			Skill Expert
+			Attributes	AlwaysCrit
+			ItemAttributes
+			{
+				ItemName	tf_weapon_minigun
+				"weapon spread bonus"	1.5
+				"damage	bonus"	3
+				"fire rate bonus"	3
+				"explosive bullets" 90
+			}
+		}
+		T_TFBot_Heavy_Explosive_Deflector
+		{
+			Class Heavyweapons
+			Name "Explosive Deflector Heavy"
+			ClassIcon heavy_blaster
+			Skill Hard
+			ItemAttributes
+			{
+				ItemName	deflector
+				"attack projectiles"	1
+				"weapon spread bonus"	1.5
+				"damage	bonus"	2
+				"fire rate bonus"	3
+				"explosive bullets" 90
+			}
+			Item	"deflector"
+			Item	"the u-clank-a"
+		}
+		T_TFBot_Heavy_Explosive_Deflector_Crit
+		{
+			Class Heavyweapons
+			Name "Crit Explosive Deflector Heavy"
+			ClassIcon heavy_blaster
+			Skill Expert
+			Attributes	AlwaysCritd
+			ItemAttributes
+			{
+				ItemName	deflector
+				"attack projectiles"	1
+				"weapon spread bonus"	1.5
+				"damage	bonus"	3
+				"fire rate bonus"	3
+				"explosive bullets" 90
+			}
+			Item	"deflector"
+			Item	"the u-clank-a"
+		}
+		
+		T_TFBot_Heavy_Brassbeast_Explosive
+		{
+			ClassIcon	heavy_brass_nys
+			Name	"Bombing Goldgun Heavy"
+			Class	HeavyWeapons
+			Skill	Hard
+			ItemAttributes
+			{
+				ItemName	"the brass beast"
+				"damage bonus"	3
+				"turn to gold"	1				
+				"weapon spread bonus"	2
+				"fire rate bonus"	3
+				"explosive bullets" 147
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.8
+			}
+			Item	"the brass beast"
+			Item	"the gridiron guardian"
+		}
+		
+		T_TFBot_Heavy_Brassbeast_Explosive_Hyper
+		{
+			ClassIcon	heavy_brassbeast_hyper
+			Name	"Hyper Bombing Goldgun Heavy"
+			Class	HeavyWeapons
+			Skill	Expert
+			ItemAttributes
+			{
+				ItemName	"the brass beast"
+				"damage bonus"	4
+				"turn to gold"	1				
+				"bullets per shot bonus"	2
+				"weapon spread bonus"	2
+				"fire rate bonus"	3
+				"explosive bullets" 147
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.8
+			}
+			Item	"the brass beast"
+			Item	"the gridiron guardian"
+		}	
+		
+		//=======Engineer(As Main Bot)=======//
+		T_TFBot_Engineer_Shotgun
+		{
+			Class Engineer
+			Name "Shotgun Engineer"
+			ClassIcon shotgun_nys
+			Skill Normal
+			Action FetchFlag  
+		}
+		T_TFBot_Engineer_Shotgun_Expert
+		{
+			ClassIcon	engineer_frontier_justice_nys
+			Name	"Frontier Engineer"
+			Class	Engineer
+			Skill	Expert
+			Action FetchFlag  
+			Attributes	AlwaysCrit
+			ItemAttributes
+			{
+				ItemName	"The Frontier Justice"
+				"damage bonus"	1.5
+				"fire rate bonus" 0.6
+				"faster reload rate" -1
+			}
+			Item	"the frontier justice"
+		}
+	
+		T_TFBot_Engineer_Pomson
+		{
+			Class Engineer
+			Name "Pomson Engineer"
+			ClassIcon engineer_pomson
+			Skill Normal
+			Action FetchFlag  
+			ItemAttributes
+			{
+				ItemName	"the pomson 6000"
+				"projectile penetration"	1
+			}
+			Item	"the pomson 6000"
+		}
+		T_TFBot_Engineer_Pomson_Future
+		{
+			Class Engineer
+			Name "Future Engineer"
+			ClassIcon engineer_pomson
+			Skill Expert
+			Action FetchFlag  
+			ItemAttributes
+			{
+				ItemName	"the pomson 6000"
+				"projectile penetration"	1
+				"faster reload rate"	-0.8
+				"fire rate bonus"	0.4
+			}
+			Item	"the pomson 6000"
+			Item	"the eureka effect"
+			Item	"the brainiac goggles"
+			Item	"the brainiac hairpiece"
+		}
+	
+		T_TFBot_Engineer_Shortcircut
+		{
+			Name "Short Circuit Engineer"
+            Class Engineer
+            ClassIcon engineer_shortcircuit_lite
+            Skill Expert
+            WeaponRestrictions SecondaryOnly
+            Action FetchFlag  
+            FireWeapon  
+            {
+                IfSeeTarget 1
+                Type Secondary
+            }
+			Item "The Short Circuit"
+		}
+		T_TFBot_Engineer_ShortCircut_Spammer
+		{
+			Name "Rapid Circuit Engineer"
+            Class Engineer
+            ClassIcon engineer_shortcircuit_lite
+            Skill Expert
+            WeaponRestrictions SecondaryOnly
+            Action FetchFlag  
+            FireWeapon  
+            {
+				Delay 0.6
+                Cooldown 0.6
+                IfSeeTarget 1
+                Type Secondary
+            }
+            Item "The Short Circuit"
+		}
+		T_TFBot_Engineer_ShortCircut_Hyper
+		{
+			Name "Hyper Circuit Engineer"
+            Class Engineer
+            ClassIcon engineer_shortcircuit_lite
+            Skill Expert
+            WeaponRestrictions SecondaryOnly
+            Action FetchFlag  
+			Attributes	AlwaysCrit
+            FireWeapon  
+            {
+				Delay 0.3
+                Cooldown 0.3
+                IfSeeTarget 1
+                Type Secondary
+            }
+			Item "The Short Circuit"
+			Item	"blood botkiller wrench mk.i"
+			Item	"clockwerk's helm"
+		}
+
+		//=======Medic=======//
+		
+		//=======Sniper=======//
+		// Sniper
+		T_TFBot_Sniper_Bomb
+		{
+			Class Sniper
+			CName "Bomb Sniper"
+			Skill Hard
+			MaxVisionRange 2500
+			ItemAttributes
+			{
+				ItemName	tf_weapon_sniperrifle
+				"explosive bullets"	147
+			}
+		}
+		T_TFBot_Sniper_Bomb_Razorback
+		{
+			Class Sniper
+			CName "Bomb Sniper"
+			Skill Hard
+			MaxVisionRange 3000
+			ItemAttributes
+			{
+				ItemName	tf_weapon_sniperrifle
+				"explosive bullets"	147
+			}
+			Item	"the razorback"
+		}	
+		
+		T_TFBot_Sniper_Marker
+		{
+			Class Sniper
+			CName "Marker Sniper"
+			Skill Hard
+			MaxVisionRange 3000
+			ItemAttributes
+			{
+				ItemName	"The Sydney Sleeper"
+				DamageAppliesCond   
+				{
+					Name "TF_COND_URINE"
+					Duration 2 
+				}
+				DamageAppliesCond 
+				{
+					Name "TF_COND_MAD_MILK"
+					Duration 2
+				}
+				DamageAppliesCond 
+				{
+					Name "TF_COND_GAS"
+					Duration 2
+				}
+			}
+			Item	"the sydney sleeper"
+		}	
+		//
+		T_TFBot_Sniper_Huntsman_Explosive
+		{
+			Class Sniper
+			Name "Explosive Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_explosive
+			Item "The Huntsman"
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage bonus" 0.5
+				"explosive sniper shot"	1
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Explosive_Spammer_Normal
+		{
+			ClassIcon	sniper_bow_explosive
+			Name	"Explosive Bowman Rapid Fire"
+			Class	Sniper
+			Skill	Hard
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the huntsman"
+				"fire rate bonus"	0.6
+				"explosive sniper shot"	1
+			}
+			Item	"the huntsman"
+		}
+		T_TFBot_Sniper_Huntsman_Explosive_Spammer
+		{
+			Class Sniper
+			Name "Explosive Bowman Rapid Fire"
+			Item "The Huntsman"
+			ClassIcon sniper_bow_multi
+			Skill Hard
+			Health 1200
+			"scale" 1.5
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.6
+				"explosive sniper shot"	1
+			}
+			CharacterAttributes
+			{
+				"head scale" 0.7
+				"move speed bonus"	0.85
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Explosive_Hyper
+		{
+			ClassIcon	sniper_bow_hyper
+			Name	"Hyper Explosive Bowman"
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.5
+				"faster reload rate"	0.2
+				"explosive sniper shot"	3
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Sniper_Huntsman_Explosive_Hyper_Dmgup
+		{
+			ClassIcon	sniper_bow_hyper
+			Name	"Hyper Explosive Bowman"
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.5
+				"faster reload rate"	0.2
+				"damage bonus"	1.5
+				"explosive sniper shot"	3
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Sniper_Huntsman_Explosive_Hyper_Spammer
+		{
+			ClassIcon	sniper_bow_multi_hyper
+			Health	1200
+			Name	"Hyper Explosive Bowman"
+			Scale	1.5
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.4
+				"faster reload rate"	0.2
+				"damage bonus"	1.5
+				"explosive sniper shot"	3
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.85
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		//scatter
+		T_TFBot_Sniper_Huntsman_Scatter
+		{
+			Class Sniper
+			Name "Scatter Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage bonus" 0.5
+				"faster reload rate"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Normal
+		{
+			Class Sniper
+			Name "Scatter Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"faster reload rate"	1.5
+				"fire rate bonus" 0.6
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Spammer
+		{
+			Class Sniper
+			Health 1200
+			Scale 1.5
+			Name "Rapid Scatter Bowman"
+			ClassIcon sniper_bow_ignite_multi
+			Skill Expert			
+			WeaponRestrictions PrimaryOnly
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.6
+				"faster reload rate"	1.2
+				"projectile spread angle penalty"	2
+				"arrow mastery" 3
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.85
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Hyper
+		{
+			ClassIcon	sniper_bow_hyper
+			Name	"Hyper Scatter Bowman"
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.5
+				"faster reload rate"	0.8
+				"projectile spread angle penalty"	2
+				"arrow mastery" 5
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Hyper_Dmgup
+		{
+			ClassIcon	sniper_bow_hyper
+			Name	"Hyper Scatter Bowman"
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"damage	bonus"	1.5
+				"fire rate bonus"	0.5
+				"faster reload rate"	0.8
+				"projectile spread angle penalty"	2
+				"arrow mastery" 5
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Hyper_Spammer
+		{
+			ClassIcon	sniper_bow_multi_hyper
+			Health	1200
+			Name	"Hyper Scatter Bowman"
+			Scale	1.5
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.4
+				"faster reload rate"	0.8
+				"projectile spread angle penalty"	2
+				"arrow mastery" 5
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.85
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Hyper_Penetration
+		{
+			ClassIcon	sniper_bow_hyper
+			Name	"Hyper Scatter Bowman"
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.5
+				"faster reload rate"	0.2
+				"projectile spread angle penalty"	2
+				"arrow mastery" 5
+				"Projectile penetration" 1
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Hyper_Dmgup_Penetration
+		{
+			ClassIcon	sniper_bow_hyper
+			Name	"Hyper Scatter Bowman"
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"damage	bonus"	1.5
+				"fire rate bonus"	0.5
+				"faster reload rate"	0.2
+				"projectile spread angle penalty"	2
+				"arrow mastery" 5
+				"Projectile penetration" 1
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Hyper_Spammer_Penetration
+		{
+			ClassIcon	sniper_bow_multi_hyper
+			Health	1200
+			Name	"Hyper Scatter Bowman"
+			Scale	1.5
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.4
+				"faster reload rate"	0.2
+				"projectile spread angle penalty"	2
+				"arrow mastery" 5
+				"Projectile penetration" 1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.85
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		//
+		T_TFBot_Sniper_Huntsman_Scatter_Flame
+		{
+			Class Sniper
+			Name "Scatter Flame Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi_ignite
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage bonus" 0.5
+				"faster reload rate"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Flame_Normal
+		{
+			Class Sniper
+			Name "Scatter Flame Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi_ignite
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"faster reload rate"	1.5
+				"fire rate bonus" 0.6
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Flame
+		{
+			Class Sniper
+			Name "Scatter Flame Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi_ignite
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage bonus" 0.5
+				"faster reload rate"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Spammer_Flame
+		{
+			Class Sniper
+			Health 1200
+			Scale 1.5
+			Name "Rapid Scatter Flame Bowman"
+			ClassIcon sniper_bow_ignite_multi
+			Skill Expert			
+			WeaponRestrictions PrimaryOnly
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.6
+				"Set DamageType Ignite" 1
+				"faster reload rate"	1.2
+				"weapon burn dmg increased" 2.0
+				"projectile spread angle penalty"	2
+				"arrow mastery" 3
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.85
+			}
+		}
+		//
+		T_TFBot_Sniper_Huntsman_Scatter_Bleed
+		{
+			Class Sniper
+			Name "Scatter Bleed Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi_bleed
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage penalty" 0.5
+				"faster reload rate"	1.5
+				"bleeding duration" 3
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Bleed_Normal
+		{
+			Class Sniper
+			Name "Scatter Bleed Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi_bleed
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus"	0.6
+				"faster reload rate"	1.5
+				"bleeding duration" 5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Spammer_Bleed
+		{
+			Class Sniper
+			Health 1200
+			Scale 1.5
+			Name "Rapid Scatter Bleed Bowman"
+			ClassIcon sniper_huntsman_bleed_multi
+			Skill Expert			
+			WeaponRestrictions PrimaryOnly
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.6
+				"faster reload rate"	1.2
+				"bleeding duration" 5
+				"slow enemy on hit major" 5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 3
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.85
+			}
+		}
+		//
+		T_TFBot_Sniper_Huntsman_Scatter_Bleed_Penetration
+		{
+			Class Sniper
+			Name "Scatter Bleed Bowman"
+			Skill Hard
+			ClassIcon sniper_huntsman_bleed_multi_penetrator
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage penalty" 0.5
+				"bleeding duration" 3
+				"faster reload rate"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+				"projectile penetration" 1
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Bleed_Normal_Penetration
+		{
+			Class Sniper
+			Name "Scatter Bleed Bowman"
+			Skill Hard
+			ClassIcon sniper_huntsman_bleed_multi_penetrator
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus"	0.6
+				"bleeding duration" 5
+				"faster reload rate"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+				"projectile penetration" 1
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Spammer_Bleed_Penetration
+		{
+			Class Sniper
+			Health 1200
+			Scale 1.5
+			Name "Rapid Scatter Bleed Bowman"
+			ClassIcon sniper_huntsman_bleed_multi_penetrator
+			Skill Expert			
+			WeaponRestrictions PrimaryOnly
+			Item "The Huntsman"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.6
+				"faster reload rate"	1.2
+				"bleeding duration" 5
+				"slow enemy on hit major" 5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 3
+				"projectile penetration" 1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.85
+			}
+		}
+		//
+		T_TFBot_Sniper_Huntsman_Scatter_Explosive
+		{
+			Class Sniper
+			Name "Scatter Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi
+			Item "The Huntsman"
+			AimAt	Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage bonus" 0.5
+				"faster reload rate"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+				"explosive sniper shot"	1
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Explosive_Normal
+		{
+			Class Sniper
+			Name "Scatter Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi
+			Item "The Huntsman"
+			AimAt	Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"faster reload rate"	1.5
+				"fire rate bonus" 0.6
+				"projectile spread angle penalty"	2
+				"arrow mastery" 2
+				"explosive sniper shot"	1
+			}
+		}
+		T_TFBot_Sniper_Huntsman_Scatter_Explosive_Spammer
+		{
+			Class Sniper
+			Health 1200
+			Scale 1.5
+			Name "Rapid Scatter Bowman"
+			ClassIcon sniper_bow_ignite_multi
+			Skill Expert			
+			WeaponRestrictions PrimaryOnly
+			Item "The Huntsman"
+			AimAt	Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"fire rate bonus" 0.6
+				"faster reload rate"	1.2
+				"projectile spread angle penalty"	2
+				"arrow mastery" 3
+				"explosive sniper shot"	1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.85
+			}
+		}
+		//=======Spy=======//
+
+		//=======GIANTBOTS=======//
+		
+		//=======Soldier=======//
+		T_TFBot_Giant_Soldier_Homing
+		{
+			Class Soldier
+			Name "Giant Homing Soldier"
+			ClassIcon soldier_homing_nys_giant
+			Skill Expert
+			Health 3800
+			WeaponRestrictions PrimaryOnly
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Spammer
+		{
+			Class Soldier
+			Name "Giant Rapid Homing Soldier"
+			ClassIcon soldier_homing_spammer_nys
+			Health 3800
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_ROCKETLAUNCHER"
+				"faster reload rate" -0.8
+				"fire rate bonus" 0.5
+
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+			//	"Projectile speed increased" 0.65
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.65 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Burst
+		{
+			Class Soldier
+			Name "Giant Burst Homing Soldier"
+			ClassIcon soldier_burstfire_homing_nys
+			Health 3800
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_ROCKETLAUNCHER"
+				"move speed bonus"	0.5
+				"faster reload rate" 0.6
+				"fire rate bonus" 0.1
+				"clip size upgrade atomic" 5.0
+			//	"Projectile speed increased" 0.65
+			}
+			CharacterAttributes
+			{
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.65 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Burst_Expert
+		{
+			Class Soldier
+			Name "Giant Hyper Homing Burster"
+			ClassIcon soldier_burstfire_homing_nys
+			Health 4200
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			Attributes AlwaysCrit
+			RocketCustomParticle eyeboss_projectile
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_ROCKETLAUNCHER"
+				"damage bonus" 2.0
+				"faster reload rate" 0.4
+				"fire rate bonus" 0.2
+				"clip size upgrade atomic" 5.0
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"Projectile speed increased" 0.9
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Scatter
+		{
+			ClassIcon	soldier_rocketrain_homing_nys_giant
+			Health	3800
+			Name	"Giant Homing Scatter Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Attributes	"HoldFireUntilFullReload"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_rocketlauncher
+				"faster reload rate"	0.8
+				"fire rate bonus"	0.001
+				"clip size upgrade atomic"	8.0
+				"projectile spread angle penalty"	2
+			}
+			CharacterAttributes
+			{
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"move speed bonus"	0.5
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Scatter_Expert
+		{
+			ClassIcon	soldier_rocketrain_homing_nys_giant
+			Health	4200
+			Name	"Giant Hyper Homing Scatter"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"HoldFireUntilFullReload"
+			Attributes	"AlwaysCrit"
+			Attributes	"MiniBoss"
+			RocketCustomParticle eyeboss_projectile
+			ItemAttributes
+			{
+				ItemName	"blood botkiller rocket launcher mk.i"
+				"faster reload rate"	0.4
+				"fire rate bonus"	0.001
+				"clip size upgrade atomic"	12.0
+				"projectile spread angle penalty"	2
+				"damage bonus"	2.0
+			}
+			CharacterAttributes
+			{
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"move speed bonus"	0.5
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+			Item	"blood botkiller rocket launcher mk.i"
+			Item	"the cross-comm crash helmet"
+		}
+		T_TFBot_Giant_Soldier_Homing_Crit // Super slow crit rocket flight speed, fires one at a time
+		{
+			Class Soldier
+			Name "Giant Charged Soldier"
+			ClassIcon soldier_homing_nys_giant
+			Skill Normal
+			Health 3800
+			Item "The Original"
+			Attributes AlwaysCrit
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			ItemAttributes
+			{
+				ItemName "The Original"
+				"faster reload rate" 0.2
+				"fire rate bonus" 2
+				//"Projectile speed increased" 0.5
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.5 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 20 //How fast should the rocket rotate to face the target
+				MaxAimError 360 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Nuker
+		{
+			ClassIcon	soldier_homing_nuke_nys_giant
+			Health	4200
+			Name	"Giant Homing Nuker Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"AlwaysCrit"
+			Attributes	"MiniBoss"
+			RocketCustomParticle eyeboss_projectile
+			ItemAttributes
+			{
+				ItemName	"the original"
+				"faster reload rate"	2
+				"fire rate bonus"	2
+				//"Projectile speed increased"	0.5
+				"damage bonus"	16
+				"damage causes airblast"	1
+				"use large smoke explosion"	1
+				"Blast radius increased"	2.0
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.5 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 20 //How fast should the rocket rotate to face the target
+				MaxAimError 360 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+			Item	"the original"
+			Item	"full metal drill hat"
+		}
+		//
+		T_TFBot_Giant_Soldier_Homing_Directhit
+		{
+			ClassIcon	soldier_directhit_giant
+			Health	3800
+			Name	"Giant Homing Hit Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Attributes	"SpawnWithFullCharge"
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"increase buff duration"	9.0
+				"deploy time increased" 0.5
+			}
+			Item	"the direct hit"
+			Item	"the buff banner"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Directhit_NoBuff
+		{
+			ClassIcon	soldier_directhit_giant
+			Health	3800
+			Name	"Giant Homing Hit Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Attributes	"SpawnWithFullCharge"
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+			}
+			Item	"the direct hit"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Directhit_Spammer
+		{
+			ClassIcon	soldier_directhit_infinite_giant
+			Health	3800
+			Name	"Giant Homing Hit Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Attributes	"SpawnWithFullCharge"
+			ItemAttributes
+			{
+				ItemName	"the direct hit"
+				"fire rate bonus"	0.6
+				"faster reload rate"	-0.8
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"increase buff duration"	9.0
+				"deploy time increased" 0.5
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+			Item	"the direct hit"
+			Item	"the buff banner"
+			Item	"defiant spartan"
+		}
+		T_TFBot_Giant_Soldier_Homing_Directhit_Spammer_NoBuff
+		{
+			ClassIcon	soldier_directhit_infinite_giant
+			Health	3800
+			Name	"Giant Homing Hit Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Attributes	"SpawnWithFullCharge"
+			ItemAttributes
+			{
+				ItemName	"the direct hit"
+				"fire rate bonus"	0.6
+				"faster reload rate"	-0.8
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+			}
+			Item	"the direct hit"
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Directhit_Burst
+		{
+			ClassIcon	soldier_directhit_spammer_giant
+			Health	4000
+			Name	"Giant Homing Hit Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Attributes	"SpawnWithFullCharge"
+			Attributes  HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName	"the direct hit"
+				"faster reload rate"	0.6
+				"fire rate bonus"	0.1
+				"clip size upgrade atomic"	5.0
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"increase buff duration"	9.0
+				"deploy time increased" 0.5
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+			Item	"the direct hit"
+			Item	"the buff banner"
+			Item	"defiant spartan"
+		}
+		T_TFBot_Giant_Soldier_Homing_Directhit_Burst_NoBuff
+		{
+			ClassIcon	soldier_directhit_spammer_giant
+			Health	4000
+			Name	"Giant Homing Hit Soldier"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Attributes	"SpawnWithFullCharge"
+			Attributes  HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName	"the direct hit"
+				"faster reload rate"	0.6
+				"fire rate bonus"	0.1
+				"clip size upgrade atomic"	5.0
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+			Item	"the direct hit"
+		}
+		T_TFBot_Giant_Soldier_Homing_Directhit_Barrage
+		{
+			Class Soldier
+			Name "Homing Direct Hit Barrage"
+			ClassIcon soldier_barrage_directhit
+			Health 4000
+
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName "the direct hit"
+				"clip size upgrade atomic" 26.0
+				"faster reload rate" 0.22
+				"fire rate bonus" 0.2
+				"projectile spread angle penalty" 5
+			}
+			CharacterAttributes
+			{
+				"health regen"	40
+				"move speed bonus"	0.5
+				"damage bonus" 1.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"airblast vertical vulnerability multiplier" 0.1
+				"increase buff duration"	9.0
+				"deploy time increased" 0.5			
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+			Item	"the direct hit"
+			Item	"the buff banner"
+			Item	"defiant spartan"
+		}
+		T_TFBot_Giant_Soldier_Homing_Directhit_Barrage_NoBuff
+		{
+			Class Soldier
+			Name "Homing Direct Hit Barrage"
+			ClassIcon soldier_barrage_directhit
+			Health 4000
+
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName "the direct hit"
+				"clip size upgrade atomic" 26.0
+				"faster reload rate" 0.22
+				"fire rate bonus" 0.2
+				"projectile spread angle penalty" 5
+			}
+			CharacterAttributes
+			{
+				"health regen"	40
+				"move speed bonus"	0.5
+				"damage bonus" 1.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"airblast vertical vulnerability multiplier" 0.1	
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+			Item	"the direct hit"
+		}
+		//
+		T_TFBot_Giant_Soldier_Homing_SlowBarrage
+		{
+			Class Soldier
+			Name "Homing Barrage"
+			ClassIcon 	soldier_barrage_homing_nys
+			Health 4000
+
+			Tag bot_giant
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_ROCKETLAUNCHER"
+				"clip size upgrade atomic" 26.0
+				"faster reload rate" 0.22
+				"fire rate bonus" 0.2
+				"projectile spread angle penalty" 5
+			}
+			CharacterAttributes
+			{
+				"health regen"	40
+				"move speed bonus"	0.5
+				"damage bonus" 1.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"airblast vertical vulnerability multiplier" 0.1			
+				//"Projectile speed increased" 0.4
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.4 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_SlowBarrage_Infinite
+		{
+			Class Soldier
+			Name "Homing Infinite Barrage"
+			ClassIcon soldier_barrage_homing_nys
+			Health 4000
+
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_ROCKETLAUNCHER"
+				"faster reload rate" -0.8
+				"fire rate bonus" 0.2
+				"projectile spread angle penalty" 5
+			}
+			CharacterAttributes
+			{
+				"health regen"	40
+				"move speed bonus"	0.5
+				"damage bonus" 1.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"airblast vertical vulnerability multiplier" 0.1			
+				"Projectile speed increased" 0.4
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.4 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Air_Barrage
+		{
+			Name "Air Homing Barrage"
+			Class Soldier
+			Skill Expert
+			Health 4000
+			ClassIcon soldier_airstrike_para_giant
+			AutoJumpMin 12
+			AutoJumpMax 12
+			WeaponRestrictions PrimaryOnly
+			MaxVisionRange 2000
+			Item "The Air Strike"
+			Item "The B.A.S.E. Jumper"
+			Item "The Whirly Warrior"
+			Attributes AutoJump
+			Attributes HoldFireUntilFullReload
+			Attributes MiniBoss
+			Attributes Parachute
+			ItemAttributes
+			{
+				ItemName "The Air Strike"
+				"clip size upgrade atomic" 40.0
+				"damage bonus" 1.5
+				"faster reload rate" 0.5
+				"fire rate bonus" 0.10
+				"Projectile speed decreased" 0.4
+				"projectile spread angle penalty" 8
+			}
+			CharacterAttributes
+			{
+				"airblast vertical vulnerability multiplier" 0.1
+				"airblast vulnerability multiplier" 0.01
+				"cancel falling damage" 1
+				"damage force reduction" 0.4
+				"increased jump height" 3.0
+				"move speed bonus" 0.5
+				"override footstep sound set" 3
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 0.4 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 40 //How fast should the rocket rotate to face the target
+				MaxAimError 180 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		T_TFBot_Giant_Soldier_Homing_Barrage_Hyper
+		{
+			ClassIcon	soldier_barrage_homing_nys
+			Health	4200
+			Name	"Hyper Homing Barrage"
+			Class	Soldier
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"HoldFireUntilFullReload"
+			Attributes	"AlwaysCrit"
+			Attributes	"MiniBoss"
+			ItemAttributes
+			{
+				ItemName	"blood botkiller rocket launcher mk.i"
+				"clip size upgrade atomic"	30.0
+				"faster reload rate"	0.11
+				"fire rate bonus"	0.2
+				"projectile spread angle penalty"	5
+			}
+			CharacterAttributes
+			{
+				"health regen"	40
+				"move speed bonus"	0.5
+				"damage bonus"	2.0
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"airblast vertical vulnerability multiplier"	0.1
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 360 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+			Item	"blood botkiller rocket launcher mk.i"
+			Item	"tyrantium helmet"
+		}
+		T_TFBot_Giant_Soldier_Homing_RocketPush
+		{
+			Class Soldier
+			Skill Expert
+			WeaponRestrictions PrimaryOnly
+			Item "The Liberty Launcher"
+			ClassIcon soldier_libertylauncher_giant
+			Attributes MiniBoss
+			Attributes HoldFireUntilFullReload
+			Name "Giant Homing Blast Soldier"
+			Health 3800
+
+			ItemAttributes
+			{
+				ItemName "The Liberty Launcher"
+				"damage causes airblast" 1
+				"damage bonus" 0.75
+				"fire rate bonus" 0.25
+				"clip size upgrade atomic" 5
+				"faster reload rate" 0.2
+				"Blast radius decreased" 1.2
+				"projectile spread angle penalty" 4
+				// "Projectile speed increased" 0.75
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"override footstep sound set" 3
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"airblast vertical vulnerability multiplier" 0.1
+			}
+			HomingRockets   
+			{
+				IgnoreDisguisedSpies 1
+				IgnoreStealthedSpies 1
+				RocketSpeed 1 // Multiplier of rocket speed. 1 for default speed
+				TurnPower 60 //How fast should the rocket rotate to face the target
+				MaxAimError 80 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+			}
+		}
+		//=======Pyro=======//
+		
+		//=======Heavy=======//
+		T_TFBot_Giant_Heavyweapons_Explosive
+		{
+			Class Heavyweapons
+			Name "Giant Explosive Heavy"
+			ClassIcon heavy_giant
+			Skill Expert
+			Health 5000
+			WeaponRestrictions PrimaryOnly
+			MaxVisionRange 1200
+			Attributes MiniBoss
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_MINIGUN"
+				"damage bonus"	1.5
+				"weapon spread bonus"	1.5
+				"fire rate bonus"	3
+				"explosive bullets" 120
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.3
+				"airblast vulnerability multiplier" 0.3
+				"override footstep sound set" 2
+			}
+		}
+		T_TFBot_Giant_Heavyweapons_Explosive_Deflector
+		{
+			Class Heavyweapons
+			Name "Giant Explosive Deflector Heavy"
+			ClassIcon heavy_giant
+			Skill Expert
+			Health 5000
+			WeaponRestrictions PrimaryOnly
+			MaxVisionRange 1200
+			Attributes MiniBoss
+			ItemAttributes
+			{
+				ItemName "Deflector"
+				"attack projectiles" 1	// force ability to shoot down projectiles
+				"damage bonus"	1.5
+				"weapon spread bonus"	1.5
+				"fire rate bonus"	3
+				"explosive bullets" 120
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.3
+				"airblast vulnerability multiplier" 0.3
+				"override footstep sound set" 2
+			}
+			Item "Deflector"
+		}
+		T_TFBot_Giant_Heavy_Brassbeast_Explosive
+		{
+			ClassIcon	heavy_brass_nys_giant
+			Health	5000
+			Name	"Giant Bombing Goldgun Heavy"
+			Class	HeavyWeapons
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			ItemAttributes
+			{
+				ItemName	"the brass beast"
+				"damage bonus"	3
+				"turn to gold"	1
+				"weapon spread bonus"	2
+				"fire rate bonus"	3
+				"explosive bullets" 147
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.35
+				"damage force reduction"	0.3
+				"airblast vulnerability multiplier"	0.3
+				"override footstep sound set"	2
+			}
+			Item	"the brass beast"
+			Item	"the gridiron guardian"
+		}
+		T_TFBot_Giant_Heavy_Brassbeast_Explosive_Hyper
+		{
+			ClassIcon	heavy_brassbeast_hyper_giant
+			Health	5000
+			Name	"Giant Hyper Bombing Goldgun Heavy"
+			Class	HeavyWeapons
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			ItemAttributes
+			{
+				ItemName	"the brass beast"
+				"damage bonus"	4
+				"bullets per shot bonus"	2
+				"turn to gold"	1				
+				"fire rate bonus"	3
+				"weapon spread bonus"	2
+				"explosive bullets" 147
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.35
+				"damage force reduction"	0.3
+				"airblast vulnerability multiplier"	0.3
+				"override footstep sound set"	2
+			}
+			Item	"the brass beast"
+			Item	"the gridiron guardian"
+		}
+		
+		//=======ENGINEER=======//
+		T_TFBot_Giant_Engineer_Shotgun
+		{
+			ClassIcon	shotgun_nys_giant
+			Health	3000
+			Name	"Giant Shotgun Engineer"
+			Class	Engineer
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Action	FetchFlag
+			ItemAttributes
+			{
+				ItemName	tf_weapon_shotgun_engineer
+				"bullets per shot bonus"	3
+				"damage bonus"	1.5
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+		}
+		T_TFBot_Giant_Engineer_Shotgun_Expert
+		{
+			ClassIcon	engineer_frontier_justice_nys_giant
+			Health	3000
+			Name	"Giant Frontier Engineer"
+			Class	Engineer
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Attributes	AlwaysCrit
+			Action	FetchFlag
+			ItemAttributes
+			{
+				ItemName	"The Frontier Justice"
+				"damage bonus"	1.5
+				"bullets per shot bonus"	3
+				"fire rate bonus" 0.6
+				"faster reload rate" -1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the frontier justice"
+		}
+		T_TFBot_Giant_Engineer_Pomson
+		{
+			ClassIcon	engineer_pomson_giant
+			Health	3000
+			Name	"Giant Pomson Engineer"
+			Class	Engineer
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Action	FetchFlag
+			ItemAttributes
+			{
+				ItemName	"the pomson 6000"
+				"projectile penetration"	1
+				"fire rate bonus" 0.8
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the pomson 6000"
+		}
+		T_TFBot_Giant_Engineer_Pomson_Future
+		{
+			ClassIcon	engineer_pomson_giant
+			Health	3000
+			Name	"Giant Future Engineer"
+			Class	Engineer
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"MiniBoss"
+			Action	FetchFlag
+			ItemAttributes
+			{
+				ItemName	"the pomson 6000"
+				"damage bonus"	1.5
+				"projectile penetration"	1
+				"faster reload rate"	-0.8
+				"fire rate bonus"	0.2
+				"projectile spread angle penalty"	5
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the pomson 6000"
+			Item	"the eureka effect"
+			Item	"the brainiac goggles"
+			Item	"the brainiac hairpiece"
+		}
+		T_TFBot_Giant_Engineer_Shortcircuit
+		{
+            ClassIcon engineer_shortcircuit_lite
+			Health	3000
+			Name	"Giant Shortcircuit Engineer"
+			Class	Engineer
+            Skill Expert
+            WeaponRestrictions SecondaryOnly
+			Attributes	"MiniBoss"
+			Action	FetchFlag
+			ItemAttributes
+			{
+				ItemName	"the short circuit"
+				"damage bonus"	1.5
+			}	
+            FireWeapon  
+            {
+				Delay 0.5
+                Cooldown 0.7
+                IfSeeTarget 1
+                Type Secondary
+            }
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item "The Short Circuit"
+		}
+		T_TFBot_Giant_Engineer_Shortcircuit_Hyper
+		{
+            ClassIcon engineer_shortcircuit_lite
+			Health	3000
+			Name	"Giant Hyper Shortcircuit Engineer"
+			Class	Engineer
+            Skill Expert
+            WeaponRestrictions SecondaryOnly
+			Attributes	"MiniBoss"
+			Action	FetchFlag
+			Attributes	AlwaysCrit
+            FireWeapon  
+            {
+				Delay 0.5
+                Cooldown 0.3
+                IfSeeTarget 1
+                Type Secondary
+            }
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item "The Short Circuit"
+			Item	"blood botkiller wrench mk.i"
+			Item	"clockwerk's helm"
+		}
+		
+		//=======Medic=======//
+		
+		//=======Sniper=======//
+		
+		T_TFBot_Giant_Sniper_Huntsman_Explosive
+		{
+			ClassIcon	demo_bow_giant
+			Health	3000
+			Name	"Giant Explosive Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the huntsman"
+				"fire rate bonus"	0.6
+				"damage bonus"	1.5
+				"explosive sniper shot"	2
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the huntsman"
+		}
+		T_TFBot_Giant_Sniper_Huntsman_Explosive_Hyper
+		{
+			ClassIcon	demo_bow_giant
+			Health	3000
+			Name	"Giant Hyper Explosive Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.4
+				"faster reload rate"	0.2
+				"damage bonus"	2.0
+				"explosive sniper shot"	5
+			}
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.6
+				"damage force reduction" 0.6
+				"move speed bonus" 0.6
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Giant_Sniper_Huntsman_Scatter
+		{
+			ClassIcon	sniper_bow_multi_giant
+			Health	3000
+			Name	"Giant Scatter Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the huntsman"
+				"faster reload rate"	1.2
+				"fire rate bonus"	0.6
+				"damage bonus"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 4
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the huntsman"
+		}
+		//
+		T_TFBot_Giant_Sniper_Huntsman_Scatter_Flame
+		{
+			ClassIcon	sniper_bow_multi_ignite
+			Health	3000
+			Name	"Giant Scatter Bleed Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the huntsman"
+				"faster reload rate"	1.2
+				"fire rate bonus"	0.6
+				"Set DamageType Ignite" 1
+				"damage bonus"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 4
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the huntsman"
+		}
+		T_TFBot_Giant_Sniper_Huntsman_Scatter_Bleed
+		{
+			ClassIcon	sniper_bow_multi_bleed
+			Health	3000
+			Name	"Giant Scatter Bleed Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the huntsman"
+				"faster reload rate"	1.2
+				"fire rate bonus"	0.6
+				"slow enemy on hit major" 5
+				"bleeding duration" 5
+				"damage bonus"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 4
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the huntsman"
+		}
+		T_TFBot_Giant_Sniper_Huntsman_Scatter_Bleed_Penetration
+		{
+			ClassIcon	sniper_huntsman_bleed_multi_penetrator
+			Health	3000
+			Name	"Giant Scatter Bleed Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the huntsman"
+				"faster reload rate"	1.2
+				"fire rate bonus"	0.6
+				"slow enemy on hit major" 5
+				"bleeding duration" 5
+				"damage bonus"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 4
+				"projectile penetration" 1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the huntsman"
+		}
+		T_TFBot_Giant_Sniper_Huntsman_Scatter_Explosive
+		{
+			ClassIcon	demo_bow_burst_giant
+			Health	3000
+			Name	"Giant Scatter Explosive Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimAt Head
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the huntsman"
+				"faster reload rate"	1.2
+				"fire rate bonus"	0.6
+				"damage bonus"	1.5
+				"projectile spread angle penalty"	2
+				"arrow mastery" 4
+				"explosive sniper shot"	3
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the huntsman"
+		}
+		T_TFBot_Giant_Sniper_Huntsman_Scatter_Hyper
+		{
+			ClassIcon	sniper_bow_multi_hyper_giant
+			Health	3000
+			Name	"Giant Scatter Explosive Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.4
+				"faster reload rate"	0.8
+				"damage bonus"	2.0
+				"projectile spread angle penalty"	2
+				"arrow mastery" 6
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+		T_TFBot_Giant_Sniper_Huntsman_Scatter_Hyper_Penetration
+		{
+			ClassIcon	sniper_bow_multi_penetrator_hyper_giant
+			Health	3000
+			Name	"Giant Scatter Explosive Bowman"
+			Class	Sniper
+			Skill	Expert
+			Attributes	"MiniBoss"
+			AimLeadProjectileSpeed 2600
+			ItemAttributes
+			{
+				ItemName	"the fortified compound"
+				"fire rate bonus"	0.4
+				"faster reload rate"	0.8
+				"damage bonus"	2.0
+				"projectile spread angle penalty"	2
+				"arrow mastery" 6
+				"Projectile penetration" 1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.6
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier" 0.6
+				"override footstep sound set" 7
+				"head scale" 0.8
+			}
+			Item	"the fortified compound"
+			Item	"the razorback"
+			Item	"larrikin robin"
+		}
+	}
+}
