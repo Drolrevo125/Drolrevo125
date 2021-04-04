@@ -52,6 +52,14 @@ WaveSchedule
 		Y	"899"                  
 		Z	"651"        
 	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"1255"                     
+		Y	"899"                  
+		Z	"651"        
+	}
    	ExtraTankPath   //Blimp Path, 오른쪽경로
 	{
 		Name "blimppath_right" //name of the starting path node prefix. First tank node name would be name_1
@@ -102,6 +110,7 @@ WaveSchedule
 		"explosive bullets" 60
 		"fire rate penalty" 1.3
 		"bullets per shot bonus"	0.25
+		"damage bonus" 1.5
 	}
 	ItemAttributes  
 	{
@@ -125,7 +134,7 @@ WaveSchedule
 	ItemAttributes  
 	{
 		ItemName "the ambassador"
-		"explosive sniper shot" 3
+		"explosive sniper shot" 2
 	}
 	StartingCurrency	800
 	RespawnWaveTime	3
@@ -133,29 +142,33 @@ WaveSchedule
 	AddSentryBusterWhenDamageDealtExceeds	750
 	AddSentryBusterWhenKillCountExceeds	8
 	Advanced	1
-	SentryBusterFriendlyFire 0 [$ SIGSEGV]
-	NoRomevisionCosmetics 1 [$ SIGSEGV]
-	SniperAllowHeadshots 1 [$ SIGSEGV]
-	ImprovedAirblast 1 [$SIGSEGV]
-	NoHolidayPickups 1 [$ SIGSEGV]
-	TextPrintTime 0 [$ SIGSEGV]
+	//SentryBusterFriendlyFire 0 [$ SIGSEGV]
+	//NoRomevisionCosmetics 1 [$ SIGSEGV]
+	//SniperAllowHeadshots 1 [$ SIGSEGV]
+	//ImprovedAirblast 1 [$SIGSEGV]
+	//NoHolidayPickups 1 [$ SIGSEGV]
+	//TextPrintTime 0 [$ SIGSEGV]
 	Templates
 	{
 		T_TFBot_TimeBomb	//6분타이머
 		{
 		    Health  360
 		    Name  "Clock Timer"
-		    Class  heavy
+		    Class  spy
 		    ClassIcon  timer_lite
 		    Skill  Expert
-		    Scale  0.001
+		    Scale  0.0001
+		    Attributes  miniboss
 		    Attributes  IgnoreEnemies
 		    Attributes UseBossHealthBar
 		    WeaponRestrictions  MeleeOnly
 		    CharacterAttributes
 		    {
-			"move speed bonus"  0.0001
 			"health regen" -1
+			"cannot pick up intelligence" 1
+			"move speed penalty" 0
+			"dmg from ranged reduced" 0
+			"dmg from melee increased" 0
 		    } 
 		} 
 	}
