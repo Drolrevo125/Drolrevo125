@@ -418,6 +418,30 @@ WaveSchedule //
 		}
 		
 		//engi
+		T_TFBot_Engineer_Barrage_ShortCircut //안될지도
+		{
+			Name "Barrage Circuit Engineer"
+			Class Engineer
+			ClassIcon engineer_shortcircuit_lite
+			Skill Expert
+			Item "The Short Circuit"
+			WeaponRestrictions SecondaryOnly
+			Action FetchFlag
+			ItemAttributes
+			{
+				ItemName "The Short Circuit"
+				"fire rate bonus" 0.1
+			}
+			FireWeapon   //Periodically fires weapon
+			{
+				Delay 0 //Time before the first fire input starts (Default: 10)
+				Cooldown 8 //Time between each fire input (Default: 10)
+				Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
+				IfSeeTarget 0 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+				Duration 2 //How long should the button be pressed (Default: 0.1)
+				Type "Secondary" // Type of fire input, Possible values:
+			}
+		}
 		T_TFBot_Giant_Engineer_SC
 		{
 			Name "Giant Shield Circuit Engineer"
