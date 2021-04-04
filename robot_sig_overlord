@@ -556,6 +556,144 @@ WaveSchedule //
 				"bot medic uber health threshold" 0 //disable standard uber behavior
 			}
 		}
+		T_TFBot_Krit_Vacc_Switcher
+		{
+			Name "Switcheroo krit Medic"
+			Class Medic
+			ClassIcon medic_vac_trio_nys
+			Skill Expert
+			Attributes SpawnWithFullCharge
+			ChangeAttributes   //Periodically changes bot attributes, defined in EventChangeAttributes
+		    	{
+				Delay 1 //Time before the first bot attribute change (Default: 10)
+				Cooldown 15 //Time between each bot attribute change (Default: 10)
+				Repeat 0
+				Name "Fire" // Name of the bot attributes listed in EventChangeAttributes
+		    	}
+		    	ChangeAttributes   
+		    	{
+				Delay 6
+				Cooldown 15
+				Repeat 0
+				Name "Blast"
+		    	}
+				ChangeAttributes   //Periodically changes bot attributes, defined in EventChangeAttributes
+		    	{
+				Delay 11 //Time before the first bot attribute change (Default: 10)
+				Cooldown 15 //Time between each bot attribute change (Default: 10)
+				Repeat 0
+				Name "Bullet" // Name of the bot attributes listed in EventChangeAttributes
+		    	}
+		    	ChangeAttributes   
+		    	{
+				Delay 16
+				Cooldown 15
+				Repeat 0
+				Name "Crit"
+		    	}
+			
+			EventChangeAttributes
+			{
+				Fire
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorFire
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"uber duration bonus"	100
+						"medigun fire resist passive"	1
+						"medigun fire resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Blast
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorBlast
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"heal rate bonus"	200
+						"uber duration bonus"	100
+						"medigun blast resist passive"	1
+						"medigun blast resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Bullet
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorBullets
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"heal rate bonus"	200
+						"uber duration bonus"	100
+						"medigun bullet resist passive"	1
+						"medigun bullet resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Crit
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes SpawnWithFullCharge
+					Item "The Kritzkrieg"
+					ItemAttributes
+					{
+						 ItemName "The Kritzkrieg"
+						 "ubercharge rate bonus" 150
+						 "uber duration bonus" 300
+						 "heal rate bonus" 200
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+			}
+		}
 		T_TFBot_Giant_Medic_Vaccinator_All
 		{
 			Name "Giant All Type Vaccinator Medic"
