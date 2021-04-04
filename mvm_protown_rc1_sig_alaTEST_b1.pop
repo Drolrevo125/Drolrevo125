@@ -134,19 +134,19 @@ WaveSchedule
 	AddSentryBusterWhenDamageDealtExceeds	750
 	AddSentryBusterWhenKillCountExceeds	8
 	Advanced	1
-	SentryBusterFriendlyFire 0
+	SentryBusterFriendlyFire 0 [$ SIGSEGV]
 	NoRomevisionCosmetics 1 [$ SIGSEGV]
 	SniperAllowHeadshots 1 [$ SIGSEGV]
 	ImprovedAirblast 1 [$SIGSEGV]
 	NoHolidayPickups 1 [$ SIGSEGV]
-	TextPrintTime 0
+	TextPrintTime 0 [$ SIGSEGV]
 	Templates
 	{
 		T_TFBot_TimeBomb	//6분타이머
 		{
 		    Health  360
 		    Name  "Clock Timer"
-		    Class  Spy
+		    Class  heavy
 		    ClassIcon  timer_lite
 		    Skill  Expert
 		    Scale  0.001
@@ -155,7 +155,7 @@ WaveSchedule
 		    WeaponRestrictions  MeleeOnly
 		    CharacterAttributes
 		    {
-			"move speed bonus"  0.1
+			"move speed bonus"  0.0001
 			"active health degen"  -1
 		    } 
 		} 
@@ -231,37 +231,7 @@ WaveSchedule
 				Scale 1.9
 				Action Mobber  
 				AlwaysGlow 1
-				ChangeAttributes    
-				{
-					Delay 3
-					Repeats 1
-					IfHealthBelow 75000
-					Name "phase2"
-				}
-				ChangeAttributes    
-				{
-					Delay 10
-					Cooldown 40
-					Repeats 1
-					IfHealthBelow 50000
-					Name "phase3"
-				}
-				ChangeAttributes    
-				{
-					Delay 20
-					Cooldown 40
-					Repeats 1
-					IfHealthBelow 30000
-					Name "phase4"
-				}
-				ChangeAttributes    
-				{
-					Delay 30
-					Cooldown 40
-					Repeats 1
-					IfHealthBelow 10000
-					Name "phase5"
-				}
+
 				EventChangeAttributes //Do not attempt to put any of custom keys here. ExtAttr is the only exception
 				{
 					Default //누커
@@ -503,6 +473,37 @@ WaveSchedule
 							"powerup charges" 1
 						}
 					}
+				}
+				ChangeAttributes    
+				{
+					Delay 3
+					Repeats 1
+					IfHealthBelow 75000
+					Name "phase2"
+				}
+				ChangeAttributes    
+				{
+					Delay 10
+					Cooldown 40
+					Repeats 1
+					IfHealthBelow 50000
+					Name "phase3"
+				}
+				ChangeAttributes    
+				{
+					Delay 20
+					Cooldown 40
+					Repeats 1
+					IfHealthBelow 30000
+					Name "phase4"
+				}
+				ChangeAttributes    
+				{
+					Delay 30
+					Cooldown 40
+					Repeats 1
+					IfHealthBelow 10000
+					Name "phase5"
 				}
 			}
 		}
