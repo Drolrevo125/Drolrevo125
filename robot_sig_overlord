@@ -243,6 +243,63 @@ WaveSchedule //
 				Type "Jump"
 			}
 		}
+		T_TFBot_Pyro_Thruster_moon //문트팩
+		{
+			Class Pyro
+			Name "Jetpack Moonman"
+			health 175
+			Skill Expert
+			Attributes DisableDodge
+			WeaponRestrictions	SecondaryOnly
+			Item "The Thermal Thruster"
+			Item	"the flamboyant flamenco"
+			AimLeadProjectileSpeed 2000
+			ItemAttributes
+			{
+				ItemName	"the phlogistinator"
+				"damage bonus"	2.0
+				"heal on kill"  175
+				"heal on hit for rapidfire"	10
+				"airblast disabled"    0
+			}
+			Item	"the phlogistinator"
+			ItemAttributes
+			{
+				ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	2.0
+				"cancel falling damage" 1
+			}
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 0
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats 0 
+			    Type "Primary" 
+			}
+		}
 		
 		//demo
 		T_TFBot_Demoman
