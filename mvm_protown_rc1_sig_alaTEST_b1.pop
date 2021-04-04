@@ -156,7 +156,7 @@ WaveSchedule
 		    CharacterAttributes
 		    {
 			"move speed bonus"  0.0001
-			"active health degen"  -1
+			"health regen" -1
 		    } 
 		} 
 	}
