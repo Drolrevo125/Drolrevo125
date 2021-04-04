@@ -94,6 +94,7 @@ WaveSchedule
 	{
 		ItemName "the liberty launcher"
 		"mult projectile count" 2
+		"energy weapon no deflect"	1
 		"projectile penetration"	3
 	}
 	ItemAttributes  
@@ -727,6 +728,3 @@ WaveSchedule
 		}
 	}
 }
-	}
-}
-//제발되라 씨ㅏㄹ 
