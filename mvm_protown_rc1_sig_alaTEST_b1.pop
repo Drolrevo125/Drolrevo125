@@ -94,12 +94,15 @@ WaveSchedule
 	{
 		ItemName "the liberty launcher"
 		"mult projectile count" 2
+		"energy weapon no deflect"	1
+		"projectile penetration"	1
 	}
 	ItemAttributes  
 	{
 		ItemName	"iron curtain"
-		"explosive bullets" 70
-		"fire rate penalty" 0.3
+		"explosive bullets" 60
+		"fire rate penalty" 1.3
+		"bullets per shot bonus"	0.25
 	}
 	ItemAttributes  
 	{
@@ -112,6 +115,13 @@ WaveSchedule
 		ItemName "the fortified compound"
 		"arrow mastery" 1
 		"faster reload rate" 1.4
+	}
+	ItemAttributes
+	{
+		ItemName "the classic"
+		"sniper penetrate players when charged"	1
+		"sniper fires tracer HIDDEN"	1
+		"explosive bullets" 100
 	}
 	ItemAttributes  
 	{
@@ -325,7 +335,7 @@ WaveSchedule
 						AimAt Head  
 						AimLeadProjectileSpeed 1513.3
 					}
-					phase3	//2페상향스왑사용
+					phase3	//
 					{
 						Skill Expert
 						Item	"Blast Blocker"
@@ -334,6 +344,14 @@ WaveSchedule
 						Attributes UseBossHealthBar
 						Attributes HoldFireUntilFullReload
 						Attributes AlwaysCrit
+						WeaponRestrictions	SecondaryOnly
+						ItemAttributes
+						{
+							ItemName "TF_WEAPON_GRENADELAUNCHER"
+							"is_passive_weapon" 1 
+							"override projectile type" 15 
+							"faster reload rate" -1
+						}
 						ItemAttributes
 						{
 							ItemName	tf_weapon_grenadelauncher
@@ -366,30 +384,6 @@ WaveSchedule
 							ItemName "Battery Canteens"
 							"ubercharge" 3
 							"powerup charges" 1
-						}
-						WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
-						{
-						    Delay 0 //Time before the first weapon switch starts (Default: 10)
-						    Cooldown 5 //Time between each weapon switch (Default: 10)
-						    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
-						    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
-						    Type "Secondary" // Weapon slot, possible values:
-							//Primary
-							//Secondary
-							//Melee
-						    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
-						}
-						WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
-						{
-						    Delay 5 //Time before the first weapon switch starts (Default: 10)
-						    Cooldown 10 //Time between each weapon switch (Default: 10)
-						    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
-						    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
-						    Type "Primary" // Weapon slot, possible values:
-							//Primary
-							//Secondary
-							//Melee
-						    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
 						}
 						AimAt Head  
 						AimLeadProjectileSpeed 1513.3
