@@ -94,8 +94,7 @@ WaveSchedule
 	{
 		ItemName "the liberty launcher"
 		"mult projectile count" 2
-		"energy weapon no deflect"	1
-		"projectile penetration"	1
+		"mini rockets" 1
 	}
 	ItemAttributes  
 	{
