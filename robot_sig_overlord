@@ -78,6 +78,22 @@ WaveSchedule //
 				//Melee
 			}
 		}
+		T_TFBot_Scout_Backscatter_Spy
+		{
+			ClassIcon	scout_backscatt_h
+			Name	"Spy Back Scatter Scout"
+			Class	Scout
+			Skill	Expert
+			Action Spy [$SIGSEGV]
+			ItemAttributes
+			{
+				ItemName	"the back scatter"
+				"minicrits become crits"	1
+				"crit forces victim to laugh"	1
+				"damage bonus"	1.5
+			}
+			Item	"the back scatter"
+		}
 		
 		//soldier
 		T_TFBot_Soldier_Quadshot //쿼드샷 시그임
