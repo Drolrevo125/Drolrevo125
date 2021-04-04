@@ -432,7 +432,7 @@ WaveSchedule //
 				"increase buff duration"    10.0
 		    	}
 		}
-		T_TFBot_Giant_Heavy_Shield //쉴드거대헤비골건
+		T_TFBot_Giant_Heavy_Brassbeast_Shield //쉴드거대헤비골건
 		{
 		    	Class    Heavy
 		    	ClassIcon	heavy_brassbeast_hyper_giant
