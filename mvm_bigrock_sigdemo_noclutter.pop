@@ -973,3 +973,30 @@
 
 // Time before projectile starts accelerating
 // "projectile acceleration start time" 1
+
+
+new attributes
+// Projectile lifetime in seconds
+// "projectile lifetime" 52
+
+// The player is not solid to other players
+// "not solid to players" 1
+
+// If set, the player only takes damage from health degen attribute
+// "is suicide counter" 1
+
+// Always allow the player to taunt, even midair
+// "always allow taunt" 1
+
+// Reflected projectile speed multiplier
+// "mult reflect velocity" 1
+
+// Use custom kill icon. Icons are defined in scripts/mod_textures.txt in tf_misc_dir.vpk
+// "custom kill icon" "armageddon"
+
+// Homing projectiles follow crosshair
+// "mod projectile heat follow crosshair" 1
+
+// Weapon cannot be upgraded
+// "cannot be upgraded" 1
+ 
