@@ -217,37 +217,6 @@ WaveSchedule
 				Scale 1.9
 				Action Mobber  
 				AlwaysGlow 1
-				ChangeAttributes    
-				{
-					Delay 3
-					Repeats 1
-					IfHealthBelow 75000
-					Name "phase2"
-				}
-				ChangeAttributes    
-				{
-					Delay 10
-					Cooldown 40
-					Repeats 1
-					IfHealthBelow 50000
-					Name "phase3"
-				}
-				ChangeAttributes    
-				{
-					Delay 20
-					Cooldown 40
-					Repeats 1
-					IfHealthBelow 30000
-					Name "phase4"
-				}
-				ChangeAttributes    
-				{
-					Delay 30
-					Cooldown 40
-					Repeats 1
-					IfHealthBelow 10000
-					Name "phase5"
-				}
 				EventChangeAttributes //Do not attempt to put any of custom keys here. ExtAttr is the only exception
 				{
 					Default //누커
