@@ -432,6 +432,58 @@ WaveSchedule //
 				"increase buff duration"    10.0
 		    	}
 		}
+		T_TFBot_Giant_Heavy_Shield //쉴드거대헤비골건
+		{
+		    	Class    Heavy
+		    	ClassIcon	heavy_brassbeast_hyper_giant
+		    	Health    5000
+		    	Attributes    MiniBoss
+		    	Attributes    SpawnWithFullCharge
+		    	Attributes    ProjectileShield
+		    	Attributes    AlwaysFireWeapon
+			WeaponRestrictions    SecondaryOnly
+			Name    "Giant Golden Shield Gunner"
+			Item    "the brass beast"
+			Item    "The Quick-Fix"
+			Item	"the gridiron guardian"
+			ItemAttributes
+			{
+				ItemName	"the brass beast"
+				"damage bonus"	3.0
+				"turn to gold"	1				
+				"bullets per shot bonus"	2
+				"fire rate bonus"	0.4
+				"is_passive_weapon"    1
+			}
+			ItemAttributes
+			{
+				ItemName    "The Quick-Fix"
+				"generate rage on heal"    2
+				"heal rate bonus"    0.0
+			}
+			ItemModel  
+			{
+				ItemName "The Quick-Fix"
+				Model "models/weapons/c_models/c_gatling_gun/c_gatling_gun.mdl"
+			}
+			FireWeapon  
+			{
+				Delay 1
+				Cooldown 3
+				Repeats 0
+				Duration 0.6 
+				Type "Special" //Activate Shield
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.35
+				"damage force reduction"	0.3
+				"airblast vulnerability multiplier"	0.3
+				"override footstep sound set"	2
+				"bot medic uber deploy delay duration"    3000
+				"increase buff duration"    10.0
+		    	}
+		}
 		
 		//engi
 		T_TFBot_Engineer_Barrage_ShortCircut //안될지도
