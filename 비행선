@@ -61,3 +61,10 @@ WaveSchedule
 				}
 			}			
 		}
+		OffsetZ 174 [$SIGSEGV] // Tank distance off the ground (Default: 0) 
+    // 150 - Max melee range without jumping
+    // 174 - max sword range without jumping
+    // 190 - max melee range with jumping
+    // 270 - max melee range with upgraded jumping
+RotatePitch 0 [$SIGSEGV] // If tank should change its pitch rotation (Default: 1) 
+ReplaceModelCollisions 1 [$SIGSEGV] // If set, the tank will use collisons from the custom model. Tank model must contain all sequences or else it will not deploy the bomb (Default: 0)
