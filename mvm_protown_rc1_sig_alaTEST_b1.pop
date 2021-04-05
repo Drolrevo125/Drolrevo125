@@ -162,6 +162,10 @@ WaveSchedule
 		    Attributes  IgnoreEnemies
 		    Attributes UseBossHealthBar
 		    WeaponRestrictions  MeleeOnly
+		     AddCond [$SIGSEGV] //Invis effect
+		    {
+			Index 66
+		    }
 		    CharacterAttributes
 		    {
 			"health regen" -1
