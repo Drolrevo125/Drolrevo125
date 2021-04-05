@@ -1002,3 +1002,61 @@ new attributes
  
  
 "projectile acceleration start time" 1
+
+// Use this model attachment instead of bonemerging. If the name is empty, it will follow player origin instead.
+// Common attachments for robot models: head, eye_1, flag. Some bot models also have eye_2, partyhat. Demo & soldier additionally contain foot_L and foot_R
+// Common attachments for player models: head, eyes, flag, partyhat, bread_face, bread_head, effect_hand_L, effect_hand_R, bread_hand_r, bread_hand_l, bread_butt, bread_heel_l, foot_L, foot_R
+// "attachment name" "head"
+
+// Item offset from the attachment origin
+// "attachment offset" "4 2 44"
+
+// Rotation for attached items
+// "attachment angles" "25 25 0"
+
+// Model scale for attached items
+// "attachment scale" 1.5
+
+// For how long should the projectile home in 
+// "mod projectile heat aim time" 1.75
+
+// Projectile gravity in hu/s^2
+// "projectile gravity" 600
+
+// For how long should the projectile accelerate
+// "projectile acceleration time" 2.55
+
+// Grenades explode on impact
+// "grenade explode on impact" 1
+
+// Dealing damage with weapon does not increase crit rate
+// "dont count damage towards crit rate" 1
+
+// Set damage rampup to 20%
+// "reduced damage rampup" 1
+
+// Set damage rampup to 50%
+// "no reduced damage rampup" 1
+
+// Force damage rampup and falloff
+// "force damage falloff" 1
+
+// No damage rampup and falloff
+// "no damage falloff" 1
+
+// Weapon can headshot. Hitscan only
+// "can headshot" 1
+
+// Building tint color
+// "building color rgb" 23424
+
+// Building scale
+// "building scale" 1.54
+
+// Stun slow multiplier. 0 to be fully stun slow immune
+// "mult stun resistance" 0
+
+new addcond: "TF_COND_REPROGRAMMED_NEUTRAL" // New condition, makes bots join spectator team as alive players. Many ai tasks will be broken
+
+// Allow friendly fire
+// "allow friendly fire" 1
