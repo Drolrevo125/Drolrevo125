@@ -18,14 +18,14 @@ WaveSchedule
 	AddSentryBusterWhenDamageDealtExceeds	750
 	AddSentryBusterWhenKillCountExceeds	8
 	Advanced	1
-	//밑으로 시그
-	SendBotsToSpectatorImmediately 1
-	//SentryBusterFriendlyFire 0 [$ SIGSEGV]
-	//NoRomevisionCosmetics 1 [$ SIGSEGV]
-	//SniperAllowHeadshots 1 [$ SIGSEGV]
-	//ImprovedAirblast 1 [$SIGSEGV]
-	//NoHolidayPickups 1 [$ SIGSEGV]
-	TextPrintTime 0 [$ SIGSEGV]
+	//밑으로 시그 [$ SIGSEGV]이거때문인지 확인
+	SendBotsToSpectatorImmediately 1 //[$ SIGSEGV]
+	SentryBusterFriendlyFire 0 //[$ SIGSEGV]
+	NoRomevisionCosmetics 1 //[$ SIGSEGV]
+	SniperAllowHeadshots 1 //[$ SIGSEGV]
+	ImprovedAirblast 1 //[$SIGSEGV]
+	NoHolidayPickups 1 //[$ SIGSEGV]
+	TextPrintTime 0 //[$ SIGSEGV]
 	ItemAttributes
 	{
 		ItemName	sun-on-a-stick
