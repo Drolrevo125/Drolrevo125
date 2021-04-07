@@ -19,6 +19,7 @@ WaveSchedule
 	AddSentryBusterWhenKillCountExceeds	8
 	Advanced	1
 	//밑으로 시그
+	SendBotsToSpectatorImmediately 1
 	//SentryBusterFriendlyFire 0 [$ SIGSEGV]
 	//NoRomevisionCosmetics 1 [$ SIGSEGV]
 	//SniperAllowHeadshots 1 [$ SIGSEGV]
