@@ -12,6 +12,19 @@
 
 WaveSchedule
 {
+	StartingCurrency	800
+	RespawnWaveTime	3
+	CanBotsAttackWhileInSpawnRoom	no
+	AddSentryBusterWhenDamageDealtExceeds	750
+	AddSentryBusterWhenKillCountExceeds	8
+	Advanced	1
+	//밑으로 시그
+	//SentryBusterFriendlyFire 0 [$ SIGSEGV]
+	//NoRomevisionCosmetics 1 [$ SIGSEGV]
+	//SniperAllowHeadshots 1 [$ SIGSEGV]
+	//ImprovedAirblast 1 [$SIGSEGV]
+	//NoHolidayPickups 1 [$ SIGSEGV]
+	TextPrintTime 0 [$ SIGSEGV]
 	ItemAttributes
 	{
 		ItemName	sun-on-a-stick
@@ -19,12 +32,12 @@ WaveSchedule
 	}
 	ItemAttributes
         {
-                ItemName    "Baby Face's Blaster"
+                ItemName    "Baby Face's Blaster"	//하이퍼운용하게
                 "lose hype on take damage"    0    //effectively makes it impossible to lose boost
 		"hype resets on jump"	0
-		"lose hype on take damage"	0
-		"hype on damage"	1
-		"fire rate penalty" 1.3
+		"hype on damage"	1	//이게머고
+		"hype decays over time"	1
+		"fire rate penalty" 1.1
         }
 	ItemAttributes  
 	{
@@ -88,23 +101,26 @@ WaveSchedule
 		"sniper penetrate players when charged"	1
 		"explosive bullets" 100
 	}
+	ItemAttributes
+	{
+		ItemName	"the machina"
+		"sniper no headshot without full charge"	1
+		"maxammo primary reduced"	1.5
+		"headshot damage increase"	2
+		"sniper charge per sec"	0.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the sydney sleeper"
+		"sniper no charge"	1
+		"can headshot" 1
+		"radius sleeper" 1
+	}
 	ItemAttributes  
 	{
 		ItemName "the ambassador"
 		"explosive sniper shot" 2
 	}
-	StartingCurrency	800
-	RespawnWaveTime	3
-	CanBotsAttackWhileInSpawnRoom	no
-	AddSentryBusterWhenDamageDealtExceeds	750
-	AddSentryBusterWhenKillCountExceeds	8
-	Advanced	1
-	//SentryBusterFriendlyFire 0 [$ SIGSEGV]
-	//NoRomevisionCosmetics 1 [$ SIGSEGV]
-	//SniperAllowHeadshots 1 [$ SIGSEGV]
-	//ImprovedAirblast 1 [$SIGSEGV]
-	//NoHolidayPickups 1 [$ SIGSEGV]
-	//TextPrintTime 0 [$ SIGSEGV]
 	Templates
 	{
 		T_TFBot_TimeBomb	//6분타이머
@@ -180,6 +196,8 @@ WaveSchedule
 			Line "{blue}철의장막:탄환폭팔,발속감소, 나타샤:적중힐5"
 			Line "{blue}건슬:체력100,35"
 			Line "{blue}컴파운드보우:추가화살발사 클래식:탄환폭팔"
+			Line "{blue}마키나:헤드피해증가,충전속도감소,완충시헤드가능"
+			Line "{blue}시드니:줌불가,노줌헤드가능,옛날시드니"
 			Line "{blue}엠버서더:헤드폭팔2업"
 			Line "{red}버그생기면 직접수정해도되고 갠챗으로 알려주셈"
 		}
@@ -226,35 +244,32 @@ WaveSchedule
 
 				ChangeAttributes    
 				{
-					Delay 3
+					Delay 0
 					Repeats 1
 					IfHealthBelow 70000
 					Name "phase2"
 				}
 				ChangeAttributes    
 				{
-					Delay 10
-					Cooldown 40
+					Delay 0
 					Repeats 1
 					IfHealthBelow 50000
 					Name "phase3"
 				}
 				ChangeAttributes    
 				{
-					Delay 20
-					Cooldown 40
+					Delay 0
 					Repeats 1
 					IfHealthBelow 20000
 					Name "phase4"
 				}
-				//ChangeAttributes    
-				//{
-				//	Delay 30
-				//	Cooldown 40
-				//	Repeats 1
-				//	IfHealthBelow 10000
-				//	Name "phase5"
-				//}
+				ChangeAttributes    
+				{
+					Delay 0
+					Repeats 1
+					IfHealthBelow 10000
+					Name "phase5"
+				}
 
 				EventChangeAttributes
 				{
@@ -264,7 +279,9 @@ WaveSchedule
 						Item	"Blast Blocker"
 						Item	"Frag Proof Fragger"
 						Item	"The Loose Cannon"
-						Attributes AlwaysCrit
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
 						ItemAttributes
 						{
 							ItemName "The Loose Cannon"
@@ -295,6 +312,10 @@ WaveSchedule
 						Item	"Blast Blocker"
 						Item	"Frag Proof Fragger"
 						Item	"Battery Canteens"
+						Attributes AlwaysCrit
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
 						ItemAttributes
 						{
 							ItemName	tf_weapon_grenadelauncher
@@ -319,13 +340,60 @@ WaveSchedule
 							"powerup charges" 1
 						}
 					}
-					phase3	//지뢰,하이퍼점착
+					phase3
+					{
+						Skill Expert
+						Item	"Blast Blocker"
+						Item	"Frag Proof Fragger"
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
+						UseBestWeapon 1 [$SIGSEGV] 
+						ItemAttributes
+						{
+							ItemName	tf_weapon_grenadelauncher
+							"faster reload rate" 0.2
+							"fire rate bonus" -1
+							"damage bonus"	3
+							"clip size upgrade atomic"	2
+							"Projectile speed increased"	3.0
+						}
+						ItemAttributes
+						{
+							ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
+							"damage bonus"	2
+							"stickybomb charge rate" -3
+							"sticky arm time bonus" 5
+							"fire rate bonus" -1
+							"faster reload rate" 0.33
+							"projectile spread angle penalty" 5
+						}
+						CharacterAttributes
+						{
+							"move speed bonus"	0.35
+							"damage force reduction" 0.4
+							"airblast vulnerability multiplier" 0.4
+							"override footstep sound set" 4
+							"health regen"	100
+						}
+						ItemAttributes
+						{
+							ItemName "Battery Canteens"
+							"ubercharge" 3
+							"powerup charges" 1
+						}
+					}
+					phase3
 					{
 						Skill Expert
 						Item	"Blast Blocker"
 						Item	"Frag Proof Fragger"
 						Item	"the iron bomber"
 						Item	"Battery Canteens"
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
+						Attributes AlwaysCrit
 						ItemAttributes
 						{
 							ItemName	"the iron bomber"
@@ -375,6 +443,10 @@ WaveSchedule
 						Item	"Frag Proof Fragger"
 						Item	"the iron bomber"
 						Item	"Battery Canteens"
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
+						Attributes AlwaysCrit
 						WeaponRestrictions	MeleeOnly
 						ItemAttributes
 						{
