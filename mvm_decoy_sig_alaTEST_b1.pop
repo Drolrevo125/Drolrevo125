@@ -2,6 +2,12 @@
 //보스만 보는거
 #base robot_giant.pop
 #base robot_standard.pop
+#base robot_click.pop
+#base robot_click_giant.pop
+#base robot_sig_randomguy.pop
+#base robot_sigsegv_reloaded.pop
+#base robot_sig_overlord.pop
+#base robot_hole_sigsegv.pop
 
 WaveSchedule
 {
@@ -18,6 +24,46 @@ WaveSchedule
 	//NoHolidayPickups 1 //[$ SIGSEGV]
 	ForceHoliday 2 //[$SIGSEGV] //Enforces Halloween mode, but does not enable wave 666 and zombie bots
 	TextPrintTime 0 //[$ SIGSEGV]
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"1266"                     
+		Y	"-2341"                  
+		Z	"548"        
+	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"-1071"                     
+		Y	"-1798"                  
+		Z	"715"        
+	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"-858"                     
+		Y	"-1005"                  
+		Z	"539"        
+	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"730"                     
+		Y	"-617"                  
+		Z	"811"        
+	}
+	ExtraSpawnPoint [$SIGSEGV]
+	{
+		Name "redspawn"
+		TeamNum 3
+		X	"1255"                     
+		Y	"899"                  
+		Z	"651"        
+	}
 	Templates
 	{
 		T_TFBot_TimeBomb	//6분타이머
@@ -40,7 +86,10 @@ WaveSchedule
 		    {
 			"health regen" -1
 			"cannot pick up intelligence" 1
-			"dmg taken increased" 0
+			"dmg taken from bullets reduced"   0
+			"dmg taken from blast reduced"    0
+			"dmg taken from fire reduced"    0
+			"dmg taken from crit reduced"    0
 			"move speed penalty" 0
 			"dmg from ranged reduced" 0
 			"dmg from melee increased" 0
@@ -85,6 +134,62 @@ WaveSchedule
 		    {
 			Template  T_TFBot_TimeBomb
 		    }
+		}
+		WaveSpawn
+		{
+			Name redsupp
+			Where redspawn
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 4
+			WaitBeforeStarting 0
+			WaitBetweenSpawnsAfterDeath 10
+			Support Limited
+			Squad
+			{
+				TFBot
+				{
+					Template T_TFBot_Giant_Scout_Blaster_Hyper
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
+				}
+				TFBot
+				{
+					Template T_TFBot_Giant_Pyro_Future
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
+				}
+				
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_Tanker_Hyper
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
+				}
+				TFBot
+				{
+					T_TFBot_Giant_Heavy_Tomislav_Hyper
+					Action Mobber  
+					ClassIcon red2_lite
+					AddCond   //Adds conditions to bots
+					{
+						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
+					}
+				}
+			}
+
 		}
 		WaveSpawn	//보스 실험
 		{
@@ -237,6 +342,72 @@ WaveSchedule
 							"powerup charges" 1
 						}
 					}
+					last
+					{
+						Skill Expert
+						Item	"Blast Blocker"
+						Item	"Frag Proof Fragger"
+						Item	"the iron bomber"
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
+						Attributes AlwaysCrit
+						WeaponRestrictions	MeleeOnly
+						ItemAttributes
+						{
+							ItemName	"the iron bomber"
+							"damage penalty"	0.4
+							"grenade damage reduction on world contact" 2.5
+							"damage force increase"  100
+							"apply z velocity on damage"  -100
+							"projectile spread angle penalty"	40
+							"clip size bonus"	6
+							"fire rate bonus"	0.0
+							"fuse bonus"	1.5
+							"blast dmg to self increased"	0.001
+							"auto fires full clip all at once" 1
+							"grenade no bounce" 1
+							"is_passive_weapon" 1
+						}
+						ItemAttributes
+						{
+							ItemName	"the chargin' targe"
+							"charge time increased"	10
+							"no charge impact range"	1
+							"charge impact damage increased"	2.0
+							"charge recharge rate increased"	2.0
+							"Attack not cancel charge" 1				
+						}
+						ItemModel [$SIGSEGV]
+						{
+							ItemName "the iron bomber"
+							Model "models/weapons/c_models/c_headtaker/c_headtaker.mdl"
+						}
+						ItemAttributes
+						{
+							ItemName	"the horseless headless horseman's headtaker"
+							"damage bonus"	3.0
+							"hand scale"	1.3
+							"melee cleave attack" 1
+						}
+						Item	"the horseless headless horseman's headtaker"
+						CharacterAttributes
+						{
+							"move speed bonus"	0.35
+							"damage force reduction" 0.4
+							"airblast vulnerability multiplier" 0.4
+							"override footstep sound set" 4
+							"health regen"	100
+							"cancel falling damage" 1
+							"increased jump height" 2
+						}
+						ItemAttributes
+						{
+							ItemName "Battery Canteens"
+							"ubercharge" 3
+							"powerup charges" 1
+						}
+					}
 				}
 				ChangeAttributes    
 				{
@@ -249,9 +420,17 @@ WaveSchedule
 				{
 					Delay 30
 					Cooldown 40
-					Repeats 0
+					Repeats 1
 					IfHealthBelow 35000
 					Name "Demoman2"
+				}
+				ChangeAttributes    
+				{
+					Delay 50	
+					Cooldown 60
+					Repeats 1
+					IfHealthBelow 10000
+					Name "last"
 				}
 			}
 		}
