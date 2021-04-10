@@ -395,7 +395,6 @@ WaveSchedule
 						IfHealthBelow 30000
 						Name "Demoman"
 					}
-				}
 			}
 		}
 	}
