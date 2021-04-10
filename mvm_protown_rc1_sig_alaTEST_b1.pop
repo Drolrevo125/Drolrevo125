@@ -10,21 +10,22 @@
 #base robot_sig_overlord.pop
 #base robot_hole_sigsegv.pop
 
+
 WaveSchedule
 {
-	StartingCurrency	800
+	StartingCurrency	8000
 	RespawnWaveTime	3
 	CanBotsAttackWhileInSpawnRoom	no
 	AddSentryBusterWhenDamageDealtExceeds	750
 	AddSentryBusterWhenKillCountExceeds	8
 	Advanced	1
 	//밑으로 시그 [$ SIGSEGV]이거때문인지 확인
-	SendBotsToSpectatorImmediately 1 //[$ SIGSEGV]
-	SentryBusterFriendlyFire 0 //[$ SIGSEGV]
+	//SendBotsToSpectatorImmediately 1 //[$ SIGSEGV]
+	//SentryBusterFriendlyFire 0 //[$ SIGSEGV]
 	NoRomevisionCosmetics 1 //[$ SIGSEGV]
-	SniperAllowHeadshots 1 //[$ SIGSEGV]
+	//SniperAllowHeadshots 1 //[$ SIGSEGV]
 	ImprovedAirblast 1 //[$SIGSEGV]
-	NoHolidayPickups 1 //[$ SIGSEGV]
+	//NoHolidayPickups 1 //[$ SIGSEGV]
 	TextPrintTime 0 //[$ SIGSEGV]
 	ItemAttributes
 	{
@@ -32,14 +33,14 @@ WaveSchedule
 		"damage bonus vs burning"	4
 	}
 	ItemAttributes
-        {
-                ItemName    "Baby Face's Blaster"	//하이퍼운용하게
-                "lose hype on take damage"    0    //effectively makes it impossible to lose boost
+    {
+        ItemName    "Baby Face's Blaster"	//하이퍼운용하게
+        "lose hype on take damage"    0    //effectively makes it impossible to lose boost
 		"hype resets on jump"	0
 		"hype on damage"	1	//이게머고
 		"hype decays over time"	1
 		"fire rate penalty" 1.1
-        }
+    }
 	ItemAttributes  
 	{
 		ItemName	"the axtinguisher"
@@ -54,26 +55,27 @@ WaveSchedule
 	ItemAttributes
 	{
 		ItemName	"the direct hit"
-		"critboost on kill"	0.5
-		"Blast radius decreased"	2
+		"critboost on kill"	1
+		"Blast radius decreased"	0.01
 	}
 	ItemAttributes  //곡사로켓실험 멀티로켓포기
 	{
 		ItemName "the liberty launcher"
-		"projectile gravity" 600	//수치조절하기 로켓중력
-		"projectile acceleration" 500	//수치조절하기 로켓가속
-		"projectile speed decreased" "0.8"
-		"faster reload rate" 1.3
+		"projectile gravity" 850	//수치조절하기 로켓중력
+		//"projectile acceleration" 2000	//수치조절하기 로켓가속
+		"projectile speed decreased" "0.9"
+		"reload time increased"	1.2
 		"mini rockets"	1
-		"rj air bombardment"	1	//로점시 3발발사
-		"damage bonus"	1.2	//뎀감5%
-		"mul nonrocketjump attackrate" 0.5	//땅에있을시 발속증
+		"damage penalty"	0.95
+		//"damage bonus hidden"	1.2	//뎀감5%
+		"mul nonrocketjump attackrate" 0.5	//땅에있
 	}
 	ItemAttributes
 	{
-		ItemName	"the quickiebomb launcher"
+		ItemName	"the loch-n-load"
 		"reload time increased"	0.2
-		"mult projectile count" 1
+		"mult projectile count" 2.1
+		//"projectile spread angle penalty" 5
 	}
 	ItemAttributes  
 	{
@@ -81,7 +83,8 @@ WaveSchedule
 		"explosive bullets" 60
 		"fire rate penalty" 1.3
 		"bullets per shot bonus"	0.25
-		"damage bonus" 2
+		"damage bonus" 2.5
+		"maxammo primary reduced"	0.4
 	}
 	ItemAttributes
 	{
@@ -110,9 +113,9 @@ WaveSchedule
 	{
 		ItemName	"the machina"
 		"sniper no headshot without full charge"	1
-		"maxammo primary reduced"	1.5
+		"maxammo primary reduced"	0.3
 		"headshot damage increase"	2
-		"sniper charge per sec"	0.5
+		"sniper charge per sec"	0.3
 	}
 	ItemAttributes
 	{
