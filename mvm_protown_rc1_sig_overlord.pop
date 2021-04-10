@@ -1507,7 +1507,7 @@ WaveSchedule
 			SpawnCount	2
 			WaitBeforeStarting	5
 			WaitBetweenSpawns	8
-			Where	spawnbot
+			Where	spawnbot_giant
 			Squad
 			{
 				TFBot
@@ -1829,7 +1829,7 @@ WaveSchedule
 			SpawnCount	2
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	5
-			Where	spawnbot
+			Where	spawnbot_giant
 			Squad
 			{
 				TFBot
@@ -1864,7 +1864,7 @@ WaveSchedule
 			SpawnCount	1
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	2
-			Where	spawnbot
+			Where	spawnbot_sniper
 			Squad
 			{
 				TFBot
@@ -2077,7 +2077,7 @@ WaveSchedule
 			SpawnCount	1
 			WaitBeforeStarting	5
 			WaitBetweenSpawns	0.2
-			Where	spawnbot
+			Where	spawnbot_spy
 			Squad
 			{
 				TFBot
@@ -2145,7 +2145,7 @@ WaveSchedule
 			SpawnCount	1
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	10
-			Where	spawnbot
+			Where	spawnbot_giant
 			Squad
 			{
 				TFBot
@@ -2168,7 +2168,7 @@ WaveSchedule
 			{
 				TFBot
 				{
-					Template	T_TFBot_Heavy_Orb
+					Template	T_TFBot_Heavy_Deflector_Pusher
 				}
 			}
 		}
@@ -2234,7 +2234,7 @@ WaveSchedule
 			SpawnCount	3
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	10
-			Where	spawnbot
+			Where	spawnbot_giant
 			Squad
 			{
 				TFBot
@@ -2253,7 +2253,7 @@ WaveSchedule
 			SpawnCount	2
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	10
-			Where	spawnbot
+			Where	spawnbot_sniper
 			Squad
 			{
 				TFBot
@@ -2328,7 +2328,7 @@ WaveSchedule
 			SpawnCount	6
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	10
-			Where	spawnbot
+			Where	spawnbot_giant
 			Squad
 			{
 				TFBot
