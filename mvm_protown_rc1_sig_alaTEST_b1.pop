@@ -30,26 +30,25 @@ WaveSchedule
 	ItemAttributes
 	{
 		ItemName	sun-on-a-stick
-		"damage bonus vs burning"	4
+		"damage bonus vs burning"	5
 	}
 	ItemAttributes
     {
         ItemName    "Baby Face's Blaster"	//하이퍼운용하게
         "lose hype on take damage"    0    //effectively makes it impossible to lose boost
 		"hype resets on jump"	0
-		"hype on damage"	1	//이게머고
-		"hype decays over time"	1
-		"fire rate penalty" 1.1
+		"hype decays over time"	0.1
+		//"fire rate penalty" 1.1
     }
 	ItemAttributes  
 	{
 		ItemName	"the axtinguisher"
-		"damage bonus vs burning"	4
+		"damage bonus" 2.5
 	}
 	ItemAttributes  
 	{
 		ItemName "sharpened volcano fragment"
-		"damage bonus vs burning"	2
+		"damage bonus vs burning"	3
 	
 	}
 	ItemAttributes
@@ -61,19 +60,21 @@ WaveSchedule
 	ItemAttributes  //곡사로켓실험 멀티로켓포기
 	{
 		ItemName "the liberty launcher"
-		"projectile gravity" 850	//수치조절하기 로켓중력
+		"projectile gravity" 1000	//수치조절하기 로켓중력
 		//"projectile acceleration" 2000	//수치조절하기 로켓가속
 		"projectile speed decreased" "0.9"
-		"reload time increased"	1.2
+		"reload time increased"	1.3
 		"mini rockets"	1
 		"damage penalty"	0.95
 		//"damage bonus hidden"	1.2	//뎀감5%
-		"mul nonrocketjump attackrate" 0.5	//땅에있
+		"mul nonrocketjump attackrate" 0.3	//땅에있
+		//"mult projectile count" 2.1
+		"projectile spread angle penalty" 1
 	}
 	ItemAttributes
 	{
 		ItemName	"the loch-n-load"
-		"reload time increased"	0.2
+		"reload time increased"	1.4
 		"mult projectile count" 2.1
 		//"projectile spread angle penalty" 5
 	}
@@ -89,7 +90,7 @@ WaveSchedule
 	ItemAttributes
 	{
 		ItemName	natascha
-		"heal on hit for rapidfire"	5
+		"heal on hit for rapidfire"	10
 	}
 	ItemAttributes  
 	{
@@ -113,8 +114,8 @@ WaveSchedule
 	{
 		ItemName	"the machina"
 		"sniper no headshot without full charge"	1
-		"maxammo primary reduced"	0.3
-		"headshot damage increase"	2
+		"maxammo primary reduced"	0.5
+		"headshot damage increase"	2.5
 		"sniper charge per sec"	0.3
 	}
 	ItemAttributes
@@ -196,11 +197,11 @@ WaveSchedule
 		{
 			Line "페이즈보스,무기 테스트용임"
 			Line "{green}무기 조정목록"
-			Line "{blue}동총:피격시효과 삭제,최대증진딜증,발속감소"
+			Line "{blue}동총:피격시효과 삭제,최대증진딜증 시간당증진감소"
 			Line "{blue}해품막,소화도끼,화산도끼:불붙은대상 400%추가피해"
-			Line "{blue}다렉:처치시 0.5초 크리,폭범감소"
+			Line "{blue}다렉:처치시 1초 크리,폭범감소"
 			Line "{blue}자유투사:곡사로켓,무기리워크"
-			Line "{blue}순삭폭탄:점착 1추가발사"
+			Line "{blue}로크:1추가발사"
 			Line "{blue}철의장막:탄환폭팔,발속감소, 나타샤:적중힐5"
 			Line "{blue}건슬:체력100,35"
 			Line "{blue}컴파운드보우:추가화살발사 클래식:탄환폭팔"
