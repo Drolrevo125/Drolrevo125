@@ -105,160 +105,181 @@ WaveSchedule
 				Action Mobber  
 				AlwaysGlow 1
 
-					EventChangeAttributes //Do not attempt to put any of custom keys here. ExtAttr is the only exception
+				EventChangeAttributes //Do not attempt to put any of custom keys here. ExtAttr is the only exception
+				{
+					Default
 					{
-						Default
+						Skill Expert
+						Item	"Blast Blocker"
+						Item	"Frag Proof Fragger"
+						Item	"The Loose Cannon"
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
+						Attributes AlwaysCrit
+						ItemAttributes
 						{
-							Skill Expert
-							Item	"Blast Blocker"
-							Item	"Frag Proof Fragger"
-							Item	"The Loose Cannon"
-							Attributes MiniBoss
-							Attributes UseBossHealthBar
-							Attributes HoldFireUntilFullReload
-							Attributes AlwaysCrit
-							ItemAttributes
-							{
-								ItemName "The Loose Cannon"
-								"grenade launcher mortar mode" 0
-								"faster reload rate" 1.8
-								"fire rate bonus" 2
-								"clip size penalty" 0.5
-								"Projectile speed increased" 0.8
-								"projectile spread angle penalty" 5
-								"damage bonus" 9
-								"damage causes airblast" 1
-								"blast radius increased" 1.5
-								"use large smoke explosion" 1
-								"mult projectile count" 3
-							}
-							CharacterAttributes
-							{
-								"move speed bonus"	0.35
-								"damage force reduction" 0.4
-								"airblast vulnerability multiplier" 0.4
-								"override footstep sound set" 4
-								"health regen"	100
-							}
+							ItemName "The Loose Cannon"
+							"grenade launcher mortar mode" 0
+							"faster reload rate" 1.8
+							"fire rate bonus" 2
+							"clip size penalty" 0.5
+							"Projectile speed increased" 0.8
+							"projectile spread angle penalty" 5
+							"damage bonus" 9
+							"damage causes airblast" 1
+							"blast radius increased" 1.5
+							"use large smoke explosion" 1
+							"mult projectile count" 3
 						}
-						Demoman1
+						CharacterAttributes
 						{
-							Skill Expert
-							Item	"Blast Blocker"
-							Item	"Frag Proof Fragger"
-							Attributes MiniBoss
-							Attributes UseBossHealthBar
-							Attributes HoldFireUntilFullReload
-							Attributes AlwaysCrit
-							UseBestWeapon 1 [$SIGSEGV]
-							ItemAttributes
-							{
-								ItemName	tf_weapon_grenadelauncher
-								"faster reload rate" 0.2
-								"fire rate bonus" -1
-								"damage bonus"	3
-								"clip size upgrade atomic"	2
-								"Projectile speed increased"	3.0
-							}
-							ItemAttributes
-							{
-								ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
-								"damage bonus"	2
-								"stickybomb charge rate" -3
-								"sticky arm time bonus" 5
-								"fire rate bonus" -1
-								"faster reload rate" 0.33
-								"projectile spread angle penalty" 5
-							}
-							CharacterAttributes
-							{
-								"move speed bonus"	0.35
-								"damage force reduction" 0.4
-								"airblast vulnerability multiplier" 0.4
-								"override footstep sound set" 4
-								"health regen"	100
-							}
-							ItemAttributes
-							{
-								ItemName "Battery Canteens"
-								"ubercharge" 3
-								"powerup charges" 1
-							}
-						}
-						Demoman2
-						{
-							Skill Expert
-							Item	"Blast Blocker"
-							Item	"Frag Proof Fragger"
-							Item	"the iron bomber"
-							Attributes MiniBoss
-							Attributes UseBossHealthBar
-							Attributes HoldFireUntilFullReload
-							Attributes AlwaysCrit
-							ItemAttributes
-							{
-								ItemName	"the iron bomber"
-								"damage penalty"	0.4
-								"grenade damage reduction on world contact" 2.5
-								"damage force increase"  100
-								"apply z velocity on damage"  -100
-								"projectile spread angle penalty"	40
-								"clip size bonus"	6
-								"fire rate bonus"	0.0
-								"fuse bonus"	1.5
-								"blast dmg to self increased"	0.001
-								"auto fires full clip all at once" 1
-								"grenade no bounce" 1
-								"is_passive_weapon" 1
-							}
-							ItemAttributes
-							{
-								ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
-								"stickybomb charge rate" -1
-								"sticky arm time bonus" 5
-								"damage bonus" 2.5
-								"stickies detonate stickies"	1
-								"Blast radius increased"	1.5
-								"faster reload rate" -1
-								"max pipebombs increased" -7
-							}
-							CharacterAttributes
-							{
-								"move speed bonus"	0.35
-								"damage force reduction" 0.4
-								"airblast vulnerability multiplier" 0.4
-								"override footstep sound set" 4
-								"health regen"	100
-							}
-							ItemAttributes
-							{
-								ItemName "Battery Canteens"
-								"ubercharge" 3
-								"powerup charges" 1
-							}
+							"move speed bonus"	0.35
+							"damage force reduction" 0.4
+							"airblast vulnerability multiplier" 0.4
+							"override footstep sound set" 4
+							"health regen"	100
 						}
 					}
-					ChangeAttributes    
+					Demoman1
 					{
-						Delay 3
-						Repeats 1
-						IfHealthBelow 65000
-						Name "Demoman1"
+						Skill Expert
+						Item	"Blast Blocker"
+						Item	"Frag Proof Fragger"
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
+						Attributes AlwaysCrit
+						ItemAttributes
+						{
+							ItemName	tf_weapon_grenadelauncher
+							"faster reload rate" 0.2
+							"fire rate bonus" -1
+							"damage bonus"	3
+							"clip size upgrade atomic"	2
+							"Projectile speed increased"	3.0
+						}
+						ItemAttributes
+						{
+							ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
+							"damage bonus"	2
+							"stickybomb charge rate" -3
+							"sticky arm time bonus" 5
+							"fire rate bonus" -1
+							"faster reload rate" 0.33
+							"projectile spread angle penalty" 5
+						}
+						CharacterAttributes
+						{
+							"move speed bonus"	0.35
+							"damage force reduction" 0.4
+							"airblast vulnerability multiplier" 0.4
+							"override footstep sound set" 4
+							"health regen"	100
+						}
+						ItemAttributes
+						{
+							ItemName "Battery Canteens"
+							"ubercharge" 3
+							"powerup charges" 1
+						}
+						WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
+						{
+						    Delay 0 //Time before the first weapon switch starts (Default: 10)
+						    Cooldown 5 //Time between each weapon switch (Default: 10)
+						    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+						    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+						    Type "Secondary" // Weapon slot, possible values:
+							//Primary
+							//Secondary
+							//Melee
+						    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+						}
+						WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
+						{
+						    Delay 5 //Time before the first weapon switch starts (Default: 10)
+						    Cooldown 10 //Time between each weapon switch (Default: 10)
+						    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
+						    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
+						    Type "Primary" // Weapon slot, possible values:
+							//Primary
+							//Secondary
+							//Melee
+						    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
+						}
 					}
-					ChangeAttributes    
+					Demoman2
 					{
-						Delay 30
-						Cooldown 40
-						Repeats 0
-						IfHealthBelow 35000
-						Name "Demoman2"
+						Skill Expert
+						Item	"Blast Blocker"
+						Item	"Frag Proof Fragger"
+						Item	"the iron bomber"
+						Attributes MiniBoss
+						Attributes UseBossHealthBar
+						Attributes HoldFireUntilFullReload
+						Attributes AlwaysCrit
+						ItemAttributes
+						{
+							ItemName	"the iron bomber"
+							"damage penalty"	0.4
+							"grenade damage reduction on world contact" 2.5
+							"damage force increase"  100
+							"apply z velocity on damage"  -100
+							"projectile spread angle penalty"	40
+							"clip size bonus"	6
+							"fire rate bonus"	0.0
+							"fuse bonus"	1.5
+							"blast dmg to self increased"	0.001
+							"auto fires full clip all at once" 1
+							"grenade no bounce" 1
+							"is_passive_weapon" 1
+						}
+						ItemAttributes
+						{
+							ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
+							"stickybomb charge rate" -1
+							"sticky arm time bonus" 5
+							"damage bonus" 2.5
+							"stickies detonate stickies"	1
+							"Blast radius increased"	1.5
+							"faster reload rate" -1
+							"max pipebombs increased" -7
+						}
+						CharacterAttributes
+						{
+							"move speed bonus"	0.35
+							"damage force reduction" 0.4
+							"airblast vulnerability multiplier" 0.4
+							"override footstep sound set" 4
+							"health regen"	100
+						}
+						ItemAttributes
+						{
+							ItemName "Battery Canteens"
+							"ubercharge" 3
+							"powerup charges" 1
+						}
 					}
+				}
+				ChangeAttributes    
+				{
+					Delay 3
+					Repeats 1
+					IfHealthBelow 65000
+					Name "Demoman1"
+				}
+				ChangeAttributes    
+				{
+					Delay 30
+					Cooldown 40
+					Repeats 0
+					IfHealthBelow 35000
+					Name "Demoman2"
+				}
 			}
 		}
 	}
 }
-
-
 
 
 //제발되라 씨ㅏㄹ 
