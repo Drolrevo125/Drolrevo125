@@ -26,6 +26,7 @@ WaveSchedule
 	//SniperAllowHeadshots 1 //[$ SIGSEGV]
 	ImprovedAirblast 1 //[$SIGSEGV]
 	//NoHolidayPickups 1 //[$ SIGSEGV]
+	ForceHoliday 2 //[$SIGSEGV] //Enforces Halloween mode, but does not enable wave 666 and zombie bots
 	TextPrintTime 0 //[$ SIGSEGV]
 	ItemAttributes
 	{
@@ -33,13 +34,13 @@ WaveSchedule
 		"damage bonus vs burning"	5
 	}
 	ItemAttributes
-    {
-        ItemName    "Baby Face's Blaster"	//하이퍼운용하게
-        "lose hype on take damage"    0    //effectively makes it impossible to lose boost
+	{
+		ItemName    "Baby Face's Blaster"	//하이퍼운용하게
+		"lose hype on take damage"    0    //effectively makes it impossible to lose boost
 		"hype resets on jump"	0
 		"hype decays over time"	0.1
 		//"fire rate penalty" 1.1
-    }
+	}
 	ItemAttributes  
 	{
 		ItemName	"the axtinguisher"
@@ -144,7 +145,7 @@ WaveSchedule
 		    Attributes  IgnoreEnemies
 		    Attributes UseBossHealthBar
 		    WeaponRestrictions  MeleeOnly
-		     AddCond [$SIGSEGV] //Invis effect
+		    AddCond	//Invis effect
 		    {
 			Index 66
 		    }
