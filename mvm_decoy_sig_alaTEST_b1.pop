@@ -219,174 +219,183 @@ WaveSchedule
 			TFBot
 			{
 				Class Demoman
-				Health 90000
-				Scale 1.9
-				Action Mobber
-				Name "Commodore Blast"
-				Attributes MiniBoss
-				Attributes UseBossHealthBar
-				Attributes HoldFireUntilFullReload
-				//ClassIcon demoknight_headtaker_nys
+				ClassIcon demo_bicorne_lite
+				Name "Steelbeard"
+				Health 40000
+				AutoJumpMin 5
+				AutoJumpMax 10
+				Action Mobber  
+				AlwaysGlow 1
 
-				ChangeAttributes [$SIGSEGV] 
-				{
-					Delay  0
-					Cooldown  14
-					Name  "Default" 
-				}
-
-				ChangeAttributes    
-				{
-					Delay 5
-					Repeats 1
-					IfHealthBelow 65000
-					Name "phase2"
-				}
-				ChangeAttributes    
-				{
-					Delay 10
-					Repeats 1
-					IfHealthBelow 35000
-					Name "phase3"
-				}
-
-				//ChangeAttributes [$SIGSEGV] 
-				//{
-				//	Delay  10.5
-				//	Cooldown  14
-				//	Name  "Axeman" 
-				//}
-
-				EventChangeAttributes
-				{
-					Default
+					EventChangeAttributes //Do not attempt to put any of custom keys here. ExtAttr is the only exception
 					{
-						Skill Expert
-						Item	"Blast Blocker"
-						Item	"Frag Proof Fragger"
-						Item	"The Loose Cannon"
-						Attributes MiniBoss
-						Attributes UseBossHealthBar
-						Attributes HoldFireUntilFullReload
-						ItemAttributes
+						Default
 						{
-							ItemName "The Loose Cannon"
-							"grenade launcher mortar mode" 0
-							"faster reload rate" 1.8
-							"fire rate bonus" 2
-							"Projectile speed increased" 0.8
-							"projectile spread angle penalty" 5
-							"damage bonus" 9
-							"damage causes airblast" 1
-							"blast radius increased" 1.5
-							"use large smoke explosion" 1
+							Skill Expert
+							Item "The Tide Turner"
+							Item "Prinny Machete"
+
+							Item "The Buccaneer's Bicorne"
+							Item "The King of Scotland Cape"
+							Item "Mann of the Seven Sees"
+							Item "The Sole Saviors"
+							Item "The All-Father"
+
+							WeaponRestrictions MeleeOnly
+							Attributes MiniBoss
+							ItemAttributes
+							{
+								ItemName "Prinny Machete"
+								"fire rate bonus" 0.5
+								"bleeding duration" 4
+							}
+							ItemAttributes
+							{
+								ItemName "The All-Father"
+								"set item tint rgb"  2960676
+							}
+							CharacterAttributes
+							{
+								"health regen"	50
+								"move speed bonus" 0.7
+								"damage force reduction" 0.5
+								"airblast vulnerability multiplier" 0.5
+								"override footstep sound set" 4
+								"rage giving scale" 0.2						
+							}
 						}
-						CharacterAttributes
+						Swordman2
 						{
-							"move speed bonus"	0.35
-							"damage force reduction" 0.4
-							"airblast vulnerability multiplier" 0.4
-							"override footstep sound set" 4
-							"health regen"	100
+							Skill Expert
+							Item "The Tide Turner"
+							Item "The Persian Persuader"
+
+							WeaponRestrictions MeleeOnly
+							Attributes MiniBoss
+							Attributes AutoJump
+							Attributes AirChargeOnly
+							ItemAttributes
+							{
+								ItemName "The Persian Persuader"
+								"charge meter on hit" 50
+								"damage bonus" 2
+							}
+							ItemAttributes
+							{
+								ItemName "The Tide Turner"
+								"Attack not cancel charge" 1							
+							}
+							CharacterAttributes
+							{
+								"health regen"	50
+								"move speed bonus" 0.7
+								"damage force reduction" 0.5
+								"airblast vulnerability multiplier" 0.5
+								"override footstep sound set" 4
+								"rage giving scale" 0.2		
+
+								"increased jump height" 2
+								"charge time increased" 2
+							}
+						}
+						Swordman3
+						{
+							Skill Expert
+							Item "The Eyelander"
+
+							WeaponRestrictions MeleeOnly
+							Attributes MiniBoss
+							Attributes AutoJump
+							Attributes AirChargeOnly
+							ItemAttributes
+							{
+								ItemName "The Eyelander"
+								"charge meter on hit" 50
+								"damage bonus" 2
+								"attach particle effect" 1
+								"Set DamageType Ignite" 1
+								"is australium item" 1
+							}
+							CharacterAttributes
+							{
+								"health regen"	50
+								"move speed bonus" 0.7
+								"damage force reduction" 0.5
+								"airblast vulnerability multiplier" 0.5
+								"override footstep sound set" 4
+								"rage giving scale" 0.2		
+
+								"increased jump height" 2
+								"charge time increased" 2
+							}
+						}
+						Demoman
+						{
+							Skill Expert
+							Item "The Loose Cannon"
+
+							Item "The All-Father"
+
+							WeaponRestrictions PrimaryOnly
+							Attributes MiniBoss
+							Attributes AlwaysFireWeapon
+							Attributes HoldFireUntilFullReload
+							ItemAttributes
+							{
+								ItemName "The Loose Cannon"
+								"fire rate bonus" 0.001
+								"clip size penalty" 0.75
+								"faster reload rate" 1
+								"blast radius increased" 1.25
+								"Projectile speed increased" 2
+								"projectile spread angle penalty" 4
+								"override projectile type"  2
+								"no self blast dmg" 2
+								"grenade launcher mortar mode"    0
+							}
+							ItemAttributes
+							{
+								ItemName "The All-Father"
+								"set item tint rgb"  15132390
+							}
+							CharacterAttributes
+							{
+								"health regen"	50
+								"move speed bonus" 0.5
+								"damage force reduction" 0.5
+								"airblast vulnerability multiplier" 0.5
+								"override footstep sound set" 4
+								"rage giving scale" 0.2		
+
+								"increased jump height" 1
+								"charge time increased" 2
+							}
 						}
 					}
-					phase2
+					ChangeAttributes    
 					{
-						Skill Expert
-						Item	"Blast Blocker"
-						Item	"Frag Proof Fragger"
-						Attributes MiniBoss
-						Attributes UseBossHealthBar
-						Attributes HoldFireUntilFullReload
-						UseBestWeapon 1
-						ItemAttributes
-						{
-							ItemName	tf_weapon_grenadelauncher
-							"faster reload rate" 0.2
-							"fire rate bonus" -1
-							"damage bonus"	3
-							"clip size upgrade atomic"	2
-							"Projectile speed increased"	3.0
-						}
-						ItemAttributes
-						{
-							ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
-							"damage bonus"	2
-							"stickybomb charge rate" -3
-							"sticky arm time bonus" 5
-							"fire rate bonus" -1
-							"faster reload rate" 0.33
-							"projectile spread angle penalty" 5
-						}
-						CharacterAttributes
-						{
-							"move speed bonus"	0.35
-							"damage force reduction" 0.4
-							"airblast vulnerability multiplier" 0.4
-							"override footstep sound set" 4
-							"health regen"	100
-						}
-						ItemAttributes
-						{
-							ItemName "Battery Canteens"
-							"ubercharge" 3
-							"powerup charges" 1
-						}
+						Delay 3
+						Repeats 1
+						IfHealthBelow 37500
+						Name "Swordman2"
 					}
-					phase3
+					ChangeAttributes    
 					{
-						Skill Expert
-						Item	"Blast Blocker"
-						Item	"Frag Proof Fragger"
-						Item	"the iron bomber"
-						Item	"Battery Canteens"
-						Attributes MiniBoss
-						Attributes UseBossHealthBar
-						Attributes HoldFireUntilFullReload
-						Attributes AlwaysCrit
-						ItemAttributes
-						{
-							ItemName	"the iron bomber"
-							"damage penalty"	0.4
-							"grenade damage reduction on world contact" 2.5
-							"damage force increase"  100
-							"apply z velocity on damage"  -100
-							"projectile spread angle penalty"	40
-							"clip size bonus"	6
-							"fire rate bonus"	0.0
-							"fuse bonus"	1.5
-							"blast dmg to self increased"	0.001
-							"auto fires full clip all at once" 1
-							"grenade no bounce" 1
-							"is_passive_weapon" 1
-						}
-						ItemAttributes
-						{
-							ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
-							"stickybomb charge rate" -1
-							"sticky arm time bonus" 5
-							"damage bonus" 2.5
-							"stickies detonate stickies"	1
-							"Blast radius increased"	1.5
-							"faster reload rate" -1
-							"max pipebombs increased" -7
-						}
-						CharacterAttributes
-						{
-							"move speed bonus"	0.35
-							"damage force reduction" 0.4
-							"airblast vulnerability multiplier" 0.4
-							"override footstep sound set" 4
-							"health regen"	100
-						}
-						ItemAttributes
-						{
-							ItemName "Battery Canteens"
-							"ubercharge" 3
-							"powerup charges" 1
-						}
+						Delay 10
+						Cooldown 40
+						Repeats 0
+						IfHealthBelow 30000
+						Name "Swordman3"
 					}
-				}	
+					ChangeAttributes    
+					{
+						Delay 30
+						Cooldown 40
+						Repeats 0
+						IfHealthBelow 30000
+						Name "Demoman"
+					}
+				}
 			}
 		}
 	}
