@@ -232,128 +232,101 @@ WaveSchedule
 			TFBot
 			{
 				Class Demoman
-			Health 14000
-			Name "Headless Mann"
-			Attributes UseBossHealthBar
-			Attributes MiniBoss
-			ClassIcon demoknight_headtaker_nys
-			
-			Tag "horseman"
-			
-			UseHumanModel 1 [$SIGSEGV]
-			
-			SpawnTemplate "ScareCube" [$SIGSEGV]
-			
-			FireInput [$SIGSEGV]
-			{
-				Target   "boss_spook_relay"
-				Action   Trigger
-				Delay    11
-				Cooldown 14
-				Repeats  0
-			}
-			
-			Taunt [$SIGSEGV]  //Taunt periodically
-			{
-				Delay 10 //Time before the first taunt starts (Default: 10)
-				Cooldown 14 //Time between each taunt (Default: 10)
-				Repeats 0 //How many times the bot should taunt in total (Default: 0 - Infinite)
-			}
-			
-			VoiceCommand [$SIGSEGV]  
-			{
-				Delay 11 
-				Cooldown 14
-				Repeats 0 
-				Type "Battle cry" 
-			}
-			
-			ChangeAttributes [$SIGSEGV] 
-			{
-				Delay  0
-				Cooldown  14
-				Name  "Axeman" 
-			}
-			
-			ChangeAttributes [$SIGSEGV] 
-			{
-				Delay  9
-				Cooldown  14
-				Name  "DrinkAlcohol" 
-			}
-			
-			//ChangeAttributes [$SIGSEGV] 
-			//{
-			//	Delay  10.5
-			//	Cooldown  14
-			//	Name  "Axeman" 
-			//}
-			
-			EventChangeAttributes
-			{
-				Axeman
+				Health 14000
+				Name "Headless Mann"
+				Attributes UseBossHealthBar
+				Attributes MiniBoss
+				//ClassIcon demoknight_headtaker_nys
+
+				UseHumanModel 1 [$SIGSEGV]
+
+				ChangeAttributes [$SIGSEGV] 
 				{
-					Item "The Horseless Headless Horseman's Headtaker"
-					Item "The Horsemann's Hand-Me-Down"
-					Item "Zombie Demo"
-					Item "Ali Baba's Wee Booties"
-					
-					WeaponRestrictions MeleeOnly
-					
-					Attributes AlwaysFireWeapon
-					
-					Skill Expert
-					
-					ItemAttributes
-					{
-						ItemName "The Horseless Headless Horseman's Headtaker"
-						"critboost on kill" 4
-						"damage bonus" 1.4
-						"max health additive penalty" -0
-						"add_head_on_kill" 0
-						"melee range multiplier" 1.35
-					}
-					
-					CharacterAttributes
-					{
-						"move speed bonus"	0.1
-						"head scale" 0.0
-						"rage giving scale" 0.4
-						"zombiezombiezombiezombie" 1
-						"damage force reduction" 0
-						"airblast vulnerability multiplier" 0
-						"override footstep sound set" 3
-						"SET BONUS: special dsp" 38
-						"voice pitch scale" 0.5
-						"increased jump height" 0.01
-						"gesture speed increase" 2
-					}
+					Delay  0
+					Cooldown  14
+					Name  "Axeman" 
 				}
-				
-				DrinkAlcohol
+
+				ChangeAttributes [$SIGSEGV] 
 				{
-					Item "The Horsemann's Hand-Me-Down"
-					Item "Zombie Demo"
-					Item "Ali Baba's Wee Booties"
-					
-					WeaponRestrictions MeleeOnly
-					
-					Skill Expert
-					
-					
-					CharacterAttributes
+					Delay  9
+					Cooldown  14
+					Name  "DrinkAlcohol" 
+				}
+
+				//ChangeAttributes [$SIGSEGV] 
+				//{
+				//	Delay  10.5
+				//	Cooldown  14
+				//	Name  "Axeman" 
+				//}
+
+				EventChangeAttributes
+				{
+					Axeman
 					{
-						"move speed bonus"	0.1
-						"head scale" 0.0
-						"rage giving scale" 0.4
-						"zombiezombiezombiezombie" 1
-						"damage force reduction" 0
-						"airblast vulnerability multiplier" 0
-						"override footstep sound set" 3
-						"SET BONUS: special dsp" 38
-						"voice pitch scale" 0.5
-						"gesture speed increase" 2
-						"increased jump height" 0.01
+						Item "The Horseless Headless Horseman's Headtaker"
+						Item "The Horsemann's Hand-Me-Down"
+						Item "Zombie Demo"
+						Item "Ali Baba's Wee Booties"
+
+						WeaponRestrictions MeleeOnly
+
+						Attributes AlwaysFireWeapon
+
+						Skill Expert
+
+						ItemAttributes
+						{
+							ItemName "The Horseless Headless Horseman's Headtaker"
+							"critboost on kill" 4
+							"damage bonus" 1.4
+							"max health additive penalty" -0
+							"add_head_on_kill" 0
+							"melee range multiplier" 1.35
+						}
+
+						CharacterAttributes
+						{
+							"move speed bonus"	0.1
+							"head scale" 0.0
+							"rage giving scale" 0.4
+							"zombiezombiezombiezombie" 1
+							"damage force reduction" 0
+							"airblast vulnerability multiplier" 0
+							"override footstep sound set" 3
+							"SET BONUS: special dsp" 38
+							"voice pitch scale" 0.5
+							"increased jump height" 0.01
+							"gesture speed increase" 2
+						}
+					}
+
+					DrinkAlcohol
+					{
+						Item "The Horsemann's Hand-Me-Down"
+						Item "Zombie Demo"
+						Item "Ali Baba's Wee Booties"
+
+						WeaponRestrictions MeleeOnly
+
+						Skill Expert
+
+
+						CharacterAttributes
+						{
+							"move speed bonus"	0.1
+							"head scale" 0.0
+							"rage giving scale" 0.4
+							"zombiezombiezombiezombie" 1
+							"damage force reduction" 0
+							"airblast vulnerability multiplier" 0
+							"override footstep sound set" 3
+							"SET BONUS: special dsp" 38
+							"voice pitch scale" 0.5
+							"gesture speed increase" 2
+							"increased jump height" 0.01
+						}
 					}
 				}	
 			}
