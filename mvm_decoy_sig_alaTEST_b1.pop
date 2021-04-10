@@ -146,6 +146,7 @@ WaveSchedule
 						Skill Expert
 						Item	"Blast Blocker"
 						Item	"Frag Proof Fragger"
+						Item "The Splendid Screen"
 						Attributes MiniBoss
 						Attributes UseBossHealthBar
 						Attributes HoldFireUntilFullReload
@@ -155,19 +156,19 @@ WaveSchedule
 							ItemName	tf_weapon_grenadelauncher
 							"faster reload rate" 0.2
 							"fire rate bonus" -1
-							"damage bonus"	3
+							"damage bonus"	2.5
 							"clip size upgrade atomic"	2
 							"Projectile speed increased"	3.0
+							"projectile spread angle penalty" 3
+							"mult projectile count" 2.1
 						}
 						ItemAttributes
 						{
-							ItemName "TF_WEAPON_PIPEBOMBLAUNCHER"
-							"damage bonus"	2
-							"stickybomb charge rate" -3
-							"sticky arm time bonus" 5
-							"fire rate bonus" -1
-							"faster reload rate" 0.33
-							"projectile spread angle penalty" 5
+							ItemName "The Splendid Screen"
+							"Attack not cancel charge"					1
+							"charge time increased" 					2
+							"charge recharge rate increased"			10
+							"lose demo charge on damage when charging"	1
 						}
 						CharacterAttributes
 						{
@@ -182,30 +183,6 @@ WaveSchedule
 							ItemName "Battery Canteens"
 							"ubercharge" 3
 							"powerup charges" 1
-						}
-						WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
-						{
-						    Delay 0 //Time before the first weapon switch starts (Default: 10)
-						    Cooldown 5 //Time between each weapon switch (Default: 10)
-						    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
-						    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
-						    Type "Secondary" // Weapon slot, possible values:
-							//Primary
-							//Secondary
-							//Melee
-						    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
-						}
-						WeaponSwitch [$SIGSEGV]  //Periodically switches weapon
-						{
-						    Delay 5 //Time before the first weapon switch starts (Default: 10)
-						    Cooldown 10 //Time between each weapon switch (Default: 10)
-						    Repeats 0 //How many times should bot switch weapons in total (Default: 0 - Infinite)
-						    //IfSeeTarget 1 //When set to 1, this task activates only when the bot can see the target player (Default 0 - Always activate)
-						    Type "Primary" // Weapon slot, possible values:
-							//Primary
-							//Secondary
-							//Melee
-						    //IfHealthBelow 100 //When set, the task activates only when the bot health is below specified value
 						}
 					}
 					Demoman2
