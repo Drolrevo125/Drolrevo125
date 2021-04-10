@@ -135,62 +135,6 @@ WaveSchedule
 			Template  T_TFBot_TimeBomb
 		    }
 		}
-		WaveSpawn
-		{
-			Name redsupp
-			Where redspawn
-			TotalCount 4
-			MaxActive 4
-			SpawnCount 4
-			WaitBeforeStarting 0
-			WaitBetweenSpawnsAfterDeath 10
-			Support Limited
-			Squad
-			{
-				TFBot
-				{
-					Template T_TFBot_Giant_Scout_Blaster_Hyper
-					Action Mobber  
-					ClassIcon red2_lite
-					AddCond   //Adds conditions to bots
-					{
-						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
-					}
-				}
-				TFBot
-				{
-					Template T_TFBot_Giant_Pyro_Future
-					Action Mobber  
-					ClassIcon red2_lite
-					AddCond   //Adds conditions to bots
-					{
-						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
-					}
-				}
-				
-				TFBot
-				{
-					Template T_TFBot_Giant_Soldier_Tanker_Hyper
-					Action Mobber  
-					ClassIcon red2_lite
-					AddCond   //Adds conditions to bots
-					{
-						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
-					}
-				}
-				TFBot
-				{
-					T_TFBot_Giant_Heavy_Tomislav_Hyper
-					Action Mobber  
-					ClassIcon red2_lite
-					AddCond   //Adds conditions to bots
-					{
-						Name "TF_COND_REPROGRAMMED" // Condition to apply. List of available conditions https://wiki.teamfortress.com/wiki/Cheats#addcond
-					}
-				}
-			}
-
-		}
 		WaveSpawn	//보스 실험
 		{
 			TotalCurrency	500
