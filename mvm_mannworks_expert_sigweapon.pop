@@ -8,7 +8,231 @@ WaveSchedule
 	StartingCurrency 400
 	CanBotsAttackWhileInSpawnRoom No
 	RespawnWaveTime 7
+	ForceHoliday 2 //[$SIGSEGV] //Enforces Halloween mode, but does not enable wave 666 and zombie bots
+	TextPrintTime 0 //[$ SIGSEGV]
+	PlayerAttributes
+	{
+		medic
+		{
+			"medic machinery beam" 2
+		}
+	}
+	//------------------------------------------스카웃------------------------------------------	
+	ItemAttributes
+	{
+		ItemName	sun-on-a-stick
+		"damage bonus vs burning"	5
+	}
+	ItemAttributes
+	{
+		ItemName    "Baby Face's Blaster"	//하이퍼운용하게
+		"lose hype on take damage"    0    //effectively makes it impossible to lose boost
+		"hype resets on jump"	0
+		"hype decays over time"	0.1
+		//"fire rate penalty" 1.1
+	}
 	
+	//------------------------------------------파이로------------------------------------------
+	
+	ItemAttributes  
+	{
+		ItemName	"the axtinguisher"
+		"damage bonus" 2.5
+	}
+	ItemAttributes  
+	{
+		ItemName "sharpened volcano fragment"
+		"damage bonus vs burning"	3
+	
+	}
+	
+	//------------------------------------------솔저------------------------------------------
+	
+	ItemAttributes
+	{
+		ItemName	"the direct hit"
+		"critboost on kill"	1
+		"Blast radius decreased"	0.01
+		//"arrow mastery" 1	//부채로켓되나보기 실패
+	}
+	ItemAttributes  //곡사로켓실험 멀티로켓포기
+	{
+		ItemName "the liberty launcher"
+		"projectile gravity" 1000	//수치조절하기 로켓중력
+		//"projectile acceleration" 2000	//수치조절하기 로켓가속
+		"projectile speed decreased" "0.9"
+		"reload time increased"	1.3
+		"mini rockets"	1
+		"damage penalty"	0.95
+		//"damage bonus hidden"	1.2	//뎀감5%
+		"mul nonrocketjump attackrate" 0.25	//땅에있
+		//"mult projectile count" 2.1
+		"projectile spread angle penalty" 3
+		"blast radius increased" 1.3
+	}
+	
+	ItemAttributes
+	{
+		ItemName	"the original"
+		"mod projectile heat follow crosshair" 1
+		"mod projectile heat aim time" 1.75
+		//HomingRockets {FollowCrosshair 1}
+	}
+	//------------------------------------------데모------------------------------------------
+	
+	ItemAttributes
+	{
+		ItemName	"the loch-n-load"
+		"critboost on kill"	1
+		"Blast radius decreased"	0.3
+		//"reload time increased"	1.4
+		//"mult projectile count" 2.1
+		//"projectile spread angle penalty" 5
+		//"sticky air burst mode" 2
+	}
+	ItemAttributes
+	{
+		ItemName	"The Quickiebomb Launcher"
+		"stickybomb_charge_damage_increase"	1
+		"max pipebombs decreased"	-4
+		//"fire rate bonus"	0.01
+		"stickybomb charge rate"	0.0001
+		"Projectile range decreased"	0.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the iron bomber"
+		"damage penalty"	0.1
+		"blast radius increased" 1.5
+		"grenade damage reduction on world contact" 12
+		"damage force increase"  100
+		"apply z velocity on damage"  -100
+		"projectile spread angle penalty"	10
+		"fire rate bonus"	0.0
+		"fuse bonus"	1.5
+		"auto fires full clip all at once" 1
+		"grenade no bounce" 1
+		//"grenade not explode on impact" 1
+		//"sticky air burst mode" 2
+		//"grenade launcher mortar mode" 1
+	}
+	
+	//------------------------------------------헤비------------------------------------------
+	ItemAttributes
+	{
+		ItemName	tomislav
+		"weapon spread bonus"	0.5
+		"damage penalty"	0.1
+		"can headshot" 1
+	}
+	ItemAttributes  
+	{
+		ItemName	"iron curtain"
+		"explosive bullets" 60
+		"fire rate penalty" 1.3
+		"bullets per shot bonus"	0.25
+		"damage bonus" 2.5
+		"maxammo primary reduced"	0.4
+	}
+	ItemAttributes
+	{
+		ItemName	natascha
+		"heal on hit for rapidfire"	10
+	}
+	ItemAttributes
+	{
+		ItemName	"the huo long heatmaker"
+		"override projectile type"	6
+		"centerfire projectile"	1
+		"ring of fire while aiming"	6
+		"uses ammo while aiming"	0
+		"damage bonus vs burning"	1
+	}
+	
+	//------------------------------------------엔지------------------------------------------
+	
+	ItemAttributes  
+	{
+		ItemName "The Gunslinger"
+		"metal regen" 50
+		"max health additive bonus" 100
+		"fire rate bonus"	0.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the eureka effect"
+		"building cost reduction"	1.5
+		"build rate bonus"	1.3
+		"engy building health bonus"    	1.5
+		"cannot pick up buildings"	1
+		"engy sentry damage bonus"	1.5
+		//"engy sentry fire rate increased"	1.5
+		//"move speed penalty"	1.5
+        	"mvm sentry ammo" 2
+		"building scale" 1.2
+		//"engy sentry health bonus" 0.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the jag"
+		"building cost reduction"	0.5
+		"build rate bonus"	0.5
+		"engy sentry fire rate increased" 1.2
+		"fire rate bonus"	0.8
+		"build small sentries" 2
+		//"engy sentry health bonus" 0.3
+	}
+	
+	//------------------------------------------메딕------------------------------------------
+	ItemAttributes
+	{
+		ItemName	tf_weapon_medigun
+		"overheal decay disabled"	1
+		"increase buff duration"	1.3
+	}
+	ItemAttributes
+	{
+		ItemName	"the quick-fix"
+		"speed buff ally"	3
+	}
+	
+	//------------------------------------------스나------------------------------------------
+	
+	ItemAttributes  
+	{
+		ItemName "the fortified compound"
+		"arrow mastery" 1
+		"reload time increased hidden"	0.5
+	}
+	ItemAttributes
+	{
+		ItemName "the classic"
+		"sniper penetrate players when charged"	1
+		"explosive bullets" 100
+	}
+	ItemAttributes
+	{
+		ItemName	"the machina"
+		"sniper no headshot without full charge"	1
+		"maxammo primary reduced"	0.5
+		"headshot damage increase"	2.5
+		"sniper charge per sec"	0.3
+	}
+	ItemAttributes
+	{
+		ItemName	"the sydney sleeper"
+		"sniper no charge"	1
+		"can headshot" 1
+		"radius sleeper" 1
+	}
+	
+	//------------------------------------------스파이------------------------------------------
+	
+	ItemAttributes  
+	{
+		ItemName "the ambassador"
+		"explosive sniper shot" 2
+	}
 	Templates
 	{
 		T_TFBot_Heavyweapons_Deflector
@@ -225,6 +449,21 @@ WaveSchedule
 		{
 			Target bombpath_wavefinished
 			Action Trigger
+		}
+		Explanation
+		{
+			Line "{red}유저무기 테스트용 미션"
+			Line "{red}절대 클리어 목적으로 하는게 아님"
+			Line "{blue}밸패,리워크 목록
+			Line "{blue}스카웃:동총,해품막
+			Line "{blue}솔저:자투,다렉
+			Line "{blue}파이로:화산도끼,소화도끼
+			Line "{blue}데모:무폭,순삭
+			Line "{blue}헤비:철장막,나타샤,토미,화룡
+			Line "{blue}엔지:유레카,남부,뾰렌
+			Line "{blue}메딕:메디건,응조
+			Line "{blue}스나:시드니,마키나,클래식,컴파운드
+			Line "{blue}스파이:앰버
 		}
 		
 		WaveSpawn
