@@ -12,16 +12,24 @@ WaveSchedule
 	Advanced	1
 	//밑으로 시그 [$ SIGSEGV]이거때문인지 확인
 	NoRomevisionCosmetics 1 //[$ SIGSEGV]
-	//NoHolidayPickups 1 //[$ SIGSEGV]
+	NoHolidayPickups 1 //[$ SIGSEGV]
 	ForceHoliday 2 //[$SIGSEGV] //Enforces Halloween mode, but does not enable wave 666 and zombie bots
 	TextPrintTime 0 //[$ SIGSEGV]
-	ExtraSpawnPoint [$SIGSEGV]
+	ExtraSpawnPoint  
 	{
-		Name "dummy"
+		Name "spawnbot_backcap"
 		TeamNum 3
-		X	"-80"                   
-		Y	"-741                
-		Z	"811      
+		X	"-80"                     
+		Y	"-741"                  
+		Z	"811"	
+	}
+	ExtraSpawnPoint  
+	{
+		Name "spawnbot_blue"
+		TeamNum 3
+		X	"-124"                     
+		Y	"-2256"                  
+		Z	"552"	
 	}
 	//					스카웃			
 	ItemAttributes
