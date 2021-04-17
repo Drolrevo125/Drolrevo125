@@ -1,4 +1,5 @@
 http://clickmvm.duckdns.org:9090/files/missions/ 상전웹
+http://clickmvm.duckdns.org:8080/
 http://dl.potatomvm.tf/tf/ 감자웹
 https://wiki.teamfortress.com/wiki/List_of_item_attributes/ko 효과
 https://mvm.tf/ 
