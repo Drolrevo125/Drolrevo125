@@ -207,6 +207,13 @@ WaveSchedule
 		    Target  wave_finished_relay
 		    Action  Trigger 
 		}
+		Explanation
+		{
+			Line "{green}--------------------------"
+			Line "{red}시그모드 테스트 전용 미션"
+			Line "{blue}유저 무기밸패 
+			Line "{green}--------------------------"
+		}
 		WaveSpawn
 		{
 			Where	spawnbot_blue
