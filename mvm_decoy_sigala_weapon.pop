@@ -31,7 +31,14 @@ WaveSchedule
 		Y	"-2256"                  
 		Z	"552"	
 	}
-	//					스카웃			
+	PlayerAttributes
+	{
+		medic
+		{
+			"medic machinery beam" 2
+		}
+	}
+	//------------------------------------------스카웃------------------------------------------	
 	ItemAttributes
 	{
 		ItemName	sun-on-a-stick
@@ -46,7 +53,7 @@ WaveSchedule
 		//"fire rate penalty" 1.1
 	}
 	
-	//					pyro
+	//------------------------------------------파이로------------------------------------------
 	
 	ItemAttributes  
 	{
@@ -60,14 +67,14 @@ WaveSchedule
 	
 	}
 	
-	//					sol
+	//------------------------------------------솔저------------------------------------------
 	
 	ItemAttributes
 	{
 		ItemName	"the direct hit"
 		"critboost on kill"	1
 		"Blast radius decreased"	0.01
-		//"arrow mastery" 1	//부채로켓되나보기
+		//"arrow mastery" 1	//부채로켓되나보기 실패
 	}
 	ItemAttributes  //곡사로켓실험 멀티로켓포기
 	{
@@ -85,15 +92,33 @@ WaveSchedule
 		"blast radius increased" 1.3
 	}
 	
-	//					demo
+	ItemAttributes
+	{
+		ItemName	"the original"
+		"mod projectile heat follow crosshair" 1
+		"mod projectile heat aim time" 1.75
+		//HomingRockets {FollowCrosshair 1}
+	}
+	//------------------------------------------데모------------------------------------------
 	
 	ItemAttributes
 	{
 		ItemName	"the loch-n-load"
-		"reload time increased"	1.4
-		"mult projectile count" 2.1
+		"critboost on kill"	1
+		"Blast radius decreased"	0.3
+		//"reload time increased"	1.4
+		//"mult projectile count" 2.1
 		//"projectile spread angle penalty" 5
-		"sticky air burst mode" 2
+		//"sticky air burst mode" 2
+	}
+	ItemAttributes
+	{
+		ItemName	"The Quickiebomb Launcher"
+		"stickybomb_charge_damage_increase"	1
+		"max pipebombs decreased"	-4
+		//"fire rate bonus"	0.01
+		"stickybomb charge rate"	0.0001
+		"Projectile range decreased"	0.5
 	}
 	ItemAttributes
 	{
@@ -108,13 +133,19 @@ WaveSchedule
 		"fuse bonus"	1.5
 		"auto fires full clip all at once" 1
 		"grenade no bounce" 1
-		"grenade not explode on impact" 1
+		//"grenade not explode on impact" 1
 		//"sticky air burst mode" 2
-		"grenade launcher mortar mode" 1
+		//"grenade launcher mortar mode" 1
 	}
 	
-	//					heavy
-	
+	//------------------------------------------헤비------------------------------------------
+	ItemAttributes
+	{
+		ItemName	tomislav
+		"weapon spread bonus"	0.5
+		"damage penalty"	0.1
+		"can headshot" 1
+	}
 	ItemAttributes  
 	{
 		ItemName	"iron curtain"
@@ -129,14 +160,24 @@ WaveSchedule
 		ItemName	natascha
 		"heal on hit for rapidfire"	10
 	}
+	ItemAttributes
+	{
+		ItemName	"the huo long heatmaker"
+		"override projectile type"	6
+		"centerfire projectile"	1
+		"ring of fire while aiming"	6
+		"uses ammo while aiming"	0
+		"damage bonus vs burning"	1
+	}
 	
-	//					engi
+	//------------------------------------------엔지------------------------------------------
 	
 	ItemAttributes  
 	{
 		ItemName "The Gunslinger"
 		"metal regen" 50
 		"max health additive bonus" 100
+		"fire rate bonus"	0.5
 	}
 	ItemAttributes
 	{
@@ -148,7 +189,7 @@ WaveSchedule
 		"engy sentry damage bonus"	1.5
 		//"engy sentry fire rate increased"	1.5
 		//"move speed penalty"	1.5
-        "mvm sentry ammo" 2
+        	"mvm sentry ammo" 2
 		"building scale" 1.2
 		//"engy sentry health bonus" 0.5
 	}
@@ -159,11 +200,24 @@ WaveSchedule
 		"build rate bonus"	0.5
 		"engy sentry fire rate increased" 1.2
 		"fire rate bonus"	0.8
-		"build small sentries" 1
+		"build small sentries" 2
 		//"engy sentry health bonus" 0.3
 	}
 	
-	//					sniper
+	//------------------------------------------메딕------------------------------------------
+	ItemAttributes
+	{
+		ItemName	tf_weapon_medigun
+		"overheal decay disabled"	1
+		"increase buff duration"	1.3
+	}
+	ItemAttributes
+	{
+		ItemName	"the quick-fix"
+		"speed buff ally"	3
+	}
+	
+	//------------------------------------------스나------------------------------------------
 	
 	ItemAttributes  
 	{
@@ -193,7 +247,7 @@ WaveSchedule
 		"radius sleeper" 1
 	}
 	
-	//					spy
+	//------------------------------------------스파이------------------------------------------
 	
 	ItemAttributes  
 	{
@@ -213,6 +267,21 @@ WaveSchedule
 		{
 		    Target  wave_finished_relay
 		    Action  Trigger 
+		}
+		Explanation
+		{
+			Line "{red}유저무기 테스트용 미션"
+			Line "{red}절대 클리어 목적으로 하는게 아님"
+			Line "{blue}밸패,리워크 목록
+			Line "{blue}스카웃:동총,해품막
+			Line "{blue}솔저:자투,다렉
+			Line "{blue}파이로:화산도끼,소화도끼
+			Line "{blue}데모:무폭,순삭
+			Line "{blue}헤비:철장막,나타샤,토미,화룡
+			Line "{blue}엔지:유레카,남부,뾰렌
+			Line "{blue}메딕:메디건,응조
+			Line "{blue}스나:시드니,마키나,클래식,컴파운드
+			Line "{blue}스파이:앰버
 		}
 		WaveSpawn
 		{
@@ -253,6 +322,7 @@ WaveSchedule
 					"damage force reduction" 0.6
 					"airblast vulnerability multiplier" 0.6
 					"override footstep sound set" 6
+					"cancel falling damage"	1
 				}
 			}
 		}
