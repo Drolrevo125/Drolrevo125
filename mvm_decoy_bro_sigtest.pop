@@ -1,0 +1,337 @@
+#base robot_giant.pop
+#base robot_standard.pop
+#base robot_gatebot.pop
+#base robot_sig_randomguy.pop
+#base robot_hole_sigsegv.pop
+#base robot_bro.pop
+#base robot_hole.pop
+
+WaveSchedule
+{
+	StartingCurrency 800
+	CanBotsAttackWhileInSpawnRoom No
+	RespawnWaveTime 3
+	FixSetCustomModelInput 1
+	SniperAllowHeadshots 1
+	NoRomevisionCosmetics 1
+	ImprovedAirblast 1
+	ForceHoliday 2
+	TextPrintTime 0
+	
+	ExtraSpawnPoint  
+    {
+        Name "spawnbot_backcap"
+        TeamNum 3
+        X	"-80"                     
+        Y	"-741"                  
+        Z	"811"	
+    }
+	
+	ExtraSpawnPoint  
+    {
+        Name "spawnbot_blue"
+        TeamNum 3
+        X	"-124"                     
+        Y	"-2256"                  
+        Z	"552"	
+    }
+	
+	PlayerAttributes
+	{
+		Medic
+		{
+			"medic machinery beam" -1.5
+		}
+	}
+	
+	ItemAttributes  
+	{
+		ItemName "the liberty launcher"
+		"fire rate bonus" 0.001
+		"clip size penalty" 0.6
+		"projectile spread angle penalty" 2
+	}
+	
+	ItemAttributes
+	{
+		Itemname "The Southern Hospitality"
+		"mult firerocket rate" 0.1
+		"engy sentry damage bonus"	0.6
+		"engy sentry fire rate increased"	10
+	}
+	
+	ItemAttributes
+	{
+		ItemName	"the eyelander"
+		"is australium item"	1
+		"item style override" 1
+		"attach particle effect" 13 //burning flames
+	}
+	
+	ItemAttributes  
+	{
+		ItemName	"iron curtain"
+		"explosive bullets" 70
+		"fire rate penalty" 1.5
+		"damage bonus" 1.8
+	}
+	
+	ItemAttributes  
+	{
+		ItemName "the fortified compound"
+		"arrow mastery" 1
+	}
+	
+	ItemAttributes
+	{
+		ItemName "The Ambassador"
+		"explosive sniper shot"	1
+	}
+	
+	ItemAttributes
+	{
+		ItemName "Buzz Killer"
+		"attach particle effect" 99
+	}
+	
+	ItemAttributes
+	{
+		ItemName "The Jag"
+		"construction rate increased" 1.75
+		"upgrade rate decrease"	1.5
+		"Repair rate increased"	1.5
+	}
+	
+	ItemAttributes
+	{
+		Itemname "Reggaelator"
+		"attach particle effect" 45
+	}
+	
+	ExtraTankPath   //Blimp Path, 오른쪽경로
+	{
+		Name "blimppath_right" //name of the starting path node prefix. First tank node name would be name_1
+		Node "1495 3158 1038" // note XYZ coordinates. First node is the starting point
+		Node "603.72 2531.98 1038"
+		Node "625 621 1038"
+		Node "953 -530 1038"
+		Node "942 -1368 1038"
+		Node "183 -1807 1038"
+	}
+	
+	ExtraTankPath   //Blimp Path, 왼쪽경로
+	{
+		Name "blimppath_left" //name of the starting path node prefix. First tank node name would be name_1
+		Node "-1586 3383 1038" // note XYZ coordinates. First node is the starting point
+		Node "-705 2640 1038"
+		Node "92 2220 1038"
+		Node "69 1020 1038"
+		Node "-981 -423 1038"
+		Node "-959 -1154 1038"
+		Node "-176 -1773 1038"  
+	}
+	
+	//////////////
+	// ASSETS
+	//////////////
+	
+	Templates
+	{
+		T_TFBot_Giant_Orb_Soldier
+		{
+			Class Soldier
+			Name "Orb"
+			Skill Expert
+			Scale 1.9
+			Attributes Miniboss
+			ClassIcon engineer_gazer_lite
+			Health 40000
+			Item "Ali Baba's Wee Booties"
+			Item "The Short Circuit"
+			Item "Beep Man"
+			WeaponRestrictions SecondaryOnly
+			AimAt Feet
+			DamageAppliesCond  
+			{
+				Name TF_COND_SWIMMING_NO_EFFECTS
+				Duration 8
+			}			
+			UseMeleeThreatPrioritization 1  
+			AimTrackingInterval 0
+			FireWeapon  
+			{
+				Delay 0.1
+				Cooldown 0.1            
+				Duration 0.1
+				IfSeeTarget 1
+				Type Secondary
+			}
+			Itemattributes
+			{
+				Itemname "TF_WEAPON_ROCKETLAUNCHER"
+				"override projectile type" 1
+				"is_passive_weapon" 1
+				"damage bonus" 0
+				"fire rate bonus" 100
+				"faster reload rate" 0.01
+			}
+			Itemattributes
+			{
+				Itemname "The Short Circuit"
+				"apply z velocity on damage" 520
+				"apply look velocity on damage"	1000
+				"fire rate bonus" 0.5
+				"dmg bonus vs buildings" 1337
+				"damage bonus"	2.0
+			}
+			Itemattributes
+			{
+				Itemname "Ali Baba's Wee Booties"
+				"max health additive bonus" -25
+			}
+			Itemattributes
+			{
+				Itemname "Beep Man"
+				"SPELL: set item tint RGB" 3
+			}
+			Attributes UseBossHealthBar
+			CharacterAttributes
+			{
+				"dmg penalty vs players" 1.5
+				"cancel falling damage" 1
+				"dmg pierces resists absorbs" 1
+				"gesture speed increase" 1.5
+				"hand scale" 1.25
+				"move speed bonus" 0.5
+				"override footstep sound set" 7
+				"airblast vulnerability multiplier" 0
+				"airblast vertical vulnerability multiplier" 0
+				"damage force reduction" 0
+				"rage giving scale" 0.1
+			}
+		}
+	}
+
+	/////////////
+	// MISSIONS 
+	/////////////
+	
+	//////////
+	// WAVES
+	//////////
+	
+	///////////////////////////////////////////////////////////////////////
+	// Wave 1
+	// Starting Currency		: 800
+	// Total (in this wave) 	: 800 + 100 (bonus)
+	// Total (when wave ends) 	: 800 + 800 + 100 (bonus) = 1700
+	///////////////////////////////////////////////////////////////////////
+	
+	Wave
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		
+		Explanation
+		{
+			Line "{green}--------------------------"
+			Line "{red}시그모드 테스트 전용 미션"
+			Line "{blue}관계자 외 플레이 x"
+			Line "{green}--------------------------"
+		}
+		
+		// Main 1
+		// bombcarry
+		WaveSpawn
+		{
+			Where	spawnbot_blue
+			
+			Name	Wave1_test
+			
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	10
+			WaitBetweenSpawns	10
+			
+			TotalCurrency	200
+			
+			Support	1
+			
+			TFBot
+			{
+				Class	Scout
+				Health	999999
+				Skill	Easy
+				Name	Test
+				
+				Attributes	MiniBoss
+				WeaponRestrictions	PrimaryOnly
+				
+				ItemAttributes
+				{
+					ItemName	tf_weapon_scattergun
+					"override projectile type" 15 
+				}
+				
+				CharacterAttributes
+				{
+					"move speed bonus"	0.0001
+					"health regen"	10000
+					"move speed bonus"	0.5
+					"damage force reduction" 0.6
+					"airblast vulnerability multiplier" 0.6
+					"override footstep sound set" 6
+				}
+			}
+		}
+		
+		// bombcarry
+		WaveSpawn
+		{
+			Where	spawnbot
+			
+			Name	Wave1_bombcarry
+			
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	10
+			
+			TotalCurrency	200
+			
+			TFBot
+			{
+				Class	Soldier
+				Health	999999
+				Skill	Easy
+				Name	Test
+				
+				Attributes	MiniBoss
+				WeaponRestrictions	PrimaryOnly
+				
+				ItemAttributes
+				{
+					ItemName	tf_weapon_rocketlauncher
+					"override projectile type" 15 
+				}
+				
+				CharacterAttributes
+				{
+					"move speed bonus"	0.0001
+					"health regen"	10000
+				}
+			}
+		}
+	}
