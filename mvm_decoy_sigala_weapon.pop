@@ -53,13 +53,18 @@ WaveSchedule
 		"hype decays over time"	0.05
 		//"fire rate penalty" 1.1
 	}
-	
+	ItemAttributes
+	{
+		ItemName    "the back scatter"	//미니크리는 크리
+		"minicrits become crits"	1
+	}
 	//------------------------------------------파이로------------------------------------------
 	
 	ItemAttributes  
 	{
 		ItemName	"the axtinguisher"
 		"dragon fury positive properties" 1
+		"damage penalty"	0.95
 	}
 	ItemAttributes  
 	{
@@ -68,30 +73,46 @@ WaveSchedule
 	
 	}
 	ItemAttributes
-    {
-        ItemName "The Degreaser"
-        "mult airblast refire time" 1.25
-        "airblast_give_teammate_speed_boost" 1
-        "mod projectile heat follow crosshair" 1
-        "airblast cost increased" 2
-        "mult reflect velocity" 2
-    }
+	{
+		ItemName "the rainblower"
+		"mult airblast refire time" 1.25
+		"airblast_give_teammate_speed_boost" 1
+		"mod projectile heat follow crosshair" 1
+		"airblast cost increased" 2
+		"mult reflect velocity" 2
+	}
+	ItemAttributes
+	{
+		ItemName	"the degreaser"		//스카웃처럼 만들기
+		"damage penalty"	0.9
+		"increased air control"	5
+		"air dash count"	1
+		"speed_boost_on_hit_enemy"	2
+		"heal on hit for rapidfire"	10
+		"airblast dashes" 1
+		"teleport instead of die" 50	//뒤지면 확률부활
+		
+	}
 	
 	//------------------------------------------솔저------------------------------------------
-	
+	ItemAttributes
+	{
+		ItemName	"the cow mangler 5000"
+		"minicrits become crits"	1
+		"damage penalty"	0.8
+	}
 	ItemAttributes
 	{
 		ItemName	"the direct hit"
 		"critboost on kill"	3
 		"Blast radius decreased"	0.01
-		//"arrow mastery" 1	//부채로켓되나보기 실패
 	}
 	ItemAttributes  //곡사로켓실험 멀티로켓포기
 	{
 		ItemName "the liberty launcher"
-		"projectile gravity" 1000	//수치조절하기 로켓중력
+		"projectile gravity" 1100	//수치조절하기 로켓중력
 		//"projectile acceleration" 2000	//수치조절하기 로켓가속
-		"projectile speed decreased" "0.9"
+		//"projectile speed decreased" "0.9"
 		"reload time increased"	1.3
 		"mini rockets"	1
 		"damage penalty"	0.95
@@ -105,7 +126,7 @@ WaveSchedule
 	ItemAttributes
 	{
 		ItemName	"the original"
-		"mod projectile heat follow crosshair" 1
+		"mod projectile heat follow crosshair" 1	//조종로켓됨???
 		"mod projectile heat aim time" 1.75
 		HomingRockets {FollowCrosshair 1}
 	}
@@ -121,6 +142,22 @@ WaveSchedule
 		//"projectile spread angle penalty" 5
 		//"sticky air burst mode" 2
 		"clip size penalty" 0.5
+	}
+	ItemAttributes
+	ItemAttributes
+	{
+		ItemName	tf_weapon_grenadelauncher
+		"sticky detonate mode"	1
+		"clip size upgrade atomic" 1.5
+	}
+	{
+		ItemName	tf_weapon_pipebomblauncher
+		"Projectile range increased"	0.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the scottish resistance"
+		"sticky arm time penalty"	0.3
 	}
 	ItemAttributes
 	{
@@ -150,15 +187,14 @@ WaveSchedule
 		//"grenade launcher mortar mode" 1
 	}
 	ItemAttributes //반자이
-    {
-        ItemName "The Ullapool Caber"
-        "regenerate stickbomb" 1
-        "blast dmg to self increased" 0.1
-        "fire rate penalty" 1
-        "crit on hard hit" 1
-        "self dmg push force increased" 0.25
-    }
-	
+	{
+		ItemName "The Ullapool Caber"
+		"regenerate stickbomb" 1
+		"blast dmg to self increased" 0.1
+		"fire rate penalty" 1
+		"crit on hard hit" 1
+		"self dmg push force increased" 0.25
+	}
 	//------------------------------------------헤비------------------------------------------
 	ItemAttributes
 	{
@@ -193,17 +229,53 @@ WaveSchedule
 		"ring of fire while aiming"	6
 		"uses ammo while aiming"	0
 		"damage bonus vs burning"	1.5
-        "damage bonus" 2
+        	"damage bonus" 2
+	}
+	ItemAttributes   // regular spin-up, no resis, no rev walk at all
+	{
+		ItemName "The Brass Beast"
+		"spunup_damage_resistance" 5
 	}
 	
 	//------------------------------------------엔지------------------------------------------
-	
+	ItemAttributes   
+	{	//레이저샷건
+		ItemName "The Pomson 6000"
+		"override projectile type" 1
+		"sniper fires tracer HIDDEN" 1
+		"always crit" 1
+		"dmg bonus vs buildings" 10
+		"damage applies to sappers" 1
+		"engy sentry health bonus" 1.2
+	}
+	ItemAttributes
+	{
+		ItemName	"the widowmaker"
+		"damage bonus vs sentry target"	1.5
+		"engy sentry health bonus" 1.2
+	}
+	ItemAttributes
+	{
+		ItemName	"the frontier justice"
+		"engy sentry health bonus" 1.2
+		"weapon spread bonus"	0.5
+		"can headshot" 1
+		"headshot damage increase"	1.2
+	}
+	ItemAttributes   
+	{ //pistol buff
+		ClassName "TF_WEAPON_PISTOL"
+		"add onhit addammo"	1
+		"max health additive bonus" 25
+		"engy sentry fire rate increased"	0.8
+	}	
 	ItemAttributes  
 	{
 		ItemName "The Gunslinger"
 		"metal regen" 50
 		"max health additive bonus" 100
 		"fire rate bonus"	0.5
+		"mvm sentry ammo" 99
 	}
 	ItemAttributes
 	{
@@ -211,10 +283,10 @@ WaveSchedule
 		"building cost reduction"	1.5
 		"build rate bonus"	1.3
 		"engy building health bonus"    	1.5
-		"cannot pick up buildings"	1
+		//"cannot pick up buildings"	1	//넘병신임
 		"engy sentry damage bonus"	1.5
-		//"engy sentry fire rate increased"	1.5
-		//"move speed penalty"	1.5
+		"engy sentry fire rate increased"	0.8
+		"move speed penalty"	0.8
         	"mvm sentry ammo" 2
 		"building scale" 1.2
 		//"engy sentry health bonus" 0.5
@@ -224,9 +296,9 @@ WaveSchedule
 		ItemName	"the jag"
 		"building cost reduction"	0.5
 		"build rate bonus"	0.5
-		"engy sentry fire rate increased" 1.2
+		"engy sentry fire rate increased" 1.5
 		"fire rate bonus"	0.8
-		"build small sentries" 2
+		"build small sentries" 1
 		//"engy sentry health bonus" 0.3
 	}
 	
@@ -234,22 +306,38 @@ WaveSchedule
 	ItemAttributes
 	{
 		ItemName	tf_weapon_medigun
-		"overheal decay disabled"	1
-		"increase buff duration"	1.3
+		"increase buff duration"	1.5
 	}
 	ItemAttributes
 	{
 		ItemName	"the quick-fix"
+		"air dash count"	1
 		"speed buff ally"	3
 	}
 	
 	//------------------------------------------스나------------------------------------------
-	
+	ItemAttributes
+	{
+		ItemName	tf_weapon_sniperrifle
+		"ability master sniper" 1
+	}
+	ItemAttributes  
+	{
+		ItemName "the awper hand"
+		"ability master sniper" 1
+	}		
 	ItemAttributes  
 	{
 		ItemName "the fortified compound"
-		"arrow mastery" 1
-		"reload time increased hidden"	0.5
+		"arrow mastery" 4
+		"explosive sniper shot" 2
+	}
+	ItemAttributes  
+	{
+		ItemName "the huntsman"
+		"damage penalty"	0.7
+		"ability master sniper" 2
+		"explosive sniper shot" 1
 	}
 	ItemAttributes
 	{
@@ -279,7 +367,30 @@ WaveSchedule
 	{
 		ItemName "the ambassador"
 		"explosive sniper shot" 2
-    }
+    	}
+	
+	//------------------------------------------공용------------------------------------------
+	
+	ItemAttributes   
+	{ //shotgun buff
+		ClassName "TF_WEAPON_SHOTGUN"
+		"critboost on kill" 4
+		"add onhit addammo"	1
+	}
+	ItemAttributes   
+	{
+		ClassName "tf_weapon_shotgun_multiclass"
+		"critboost on kill" 4
+		"add onhit addammo"	1
+	}
+	ItemAttributes	//	*^^*
+	{
+		ItemName	"blood botkiller wrench mk.i"
+		"torso scale"	0.8
+		"pyro year number"	2021
+		"Wrench index"	1
+	}
+	
 	Wave
 	{
 		WaitWhenDone  65
@@ -296,15 +407,17 @@ WaveSchedule
 		}
 		Explanation
 		{
-			Line "{blue}스카웃:동총,해품막"
+			Line "{green}변경목록 재미로 하는거 과몰입X"
+			Line "{blue}스카웃:동총,등짝,해품막"
 			Line "{blue}솔저:자투,다렉"
-			Line "{blue}파이로:화산도끼,소화도끼"
-			Line "{blue}데모:로크,무폭,순삭"
-			Line "{blue}헤비:철장막,나타샤,토미,화룡"
-			Line "{blue}엔지:유레카,남부,뾰렌"
+			Line "{blue}파이로:무지개,기름때,화산도끼,소화도끼"
+			Line "{blue}데모:로크,무폭,순삭,폭곤"
+			Line "{blue}헤비:모든 미니건언락"
+			Line "{blue}엔지:거의 다"
 			Line "{blue}메딕:메디건,응조"
-			Line "{blue}스나:시드니,마키나,클래식,컴파운드"
+			Line "{blue}스나:주무기들"
 			Line "{blue}스파이:앰버"
+			Line "{blue}공용:샷건"
 		}
 		WaveSpawn
 		{
@@ -327,10 +440,11 @@ WaveSchedule
 				Class	Scout
 				Health	999999
 				Skill	Easy
-				Name	Test
+				Name	Dummy
 				
 				Attributes	MiniBoss
 				WeaponRestrictions	PrimaryOnly
+				AlwaysGlow 1 [$SIGSEGV] //If set, the bot is always highlighted
 				
 				ItemAttributes
 				{
@@ -345,6 +459,37 @@ WaveSchedule
 					"damage force reduction" 0.6
 					"airblast vulnerability multiplier" 0.6
 					"override footstep sound set" 6
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Where	spawnbot_blue
+			
+			Name	movingdummy
+			
+			TotalCount	1
+			MaxActive	5
+			SpawnCount	5
+			WaitBeforeStarting	5
+			WaitBetweenSpawns	10
+			
+			TotalCurrency	0
+			
+			Support	1
+			
+			TFBot
+			{
+				Class	Scout
+				Skill	Easy
+				Name	Test
+				WeaponRestrictions	PrimaryOnly
+				AlwaysGlow 1 [$SIGSEGV] //If set, the bot is always highlighted
+				
+				ItemAttributes
+				{
+					ItemName	tf_weapon_scattergun
+					"override projectile type" 15 
 				}
 			}
 		}
