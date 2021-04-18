@@ -16,23 +16,7 @@ WaveSchedule
 	ForceHoliday 2 //[$SIGSEGV] //Enforces Halloween mode, but does not enable wave 666 and zombie bots
 	TextPrintTime 0 //[$ SIGSEGV]
 	maxredplayers 10
-	ExtraSpawnPoint  
-	{
-		Name "spawnbot_backcap"
-		TeamNum 3
-		X	"-80"                     
-		Y	"-741"                  
-		Z	"811"	
-	}
-	ExtraSpawnPoint  
-	{
-		Name "spawnbot_blue"
-		TeamNum 3
-		X	"-124"                     
-		Y	"-2256"                  
-		Z	"552"	
-	}
-    playerAttributes
+    	playerAttributes
 	{
 		medic
 		{
@@ -390,6 +374,46 @@ WaveSchedule
 		"pyro year number"	2021
 		"Wrench index"	1
 	}
+	ExtraSpawnPoint  
+	{
+		Name "spawnbot_backcap"
+		TeamNum 3
+		X	"-80"                     
+		Y	"-741"                  
+		Z	"811"	
+	}
+	ExtraSpawnPoint  
+	{
+		Name "spawnbot_blue"	// 스폰쪽
+		TeamNum 3
+		X	"-124"                     
+		Y	"-2256"                  
+		Z	"552"	
+	}
+	PointTemplates  
+   	{
+		dummydisp
+		{
+			NoFixup 1
+			OnSpawnOutput
+		    	{
+				Target "dummydisp"
+				Action "sethealth"
+				Param 1000000
+			}
+
+			obj_dispenser
+			{
+				"targetname" "Dummydisp"
+				"origin" "0 0 0" //-124 -2000 -552
+				"teamnum" "3"
+				"spawnflags" "10"
+				"SolidToPlayer" "0"
+				"defaultupgrade" "1"
+				"modelscale" 1.5
+			}
+		}
+	}
 	
 	Wave
 	{
@@ -418,6 +442,12 @@ WaveSchedule
 			Line "{blue}스나:주무기들"
 			Line "{blue}스파이:앰버"
 			Line "{blue}공용:샷건"
+		}
+		SpawnTemplate  
+		{
+			Name "dummydisp"
+			Origin "-124 -2000 -552"
+			Angles "0 0 0"
 		}
 		WaveSpawn
 		{
