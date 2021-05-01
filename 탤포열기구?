@@ -1,0 +1,36 @@
+So this is the template I'm using to make my blimp release bots when they explode, but they don't spawn in position
+BlimpTeleport
+        {
+            NoFixup 1
+            info_player_teamspawn
+            {
+                "targetname" "spawnbot_blimp"
+                "StartDisabled" "0"
+                "spawnflags" "511"
+                "TeamNum" "2"
+                "origin" "-520 -544 900"
+            }
+            filter_tf_bot_has_tag
+            {
+                "targetname" "filter_dropship_bot"
+                "Negated" "0"
+                "require_all_tags" "1"
+                "tags" "bot_dropship"
+                "OnPass" "blimp_teleport,Teleport,,0,-1"
+            }
+            trigger_teleport
+            {
+                "targetname" "blimp_teleport"
+                "filtername" "filter_dropship_bot"
+                "origin" "-520 544 900"  
+                "spawnflags" "1"
+                "target" "blimp_explode"
+                "mins" "-100 -100 -100"
+                "maxs" "100 100 100"
+            }
+            logic_relay
+            {
+                "targetname" "blimp_kill_relay"
+                "OnTrigger" "tank_destruction,AddOutput,targetname blimp_explode,0,-1"
+            }
+        }
