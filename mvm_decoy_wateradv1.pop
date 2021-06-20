@@ -8,40 +8,7 @@ population
 	StartingCurrency	400
 	RespawnWaveTime	6
 	CanBotsAttackWhileInSpawnRoom	no
-	Templates
-	{
-		T_TFBot_Giant_Soldier_SlowBarrage
-		{
-			ClassIcon	soldier_barrage
-			Health	4000
-			Name	"Colonel Barrage"
-			Class	Soldier
-			Skill	Expert
-			WeaponRestrictions	PrimaryOnly
-			Tag	"bot_giant"
-			Attributes	"MiniBoss"
-			Attributes	"HoldFireUntilFullReload"
-			ItemAttributes
-			{
-				ItemName	tf_weapon_rocketlauncher
-				"clip size upgrade atomic"	26.0
-				"faster reload rate"	0.22
-				"fire rate bonus"	0.2
-				"projectile spread angle penalty"	5
-			}
-			CharacterAttributes
-			{
-				"health regen"	40
-				"move speed bonus"	0.5
-				"damage bonus"	1.5
-				"damage force reduction"	0.4
-				"airblast vulnerability multiplier"	0.4
-				"override footstep sound set"	3
-				"airblast vertical vulnerability multiplier"	0.1
-				"Projectile speed increased"	0.4
-			}
-		}
-	}
+	
 	Wave
 	{
 		WaitWhenDone	65
