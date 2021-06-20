@@ -3,7 +3,7 @@
 #base robot_standard.pop
 #base robot_click.pop
 #base robot_click_giant.pop
-#base robot_sig_overlord.pop
+#base robot_sig_alaok.pop
 population
 {
 	StartingCurrency	700
