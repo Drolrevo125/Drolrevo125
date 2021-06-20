@@ -259,6 +259,37 @@ WaveSchedule
 				Type "Secondary"
 			}
 		}
+		Ala_TFBot_Pyro_Dash_mid
+		{
+			Name "Dash Pyro"
+			Class Pyro
+			Skill hard
+			Health 600
+			Scale 1.3
+			MaxVisionRange 3000
+			Item	"the gas guzzler"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_flamethrower
+				"airblast dashes" 1
+				"mult airblast refire time" 0.3
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 3
+				IfSeeTarget 1
+				Type "Jump"
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 3
+				//duration 0.3
+				IfSeeTarget 1
+				Type "Secondary"
+			}
+		}
 		Ala_TFBot_Giant_Pyro_Dash
 		{
 			Name "Giant Dash Pyro"
