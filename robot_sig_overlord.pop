@@ -386,7 +386,7 @@ WaveSchedule
 		}
 		
 		//demo
-		T_TFBot_Demoman
+		T_TFBot_Demomanhfda
 		{
 			Class Demoman
 			Skill Expert
@@ -417,6 +417,45 @@ WaveSchedule
 			ClassIcon	demo_sticky_daan
 			Name	"Sticky Bomb Demo"
 			Class	Demoman
+			Skill	expert
+			MaxVisionRange	5000
+			Attributes HoldFireUntilFullReload
+            WeaponRestrictions	SecondaryOnly
+			ItemAttributes
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"is_passive_weapon" 1 
+				"projectile gravity" 10000
+				"faster reload rate" 0.01
+				"apply look velocity on damage"	500
+				"apply y velocity on damage"	-100
+				"fuse bonus"	-0.1
+				"projectile speed decreased" 0.001
+				"damage penalty"	2
+				"blast radius decreased" 0.001
+			}
+			ItemAttributes
+			{
+				ItemName	tf_weapon_pipebomblauncher
+				"stickybomb charge rate" -1
+				"sticky arm time bonus" 5
+                "faster reload rate" 0.33
+                "damage force reduction" 2
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	2
+				"self dmg push force decreased" 2
+			    "cancel falling damage" 1
+				"increased air control" 4
+			}
+		}
+		Ala_TFBot_Demo_Sticky_pogo_ar
+		{
+			ClassIcon	demo_sticky_daan
+			Name	"Sticky Bomb Demo"
+			Class	Demoman
+			Health 650
+			Scale 1.3
 			Skill	expert
 			MaxVisionRange	5000
 			Attributes HoldFireUntilFullReload
