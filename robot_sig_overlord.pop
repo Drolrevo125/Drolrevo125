@@ -260,7 +260,7 @@ WaveSchedule
 			}
 		}
 		Ala_TFBot_Pyro_Dash_mid
-		{
+		{//
 			Name "Dash Pyro"
 			Class Pyro
 			Skill hard
