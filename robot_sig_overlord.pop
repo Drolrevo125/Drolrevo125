@@ -420,9 +420,8 @@ WaveSchedule
 			Skill	expert
 			MaxVisionRange	5000
 			Attributes HoldFireUntilFullReload
-			WeaponRestrictions	SecondaryOnly
+            WeaponRestrictions	SecondaryOnly
 			ItemAttributes
-			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
 				"is_passive_weapon" 1 
 				"projectile gravity" 10000
@@ -438,9 +437,7 @@ WaveSchedule
 			{
 				ItemName	tf_weapon_pipebomblauncher
 				"stickybomb charge rate" -1
-				//"projectile speed increased" 900
 				"sticky arm time bonus" 5
-                //"fire rate bonus" 0.01
                 "faster reload rate" 0.33
                 "damage force reduction" 2
 			}
@@ -481,9 +478,7 @@ WaveSchedule
 			{
 				ItemName	tf_weapon_pipebomblauncher
 				"stickybomb charge rate" -1
-				//"projectile speed increased" 900
 				"sticky arm time bonus" 5
-                //"fire rate bonus" 0.01
                 "faster reload rate" 0.33
 			}
 			CharacterAttributes
