@@ -259,9 +259,9 @@ WaveSchedule
 				Type "Secondary"
 			}
 		}
-		Ala_TFBot_Pyro_Dash_mid
+		Ala_TFBot_Pyro_Dash_Armored
 		{
-			Name "Dash Pyro"
+			Name "Armored Dash Pyro"
 			Class Pyro
 			Skill hard
 			Health 600
@@ -415,7 +415,7 @@ WaveSchedule
 		Ala_TFBot_Demo_Sticky_pogo
 		{
 			ClassIcon	demo_sticky_daan
-			Name	"Sticky Bomb Demo"
+			Name	"Sticky Jump Demo"
 			Class	Demoman
 			Skill	expert
 			MaxVisionRange	5000
@@ -449,10 +449,10 @@ WaveSchedule
 				"increased air control" 4
 			}
 		}
-		Ala_TFBot_Demo_Sticky_pogo_ar
+		Ala_TFBot_Demo_Sticky_pogo_Armored
 		{
 			ClassIcon	demo_sticky_daan
-			Name	"Sticky Bomb Demo"
+			Name	"Armored Sticky Jump Demo"
 			Class	Demoman
 			Health 650
 			Scale 1.3
