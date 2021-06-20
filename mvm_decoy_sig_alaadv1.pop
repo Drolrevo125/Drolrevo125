@@ -1,8 +1,8 @@
 //맵고르기 커스텀무기 시그모드
 #base robot_giant.pop
 #base robot_standard.pop
-#base robot_clickin.pop
-#base robot_clickin_giant.pop
+#base robot_click.pop
+#base robot_click_giant.pop
 #base robot_sig_overlord.pop
 population
 {
