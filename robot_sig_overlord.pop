@@ -391,27 +391,6 @@ WaveSchedule
 			Class Demoman
 			Skill Expert
 		}
-		T_TFBot_Demoman_blastjump_charge //폭곤점프,돌진 수정해야함
-		{
-			ClassIcon	demoman
-			Health	175
-			Name	Demoman
-			Class	Demoman
-			Skill	Expert
-			ItemAttributes
-			{
-				ItemName	"the tide turner"
-				"full charge turn control"	1
-			}
-			ItemAttributes
-			{
-				ItemName	"the ullapool caber"
-				"melee range multiplier"	3
-			}
-			Item	"the iron bomber"
-			Item	"the tide turner"
-			Item	"the ullapool caber"
-		}
 		Ala_TFBot_Demo_Sticky_pogo
 		{
 			ClassIcon	demo_sticky_daan
