@@ -178,7 +178,7 @@ WaveSchedule
 			Name "Dash Pyro"
 			Class Pyro
 			Skill hard
-			MaxVisionRange 3000
+			//MaxVisionRange 3000
 			Item	"the gas guzzler"
 			ItemAttributes
 			{
@@ -206,7 +206,7 @@ WaveSchedule
 			Name "Dash Pyro"
 			Class Pyro
 			Skill hard
-			MaxVisionRange 3000
+			MaxVisionRange 2000
 			Item	"the gas guzzler"
 			ItemAttributes
 			{
