@@ -52,11 +52,9 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	pyro
-					Health	175
 					Name	Pyro
 					Class	Pyro
-					Skill	Normal
+					Skill	hard
 				}
 			}
 		}
@@ -73,11 +71,9 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	demoman
-					Health	175
 					Name	Demoman
 					Class	Demoman
-					Skill	Normal
+					Skill	hard
 				}
 			}
 		}
@@ -138,28 +134,6 @@ population
 		}
 		WaveSpawn
 		{
-			WaitForAllDead	w1_2
-			TotalCurrency	80
-			TotalCount	8
-			MaxActive	4
-			SpawnCount	1
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	7
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	demoman
-					Health	175
-					Name	Demoman중형포고모바
-					Class	Demoman
-					Skill	Normal
-				}
-			}
-		}
-		WaveSpawn
-		{
 			WaitForAllSpawned	w1_2
 			TotalCurrency	120
 			TotalCount	24
@@ -172,11 +146,9 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	heavyweapons
-					Health	300
 					Name	HeavyWeapons
 					Class	HeavyWeapons
-					Skill	Normal
+					Skill	hard
 				}
 			}
 		}
@@ -195,11 +167,9 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	scout
-					Health	125
 					Name	Scout
 					Class	Scout
-					Skill	Normal
+					Skill	hard
 				}
 			}
 		}
@@ -217,8 +187,27 @@ population
 			{
 				TFBot
 				{
-					Name	Pyro중형대쉬모바
-					Template	T_TFBot_Pyro
+					template	Ala_TFBot_Demo_Sticky_pogo_Armored
+					action mobber
+				}
+			}
+		}
+		WaveSpawn
+		{
+			WaitForAllDead	w1_2
+			TotalCurrency	80
+			TotalCount	8
+			MaxActive	4
+			SpawnCount	1
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			Where	spawnbot
+			Squad
+			{
+				TFBot
+				{
+					Template	Ala_TFBot_Pyro_Dash_Armored
+					action mobber
 				}
 			}
 		}
@@ -251,8 +240,7 @@ population
 			{
 				TFBot
 				{
-					Name	"Giant Heavy슬로우"
-					Template	T_TFBot_Giant_Heavyweapons
+					Template	T_TFBot_Giant_Heavy_SlowonHit
 				}
 			}
 		}
@@ -269,8 +257,7 @@ population
 			{
 				TFBot
 				{
-					Name	Scout점프캇
-					Template	T_TFBot_Scout_Melee
+					Template	T_TFBot_Scout_DBjump
 				}
 			}
 		}
@@ -289,8 +276,7 @@ population
 			{
 				TFBot
 				{
-					Name	Pyro대쉬하드모바
-					Template	T_TFBot_Pyro
+					Template	Ala_TFBot_Pyro_Dash_hard
 				}
 			}
 		}
@@ -308,8 +294,7 @@ population
 			{
 				TFBot
 				{
-					Name	"Steel Gauntlet주먹헤비"
-					Template	T_TFBot_Heavyweapons_Fist
+					Template	T_TFBot_Heavy_Brassknuckle
 				}
 			}
 		}
@@ -328,8 +313,18 @@ population
 			{
 				TFBot
 				{
-					Name	"Giant Soldier유도"
+					Name	"Giant Homing Soldier"
 					Template	T_TFBot_Giant_Soldier
+					ClassIcon	soldier_homing_nys
+					RocketCustomParticle eyeboss_projectile
+					HomingRockets   
+					{
+						IgnoreDisguisedSpies 1
+						IgnoreStealthedSpies 1
+						RocketSpeed 0.5 // Multiplier of rocket speed. 1 for default speed
+						TurnPower 80 //How fast should the rocket rotate to face the target
+						MaxAimError 180 //Max angle between rocket and the target (Rocket will stop homing if a player is not within this angle)
+					}
 				}
 			}
 		}
@@ -383,8 +378,8 @@ population
 			{
 				TFBot
 				{
-					Name	"Giant Pyro대쉬 모바"
-					Template	T_TFBot_Giant_Pyro
+					Template	Ala_TFBot_Giant_Pyro_Dash
+					action mobber
 				}
 			}
 		}
@@ -416,8 +411,8 @@ population
 			{
 				TFBot
 				{
-					Name	"Buff Soldier로점솔"
-					Template	T_TFBot_Soldier_Buff_Banner
+					Template	Ala_TFBot_Soldier_rocketjump
+					
 				}
 			}
 		}
@@ -434,8 +429,8 @@ population
 			{
 				TFBot
 				{
-					Name	Demoman포고데모
-					Template	T_TFBot_Demoman
+					Template	Ala_TFBot_Demo_Sticky_pogo
+					action mobber
 				}
 			}
 		}
@@ -483,8 +478,7 @@ population
 			{
 				TFBot
 				{
-					Name	Scout우유캇
-					Template	T_TFBot_Scout_Melee
+					Template	T_TFBot_Mad_Milk_Slow
 				}
 			}
 		}
@@ -503,8 +497,8 @@ population
 			{
 				TFBot
 				{
-					Name	"Bowman Rapid Fire거대활"
-					Template	T_TFBot_Sniper_Huntsman_Spammer
+					Template	T_TFBot_Sniper_Giant_Huntsman_3multishot
+					Attributes	"AlwaysCrit"
 				}
 				TFBot
 				{
@@ -530,17 +524,18 @@ population
 				}
 				TFBot
 				{
-					Name	Pyro백버너
-					Template	T_TFBot_Pyro
+					Template	T_TFBot_Pyro_Backburner
 					Attributes	"AlwaysFireWeapon"
 				}
 				TFBot
 				{
-					Template	T_TFBot_Pyro
+					Template	T_TFBot_Pyro_Backburner
+					Attributes	"AlwaysFireWeapon"
 				}
 				TFBot
 				{
-					Template	T_TFBot_Pyro
+					Template	T_TFBot_Pyro_Backburner
+					Attributes	"AlwaysFireWeapon"
 				}
 			}
 		}
@@ -558,8 +553,7 @@ population
 			{
 				TFBot
 				{
-					Name	"Giant Battalion Soldier탱커 "
-					Template	T_TFBot_Giant_Soldier_Extended_Battalion
+					Template	T_TFBot_Giant_Soldier_Tanker
 				}
 			}
 		}
@@ -578,8 +572,7 @@ population
 			{
 				TFBot
 				{
-					Name	Scout백스캐터스파이알람
-					Template	T_TFBot_Scout_Melee
+					Template	T_TFBot_Scout_Backscatter_Spy
 					Attributes	"AlwaysFireWeapon"
 				}
 			}
@@ -599,14 +592,11 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	heavyweapons
-					Health	300
 					Name	HeavyWeapons
 					Class	HeavyWeapons
-					Skill	Normal
+					Skill	hard
 				}
 			}
 		}
 	}
 }
-//This file has been generated by http://mvm.tf
