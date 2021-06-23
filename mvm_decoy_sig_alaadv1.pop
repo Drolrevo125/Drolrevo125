@@ -37,9 +37,7 @@ population
 			{
 				TFBot
 				{
-					Name	"Giant Soldier탈계거대"
-					Template	T_TFBot_Giant_Soldier
-					Attributes	"AlwaysCrit"
+					Template	T_TFBot_Giant_Soldier_Equalizer
 				}
 			}
 		}
@@ -56,11 +54,9 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	demoman
-					Health	175
 					Name	Demoman
 					Class	Demoman
-					Skill	Normal
+					Skill	hard
 				}
 			}
 		}
@@ -77,11 +73,7 @@ population
 			{
 				TFBot
 				{
-					ClassIcon	soldier
-					Health	200
-					Name	Soldier크리탈계
-					Class	Soldier
-					Skill	Normal
+					Template	T_TFBot_Soldier_Equalizer
 					Attributes	"AlwaysCrit"
 				}
 			}
