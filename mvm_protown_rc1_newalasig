@@ -1,5 +1,9 @@
+//시그봇 최대한 써서 다양하게만들기
 #base robot_giant.pop
 #base robot_standard.pop
+#base robot_click.pop
+#base robot_click_giant.pop
+#base robot_sig_overlord.pop
 population
 {
 	StartingCurrency	800
