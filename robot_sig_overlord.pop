@@ -1,0 +1,1339 @@
+WaveSchedule
+{
+	Templates // 
+	{
+		//scout
+		T_TFBot_Scout_DBjump
+		{
+			Class Scout
+			Skill Expert
+			Attributes	"AirChargeOnly"
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 2.1
+				IfSeeTarget 1
+				Type "Jump"
+			}
+			FireWeapon  
+			{
+				Delay 0.7
+				Cooldown 2.1
+				IfSeeTarget 1
+				Type "jump"
+			}
+		}
+		T_TFBot_Scout_Cleaver_combo
+		{
+			ClassIcon	scout_cleaver
+			Name	"Combo Cleaver Scout"
+			Class	Scout
+			Skill	Expert
+			CharacterAttributes
+			{
+				"effect bar recharge rate increased"	0.05
+			}
+			Item	"the flying guillotine"
+			Item "The Sandman"
+			WeaponSwitch [$SIGSEGV]  //칼
+			{
+			    Delay 0
+			    Cooldown 2
+			    Repeats 0
+			    IfSeeTarget 1
+			    Type "Secondary"
+			}
+			WeaponSwitch [$SIGSEGV]  //공
+			{
+			    Delay 1
+			    Cooldown 2
+			    Repeats 0
+				IfSeeTarget 1
+			    Type "Melee"
+
+			}
+		}
+		T_TFBot_Scout_Backscatter_Spy
+		{
+			ClassIcon	scout_backscatt_h
+			Name	"Spy Back Scatter Scout"
+			Class	Scout
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			//ExtAttr FastUpdate 1 [$SIGSEGV] //
+			Action Spy [$SIGSEGV]
+			ItemAttributes
+			{
+				ItemName	"the back scatter"
+				"minicrits become crits"	1
+				//"crit forces victim to laugh"	1
+				//"damage bonus"	1.5
+			}
+			Item	"the back scatter"
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 0.2
+				IfSeeTarget 1
+				Type "Primary"
+			}
+		}
+		
+		//soldier
+		Ala_TFBot_Soldier_rocketjump
+		{
+			Class Soldier
+			Name "RocketJump Soldier"
+			Skill Expert
+			Attributes HoldFireUntilFullReload
+			Item "The Gunboats"
+			CharacterAttributes
+			{
+				"increased air control" 4
+				"cancel falling damage" 1
+				//"increased jump height" 1.5
+			}
+			RocketJump 1
+			AimLeadProjectileSpeed 1600
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 4
+				IfSeeTarget 1
+				Type "Jump"
+			}
+				//SIG
+		}
+	
+		T_TFBot_Soldier_ChargeCow // 충전소도둑
+		{
+			Name "Charging Soldier"
+			Class Soldier
+			Skill Expert
+			//ClassIcon soldier_homing_nys
+			Attributes	"HoldFireUntilFullReload"
+			ExtAttr AlwaysFireWeaponAlt  
+			ItemAttributes
+			{
+				ItemName "The Cow Mangler 5000"
+				"faster reload rate" 0.5
+			}
+			item "the cow mangler 5000"
+		}
+	
+		T_TFBot_Soldier_Homing_ChargeCow // 호밍충전
+		{
+			Name "Homing Charging Soldier"
+			Class Soldier
+			Skill Expert
+			ClassIcon soldier_homing_nys
+			ExtAttr AlwaysFireWeaponAlt
+			Attributes	"HoldFireUntilFullReload"
+			ItemAttributes
+			{
+				ItemName "The Cow Mangler 5000"
+				"faster reload rate" 0.5
+				"projectile speed decreased" 0.5
+				"mod projectile heat seek power" 500
+		"mod projectile heat aim error" 360
+			}
+			
+			item "the cow mangler 5000"
+		}
+		T_TFBot_Giant_Soldier_Homing_Charging //거대호밍
+		{
+			Health	4000
+			Name	"Giant Homing Charging Soldier"
+			Class	Soldier
+			ClassIcon soldier_homing_nys
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Tag	"bot_giant"
+			Attributes	"MiniBoss"
+			Attributes	"HoldFireUntilFullReload"
+			ExtAttr AlwaysFireWeaponAlt  
+			ItemAttributes
+			{
+				ItemName "The Cow Mangler 5000"
+				"faster reload rate" 0.5
+				"damage bonus"	4
+				"projectile speed decreased" 0.5
+				"mod projectile heat seek power" 500
+		"mod projectile heat aim error" 360
+			}
+			item "the cow mangler 5000"
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.4
+				"airblast vulnerability multiplier"	0.4
+				"override footstep sound set"	3
+				"airblast vertical vulnerability multiplier"	0.1
+			}
+		}
+		
+		//pyro
+		Ala_TFBot_Pyro_Dash_normal
+		{
+			Name "Dash Pyro"
+			Class Pyro
+			Skill hard
+			//MaxVisionRange 3000
+			Item	"the gas guzzler"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_flamethrower
+				"airblast dashes" 1
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 4
+				IfSeeTarget 1
+				Type "Jump"
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 4
+				//duration 0.3
+				IfSeeTarget 1
+				Type "Secondary"
+			}
+		}
+		Ala_TFBot_Pyro_Dash_hard
+		{
+			Name "Dash Pyro"
+			Class Pyro
+			Skill hard
+			MaxVisionRange 2000
+			Item	"the gas guzzler"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_flamethrower
+				"airblast dashes" 1
+				"mult airblast refire time" 0.3
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 2.5
+				IfSeeTarget 1
+				Type "Jump"
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 2.5
+				//duration 0.3
+				IfSeeTarget 1
+				Type "Secondary"
+			}
+		}
+		Ala_TFBot_Pyro_Dash_expert
+		{
+			Name "Dash Pyro"
+			Class Pyro
+			Skill Expert
+			MaxVisionRange 3000
+			Item	"the gas guzzler"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_flamethrower
+				"airblast dashes" 1
+				"mult airblast refire time" 0.1
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 1
+				IfSeeTarget 1
+				Type "Jump"
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 1
+				//duration 0.3
+				IfSeeTarget 1
+				Type "Secondary"
+			}
+		}
+		Ala_TFBot_Pyro_Dash_Armored
+		{
+			Name "Armored Dash Pyro"
+			Class Pyro
+			Skill hard
+			Health 600
+			Scale 1.3
+			MaxVisionRange 3000
+			Item	"the gas guzzler"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_flamethrower
+				"airblast dashes" 1
+				"mult airblast refire time" 0.3
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 3
+				IfSeeTarget 1
+				Type "Jump"
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 3
+				//duration 0.3
+				IfSeeTarget 1
+				Type "Secondary"
+			}
+		}
+		Ala_TFBot_Giant_Pyro_Dash
+		{
+			Name "Giant Dash Pyro"
+			Class Pyro
+			Health	4000
+			Skill Expert
+			Attributes	"MiniBoss"
+			MaxVisionRange 3000
+			Item	"the gas guzzler"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_flamethrower
+				"airblast dashes" 1
+				"mult airblast refire time" 0.1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction"	0.6
+				"airblast vulnerability multiplier"	0.6
+				"override footstep sound set"	6
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 3
+				IfSeeTarget 1
+				Type "Jump"
+			}
+			FireWeapon  
+			{
+				Delay 0
+				Cooldown 3
+				IfSeeTarget 1
+				Type "Secondary"
+			}
+		}
+		T_TFBot_Pyro_Thruster_moon //문트팩
+		{
+			Class Pyro
+			Name "Jetpack Moonman"
+			health 175
+			Skill Expert
+			Attributes DisableDodge
+			WeaponRestrictions	SecondaryOnly
+			Item "The Thermal Thruster"
+			Item	"the flamboyant flamenco"
+			AimLeadProjectileSpeed 2000
+			ItemAttributes
+			{
+				ItemName	"the phlogistinator"
+				"damage bonus"	2.0
+				"heal on kill"  175
+				"heal on hit for rapidfire"	10
+				"airblast disabled"    0
+			}
+			Item	"the phlogistinator"
+			ItemAttributes
+			{
+				ItemName "The Thermal Thruster"
+				//"thermal_thruster_air_launch" 1
+				"item_meter_charge_rate" 0.01
+				//"falling_impact_radius_stun" 1
+				"holster_anim_time" 0
+				"deploy time decreased" 0.001
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	2.0
+				"cancel falling damage" 1
+			}
+			FireWeapon  
+			{
+				Delay 4
+				Cooldown 8
+				IfSeeTarget 1
+				Type "Primary"
+			}
+			
+			WeaponSwitch
+			{
+			    Delay 3
+			   Cooldown 8
+			    Repeats 0
+			    Type "Secondary" 
+			}
+			WeaponSwitch
+			{
+			    Delay 5
+			    Cooldown 8
+			    Repeats 0 
+			    Type "Primary" 
+			}
+		}
+		
+		//demo
+		T_TFBot_Demomanhfda
+		{
+			Class Demoman
+			Skill Expert
+		}
+    Ala_TFBot_Demo_Sticky_pogo
+		{
+			ClassIcon	demo_sticky_daan
+			Name	"Sticky Jump Demo"
+			Class	Demoman
+			Skill	expert
+			MaxVisionRange	5000
+			Attributes HoldFireUntilFullReload
+            WeaponRestrictions	SecondaryOnly
+			ItemAttributes
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"is_passive_weapon" 1 
+				"projectile gravity" 10000
+				"faster reload rate" 0.4
+				"apply look velocity on damage"	500
+				"apply y velocity on damage"	-100
+				"fuse bonus"	-0.1
+				"projectile speed decreased" 0.001
+				"damage penalty"	2
+				"blast radius decreased" 0.001
+			}
+			ItemAttributes
+			{
+				ItemName	tf_weapon_pipebomblauncher
+				"stickybomb charge rate" -1
+				"sticky arm time bonus" 5
+                "faster reload rate" 0.33
+                "damage force reduction" 2
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	2
+				"self dmg push force decreased" 2
+			    "cancel falling damage" 1
+				"increased air control" 4
+			}
+		}
+		Ala_TFBot_Demo_Sticky_pogo_expert
+		{
+			ClassIcon	demo_sticky_daan
+			Name	"Sticky Jump Demo"
+			Class	Demoman
+			Skill	expert
+			MaxVisionRange	5000
+			Attributes HoldFireUntilFullReload
+            WeaponRestrictions	SecondaryOnly
+			ItemAttributes
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"is_passive_weapon" 1 
+				"projectile gravity" 10000
+				"faster reload rate" 0.01
+				"apply look velocity on damage"	500
+				"apply y velocity on damage"	-100
+				"fuse bonus"	-0.1
+				"projectile speed decreased" 0.001
+				"damage penalty"	2
+				"blast radius decreased" 0.001
+			}
+			ItemAttributes
+			{
+				ItemName	tf_weapon_pipebomblauncher
+				"stickybomb charge rate" -1
+				"sticky arm time bonus" 5
+                "faster reload rate" 0.1
+                "damage force reduction" 2
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	2
+				"self dmg push force decreased" 2
+			    "cancel falling damage" 1
+				"increased air control" 4
+			}
+		}
+		Ala_TFBot_Demo_Sticky_pogo_Armored
+		{
+			ClassIcon	demo_sticky_daan
+			Name	"Armored Sticky Jump Demo"
+			Class	Demoman
+			Health 650
+			Scale 1.3
+			Skill	expert
+			MaxVisionRange	5000
+			Attributes HoldFireUntilFullReload
+            WeaponRestrictions	SecondaryOnly
+			ItemAttributes
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"is_passive_weapon" 1 
+				"projectile gravity" 10000
+				"faster reload rate" 0.01
+				"apply look velocity on damage"	500
+				"apply y velocity on damage"	-100
+				"fuse bonus"	-0.1
+				"projectile speed decreased" 0.001
+				"damage penalty"	2
+				"blast radius decreased" 0.001
+			}
+			ItemAttributes
+			{
+				ItemName	tf_weapon_pipebomblauncher
+				"stickybomb charge rate" -1
+				"sticky arm time bonus" 5
+                "faster reload rate" 0.33
+                "damage force reduction" 2
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	2
+				"self dmg push force decreased" 2
+			    "cancel falling damage" 1
+				"increased air control" 4
+			}
+		}
+		Ala_TFBot_Giant_Demo_Sticky_pogo
+		{
+			ClassIcon	demo_sticky_daan
+			Name	"Giant Sticky Jump Demo"
+			Class	Demoman
+			Health	4500
+			Skill Expert
+			Attributes	"MiniBoss"
+			MaxVisionRange	5000
+			Attributes HoldFireUntilFullReload
+			WeaponRestrictions	SecondaryOnly
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_GRENADELAUNCHER"
+				"is_passive_weapon" 1 
+				"projectile gravity" 10000
+				"faster reload rate" 0.01
+				"apply look velocity on damage"	500
+				"apply y velocity on damage"	-100
+				"apply z velocity on damage" 400
+				"fuse bonus"	-0.1
+				"projectile speed decreased" 0.001
+				"damage penalty"	2
+				"blast radius decreased" 0.001
+			}
+			ItemAttributes
+			{
+				ItemName	tf_weapon_pipebomblauncher
+				"stickybomb charge rate" -1
+				"sticky arm time bonus" 5
+                "faster reload rate" 0.33
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	2
+			    "cancel falling damage" 1
+				"increased air control" 4
+				"move speed bonus"	0.5
+				"damage force reduction" 0.5
+				"airblast vulnerability multiplier" 0.5
+				"override footstep sound set" 4
+			}
+		}
+		//heavy
+		T_TFBot_Heavy_explosiveshot_normal	//폭팔탄헤비노말
+		{
+			Name "Explosive Shot Heavy"
+			Class Heavyweapons
+			ClassIcon heavy_deflector_explosion 
+			Skill normal
+			ItemAttributes
+			{
+				ItemName	"iron curtain"
+				"weapon spread bonus"	1
+		"explosive bullets" 90
+		"fire rate penalty" 1.3
+		"bullets per shot bonus"	0.25
+		"damage bonus" 3
+		"maxammo primary reduced"	0.4
+		"no self blast dmg" 2
+		"self dmg push force increased" 1.01
+		"blast dmg to self increased" 0
+			}
+			Item	"iron curtain"
+			Item	"the eliminators safeguard"
+			Item	"the war goggles"
+		}
+		T_TFBot_Heavy_explosiveshot_expert	//폭팔탄헤비익퍼
+		{
+			Name "Explosive Shot Heavy"
+			Class Heavyweapons
+			//Classicon 
+			Skill Expert
+			ItemAttributes
+			{
+				ItemName	"iron curtain"
+				"explosive bullets" 70
+			}
+			CharacterAttributes
+			{
+				"no self blast dmg"	1
+			}
+			Item	"iron curtain"
+			Item	"the eliminators safeguard"
+			Item	"the war goggles"
+		}
+		T_TFBot_Giant_Heavy_explosiveshot //거대폭팔
+		{
+		    	Class    Heavy
+		    	//ClassIcon
+		    	Health    5000
+		    	Attributes    MiniBoss
+			Name "Explosive Shot Heavy"
+			Class Heavyweapons
+			Skill Expert
+			ItemAttributes
+			{
+				ItemName	"iron curtain"
+						"weapon spread bonus"	1
+		"explosive bullets" 90
+		"fire rate penalty" 1.3
+		"bullets per shot bonus"	0.25
+		"damage bonus" 4
+		"maxammo primary reduced"	0.4
+		"no self blast dmg" 2
+		"self dmg push force increased" 1.01
+		"blast dmg to self increased" 0
+			}
+			Item	"iron curtain"
+			Item	"the eliminators safeguard"
+			Item	"the war goggles"
+		    	CharacterAttributes
+		    	{
+				"move speed bonus"    0.5
+				"damage force reduction"    0.4
+				"airblast vulnerability multiplier"    0.4
+		    	}
+		}
+		T_TFBot_Giant_Heavy_explosiveshot_pusher //거대폭팔푸셔
+		{
+		    	Class    Heavy
+		    	//ClassIcon
+		    	Health    5000
+		    	Attributes    MiniBoss
+			Name "ExploShot Heavy Pusher"
+			Class Heavyweapons
+			Skill Expert
+			ItemAttributes
+			{
+				ItemName	"iron curtain"
+						"weapon spread bonus"	1
+		"explosive bullets" 90
+		"fire rate penalty" 1.3
+		"bullets per shot bonus"	0.25
+		"damage bonus" 4
+		"maxammo primary reduced"	0.4
+		"no self blast dmg" 2
+		"self dmg push force increased" 1.01
+		"blast dmg to self increased" 0
+				"attack projectiles"	2
+				"damage causes airblast"	1
+			}
+			Item	"iron curtain"
+			Item	"the eliminators safeguard"
+			Item	"the war goggles"
+		    	CharacterAttributes
+		    	{
+				"move speed bonus"    0.5
+				"damage force reduction"    0.4
+				"airblast vulnerability multiplier"    0.4
+		    	}
+		}
+		T_TFBot_Giant_Heavy_Shield //쉴드거대헤비
+		{
+		    	Class    Heavy
+		    	//ClassIcon    heavy_armoured
+		    	Health    5000
+		    	Attributes    MiniBoss
+		    	Attributes    SpawnWithFullCharge
+		    	Attributes    ProjectileShield
+		    	Attributes    AlwaysFireWeapon
+			WeaponRestrictions    SecondaryOnly
+			Name    "Giant Shield Gunner"
+			Item    "pyroland_minigun_mistercuddles"
+			Item    "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName    "pyroland_minigun_mistercuddles"
+				"minigun spinup time decreased"    0.7
+				"is_passive_weapon"    1
+			}
+			ItemAttributes
+			{
+				ItemName    "The Quick-Fix"
+				"generate rage on heal"    2
+				"heal rate bonus"    0.0
+			}
+			ItemModel  
+			{
+				ItemName "The Quick-Fix"
+				Model "models/weapons/c_models/c_minigun/c_minigun.mdl"
+			}
+			FireWeapon  
+			{
+				Delay 1
+				Cooldown 3
+				Repeats 0
+				Duration 0.6 
+				Type "Special" //Activate Shield
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"    0.5
+				"damage force reduction"    0.4
+				"airblast vulnerability multiplier"    0.4
+				"bot medic uber deploy delay duration"    2000
+				"increase buff duration"    10.0
+		    	}
+		}
+		T_TFBot_Giant_Heavy_Brassbeast_Shield //쉴드거대헤비골건
+		{
+		    	Class    Heavy
+		    	ClassIcon	heavy_brassbeast_hyper_giant
+		    	Health    5000
+		    	Attributes    MiniBoss
+		    	Attributes    SpawnWithFullCharge
+		    	Attributes    ProjectileShield
+		    	Attributes    AlwaysFireWeapon
+			WeaponRestrictions    SecondaryOnly
+			Name    "Giant Golden Shield Gunner"
+			Item    "the brass beast"
+			Item    "The Quick-Fix"
+			Item	"the gridiron guardian"
+			ItemAttributes
+			{
+				ItemName	"the brass beast"
+				"damage bonus"	3.0
+				"turn to gold"	1				
+				"bullets per shot bonus"	2
+				"fire rate bonus"	0.4
+				"is_passive_weapon"    1
+			}
+			ItemAttributes
+			{
+				ItemName    "The Quick-Fix"
+				"generate rage on heal"    2
+				"heal rate bonus"    0.0
+			}
+			ItemModel  
+			{
+				ItemName "The Quick-Fix"
+				Model "models/weapons/c_models/c_gatling_gun/c_gatling_gun.mdl"
+			}
+			FireWeapon  
+			{
+				Delay 1
+				Cooldown 3
+				Repeats 0
+				Duration 0.6 
+				Type "Special" //Activate Shield
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.35
+				"damage force reduction"	0.3
+				"airblast vulnerability multiplier"	0.3
+				"override footstep sound set"	2
+				"bot medic uber deploy delay duration"    3000
+				"increase buff duration"    10.0
+		    	}
+		}
+		
+		//engi
+		T_TFBot_Engineer_circuit_homing
+		{
+		Name "Homing Short Circuit Engineer"
+            Class Engineer
+            ClassIcon engineer_shortcircuit_lite
+            Skill Expert
+            WeaponRestrictions SecondaryOnly
+            Action FetchFlag  
+			FireWeapon
+			{
+				Delay	0.5
+				Cooldown	0.5
+				IfSeeTarget	1
+				Repeats	0
+				Type	Secondary
+			}
+			ItemAttributes
+            {
+                ItemName "The Short Circuit"
+				"crits_become_minicrits"	1
+				"projectile acceleration" 700
+		"mod projectile heat seek power" 9999
+		"mod projectile heat aim error" 9999
+            }
+			Item	"the short circuit"
+		}
+		T_TFBot_Giant_Engineer_Shield
+		{
+			Name "Giant Shield Engineer"
+			Class Engineer
+			Health 3300
+			Skill Expert
+			//WeaponRestrictions SecondaryOnly
+			Attributes    MiniBoss
+		    	Attributes    SpawnWithFullCharge
+		    	Attributes    ProjectileShield
+		    	Attributes    AlwaysFireWeapon
+			Action FetchFlag
+			Item    "The Quick-Fix"
+			ItemAttributes
+			{
+				ItemName    "The Quick-Fix"
+				"generate rage on heal" 2
+				"is_passive_weapon"  1  
+				"heal rate bonus"    0.0
+			}
+			FireWeapon  
+			{
+				Delay 1
+				Cooldown 3
+				Repeats 0
+				Duration 0.6 
+				Type "Special" //Activate Shield
+			}
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.6
+				"damage force reduction" 0.6
+				"move speed bonus" 0.5
+				"bot medic uber deploy delay duration"    2000
+				"increase buff duration"    10.0
+			}
+		}
+		T_TFBot_Giant_Engineer_circuit_homing
+		{
+			Name "Giant Homing Short Circuit Engineer"
+			Class Engineer
+			Health 3300
+			Skill Expert
+			WeaponRestrictions SecondaryOnly
+			Attributes    MiniBoss
+		    	Attributes    SpawnWithFullCharge
+			WeaponRestrictions SecondaryOnly
+            Action FetchFlag  
+			FireWeapon
+			{
+				Delay	0.5
+				Cooldown	0.5
+				IfSeeTarget	1
+				Repeats	0
+				Type	Secondary
+			}
+			ItemAttributes
+            {
+                ItemName "The Short Circuit"
+			//"crits_become_minicrits"	1
+				"projectile acceleration" 1100
+		"mod projectile heat seek power" 9999
+		"mod projectile heat aim error" 9999
+            }
+			Item	"the short circuit"
+			CharacterAttributes
+			{
+				"airblast vulnerability multiplier" 0.6
+				"damage force reduction" 0.6
+				"move speed bonus" 0.5
+			}
+		}
+		//medic
+		T_TFBot_Medic
+		{
+			Class Medic
+			Skill Expert
+		}
+		T_TFBot_Medic_Vaccinator_All
+		{
+			Name "All Type Vaccinator Medic"
+			Class Medic
+			ClassIcon medic_vac_trio_nys
+			Skill Expert
+			Item "The Vaccinator"
+			Attributes SpawnWithFullCharge
+			FireWeapon  
+			{
+				Delay		1
+				Cooldown	1
+				Repeats		0
+				IfSeeTarget 0
+				Type "Secondary"
+			}
+			FireWeapon  
+			{
+				Delay		1.3
+				Cooldown	1
+				Repeats		0
+				IfSeeTarget 0
+				Type "Reload"
+			}
+			ItemAttributes
+			{
+				ItemName "The Vaccinator"
+				"medigun blast resist deployed"		1
+				"medigun bullet resist deployed"	1  
+				"medigun fire resist deployed"		1
+				"ubercharge rate bonus" 999
+			}
+			CharacterAttributes
+			{
+				"bot medic uber health threshold" 0 //disable standard uber behavior
+			}
+		}
+		T_TFBot_Krit_Vacc_Switcher
+		{
+			Name "Switcheroo krit Medic"
+			Class Medic
+			ClassIcon medic_vac_trio_nys
+			Skill Expert
+			Attributes SpawnWithFullCharge
+			ChangeAttributes   //Periodically changes bot attributes, defined in EventChangeAttributes
+		    	{
+				Delay 1 //Time before the first bot attribute change (Default: 10)
+				Cooldown 15 //Time between each bot attribute change (Default: 10)
+				Repeat 0
+				Name "Fire" // Name of the bot attributes listed in EventChangeAttributes
+		    	}
+		    	ChangeAttributes   
+		    	{
+				Delay 6
+				Cooldown 15
+				Repeat 0
+				Name "Blast"
+		    	}
+				ChangeAttributes   //Periodically changes bot attributes, defined in EventChangeAttributes
+		    	{
+				Delay 11 //Time before the first bot attribute change (Default: 10)
+				Cooldown 15 //Time between each bot attribute change (Default: 10)
+				Repeat 0
+				Name "Bullet" // Name of the bot attributes listed in EventChangeAttributes
+		    	}
+		    	ChangeAttributes   
+		    	{
+				Delay 16
+				Cooldown 15
+				Repeat 0
+				Name "Crit"
+		    	}
+			
+			EventChangeAttributes
+			{
+				Fire
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorFire
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"uber duration bonus"	100
+						"medigun fire resist passive"	1
+						"medigun fire resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Blast
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorBlast
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"heal rate bonus"	200
+						"uber duration bonus"	100
+						"medigun blast resist passive"	1
+						"medigun blast resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Bullet
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorBullets
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"heal rate bonus"	200
+						"uber duration bonus"	100
+						"medigun bullet resist passive"	1
+						"medigun bullet resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Crit
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes SpawnWithFullCharge
+					Item "The Kritzkrieg"
+					ItemAttributes
+					{
+						 ItemName "The Kritzkrieg"
+						 "ubercharge rate bonus" 150
+						 "uber duration bonus" 300
+						 "heal rate bonus" 200
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+			}
+		}
+		T_TFBot_Giant_Medic_Vaccinator_All
+		{
+			Name "Giant All Type Vaccinator Medic"
+			Class Medic
+			ClassIcon medic_vac_trio_nys_giant
+			Health 4500
+			Skill Expert
+			Attributes MiniBoss
+			Attributes SpawnWithFullCharge
+			Item "The Vaccinator"
+			FireWeapon  
+			{
+				Delay		0
+				Cooldown	1
+				Repeats		0
+				IfSeeTarget 0
+				Type "Secondary"
+			}
+			FireWeapon  
+			{
+				Delay		0.5
+				Cooldown	1
+				Repeats		0
+				IfSeeTarget 0
+				Type "Reload"
+			}
+			ItemAttributes
+			{
+				ItemName "The Vaccinator"
+				"medigun blast resist deployed" 1
+				"medigun bullet resist deployed" 1  
+				"medigun fire resist deployed" 1
+				"ubercharge rate bonus" 9999
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.6
+				"airblast vulnerability multiplier"	0.6
+				"bot medic uber health threshold" 0
+				"heal rate bonus" 200
+			}
+		}
+		T_TFBot_Giant_Krit_Vacc_Switcher //거대 스왑백시 
+		{
+			ClassIcon	medic_vac_trio_kritz
+			Health	4500
+			Name	"Giant Switcheroo Medic"
+			Class	Medic
+			Attributes	MiniBoss
+			Attributes IgnoreEnemies
+			
+			ChangeAttributes   //Periodically changes bot attributes, defined in EventChangeAttributes
+		    	{
+				Delay 1 //Time before the first bot attribute change (Default: 10)
+				Cooldown 15 //Time between each bot attribute change (Default: 10)
+				Repeat 0
+				Name "Fire" // Name of the bot attributes listed in EventChangeAttributes
+		    	}
+		    	ChangeAttributes   
+		    	{
+				Delay 6
+				Cooldown 15
+				Repeat 0
+				Name "Blast"
+		    	}
+				ChangeAttributes   //Periodically changes bot attributes, defined in EventChangeAttributes
+		    	{
+				Delay 11 //Time before the first bot attribute change (Default: 10)
+				Cooldown 15 //Time between each bot attribute change (Default: 10)
+				Repeat 0
+				Name "Bullet" // Name of the bot attributes listed in EventChangeAttributes
+		    	}
+		    	ChangeAttributes   
+		    	{
+				Delay 16
+				Cooldown 15
+				Repeat 0
+				Name "Crit"
+		    	}
+			
+			EventChangeAttributes
+			{
+				Fire
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorFire
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"uber duration bonus"	100
+						"medigun fire resist passive"	1
+						"medigun fire resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Blast
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorBlast
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"heal rate bonus"	200
+						"uber duration bonus"	100
+						"medigun blast resist passive"	1
+						"medigun blast resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Bullet
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes	SpawnWithFullCharge
+					Attributes	VaccinatorBullets
+					Item "TF_WEAPON_MEDIGUN"
+					ItemAttributes
+					{
+						ItemName "TF_WEAPON_MEDIGUN"
+						"ubercharge rate bonus"	50
+						"heal rate bonus"	200
+						"uber duration bonus"	100
+						"medigun bullet resist passive"	1
+						"medigun bullet resist deployed"	1
+						"lunchbox adds minicrits"	3
+						"medigun charge is resists"	3
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+				Crit
+				{
+					Skill Expert
+					WeaponRestrictions SecondaryOnly
+					Attributes SpawnWithFullCharge
+					Item "The Kritzkrieg"
+					ItemAttributes
+					{
+						 ItemName "The Kritzkrieg"
+						 "ubercharge rate bonus" 150
+						 "uber duration bonus" 300
+						 "heal rate bonus" 200
+					}
+					CharacterAttributes
+					{
+						"damage force reduction" 0.0 //	0.0
+						"airblast vulnerability multiplier"	0.0
+						"move speed bonus"	0.5
+						"bot medic uber health threshold" 25000
+					}
+				}
+			}
+		}
+		
+		//sniper
+		T_TFBot_Sniper
+		{
+			Class Sniper
+			Skill Expert
+		}
+		T_TFBot_Sniper_Huntsman_3multishot //3중샷
+		{
+			Class Sniper
+			Name "Triple Shot Bowman"
+			Skill Hard
+			ClassIcon sniper_bow_multi
+			WeaponRestrictions PrimaryOnly
+			Item "The Huntsman"
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"arrow mastery" 1
+			}
+			AimAt Head  
+			AimLeadProjectileSpeed 2600   //https://wiki.teamfortress.com/wiki/Projectiles can be used to find good speed.
+		}
+		T_TFBot_Sniper_Giant_Huntsman_3multishot //3중샷거대
+		{
+			Class Sniper
+			ClassIcon sniper_bow_multi
+			Name "Giant Triple Shot Bowman"
+			Skill Expert
+			Item "The Huntsman"
+			Attributes miniboss
+			Health 3600
+			AimAt Head  
+			AimLeadProjectileSpeed 2600   //https://wiki.teamfortress.com/wiki/Projectiles can be used to find good speed.
+			ItemAttributes
+			{
+				ItemName "The Huntsman"
+				"damage bonus" 1.5
+				"arrow mastery" 1
+			}
+			CharacterAttributes
+			{
+				"move speed bonus" 0.5
+				"damage force reduction" 0.0
+				"airblast vulnerability multiplier" 0.0
+				"override footstep sound set" 4
+				"head scale" 0.7
+			}
+		}
+		T_TFBot_Sniper_ExpShot // 폭탄환 스나
+		{
+			//ClassIcon	sniper
+			Health	125
+			Name	"Explosive Shot Sniper"
+			Class	Sniper
+			Skill	Expert
+			AimAt Body [$SIGSEGV]
+			ItemAttributes
+			{
+				ItemName	"the classic"
+				"damage bonus"	2.5
+				"sniper penetrate players when charged"	1
+				"sniper fires tracer HIDDEN"	1
+				"explosive bullets" 50
+			}
+			Item	"the classic"
+			Item	"the cozy camper"
+			Item	"letch's led"
+		}
+		
+		//spy
+		T_TFBot_Spy
+		{
+			Class Spy
+			Skill Expert
+		}
+		T_TFBot_Spy_Exp_Headshot // 헤폭엠버
+				{
+			//ClassIcon	spy
+			Health	125
+			Name	"Explosive Headshot Spy"
+			Class	Spy
+			Skill	Expert
+			WeaponRestrictions	PrimaryOnly
+			Attributes	"UseBossHealthBar"
+			Attributes	"HoldFireUntilFullReload"
+			ItemAttributes
+			{
+				ItemName	"the ambassador"
+				"headshot damage increase" 2
+				"reload time increased" 1.5
+				"clip size penalty" 0.2
+				"fire rate penalty" 3
+				"explosive sniper shot" 3
+			}
+			Item	"the ambassador"
+			Item	"the deep cover operator"
+		}
+	}
+	
+}
+
+
+
+
+
+
+//
+
+
+
+
+
+
+
+
+
+//
