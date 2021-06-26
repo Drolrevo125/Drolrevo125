@@ -425,8 +425,8 @@ WaveSchedule
 				ItemName	tf_weapon_pipebomblauncher
 				"stickybomb charge rate" -1
 				"sticky arm time bonus" 5
-                "faster reload rate" 0.33
-                "self dmg push force decreased" 0
+        "faster reload rate" 0.33
+        "self dmg push force decreased" 0
 				"rocket jump damage reduction" 0
 
 			}
