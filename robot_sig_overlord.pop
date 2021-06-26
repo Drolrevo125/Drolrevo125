@@ -177,6 +177,7 @@ WaveSchedule
 		{
 			Name "Dash Pyro"
 			Class Pyro
+			ClassIcon pyro_jumping
 			Skill hard
 			//MaxVisionRange 3000
 			Item	"the gas guzzler"
@@ -205,6 +206,7 @@ WaveSchedule
 		{
 			Name "Dash Pyro"
 			Class Pyro
+			ClassIcon pyro_jumping
 			Skill hard
 			MaxVisionRange 2000
 			Item	"the gas guzzler"
@@ -234,6 +236,7 @@ WaveSchedule
 		{
 			Name "Dash Pyro"
 			Class Pyro
+			ClassIcon pyro_jumping
 			Skill Expert
 			MaxVisionRange 3000
 			Item	"the gas guzzler"
@@ -263,6 +266,7 @@ WaveSchedule
 		{
 			Name "Armored Dash Pyro"
 			Class Pyro
+			ClassIcon pyro_jumping
 			Skill hard
 			Health 600
 			Scale 1.3
@@ -294,6 +298,7 @@ WaveSchedule
 		{
 			Name "Giant Dash Pyro"
 			Class Pyro
+			ClassIcon pyro_jumping_giant
 			Health	4000
 			Skill Expert
 			Attributes	"MiniBoss"
@@ -391,9 +396,9 @@ WaveSchedule
 			Class Demoman
 			Skill Expert
 		}
-    Ala_TFBot_Demo_Sticky_pogo
+        Ala_TFBot_Demo_Sticky_pogo
 		{
-			ClassIcon	demo_sticky_daan
+			ClassIcon	demo_sticky_jump
 			Name	"Sticky Jump Demo"
 			Class	Demoman
 			Skill	expert
@@ -401,16 +406,19 @@ WaveSchedule
 			Attributes HoldFireUntilFullReload
             WeaponRestrictions	SecondaryOnly
 			ItemAttributes
+			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
 				"is_passive_weapon" 1 
 				"projectile gravity" 10000
-				"faster reload rate" 0.4
+				"faster reload rate" 0.01
 				"apply look velocity on damage"	500
-				"apply y velocity on damage"	-100
-				"fuse bonus"	-0.1
+				"apply z velocity on damage" -50
+				"fuse bonus"	-0
 				"projectile speed decreased" 0.001
 				"damage penalty"	2
 				"blast radius decreased" 0.001
+				"mult projectile scale" 0
+				"no self blast dmg"	2
 			}
 			ItemAttributes
 			{
@@ -418,19 +426,19 @@ WaveSchedule
 				"stickybomb charge rate" -1
 				"sticky arm time bonus" 5
                 "faster reload rate" 0.33
-                "damage force reduction" 2
+                "self dmg push force decreased" 0
+				"rocket jump damage reduction" 0
+
 			}
 			CharacterAttributes
 			{
-				"no self blast dmg"	2
-				"self dmg push force decreased" 2
 			    "cancel falling damage" 1
 				"increased air control" 4
 			}
 		}
 		Ala_TFBot_Demo_Sticky_pogo_expert
 		{
-			ClassIcon	demo_sticky_daan
+			ClassIcon	demo_sticky_jump
 			Name	"Sticky Jump Demo"
 			Class	Demoman
 			Skill	expert
@@ -438,16 +446,19 @@ WaveSchedule
 			Attributes HoldFireUntilFullReload
             WeaponRestrictions	SecondaryOnly
 			ItemAttributes
+			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
 				"is_passive_weapon" 1 
 				"projectile gravity" 10000
 				"faster reload rate" 0.01
 				"apply look velocity on damage"	500
-				"apply y velocity on damage"	-100
-				"fuse bonus"	-0.1
+				"apply z velocity on damage" -50
+				"fuse bonus"	-0
 				"projectile speed decreased" 0.001
 				"damage penalty"	2
 				"blast radius decreased" 0.001
+				"mult projectile scale" 0
+				"no self blast dmg"	2
 			}
 			ItemAttributes
 			{
@@ -455,19 +466,18 @@ WaveSchedule
 				"stickybomb charge rate" -1
 				"sticky arm time bonus" 5
                 "faster reload rate" 0.1
-                "damage force reduction" 2
+                "self dmg push force decreased" 0
+				"rocket jump damage reduction" 0
 			}
 			CharacterAttributes
 			{
-				"no self blast dmg"	2
-				"self dmg push force decreased" 2
 			    "cancel falling damage" 1
 				"increased air control" 4
 			}
 		}
 		Ala_TFBot_Demo_Sticky_pogo_Armored
 		{
-			ClassIcon	demo_sticky_daan
+			ClassIcon	demo_sticky_jump
 			Name	"Armored Sticky Jump Demo"
 			Class	Demoman
 			Health 650
@@ -477,16 +487,20 @@ WaveSchedule
 			Attributes HoldFireUntilFullReload
             WeaponRestrictions	SecondaryOnly
 			ItemAttributes
+			{
 				ItemName "TF_WEAPON_GRENADELAUNCHER"
-				"is_passive_weapon" 1 
+								"is_passive_weapon" 1 
 				"projectile gravity" 10000
 				"faster reload rate" 0.01
 				"apply look velocity on damage"	500
-				"apply y velocity on damage"	-100
-				"fuse bonus"	-0.1
+				//"apply y velocity on damage"	-3000
+				"apply z velocity on damage" 150
+				"fuse bonus"	-0
 				"projectile speed decreased" 0.001
 				"damage penalty"	2
 				"blast radius decreased" 0.001
+				"mult projectile scale" 0
+				"no self blast dmg"	2
 			}
 			ItemAttributes
 			{
@@ -494,19 +508,18 @@ WaveSchedule
 				"stickybomb charge rate" -1
 				"sticky arm time bonus" 5
                 "faster reload rate" 0.33
-                "damage force reduction" 2
+                "self dmg push force decreased" 0
+				"rocket jump damage reduction" 0
 			}
 			CharacterAttributes
 			{
-				"no self blast dmg"	2
-				"self dmg push force decreased" 2
 			    "cancel falling damage" 1
 				"increased air control" 4
 			}
 		}
 		Ala_TFBot_Giant_Demo_Sticky_pogo
 		{
-			ClassIcon	demo_sticky_daan
+			ClassIcon	demo_sticky_jump
 			Name	"Giant Sticky Jump Demo"
 			Class	Demoman
 			Health	4500
@@ -522,12 +535,13 @@ WaveSchedule
 				"projectile gravity" 10000
 				"faster reload rate" 0.01
 				"apply look velocity on damage"	500
-				"apply y velocity on damage"	-100
-				"apply z velocity on damage" 400
-				"fuse bonus"	-0.1
+				"apply z velocity on damage" 230
+				"fuse bonus"	-0
 				"projectile speed decreased" 0.001
 				"damage penalty"	2
 				"blast radius decreased" 0.001
+				"mult projectile scale" 0
+				"no self blast dmg"	2
 			}
 			ItemAttributes
 			{
@@ -535,11 +549,11 @@ WaveSchedule
 				"stickybomb charge rate" -1
 				"sticky arm time bonus" 5
                 "faster reload rate" 0.33
+                "self dmg push force decreased" 0
+				"rocket jump damage reduction" 0
 			}
 			CharacterAttributes
 			{
-				"no self blast dmg"	2
-			    "cancel falling damage" 1
 				"increased air control" 4
 				"move speed bonus"	0.5
 				"damage force reduction" 0.5
