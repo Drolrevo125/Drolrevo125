@@ -6,10 +6,261 @@
 population
 {
 	StartingCurrency	0
-	RespawnWaveTime	999999
+	RespawnWaveTime	999999 //부활불가
 	CanBotsAttackWhileInSpawnRoom	no
 	EventPopfile	Halloween
 	Advanced	1
+	ClassLimit [$SIGSEGV] //클제한두기 0은 덜만듬, 그냥금지
+	{
+		Scout 6
+		Soldier 1
+		Pyro 0
+		Demoman 0
+		Heavyweapons 2
+		Engineer 3
+		Medic 0
+		Sniper 6
+		Spy 0
+	}
+	playerAttributes//플레이어 스팩 목록:스캇,솔저,헤비,엔지,스나
+	{
+		//"allow friendly fire" 1	//팀킬 됨???
+		"can headshot" 1	//전클래스 헤드샷
+		"projectile penetration" 2	//전클래스 관통
+		Scout
+		{
+			"max health additive bonus"	175
+			"move speed penalty"	0.8
+			"no double jump"	1
+		}
+		Soldier
+		{
+			"rocket jump damage reduction"	0.1//자폭사망
+			"max health additive bonus"	100
+		}
+		Heavyweapons
+		{
+			"move speed bonus"	1.2
+		}
+		Engineer
+		{
+			"max health additive bonus"	175
+			"metal regen"	5
+			"building cost reduction" -1.5
+			"engy sentry damage bonus"	3
+			"mod wrench builds minisentry"	1
+		}
+		Sniper
+		{
+			"max health additive bonus"	175
+		}
+	}
+	
+	//무기스팩조정 여기 없으면 밴언락
+	//------------------------------------------스카웃------------------------------------------
+	//목록: 스캐터,자섭,권총,윙어,빠따
+	
+	ItemAttributes
+	{
+		ItemName	tf_weapon_scattergun
+		"maxammo primary reduced"	0.9
+		"damage bonus"	2
+	}
+	ItemAttributes
+	{
+		ItemName	"the force-a-nature"
+		"maxammo primary reduced"	0.45
+		"damage bonus"	4.61
+		"clip size penalty"	0.5
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_pistol_scout
+		"damage bonus"	2.7
+		"maxammo secondary increased"	5.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the winger"
+		"maxammo secondary increased"	4.16
+		"damage bonus"	3
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_bat
+		"damage bonus"	3.5
+	}
+
+	//------------------------------------------솔저------------------------------------------
+	//목록: 로켓,다랙,샷건,부사수,삽,자토이치
+	
+	ItemAttributes
+	{
+		ItemName	tf_weapon_rocketlauncher
+		"damage bonus"	4.45
+		"rocket specialist"	1
+		"maxammo primary reduced"	0.75
+	}
+	ItemAttributes
+	{
+		ItemName	"the direct hit"
+		"maxammo primary reduced"	0.1
+		"damage bonus"	26.79
+		"rocket specialist"	1
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_shotgun_soldier
+		"maxammo secondary increased"	3.34
+		"damage bonus"	2
+	}
+	ItemAttributes
+	{
+		ItemName	"the reserve shooter" //자동샷건
+		"damage bonus"	1.5
+		"maxammo primary increased"	3.34
+		"clip size bonus"	3
+		"fire rate bonus"	1.2
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_shovel
+		"damage bonus"	2
+	}
+	ItemAttributes
+	{
+		ItemName	"the half-zatoichi"
+		"damage bonus"	4.62
+		"heal on kill"	0
+	}
+	
+		
+	//------------------------------------------파이로------------------------------------------
+	//덜만듬
+	
+	//------------------------------------------데모------------------------------------------
+	//덜만듬
+	
+	//------------------------------------------헤비------------------------------------------
+	//목록:미니건,토미,샷건,가족,주먹,
+	
+	ItemAttributes
+	{
+		ItemName	tf_weapon_minigun
+		"maxammo primary reduced"	0.75
+		"damage bonus"	6.67
+		"projectile penetration"	7
+	}
+	ItemAttributes
+	{
+		ItemName	tomislav
+		"maxammo primary reduced"	0.75
+		"damage bonus"	4.45
+		"projectile penetration"	5
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_shotgun_hwg
+		"damage bonus"	2
+		"maxammo secondary increased"	3.34
+	}
+	ItemAttributes
+	{
+		ItemName	"the family business"
+		"maxammo secondary increased"	3.34
+		"weapon spread bonus"	1.8
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_fists
+		"damage bonus"	2
+	}
+	ItemAttributes
+	{
+		ItemName	"the eviction notice"
+		"damage bonus"	3.85
+		"mod_maxhealth_drain_rate" 0
+	}
+	
+	//------------------------------------------엔지------------------------------------------
+	//목록:샷건,개척자,권총,렌치,뾰렌
+	
+	ItemAttributes
+	{
+		ItemName	tf_weapon_shotgun_primary
+		"damage bonus"	2
+		"maxammo primary increased"	3.34
+		}
+	ItemAttributes
+	{
+		ItemName	"the frontier justice" //레버액션?
+		"damage bonus"	4
+		"clip size penalty"	0
+		"weapon spread bonus"	2
+		"bullets per shot bonus"	-2 //단발
+		"maxammo primary increased"	2
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_pistol
+		"damage bonus"	2.7
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_wrench
+		"damage bonus"	2
+	}
+	ItemAttributes
+	{
+		ItemName	"the jag"
+		"damage bonus"	2
+	}
+	
+	//------------------------------------------메딕------------------------------------------
+	//미구현
+	
+	//------------------------------------------스나------------------------------------------
+	//목록: 저격총,살청,슴지,청소부,쿠크리,부시
+	
+	ItemAttributes
+	{
+		ItemName	tf_weapon_sniperrifle
+		"damage bonus"	2.31
+	}
+	ItemAttributes
+	{
+		ItemName	"the hitman's heatmaker"
+		"damage bonus"	3
+		"maxammo primary increased"	1.4
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_smg
+		"maxammo secondary increased"	3
+		"damage bonus"	5
+	}
+	ItemAttributes
+	{
+		ItemName	"the cleaner's carbine"
+		"maxammo secondary increased"	2.75
+		"damage bonus"	7.5
+	}
+	ItemAttributes
+	{
+		ItemName	tf_weapon_club
+		"damage bonus"	2
+	}
+	ItemAttributes
+	{
+		ItemName	"the bushwacka"
+		"damage bonus"	1.5
+	}
+	
+	//------------------------------------------스파이------------------------------------------
+	
+	//밸붕
+
+	
 	Templates
 	{
 	}
@@ -293,464 +544,6 @@ population
 	{
 		WaitWhenDone	65
 		Checkpoint	Yes
-		StartWaveOutput
-		{
-			Target	wave_start_relay
-			Action	Trigger
-		}
-		DoneOutput
-		{
-			Target	wave_finished_relay
-			Action	Trigger
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	scout
-					Health	125
-					Name	"플레이어캇 스팩"
-					Class	Scout
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	"the force-a-nature"
-						"maxammo primary reduced"	0.45
-						"damage bonus"	4.61
-						"clip size penalty"	0.5
-					}
-					ItemAttributes
-					{
-						ItemName	"the winger"
-						"maxammo secondary increased"	4.16
-						"damage bonus"	3
-					}
-					Item	"the force-a-nature"
-					Item	"the winger"
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	scout
-					Health	125
-					Name	"플래이어캇 스팩"
-					Class	Scout
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	tf_weapon_scattergun
-						"maxammo primary reduced"	0.9
-						"damage bonus"	2
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_pistol_scout
-						"damage bonus"	2.7
-						"maxammo secondary increased"	5.5
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_bat
-						"damage bonus"	3.5
-					}
-					CharacterAttributes
-					{
-						"max health additive bonus"	175
-						"move speed penalty"	0.8
-						"no double jump"	1
-					}
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	soldier
-					Health	200
-					Name	Soldier
-					Class	Soldier
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	tf_weapon_rocketlauncher
-						"damage bonus"	4.45
-						"rocket specialist"	1
-						"maxammo primary reduced"	0.75
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_shotgun_soldier
-						"maxammo secondary increased"	3.34
-						"damage bonus"	2
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_shovel
-						"damage bonus"	2
-					}
-					CharacterAttributes
-					{
-						"rocket jump damage reduction"	0.1
-						"max health additive bonus"	100
-					}
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	soldier
-					Health	200
-					Name	Soldier
-					Class	Soldier
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	"the direct hit"
-						"maxammo primary reduced"	0.1
-						"damage bonus"	26.79
-						"rocket specialist"	1
-					}
-					ItemAttributes
-					{
-						ItemName	"the reserve shooter"
-						"damage bonus"	1.5
-						"maxammo primary increased"	3.34
-						"clip size bonus"	3
-						"fire rate bonus"	1.2
-					}
-					ItemAttributes
-					{
-						ItemName	"the half-zatoichi"
-						"damage bonus"	4.62
-						"heal on kill"	0
-					}
-					Item	"the direct hit"
-					Item	"the reserve shooter"
-					Item	"the half-zatoichi"
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	heavyweapons
-					Health	300
-					Name	HeavyWeapons
-					Class	HeavyWeapons
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	tf_weapon_minigun
-						"maxammo primary reduced"	0.75
-						"damage bonus"	6.67
-						"projectile penetration"	7
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_shotgun_hwg
-						"damage bonus"	2
-						"maxammo secondary increased"	3.34
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_fists
-						"damage bonus"	2
-					}
-					CharacterAttributes
-					{
-						"move speed bonus"	1.2
-					}
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	heavyweapons
-					Health	300
-					Name	HeavyWeapons
-					Class	HeavyWeapons
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	tomislav
-						"maxammo primary reduced"	0.75
-						"damage bonus"	4.45
-						"projectile penetration"	5
-					}
-					ItemAttributes
-					{
-						ItemName	"the family business"
-						"maxammo secondary increased"	3.34
-						"weapon spread bonus"	1.8
-					}
-					ItemAttributes
-					{
-						ItemName	"the eviction notice"
-						"damage bonus"	3.85
-						"health drain"	"mod_maxhealth_drain_rate 0"
-					}
-					Item	"tomislav"
-					Item	"the family business"
-					Item	"the eviction notice"
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	engineer
-					Health	125
-					Name	Engineer
-					Class	Engineer
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	tf_weapon_shotgun_primary
-						"damage bonus"	2
-						"maxammo primary increased"	3.34
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_pistol
-						"damage bonus"	2.7
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_wrench
-						"damage bonus"	2
-					}
-					CharacterAttributes
-					{
-						"max health additive bonus"	175
-						"metal regen"	5
-						"engy sentry damage bonus"	3
-						"mod wrench builds minisentry"	1
-					}
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	engineer
-					Health	125
-					Name	Engineer
-					Class	Engineer
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	"the frontier justice"
-						"damage bonus"	4
-						"clip size penalty"	0
-						"weapon spread bonus"	2
-						"bullets per shot bonus"	-2
-						"maxammo primary increased"	2
-					}
-					ItemAttributes
-					{
-						ItemName	"the jag"
-						"damage bonus"	2
-					}
-					Item	"the frontier justice"
-					Item	"the jag"
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	sniper
-					Health	125
-					Name	Sniper
-					Class	Sniper
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	tf_weapon_sniperrifle
-						"damage bonus"	2.31
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_smg
-						"maxammo secondary increased"	3
-						"damage bonus"	5
-					}
-					ItemAttributes
-					{
-						ItemName	tf_weapon_club
-						"damage bonus"	2
-					}
-					CharacterAttributes
-					{
-						"max health additive bonus"	175
-					}
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	sniper
-					Health	125
-					Name	Sniper
-					Class	Sniper
-					Skill	Normal
-					ItemAttributes
-					{
-						ItemName	"the hitman's heatmaker"
-						"damage bonus"	3
-						"maxammo primary increased"	1.4
-					}
-					ItemAttributes
-					{
-						ItemName	"the cleaner's carbine"
-						"maxammo secondary increased"	2.75
-						"damage bonus"	7.5
-					}
-					ItemAttributes
-					{
-						ItemName	"the bushwacka"
-						"damage bonus"	1.5
-					}
-					Item	"the hitman's heatmaker"
-					Item	"the cleaner's carbine"
-					Item	"the bushwacka"
-				}
-			}
-		}
-		WaveSpawn
-		{
-			TotalCurrency	400
-			TotalCount	10
-			MaxActive	5
-			SpawnCount	2
-			WaitBeforeStarting	0
-			WaitBetweenSpawns	10
-			Where	spawnbot
-			Squad
-			{
-				TFBot
-				{
-					ClassIcon	scout
-					Health	125
-					Name	전체적용
-					Class	Scout
-					Skill	Normal
-					CharacterAttributes
-					{
-						"projectile penetration"	2
-					}
-				}
-			}
-		}
-	}
-	Wave
-	{
-		WaitWhenDone	65
-		Checkpoint	Yes
 		Description	"1웨 좀비 2웨 플레이어 3웨??"
 		StartWaveOutput
 		{
@@ -785,4 +578,31 @@ population
 		}
 	}
 }
-//This file has been generated by http://mvm.tf
+//This file has been generated by http://broccoli.tf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
+
+
+
+
+
+
+
+
+//
+
+
