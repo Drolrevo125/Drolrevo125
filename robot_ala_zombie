@@ -124,6 +124,14 @@ WaveSchedule
 				ItemName	tf_weapon_bottle
 				"damage bonus"	2
 			}
+			ItemAttributes
+			{
+				ItemName "the splendid screen"
+				"Attack not cancel charge" 1
+				//"charge impact damage increased" 2
+				"charge time increased" 3
+				"charge recharge rate increased" 2
+			}
 			CharacterAttributes
 			{
 				"torso scale"	1.2
@@ -139,7 +147,14 @@ WaveSchedule
 			Name	Spitter
 			Class	Pyro
 			Skill	expert
-			WeaponRestrictions	MeleeOnly
+			WeaponRestrictions	SecondaryOnly
+			ItemAttributes
+			{
+				ItemName "The Gas Passer"
+				"mult_item_meter_charge_rate" 0.05
+				"fire rate penalty" 5
+			}
+			Item    "The Gas Passer"
 			CharacterAttributes
 			{
 				"torso scale"	0.8
@@ -153,7 +168,7 @@ WaveSchedule
 			Name	Boomer
 			Class	Sniper
 			Skill	Expert
-			WeaponRestrictions	MeleeOnly
+			WeaponRestrictions	SecondaryOnly
 			CharacterAttributes
 			{
 				"torso scale"	1.4
