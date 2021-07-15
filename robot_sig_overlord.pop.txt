@@ -89,29 +89,54 @@ WaveSchedule
 		}
 		
 		//특수좀비
-		Ala_TFBot_Soldier_rocketjump
+		Ala_zombie_jockey
 		{
 			Class Soldier
-			Name "RocketJump Soldier"
-			Skill Expert
-			Attributes HoldFireUntilFullReload
-			Item "The Gunboats"
-			CharacterAttributes
-			{
-				"increased air control" 4
-				"cancel falling damage" 1
-				//"increased jump height" 1.5
-			}
-			RocketJump 1
-			AimLeadProjectileSpeed 1600
-			FireWeapon  
-			{
-				Delay 0
-				Cooldown 4
-				IfSeeTarget 1
-				Type "Jump"
-			}
+			
 		}
+		
+		Ala_zombie_charger
+		{
+			Class Soldier
+			
+		}
+		
+		Ala_zombie_spitter
+		{
+			Class Soldier
+			
+		}
+		
+		Ala_zombie_boomer
+		{
+			Class Soldier
+			
+		}
+		
+		Ala_zombie_smoker
+		{
+			Class Soldier
+			
+		}
+		
+		Ala_zombie_hunter
+		{
+			Class Soldier
+			
+		}
+		
+		Ala_zombie_witch
+		{
+			Class Soldier
+			
+		}
+		
+		Ala_zombie_tank
+		{
+			Class Soldier
+			
+		}
+		
 	}
 }
 
