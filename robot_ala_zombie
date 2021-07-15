@@ -111,21 +111,54 @@ WaveSchedule
 			}
 		}
 		
-		Ala_zombie_charger
+		Ala_zombie_charger	//돌진넉백추가
 		{
-			Class Soldier
-			
+			ClassIcon	demoman
+			Health	1000
+			Name	Demoman
+			Scale	1.2
+			Class	Demoman
+			Skill	expert
+			ItemAttributes
+			{
+				ItemName	tf_weapon_bottle
+				"damage bonus"	2
+			}
+			CharacterAttributes
+			{
+				"torso scale"	1.2
+				"hand scale"	1.3
+			}
+			Item	"the splendid screen"
 		}
 		
 		Ala_zombie_spitter
 		{
-			Class Soldier
-			
+			ClassIcon	pyro
+			Health	300
+			Name	Spitter
+			Class	Pyro
+			Skill	expert
+			WeaponRestrictions	MeleeOnly
+			CharacterAttributes
+			{
+				"torso scale"	0.8
+			}
 		}
 		
 		Ala_zombie_boomer
 		{
-			Class Soldier
+			ClassIcon	sniper
+			Health	400
+			Name	Boomer
+			Class	Sniper
+			Skill	Expert
+			WeaponRestrictions	MeleeOnly
+			CharacterAttributes
+			{
+				"torso scale"	1.4
+			}
+			Item	"jarate"
 			
 		}
 		
@@ -149,7 +182,25 @@ WaveSchedule
 		
 		Ala_zombie_tank
 		{
-			Class Soldier
+			ClassIcon	heavyweapons
+			Health	8000	//피통조정
+			Name	Tank
+			Scale	1.4
+			Class	HeavyWeapons
+			Skill	expert
+			WeaponRestrictions	MeleeOnly
+			Attributes	"MiniBoss"
+			ItemAttributes
+			{
+				ItemName	tf_weapon_fists
+				"damage bonus"	3.1
+			}
+			CharacterAttributes
+			{
+				"torso scale"	1.2
+				"hand scale"	1.2
+				"head scale"	1	//크기조정
+			}
 			
 		}
 		
