@@ -1,6 +1,6 @@
 //기본좀비 뎀조정50
 //좀비구현 자키,헌터,위치,스모커
-//
+//자키 갈고리주기
 WaveSchedule
 {
 	Templates // 
@@ -89,7 +89,7 @@ WaveSchedule
 		}
 		
 		//특수좀비
-		Ala_zombie_jockey
+		Ala_zombie_jockey	//비전설정
 		{
 			ClassIcon	scout
 			Health	250
@@ -97,6 +97,7 @@ WaveSchedule
 			Scale	0.7
 			Class	Scout
 			Skill	expert
+			//MaxVisionRange	1
 			WeaponRestrictions	MeleeOnly
 			ItemAttributes
 			{
