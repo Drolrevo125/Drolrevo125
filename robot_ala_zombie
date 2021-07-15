@@ -131,6 +131,7 @@ WaveSchedule
 				//"charge impact damage increased" 2
 				"charge time increased" 3
 				"charge recharge rate increased" 2
+				"damage causes airblast"	1
 			}
 			CharacterAttributes
 			{
