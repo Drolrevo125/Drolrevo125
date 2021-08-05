@@ -1,4 +1,23 @@
-//------------------------------------------스카웃------------------------------------------	
+WaveSchedule
+{
+	StartingCurrency	8000
+	RespawnWaveTime	3
+	CanBotsAttackWhileInSpawnRoom	no
+	Advanced	1
+	//밑으로 시그 [$ SIGSEGV]이거때문인지 확인
+	NoRomevisionCosmetics 1 //[$ SIGSEGV]
+	//NoHolidayPickups 1 //[$ SIGSEGV]
+	ForceHoliday 2 //[$SIGSEGV] //Enforces Halloween mode, but does not enable wave 666 and zombie bots
+	TextPrintTime 0 //[$ SIGSEGV]
+	maxredplayers 10
+    	playerAttributes
+	{
+		medic
+		{
+			"medic machinery beam" 2
+		}
+	}
+	//------------------------------------------스카웃------------------------------------------	
 	ItemAttributes
 	{
 		ItemName	sun-on-a-stick
@@ -349,3 +368,14 @@
 		"pyro year number"	2021
 		"Wrench index"	1
 	}
+	
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+--
