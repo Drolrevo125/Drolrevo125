@@ -37,6 +37,7 @@
 	{
 		ItemName	"the boston basher"
 		"health from healers increased"	1.5
+		"mod medic killed marked for death" 5
 	}
 	//------------------------------------------파이로------------------------------------------
 	
@@ -175,13 +176,6 @@
 		"self dmg push force increased" 0.25
 	}
 	//------------------------------------------헤비------------------------------------------
-	ItemAttributes
-	{
-		ItemName	tomislav
-		//"weapon spread bonus"	0.5
-		"damage penalty"	0.7
-		"can headshot" 1
-	}
 	ItemAttributes  
 	{
 		ItemName	"iron curtain"
@@ -202,18 +196,47 @@
 	}
 	ItemAttributes
 	{
-		ItemName	"the huo long heatmaker"
-		"override projectile type"	6
-		"centerfire projectile"	1
-		"ring of fire while aiming"	6
-		"uses ammo while aiming"	0
-		"damage bonus vs burning"	1.5
-        	"damage bonus" 2
+		ItemName	tomislav
+		"SET BONUS: move speed set bonus"	1.1
+		"minigun spinup time decreased"	5
+		"aiming movespeed increased"	1.3
+		"fire rate penalty"	1.1
+		"mod minigun can holster while spinning" !
 	}
-	ItemAttributes   // regular spin-up, no resis, no rev walk at all
+	ItemAttributes
 	{
-		ItemName "The Brass Beast"
-		"spunup_damage_resistance" 5
+		ItemName	"the family business"
+		"SET BONUS: move speed set bonus"	1.1
+		"fire rate penalty"	-0.5
+		"speed_boost_on_hit" 1
+	}
+	ItemAttributes
+	{
+		ItemName	"the eviction notice"
+		"SET BONUS: move speed set bonus"	1.1
+		"minicritboost on kill"	10
+	}
+	ItemAttributes
+	{
+		ItemName	"the huo long heatmaker"
+		"damage bonus vs burning"	1.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the brass beast"
+		"SET BONUS: dmg taken from crit reduced set bonus"	1.2
+	}
+	ItemAttributes
+	{
+		ItemName	"the buffalo steak sandvich"
+		"SET BONUS: dmg taken from crit reduced set bonus"	1.2
+		"force weapon switch" 1
+	}
+	ItemAttributes
+	{
+		ItemName	"warrior's spirit"
+		"SET BONUS: dmg taken from crit reduced set bonus"	1.2
+		"heal on hit for rapidfire"	20
 	}
 	
 	//------------------------------------------엔지------------------------------------------
