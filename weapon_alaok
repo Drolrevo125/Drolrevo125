@@ -209,6 +209,8 @@
 	{
 		ItemName	natascha
 		"heal on hit for rapidfire"	6
+		"no reduced damage rampup" 1.5
+		"reduced damage rampup" 1.5
 	}
 	ItemAttributes
 	{
@@ -323,6 +325,22 @@
 	//------------------------------------------메딕------------------------------------------
 	ItemAttributes
 	{
+		ItemName	tf_weapon_syringegun_medic
+		"overheal bonus"	1.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the blutsauger"
+		"heal rate bonus"	1.25
+	}
+	ItemAttributes
+	{
+		ItemName	"the overdose"
+		"move speed bonus"	1.05
+	}
+	
+	ItemAttributes
+	{
 		ItemName	tf_weapon_medigun
 		"increase buff duration"	1.5
 	}
@@ -330,7 +348,28 @@
 	{
 		ItemName	"the quick-fix"
 		"air dash count"	1
-		"speed buff ally"	3
+	}
+	
+	ItemAttributes
+	{
+		ItemName	tf_weapon_bonesaw
+		"uber duration bonus"	2
+	}
+	ItemAttributes
+	{
+		ItemName	"the amputator"
+		"mult medigun range"	1.5
+	}
+	ItemAttributes
+	{
+		ItemName	"the vita-saw"
+		"preserve ubercharge"	100
+		"add uber charge on hit"	10
+	}
+	ItemAttributes
+	{
+		ItemName	"the solemn vow"
+		"medic machinery beam"	5
 	}
 	
 	//------------------------------------------스나------------------------------------------
