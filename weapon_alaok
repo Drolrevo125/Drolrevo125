@@ -5,8 +5,8 @@
 	ItemAttributes
 	{
 		ItemName	"the force-a-nature"
-		"bullets per shot bonus"	1.5
-		"spread penalty"	1.1
+		"bullets per shot bonus"	1.7
+		"spread penalty"	1.4
 	}
 	ItemAttributes
 	{
@@ -16,10 +16,9 @@
 	ItemAttributes
 	{
 		ItemName    "Baby Face's Blaster"	//하이퍼운용하게
-		"lose hype on take damage"    0    //effectively makes it impossible to lose boost
+		"lose hype on take damage"    0
 		"hype resets on jump"	0
 		"hype decays over time"	0.05
-		//"fire rate penalty" 1.1
 	}
 	ItemAttributes
 	{
@@ -30,8 +29,25 @@
 	{
 		ItemName	"the winger"
 		"air dash count"	2
-		"increased jump height"	1.05
 		"Set DamageType Ignite"	1
+	}
+	ItemAttributes
+	{
+		ItemName	"pretty boy's pocket pistol"
+		"boost on damage" 1
+		"speed_boost_on_hit_enemy"	2
+
+	}
+	ItemAttributes
+	{
+		ItemName	"crit-a-cola"
+
+	}
+	ItemAttributes
+	{
+		ItemName	"the flying guillotine"
+		"maxammo secondary increased" 3
+		"always crit" 1
 	}
 	ItemAttributes
 	{
