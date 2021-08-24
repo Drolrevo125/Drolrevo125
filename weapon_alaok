@@ -121,7 +121,6 @@
 		ItemName	"the original"
 		"mod projectile heat follow crosshair" 1	//조종로켓됨???
 		"mod projectile heat aim time" 1.75
-		HomingRockets {FollowCrosshair 1}
 	}
 	//------------------------------------------데모------------------------------------------
 	
