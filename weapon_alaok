@@ -108,14 +108,11 @@
 	{
 		ItemName "the liberty launcher"
 		"projectile gravity" 1100	//수치조절하기 로켓중력
-		//"projectile acceleration" 2000	//수치조절하기 로켓가속
-		//"projectile speed decreased" "0.9"
 		"reload time increased"	1.3
 		"mini rockets"	1
 		"damage penalty"	0.95
-		//"damage bonus hidden"	1.2	//뎀감5%
+
 		"mul nonrocketjump attackrate" 0.25	//땅에있
-		//"mult projectile count" 2.1
 		"projectile spread angle penalty" 3
 		"blast radius increased" 1.3
 	}
